@@ -1,0 +1,12 @@
+{
+  "settings": {
+    "disable_autorun": false,
+    "enable_autorun_immediately": false,
+    "enable_shutdown_on_completion": false,
+    "skip_tests_by_default": false,
+    "delay_milliseconds_between_tests": 0,
+    "output_directory_path": "e:/xemu_perf_tests"
+  },
+  "test_suites": {
+  }
+}
