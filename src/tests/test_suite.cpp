@@ -18,6 +18,8 @@
 using namespace PBKitPlusPlus;
 using namespace XboxMath;
 
+static constexpr uint32_t kMaxClockDesyncRecoveryAttempts = 4;
+
 #define SET_MASK(mask, val) (((val) << (__builtin_ffs(mask) - 1)) & (mask))
 
 TestSuite::TestSuite(TestHost& host, std::string output_dir, std::string suite_name, const Config& config)
@@ -269,45 +271,59 @@ void TestSuite::Initialize() {
 
 TestHost::ProfileResults TestSuite::Profile(const std::string& test_name, uint32_t num_iterations,
                                             const std::function<void(void)>& body) const {
-  TestHost::ProfileResults ret{
-      .iterations = num_iterations,
-      .total_time_microseconds = 0xFFFFFFFF,
-      .average_time_microseconds = 0xFFFFFFFF,
-      .maximum_time_microseconds = 0,
-      .minimum_time_microseconds = 0xFFFFFFFF,
-  };
+  for (auto clock_desync_retry = 0; clock_desync_retry < kMaxClockDesyncRecoveryAttempts; ++clock_desync_retry) {
+    TestHost::ProfileResults ret{
+        .iterations = num_iterations,
+        .total_time_microseconds = 0xFFFFFFFF,
+        .average_time_microseconds = 0xFFFFFFFF,
+        .maximum_time_microseconds = 0,
+        .minimum_time_microseconds = 0xFFFFFFFF,
+    };
 
-  auto run_times = std::make_unique<uint32_t[]>(num_iterations);
+    auto run_times = std::make_unique<uint32_t[]>(num_iterations);
 
-  PrintMsg("Starting %s::%s\n", suite_name_.c_str(), test_name.c_str());
+    PrintMsg("Starting %s::%s\n", suite_name_.c_str(), test_name.c_str());
 
-  auto profile_start = std::chrono::high_resolution_clock::now();
-  for (auto i = 0; i < num_iterations; ++i) {
-    auto iteration_start = std::chrono::high_resolution_clock::now();
-    body();
-    auto duration = std::chrono::duration_cast<std::chrono::microseconds>(std::chrono::high_resolution_clock::now() -
-                                                                          iteration_start);
-    run_times[i] = static_cast<uint32_t>((duration.count() & 0xFFFFFFFF));
+    auto profile_start = std::chrono::steady_clock::now();
+    std::chrono::duration<long long, std::ratio<1, 1000000>> duration{};
+
+    for (auto i = 0; i < num_iterations; ++i) {
+      auto iteration_start = std::chrono::steady_clock::now();
+      body();
+      duration =
+          std::chrono::duration_cast<std::chrono::microseconds>(std::chrono::steady_clock::now() - iteration_start);
+      if (duration.count() < 0) {
+        goto desync_detected;
+      }
+      run_times[i] = static_cast<uint32_t>((duration.count()));
+    }
+
+    duration = std::chrono::duration_cast<std::chrono::microseconds>(std::chrono::steady_clock::now() - profile_start);
+    if (duration.count() < 0) {
+      goto desync_detected;
+    }
+    ret.total_time_microseconds = static_cast<uint32_t>((duration.count()));
+
+    PrintMsg("  Completed '%s::%s' in %fms\n", suite_name_.c_str(), test_name.c_str(),
+             static_cast<double>(ret.total_time_microseconds) / 1000.f);
+
+    ret.iterations = num_iterations;
+    ret.average_time_microseconds = ret.total_time_microseconds / num_iterations;
+
+    for (auto i = 0; i < num_iterations; ++i) {
+      if (run_times[i] < ret.minimum_time_microseconds) {
+        ret.minimum_time_microseconds = run_times[i];
+      }
+      if (run_times[i] > ret.maximum_time_microseconds) {
+        ret.maximum_time_microseconds = run_times[i];
+      }
+    }
+
+    return ret;
+
+  desync_detected:
+    PrintMsg("Clock desync detected, retrying %d\n", clock_desync_retry + 1);
   }
 
-  auto duration =
-      std::chrono::duration_cast<std::chrono::microseconds>(std::chrono::high_resolution_clock::now() - profile_start);
-  ret.total_time_microseconds = static_cast<uint32_t>((duration.count() & 0xFFFFFFFF));
-
-  PrintMsg("  Completed '%s::%s' in %fms\n", suite_name_.c_str(), test_name.c_str(),
-           static_cast<double>(ret.total_time_microseconds) / 1000.f);
-
-  ret.iterations = num_iterations;
-  ret.average_time_microseconds = ret.total_time_microseconds / num_iterations;
-
-  for (auto i = 0; i < num_iterations; ++i) {
-    if (run_times[i] < ret.minimum_time_microseconds) {
-      ret.minimum_time_microseconds = run_times[i];
-    }
-    if (run_times[i] > ret.maximum_time_microseconds) {
-      ret.maximum_time_microseconds = run_times[i];
-    }
-  }
-
-  return ret;
+  ASSERT(!"Failed to recover from clock desync during profiling");
 }
