@@ -281,18 +281,20 @@ TestHost::ProfileResults TestSuite::Profile(const std::string& test_name, uint32
 
   PrintMsg("Starting %s::%s\n", suite_name_.c_str(), test_name.c_str());
 
-  auto profile_start = std::chrono::high_resolution_clock::now();
+  auto profile_start = std::chrono::steady_clock::now();
   for (auto i = 0; i < num_iterations; ++i) {
-    auto iteration_start = std::chrono::high_resolution_clock::now();
+    auto iteration_start = std::chrono::steady_clock::now();
     body();
-    auto duration = std::chrono::duration_cast<std::chrono::microseconds>(std::chrono::high_resolution_clock::now() -
-                                                                          iteration_start);
-    run_times[i] = static_cast<uint32_t>((duration.count() & 0xFFFFFFFF));
+    auto duration =
+        std::chrono::duration_cast<std::chrono::microseconds>(std::chrono::steady_clock::now() - iteration_start);
+    ASSERT(duration.count() >= 0);
+    run_times[i] = static_cast<uint32_t>((duration.count()));
   }
 
   auto duration =
-      std::chrono::duration_cast<std::chrono::microseconds>(std::chrono::high_resolution_clock::now() - profile_start);
-  ret.total_time_microseconds = static_cast<uint32_t>((duration.count() & 0xFFFFFFFF));
+      std::chrono::duration_cast<std::chrono::microseconds>(std::chrono::steady_clock::now() - profile_start);
+  ASSERT(duration.count() >= 0);
+  ret.total_time_microseconds = static_cast<uint32_t>((duration.count()));
 
   PrintMsg("  Completed '%s::%s' in %fms\n", suite_name_.c_str(), test_name.c_str(),
            static_cast<double>(ret.total_time_microseconds) / 1000.f);
