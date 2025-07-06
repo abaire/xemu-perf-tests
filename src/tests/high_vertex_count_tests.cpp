@@ -181,9 +181,6 @@ static void CreateGeometry(TestHost &host, std::shared_ptr<VertexBuffer> &vertex
 void HighVertexCountTests::Initialize() {
   TestSuite::Initialize();
 
-  auto shader = std::make_shared<PassthroughVertexShader>();
-  host_.SetVertexShaderProgram(shader);
-
   geometry_ = std::make_unique<GeometryBuffer[]>(kNumVertexCounts);
   for (auto i = 0; i < kNumVertexCounts; ++i) {
     auto &entry = geometry_[i];
@@ -199,11 +196,12 @@ void HighVertexCountTests::Deinitialize() {
 
 //! Test the arbitrary maximum number of vertices per draw.
 void HighVertexCountTests::Test(const std::string& name, DrawMode draw_mode) {
+  auto shader = std::make_shared<PassthroughVertexShader>();
+  host_.SetVertexShaderProgram(shader);
+
   auto &vertex_buffer = geometry_[kNumVertexCounts - 1].vertex_buffer;
   auto &index_buffer = geometry_[kNumVertexCounts - 1].index_buffer;
   host_.SetVertexBuffer(vertex_buffer);
-
-  auto shader = host_.GetShaderProgram();
 
   static constexpr uint32_t kBackgroundColor = 0xFF444444;
   host_.PrepareDraw(kBackgroundColor);
@@ -239,7 +237,8 @@ void HighVertexCountTests::Test(const std::string& name, DrawMode draw_mode) {
 
 //! Test various vertex counts per draw.
 void HighVertexCountTests::TestMixedSizes(const std::string &name, HighVertexCountTests::DrawMode draw_mode) {
-  auto shader = host_.GetShaderProgram();
+  auto shader = std::make_shared<PassthroughVertexShader>();
+  host_.SetVertexShaderProgram(shader);
 
   static constexpr uint32_t kBackgroundColor = 0xFF444444;
   host_.PrepareDraw(kBackgroundColor);
