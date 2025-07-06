@@ -194,15 +194,17 @@ static void RunTests(RuntimeConfig& config, TestHost& host, std::vector<std::sha
   Logger::Log().close();
 
   if (config.enable_shutdown_on_completion()) {
-    debugPrint("Results written to %s\n\nShutting down in 10 seconds...\n", config.output_directory_path().c_str());
+    debugPrint("Results written to %s\n\nShutting down in %d seconds...\n", config.output_directory_path().c_str(),
+               config.reboot_or_shutdown_delay_ms() / 1000);
     pb_show_debug_screen();
-    Sleep(10000);
+    Sleep(config.reboot_or_shutdown_delay_ms());
 
     Shutdown();
   } else {
-    debugPrint("Results written to %s\n\nRebooting in 10 seconds...\n", config.output_directory_path().c_str());
+    debugPrint("Results written to %s\n\nRebooting in %d seconds...\n", config.output_directory_path().c_str(),
+               config.reboot_or_shutdown_delay_ms() / 1000);
     pb_show_debug_screen();
-    Sleep(10000);
+    Sleep(config.reboot_or_shutdown_delay_ms());
   }
 }
 

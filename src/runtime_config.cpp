@@ -163,6 +163,11 @@ bool RuntimeConfig::LoadConfigBuffer(const std::string& config_content, std::vec
   }
   output_directory_path_ = SanitizePath(output_directory_path_);
 
+  if (!LoadUint32(settings, "reboot_or_shutdown_delay", reboot_or_shutdown_delay_ms_)) {
+    errors.emplace_back("settings[reboot_or_shutdown_delay] must be an integer");
+    return false;
+  }
+
   auto test_suites = json_getProperty(root, "test_suites");
   if (!test_suites) {
     return true;
