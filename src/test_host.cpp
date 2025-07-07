@@ -97,12 +97,12 @@ void TestHost::FinishDraw(const std::string &suite_name, const std::string &test
   PBKitPlusPlus::NV2AState::FinishDraw();
 
   Logger::Log() << "  {" << std::endl;
-  Logger::Log() << "    'name': '" << suite_name << "::" << test_name << "'," << std::endl;
-  Logger::Log() << "    'iterations': " << results.iterations << "," << std::endl;
-  Logger::Log() << "    'total_us': " << results.total_time_microseconds << "," << std::endl;
-  Logger::Log() << "    'average_us': " << results.average_time_microseconds << "," << std::endl;
-  Logger::Log() << "    'min_us': " << results.minimum_time_microseconds << "," << std::endl;
-  Logger::Log() << "    'max_us': " << results.maximum_time_microseconds << std::endl;
+  Logger::Log() << R"(    "name": ")" << suite_name << "::" << test_name << "\"," << std::endl;
+  Logger::Log() << "    \"iterations\": " << results.iterations << "," << std::endl;
+  Logger::Log() << "    \"total_us\": " << results.total_time_microseconds << "," << std::endl;
+  Logger::Log() << "    \"average_us\": " << results.average_time_microseconds << "," << std::endl;
+  Logger::Log() << "    \"min_us\": " << results.minimum_time_microseconds << "," << std::endl;
+  Logger::Log() << "    \"max_us\": " << results.maximum_time_microseconds << std::endl;
   Logger::Log() << "  }," << std::endl;
 }
 

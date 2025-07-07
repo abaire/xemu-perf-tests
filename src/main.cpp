@@ -185,12 +185,10 @@ static void RunTests(RuntimeConfig& config, TestHost& host, std::vector<std::sha
   TestDriver driver(host, test_suites, kFramebufferWidth, kFramebufferHeight, false, config.disable_autorun(),
                     config.enable_autorun_immediately());
 
-  Logger::Log() << "Starting tests." << std::endl;
   Logger::Log() << "[" << std::endl;
   driver.Run();
   Logger::Log() << "]" << std::endl;
   PrintMsg("Test loop completed normally\n");
-  Logger::Log() << "Testing completed normally, closing log." << std::endl;
   Logger::Log().close();
 
   if (config.enable_shutdown_on_completion()) {
