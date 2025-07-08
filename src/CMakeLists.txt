@@ -16,6 +16,8 @@ FetchContent_Declare(
         GIT_TAG main
 )
 
+set(NO_OPT ON CACHE INTERNAL "Force pbkitplusplus debug build")
+
 FetchContent_MakeAvailable(pbkitplusplus)
 
 configure_file(configure.h.in configure.h)
@@ -74,6 +76,8 @@ add_library(
         perf_tests
         tests/high_vertex_count_tests.cpp
         tests/high_vertex_count_tests.h
+        tests/vertex_buffer_allocation_tests.cpp
+        tests/vertex_buffer_allocation_tests.h
         tests/test_suite.cpp
         tests/test_suite.h
 )

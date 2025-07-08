@@ -1,5 +1,5 @@
-#ifndef XEMU_PERF_TESTS_HIGH_VERTEX_COUNT_TESTS_H
-#define XEMU_PERF_TESTS_HIGH_VERTEX_COUNT_TESTS_H
+#ifndef XEMU_PERF_TESTS_VERTEX_BUFFER_ALLOCATION_TESTS_H
+#define XEMU_PERF_TESTS_VERTEX_BUFFER_ALLOCATION_TESTS_H
 
 #include <memory>
 #include <vector>
@@ -17,7 +17,7 @@ using namespace PBKitPlusPlus;
  * Tests behavior when massive numbers of vertices are specified without an END
  * call.
  */
-class HighVertexCountTests : public TestSuite {
+class VertexBufferAllocationTests : public TestSuite {
  public:
   enum DrawMode {
     DRAW_ARRAYS,
@@ -27,17 +27,13 @@ class HighVertexCountTests : public TestSuite {
   };
 
  public:
-  HighVertexCountTests(TestHost &host, std::string output_dir, const Config &config);
+  VertexBufferAllocationTests(TestHost &host, std::string output_dir, const Config &config);
 
   void Initialize() override;
   void Deinitialize() override;
 
  private:
-  void Test(const std::string &name, DrawMode mode);
-
- private:
-  std::shared_ptr<VertexBuffer> vertex_buffer_;
-  std::vector<uint32_t> index_buffer_;
+  void TestMixedSizes(const std::string &name, DrawMode mode);
 };
 
-#endif  // XEMU_PERF_TESTS_HIGH_VERTEX_COUNT_TESTS_H
+#endif  // XEMU_PERF_TESTS_VERTEX_BUFFER_ALLOCATION_TESTS_H

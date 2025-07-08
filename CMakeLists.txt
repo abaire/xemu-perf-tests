@@ -27,7 +27,7 @@ endif ()
 
 option(
         NO_OPT
-        "Suppress optimization on core files that are typically optimized regardless of release/debug configuration"
+        "Suppress optimization on tester core files that are typically optimized regardless of release/debug configuration"
         OFF
 )
 
