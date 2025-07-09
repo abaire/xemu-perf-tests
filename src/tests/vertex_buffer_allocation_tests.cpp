@@ -33,6 +33,9 @@ static std::string MakeTestName(const std::string &prefix, VertexBufferAllocatio
     case VertexBufferAllocationTests::DRAW_INLINE_ELEMENTS:
       ret += "-inlineelements";
       break;
+
+    case VertexBufferAllocationTests::DRAW_INLINE_ARRAYS_INLINE_ELEMENTS_INTERSPERSED:
+      ret += "-ia+ie";
   }
 
   return ret;
@@ -40,7 +43,8 @@ static std::string MakeTestName(const std::string &prefix, VertexBufferAllocatio
 
 VertexBufferAllocationTests::VertexBufferAllocationTests(TestHost &host, std::string output_dir, const Config &config)
     : TestSuite(host, std::move(output_dir), "Vertex buffer allocation", config) {
-  for (auto draw_mode : {DRAW_ARRAYS, DRAW_INLINE_BUFFERS, DRAW_INLINE_ARRAYS, DRAW_INLINE_ELEMENTS}) {
+  for (auto draw_mode : {DRAW_ARRAYS, DRAW_INLINE_BUFFERS, DRAW_INLINE_ARRAYS, DRAW_INLINE_ELEMENTS,
+                         DRAW_INLINE_ARRAYS_INLINE_ELEMENTS_INTERSPERSED}) {
     auto name = MakeTestName(kMixedVertexCountTest, draw_mode);
     tests_[name] = [this, name, draw_mode]() { TestMixedSizes(name, draw_mode); };
   }
@@ -129,35 +133,27 @@ static void CreateGeometry(TestHost &host, std::vector<uint32_t> &index_buffer, 
     ++vertex;
   };
 
-  uint32_t quad_count = 0;
   uint32_t vertex_index = 0;
-  float top = kTop;
+  const auto x_range = static_cast<uint32_t>(host.GetFramebufferWidth() - kQuadSize);
+  const auto y_range = static_cast<uint32_t>(host.GetFramebufferHeight() - kQuadSize);
   float alpha = 1.f;
-  while (quad_count < target_quads) {
-    float left = kInset;
-    for (auto x = 0; x < quads_per_row && quad_count < target_quads; ++x, left += kQuadSize) {
-      add_quad(left, top, alpha);
-      ++quad_count;
-      index_buffer.emplace_back(vertex_index++);
-      index_buffer.emplace_back(vertex_index++);
-      index_buffer.emplace_back(vertex_index++);
-      index_buffer.emplace_back(vertex_index++);
-    }
-
-    top += kQuadSize;
-    if (top > bottom_row_y) {
-      top = kTop;
-      red = 1.f;
-      green = 0.f;
-      blue = 1.f;
-      alpha *= 0.75f;
-    }
+  for (auto quad_count = 0; quad_count < target_quads; ++quad_count) {
+    auto left = static_cast<float>(rand() % x_range);
+    auto top = static_cast<float>(rand() % y_range);
+    add_quad(left, top, alpha);
+    index_buffer.emplace_back(vertex_index++);
+    index_buffer.emplace_back(vertex_index++);
+    index_buffer.emplace_back(vertex_index++);
+    index_buffer.emplace_back(vertex_index++);
   }
 
   vertex_buffer->Unlock();
 }
 
-void VertexBufferAllocationTests::Initialize() { TestSuite::Initialize(); }
+void VertexBufferAllocationTests::Initialize() {
+  TestSuite::Initialize();
+  srand(0x12345678);
+}
 
 void VertexBufferAllocationTests::Deinitialize() {
   host_.ClearVertexBuffer();
@@ -221,6 +217,24 @@ void VertexBufferAllocationTests::TestMixedSizes(const std::string &name,
           std::vector<uint32_t> index_buffer;
           CreateGeometry(host_, index_buffer, kMixedVertexCount);
           host_.DrawInlineArray(attributes, kPrimitive);
+          host_.ClearVertexBuffer();
+          index_buffer.clear();
+        }
+      });
+      break;
+
+    case DRAW_INLINE_ARRAYS_INLINE_ELEMENTS_INTERSPERSED:
+      results = Profile(name, 10, [this, &attributes] {
+        bool use_arrays = false;
+        for (unsigned int kMixedVertexCount : kMixedVertexCounts) {
+          std::vector<uint32_t> index_buffer;
+          CreateGeometry(host_, index_buffer, kMixedVertexCount);
+          if (use_arrays) {
+            host_.DrawInlineArray(attributes, kPrimitive);
+          } else {
+            host_.DrawInlineElements16(index_buffer, attributes, kPrimitive);
+          }
+          use_arrays = !use_arrays;
           host_.ClearVertexBuffer();
           index_buffer.clear();
         }
