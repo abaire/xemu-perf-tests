@@ -76,7 +76,7 @@ jobs:
           path: .
 
       - name: Create release
-        uses: softprops/action-gh-release@v2.2.1
+        uses: softprops/action-gh-release@v2.3.2
         with:
           tag_name: ${{ steps.tag_version.outputs.new_tag }}
           name: "xemu performance tests ${{ steps.tag_version.outputs.new_version }}"
