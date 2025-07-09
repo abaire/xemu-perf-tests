@@ -1,10 +1,7 @@
 #include "test_host.h"
 
 #include <SDL.h>
-#include <SDL_image.h>
 #include <strings.h>
-
-#include <cmath>
 
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wmacro-redefined"
@@ -14,19 +11,11 @@
 #include <texture_generator.h>
 #include <xboxkrnl/xboxkrnl.h>
 
-#include <algorithm>
-#include <utility>
-
 #include "debug_output.h"
 #include "logger.h"
-#include "nxdk_ext.h"
 #include "pushbuffer.h"
 #include "shaders/vertex_shader_program.h"
-#include "vertex_buffer.h"
-#include "xbox_math_d3d.h"
-#include "xbox_math_matrix.h"
 #include "xbox_math_types.h"
-#include "xbox_math_util.h"
 
 using namespace XboxMath;
 
