@@ -102,7 +102,16 @@ void TestHost::FinishDraw(const std::string &suite_name, const std::string &test
   Logger::Log() << "    \"total_us\": " << results.total_time_microseconds << "," << std::endl;
   Logger::Log() << "    \"average_us\": " << results.average_time_microseconds << "," << std::endl;
   Logger::Log() << "    \"min_us\": " << results.minimum_time_microseconds << "," << std::endl;
-  Logger::Log() << "    \"max_us\": " << results.maximum_time_microseconds << std::endl;
+  Logger::Log() << "    \"max_us\": " << results.maximum_time_microseconds << "," << std::endl;
+  Logger::Log() << "    \"raw_results\": [";
+  std::string separator = "";
+  for (auto val : results.raw_results) {
+    Logger::Log() << separator << std::endl;
+    separator = ",";
+    Logger::Log() << "      " << val;
+  }
+  Logger::Log() << std::endl;
+  Logger::Log() << "    ]" << std::endl;
   Logger::Log() << "  }," << std::endl;
 }
 

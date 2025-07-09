@@ -17,6 +17,7 @@ class TestHost : public PBKitPlusPlus::NV2AState {
     uint32_t average_time_microseconds;
     uint32_t maximum_time_microseconds;
     uint32_t minimum_time_microseconds;
+    std::vector<uint32_t> raw_results;
   };
 
  public:
