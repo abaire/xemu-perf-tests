@@ -14,8 +14,7 @@ class VertexBuffer;
 using namespace PBKitPlusPlus;
 
 /**
- * Tests behavior when massive numbers of vertices are specified without an END
- * call.
+ * Tests behavior of pathological GL buffer allocations due to use of certain vertex specification methods.
  */
 class VertexBufferAllocationTests : public TestSuite {
  public:
@@ -24,6 +23,7 @@ class VertexBufferAllocationTests : public TestSuite {
     DRAW_INLINE_BUFFERS,
     DRAW_INLINE_ARRAYS,
     DRAW_INLINE_ELEMENTS,
+    DRAW_INLINE_ARRAYS_INLINE_ELEMENTS_INTERSPERSED,
   };
 
  public:
