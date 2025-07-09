@@ -302,22 +302,24 @@ TestHost::ProfileResults TestSuite::Profile(const std::string& test_name, uint32
     if (duration.count() < 0) {
       goto desync_detected;
     }
-    ret.total_time_microseconds = static_cast<uint32_t>((duration.count()));
 
     PrintMsg("  Completed '%s::%s' in %fms\n", suite_name_.c_str(), test_name.c_str(),
              static_cast<double>(ret.total_time_microseconds) / 1000.f);
 
     ret.iterations = num_iterations;
-    ret.average_time_microseconds = ret.total_time_microseconds / num_iterations;
-
+    ret.total_time_microseconds = 0;
     for (auto i = 0; i < num_iterations; ++i) {
-      if (run_times[i] < ret.minimum_time_microseconds) {
-        ret.minimum_time_microseconds = run_times[i];
+      auto time = run_times[i];
+      ret.raw_results.emplace_back(time);
+      ret.total_time_microseconds += time;
+      if (time < ret.minimum_time_microseconds) {
+        ret.minimum_time_microseconds = time;
       }
-      if (run_times[i] > ret.maximum_time_microseconds) {
-        ret.maximum_time_microseconds = run_times[i];
+      if (time > ret.maximum_time_microseconds) {
+        ret.maximum_time_microseconds = time;
       }
     }
+    ret.average_time_microseconds = ret.total_time_microseconds / num_iterations;
 
     return ret;
 

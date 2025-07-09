@@ -23,7 +23,6 @@ class VertexBufferAllocationTests : public TestSuite {
     DRAW_INLINE_BUFFERS,
     DRAW_INLINE_ARRAYS,
     DRAW_INLINE_ELEMENTS,
-    DRAW_INLINE_ARRAYS_INLINE_ELEMENTS_INTERSPERSED,
   };
 
  public:
@@ -33,6 +32,7 @@ class VertexBufferAllocationTests : public TestSuite {
   void Deinitialize() override;
 
  private:
+  void TestTinyAllocations(const std::string &name, DrawMode mode);
   void TestMixedSizes(const std::string &name, DrawMode mode);
 };
 

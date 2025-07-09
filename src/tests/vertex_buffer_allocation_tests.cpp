@@ -10,13 +10,27 @@
 
 using namespace PBKitPlusPlus;
 
+static constexpr char kTinyAllocationTest[] = "TinyAlloc";
 static constexpr char kMixedVertexCountTest[] = "MixedVtxAlloc";
 
-static constexpr uint32_t kMixedVertexCounts[] = {
+static constexpr uint32_t kMixedVertexBufferSizes[] = {
     0x2a12, 0x17cdc, 0xcb43,  0x91f5,  0x15225, 0x14a0f, 0x12921, 0x12327,
     0x3c,   0x1bde6, 0x1b31e, 0x1a2e3, 0x1d001, 0x1FFE0, 0x12a7a, 0x9ef7,
 };
 
+static uint32_t kVertexAttributes =
+    TestHost::POSITION | TestHost::DIFFUSE | TestHost::SPECULAR | TestHost::WEIGHT | TestHost::TEXCOORD0;
+
+// Keep in sync with the size required for kVertexAttributes
+// 4 position, 1 weight, 4 diffuse, 4 specular, 2 texcoord0
+static constexpr uint32_t kArrayEntriesPerVertex = 15;
+
+static constexpr uint32_t kSmallestVertexBufferSize = kArrayEntriesPerVertex * 4;
+
+/**
+ * @tc TinyAlloc - Test the behavior of many tiny (single quad) draws.
+ * @tc MixedVtxAlloc - Test the behavior of many draws of varying length.
+ */
 static std::string MakeTestName(const std::string &prefix, VertexBufferAllocationTests::DrawMode draw_mode) {
   std::string ret = prefix;
 
@@ -33,9 +47,6 @@ static std::string MakeTestName(const std::string &prefix, VertexBufferAllocatio
     case VertexBufferAllocationTests::DRAW_INLINE_ELEMENTS:
       ret += "-inlineelements";
       break;
-
-    case VertexBufferAllocationTests::DRAW_INLINE_ARRAYS_INLINE_ELEMENTS_INTERSPERSED:
-      ret += "-ia+ie";
   }
 
   return ret;
@@ -43,30 +54,23 @@ static std::string MakeTestName(const std::string &prefix, VertexBufferAllocatio
 
 VertexBufferAllocationTests::VertexBufferAllocationTests(TestHost &host, std::string output_dir, const Config &config)
     : TestSuite(host, std::move(output_dir), "Vertex buffer allocation", config) {
-  for (auto draw_mode : {DRAW_ARRAYS, DRAW_INLINE_BUFFERS, DRAW_INLINE_ARRAYS, DRAW_INLINE_ELEMENTS,
-                         DRAW_INLINE_ARRAYS_INLINE_ELEMENTS_INTERSPERSED}) {
+  for (auto draw_mode : {DRAW_ARRAYS, DRAW_INLINE_BUFFERS, DRAW_INLINE_ARRAYS, DRAW_INLINE_ELEMENTS}) {
     auto name = MakeTestName(kMixedVertexCountTest, draw_mode);
     tests_[name] = [this, name, draw_mode]() { TestMixedSizes(name, draw_mode); };
+
+    name = MakeTestName(kTinyAllocationTest, draw_mode);
+    tests_[name] = [this, name, draw_mode]() { TestTinyAllocations(name, draw_mode); };
   }
 }
 
 static void CreateGeometry(TestHost &host, std::vector<uint32_t> &index_buffer, uint32_t target_array_entries) {
   index_buffer.clear();
 
-  static constexpr float kInset = 2.f;
-  static constexpr float kTop = 48.f;
   static constexpr float kQuadSize = 16.f;
   static constexpr float kQuadZ = 0.f;
-  const float framebuffer_width = host.GetFramebufferWidthF();
-  const float framebuffer_height = host.GetFramebufferHeightF();
 
-  // Array entries per vertex in test = (4 position, 1 weight, 4 diffuse, 4 specular, 2 texcoord0)
-  static constexpr uint32_t kArrayEntriesPerVertex = 15;
   const uint32_t target_quads = target_array_entries / (4 * kArrayEntriesPerVertex);
   ASSERT(target_quads > 0);
-
-  const auto quads_per_row = static_cast<int>((framebuffer_width - (kInset * 2.f)) / kQuadSize);
-  const float bottom_row_y = (framebuffer_height - kQuadSize);
 
   float red = 0.f;
   float green = 0.5f;
@@ -170,17 +174,14 @@ void VertexBufferAllocationTests::TestMixedSizes(const std::string &name,
 
   static constexpr auto kPrimitive = TestHost::PRIMITIVE_QUADS;
 
-  uint32_t attributes =
-      TestHost::POSITION | TestHost::DIFFUSE | TestHost::SPECULAR | TestHost::WEIGHT | TestHost::TEXCOORD0;
-
   TestHost::ProfileResults results{};
   switch (draw_mode) {
     case DRAW_ARRAYS:
-      results = Profile(name, 10, [this, &attributes] {
-        for (unsigned int kMixedVertexCount : kMixedVertexCounts) {
+      results = Profile(name, 10, [this] {
+        for (unsigned int kMixedVertexCount : kMixedVertexBufferSizes) {
           std::vector<uint32_t> index_buffer;
           CreateGeometry(host_, index_buffer, kMixedVertexCount);
-          host_.DrawArrays(attributes, kPrimitive);
+          host_.DrawArrays(kVertexAttributes, kPrimitive);
           host_.ClearVertexBuffer();
           index_buffer.clear();
         }
@@ -188,11 +189,11 @@ void VertexBufferAllocationTests::TestMixedSizes(const std::string &name,
       break;
 
     case DRAW_INLINE_BUFFERS:
-      results = Profile(name, 10, [this, &attributes] {
-        for (unsigned int kMixedVertexCount : kMixedVertexCounts) {
+      results = Profile(name, 10, [this] {
+        for (unsigned int kMixedVertexCount : kMixedVertexBufferSizes) {
           std::vector<uint32_t> index_buffer;
           CreateGeometry(host_, index_buffer, kMixedVertexCount);
-          host_.DrawInlineBuffer(attributes, kPrimitive);
+          host_.DrawInlineBuffer(kVertexAttributes, kPrimitive);
           host_.ClearVertexBuffer();
           index_buffer.clear();
         }
@@ -200,11 +201,11 @@ void VertexBufferAllocationTests::TestMixedSizes(const std::string &name,
       break;
 
     case DRAW_INLINE_ELEMENTS:
-      results = Profile(name, 10, [this, &attributes] {
-        for (unsigned int kMixedVertexCount : kMixedVertexCounts) {
+      results = Profile(name, 10, [this] {
+        for (unsigned int kMixedVertexCount : kMixedVertexBufferSizes) {
           std::vector<uint32_t> index_buffer;
           CreateGeometry(host_, index_buffer, kMixedVertexCount);
-          host_.DrawInlineElements16(index_buffer, attributes, kPrimitive);
+          host_.DrawInlineElements16(index_buffer, kVertexAttributes, kPrimitive);
           host_.ClearVertexBuffer();
           index_buffer.clear();
         }
@@ -212,29 +213,77 @@ void VertexBufferAllocationTests::TestMixedSizes(const std::string &name,
       break;
 
     case DRAW_INLINE_ARRAYS:
-      results = Profile(name, 10, [this, &attributes] {
-        for (unsigned int kMixedVertexCount : kMixedVertexCounts) {
+      results = Profile(name, 10, [this] {
+        for (unsigned int kMixedVertexCount : kMixedVertexBufferSizes) {
           std::vector<uint32_t> index_buffer;
           CreateGeometry(host_, index_buffer, kMixedVertexCount);
-          host_.DrawInlineArray(attributes, kPrimitive);
+          host_.DrawInlineArray(kVertexAttributes, kPrimitive);
+          host_.ClearVertexBuffer();
+          index_buffer.clear();
+        }
+      });
+      break;
+  }
+
+  host_.FinishDraw(suite_name_, name, results);
+}
+
+void VertexBufferAllocationTests::TestTinyAllocations(const std::string &name,
+                                                      VertexBufferAllocationTests::DrawMode draw_mode) {
+  auto shader = std::make_shared<PassthroughVertexShader>();
+  host_.SetVertexShaderProgram(shader);
+
+  static constexpr uint32_t kNumProfilingRuns = 10;
+  static constexpr uint32_t kNumDraws = 500;
+  static constexpr uint32_t kBackgroundColor = 0xFF333333;
+  host_.PrepareDraw(kBackgroundColor);
+
+  static constexpr auto kPrimitive = TestHost::PRIMITIVE_QUADS;
+
+  TestHost::ProfileResults results{};
+  switch (draw_mode) {
+    case DRAW_ARRAYS:
+      results = Profile(name, kNumProfilingRuns, [this] {
+        std::vector<uint32_t> index_buffer;
+        for (auto i = 0; i < kNumDraws; ++i) {
+          CreateGeometry(host_, index_buffer, kSmallestVertexBufferSize);
+          host_.DrawArrays(kVertexAttributes, kPrimitive);
           host_.ClearVertexBuffer();
           index_buffer.clear();
         }
       });
       break;
 
-    case DRAW_INLINE_ARRAYS_INLINE_ELEMENTS_INTERSPERSED:
-      results = Profile(name, 10, [this, &attributes] {
-        bool use_arrays = false;
-        for (unsigned int kMixedVertexCount : kMixedVertexCounts) {
-          std::vector<uint32_t> index_buffer;
-          CreateGeometry(host_, index_buffer, kMixedVertexCount);
-          if (use_arrays) {
-            host_.DrawInlineArray(attributes, kPrimitive);
-          } else {
-            host_.DrawInlineElements16(index_buffer, attributes, kPrimitive);
-          }
-          use_arrays = !use_arrays;
+    case DRAW_INLINE_BUFFERS:
+      results = Profile(name, kNumProfilingRuns, [this] {
+        std::vector<uint32_t> index_buffer;
+        for (auto i = 0; i < kNumDraws; ++i) {
+          CreateGeometry(host_, index_buffer, kSmallestVertexBufferSize);
+          host_.DrawInlineBuffer(kVertexAttributes, kPrimitive);
+          host_.ClearVertexBuffer();
+          index_buffer.clear();
+        }
+      });
+      break;
+
+    case DRAW_INLINE_ELEMENTS:
+      results = Profile(name, kNumProfilingRuns, [this] {
+        std::vector<uint32_t> index_buffer;
+        for (auto i = 0; i < kNumDraws; ++i) {
+          CreateGeometry(host_, index_buffer, kSmallestVertexBufferSize);
+          host_.DrawInlineElements16(index_buffer, kVertexAttributes, kPrimitive);
+          host_.ClearVertexBuffer();
+          index_buffer.clear();
+        }
+      });
+      break;
+
+    case DRAW_INLINE_ARRAYS:
+      results = Profile(name, kNumProfilingRuns, [this] {
+        std::vector<uint32_t> index_buffer;
+        for (auto i = 0; i < kNumDraws; ++i) {
+          CreateGeometry(host_, index_buffer, kSmallestVertexBufferSize);
+          host_.DrawInlineArray(kVertexAttributes, kPrimitive);
           host_.ClearVertexBuffer();
           index_buffer.clear();
         }
