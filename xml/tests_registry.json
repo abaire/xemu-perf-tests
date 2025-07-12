@@ -1,0 +1,38 @@
+{
+  "test_suites": [
+    {
+      "class": "HighVertexCountTests",
+      "description": [
+        "Tests behavior when large numbers of vertices are specified without an END call."
+      ],
+      "source_file": "src/tests/high_vertex_count_tests.h",
+      "source_file_line": 20,
+      "suite": "HighVertexCountTests",
+      "test_descriptions": {
+        "HighVtxCount-arrays": "Tests NV097_DRAW_ARRAYS with a very large number of vertices.",
+        "HighVtxCount-inlinearrays": "Tests NV097_INLINE_ARRAY with a very large number of vertices.",
+        "HighVtxCount-inlinebuffers": "Tests immediate mode (e.g., NV097_SET_VERTEX3F) with a very large number of vertices.",
+        "HighVtxCount-inlineelements": "Tests NV097_ARRAY_ELEMENT16 / NV097_ARRAY_ELEMENT32 with a very large number of vertices. "
+      }
+    },
+    {
+      "class": "VertexBufferAllocationTests",
+      "description": [
+        "Tests behavior of pathological xemu GL buffer allocations due to use of certain vertex specification methods."
+      ],
+      "source_file": "src/tests/vertex_buffer_allocation_tests.h",
+      "source_file_line": 19,
+      "suite": "VertexBufferAllocationTests",
+      "test_descriptions": {
+        "MixedVtxAlloc-arrays": "Tests NV097_DRAW_ARRAYS with multiple successive draws using a variety of different vertex counts.",
+        "MixedVtxAlloc-inlinearrays": "Tests NV097_INLINE_ARRAY with multiple successive draws using a variety of different vertex counts.",
+        "MixedVtxAlloc-inlinebuffers": "Tests immediate mode (e.g., NV097_SET_VERTEX3F) with multiple successive draws using a variety of different vertex counts.",
+        "MixedVtxAlloc-inlineelements": "Tests NV097_ARRAY_ELEMENT16 / NV097_ARRAY_ELEMENT32 with multiple successive draws using a variety of different vertex counts.",
+        "TinyAlloc-arrays": "Tests NV097_DRAW_ARRAYS with a large number of single quad draws.",
+        "TinyAlloc-inlinearrays": "Tests NV097_INLINE_ARRAY with a large number of single quad draws.",
+        "TinyAlloc-inlinebuffers": "Tests immediate mode (e.g., NV097_SET_VERTEX3F) with a large number of single quad draws.",
+        "TinyAlloc-inlineelements": "Tests NV097_ARRAY_ELEMENT16 / NV097_ARRAY_ELEMENT32 with a large number of single quad draws. "
+      }
+    }
+  ]
+}

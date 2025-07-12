@@ -1,0 +1,105 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="d1/dc6/structTestHost_1_1ProfileResults" kind="struct" language="C++" prot="public">
+    <compoundname>TestHost::ProfileResults</compoundname>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="d1/dc6/structTestHost_1_1ProfileResults_1a35a87a8eca1779cad448be62c317ceef" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t TestHost::ProfileResults::iterations</definition>
+        <argsstring></argsstring>
+        <name>iterations</name>
+        <qualifiedname>TestHost::ProfileResults::iterations</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/test_host.h" line="15" column="14" bodyfile="src/test_host.h" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d1/dc6/structTestHost_1_1ProfileResults_1ac8ed26813ee3c6eb470d14bbc2b2671b" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t TestHost::ProfileResults::total_time_microseconds</definition>
+        <argsstring></argsstring>
+        <name>total_time_microseconds</name>
+        <qualifiedname>TestHost::ProfileResults::total_time_microseconds</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/test_host.h" line="16" column="14" bodyfile="src/test_host.h" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d1/dc6/structTestHost_1_1ProfileResults_1a4dada5cd71522c80d074f237689824b1" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t TestHost::ProfileResults::average_time_microseconds</definition>
+        <argsstring></argsstring>
+        <name>average_time_microseconds</name>
+        <qualifiedname>TestHost::ProfileResults::average_time_microseconds</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/test_host.h" line="17" column="14" bodyfile="src/test_host.h" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d1/dc6/structTestHost_1_1ProfileResults_1a1d60a4a9b34d461598aba61ba0562d2e" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t TestHost::ProfileResults::maximum_time_microseconds</definition>
+        <argsstring></argsstring>
+        <name>maximum_time_microseconds</name>
+        <qualifiedname>TestHost::ProfileResults::maximum_time_microseconds</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/test_host.h" line="18" column="14" bodyfile="src/test_host.h" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d1/dc6/structTestHost_1_1ProfileResults_1a84ec286d48aa6690f556ca2695787e0e" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t TestHost::ProfileResults::minimum_time_microseconds</definition>
+        <argsstring></argsstring>
+        <name>minimum_time_microseconds</name>
+        <qualifiedname>TestHost::ProfileResults::minimum_time_microseconds</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/test_host.h" line="19" column="14" bodyfile="src/test_host.h" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d1/dc6/structTestHost_1_1ProfileResults_1af312934329908c83d3c011c7f5832797" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; uint32_t &gt;</type>
+        <definition>std::vector&lt;uint32_t&gt; TestHost::ProfileResults::raw_results</definition>
+        <argsstring></argsstring>
+        <name>raw_results</name>
+        <qualifiedname>TestHost::ProfileResults::raw_results</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/test_host.h" line="20" column="17" bodyfile="src/test_host.h" bodystart="20" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/test_host.h" line="14" column="3" bodyfile="src/test_host.h" bodystart="14" bodyend="21"/>
+    <listofallmembers>
+      <member refid="d1/dc6/structTestHost_1_1ProfileResults_1a4dada5cd71522c80d074f237689824b1" prot="public" virt="non-virtual"><scope>TestHost::ProfileResults</scope><name>average_time_microseconds</name></member>
+      <member refid="d1/dc6/structTestHost_1_1ProfileResults_1a35a87a8eca1779cad448be62c317ceef" prot="public" virt="non-virtual"><scope>TestHost::ProfileResults</scope><name>iterations</name></member>
+      <member refid="d1/dc6/structTestHost_1_1ProfileResults_1a1d60a4a9b34d461598aba61ba0562d2e" prot="public" virt="non-virtual"><scope>TestHost::ProfileResults</scope><name>maximum_time_microseconds</name></member>
+      <member refid="d1/dc6/structTestHost_1_1ProfileResults_1a84ec286d48aa6690f556ca2695787e0e" prot="public" virt="non-virtual"><scope>TestHost::ProfileResults</scope><name>minimum_time_microseconds</name></member>
+      <member refid="d1/dc6/structTestHost_1_1ProfileResults_1af312934329908c83d3c011c7f5832797" prot="public" virt="non-virtual"><scope>TestHost::ProfileResults</scope><name>raw_results</name></member>
+      <member refid="d1/dc6/structTestHost_1_1ProfileResults_1ac8ed26813ee3c6eb470d14bbc2b2671b" prot="public" virt="non-virtual"><scope>TestHost::ProfileResults</scope><name>total_time_microseconds</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

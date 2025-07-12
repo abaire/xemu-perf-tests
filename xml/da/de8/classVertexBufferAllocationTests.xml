@@ -1,0 +1,247 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="da/de8/classVertexBufferAllocationTests" kind="class" language="C++" prot="public">
+    <compoundname>VertexBufferAllocationTests</compoundname>
+    <basecompoundref refid="d2/d3e/classTestSuite" prot="public" virt="non-virtual">TestSuite</basecompoundref>
+    <includes refid="d7/d54/vertex__buffer__allocation__tests_8h" local="no">vertex_buffer_allocation_tests.h</includes>
+    <sectiondef kind="public-type">
+      <memberdef kind="enum" id="da/de8/classVertexBufferAllocationTests_1a1a9874a08158adf05bf2935e0d04849b" prot="public" static="no" strong="no">
+        <type></type>
+        <name>DrawMode</name>
+        <qualifiedname>VertexBufferAllocationTests::DrawMode</qualifiedname>
+        <enumvalue id="da/de8/classVertexBufferAllocationTests_1a1a9874a08158adf05bf2935e0d04849ba075fec87c1ad7573604f8743bda94955" prot="public">
+          <name>DRAW_ARRAYS</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="da/de8/classVertexBufferAllocationTests_1a1a9874a08158adf05bf2935e0d04849baac5d7f7b9dfa210adf5a4f251fbacc0f" prot="public">
+          <name>DRAW_INLINE_BUFFERS</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="da/de8/classVertexBufferAllocationTests_1a1a9874a08158adf05bf2935e0d04849ba6be689703acbf5fbf10e45cd633d8250" prot="public">
+          <name>DRAW_INLINE_ARRAYS</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="da/de8/classVertexBufferAllocationTests_1a1a9874a08158adf05bf2935e0d04849ba5c6ce978be799f82f2999fa83b89c694" prot="public">
+          <name>DRAW_INLINE_ELEMENTS</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tests/vertex_buffer_allocation_tests.h" line="21" column="3" bodyfile="src/tests/vertex_buffer_allocation_tests.h" bodystart="21" bodyend="26"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="da/de8/classVertexBufferAllocationTests_1ac04f8b68c951872246ead9942e8047cf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>VertexBufferAllocationTests::VertexBufferAllocationTests</definition>
+        <argsstring>(TestHost &amp;host, std::string output_dir, const Config &amp;config)</argsstring>
+        <name>VertexBufferAllocationTests</name>
+        <qualifiedname>VertexBufferAllocationTests::VertexBufferAllocationTests</qualifiedname>
+        <param>
+          <type><ref refid="d6/d80/classTestHost" kindref="compound">TestHost</ref> &amp;</type>
+          <declname>host</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>output_dir</declname>
+        </param>
+        <param>
+          <type>const <ref refid="da/d85/structTestSuite_1_1Config" kindref="compound">Config</ref> &amp;</type>
+          <declname>config</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Initializes the test suite and creates test cases.</para>
+<para><simplesect kind="remark"><para>MixedVtxAlloc-arrays Tests NV097_DRAW_ARRAYS with multiple successive draws using a variety of different vertex counts.</para>
+</simplesect>
+<simplesect kind="remark"><para>MixedVtxAlloc-inlinebuffers Tests immediate mode (e.g., NV097_SET_VERTEX3F) with multiple successive draws using a variety of different vertex counts.</para>
+</simplesect>
+<simplesect kind="remark"><para>MixedVtxAlloc-inlinearrays Tests NV097_INLINE_ARRAY with multiple successive draws using a variety of different vertex counts.</para>
+</simplesect>
+<simplesect kind="remark"><para>MixedVtxAlloc-inlineelements Tests NV097_ARRAY_ELEMENT16 / NV097_ARRAY_ELEMENT32 with multiple successive draws using a variety of different vertex counts.</para>
+</simplesect>
+<simplesect kind="remark"><para>TinyAlloc-arrays Tests NV097_DRAW_ARRAYS with a large number of single quad draws.</para>
+</simplesect>
+<simplesect kind="remark"><para>TinyAlloc-inlinebuffers Tests immediate mode (e.g., NV097_SET_VERTEX3F) with a large number of single quad draws.</para>
+</simplesect>
+<simplesect kind="remark"><para>TinyAlloc-inlinearrays Tests NV097_INLINE_ARRAY with a large number of single quad draws.</para>
+</simplesect>
+<simplesect kind="remark"><para>TinyAlloc-inlineelements Tests NV097_ARRAY_ELEMENT16 / NV097_ARRAY_ELEMENT32 with a large number of single quad draws. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tests/vertex_buffer_allocation_tests.h" line="29" column="3" bodyfile="src/tests/vertex_buffer_allocation_tests.cpp" bodystart="80" bodyend="89"/>
+      </memberdef>
+      <memberdef kind="function" id="da/de8/classVertexBufferAllocationTests_1a551eb0c2fa51498c87dfd65452af1bc2" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void VertexBufferAllocationTests::Initialize</definition>
+        <argsstring>() override</argsstring>
+        <name>Initialize</name>
+        <qualifiedname>VertexBufferAllocationTests::Initialize</qualifiedname>
+        <reimplements refid="d2/d3e/classTestSuite_1a1c4756eb905d6d4d35e1630107396c38">Initialize</reimplements>
+        <briefdescription>
+<para>Called to initialize the test suite. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tests/vertex_buffer_allocation_tests.h" line="31" column="8" bodyfile="src/tests/vertex_buffer_allocation_tests.cpp" bodystart="182" bodyend="185"/>
+      </memberdef>
+      <memberdef kind="function" id="da/de8/classVertexBufferAllocationTests_1a98567bffa4249601d5b57b9ad7287df6" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void VertexBufferAllocationTests::Deinitialize</definition>
+        <argsstring>() override</argsstring>
+        <name>Deinitialize</name>
+        <qualifiedname>VertexBufferAllocationTests::Deinitialize</qualifiedname>
+        <reimplements refid="d2/d3e/classTestSuite_1a137c1c57f8ad999bd78a8f7f8f2cf69e">Deinitialize</reimplements>
+        <briefdescription>
+<para>Called to tear down the test suite. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tests/vertex_buffer_allocation_tests.h" line="32" column="8" bodyfile="src/tests/vertex_buffer_allocation_tests.cpp" bodystart="187" bodyend="190"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="da/de8/classVertexBufferAllocationTests_1a15370bfddfacb340b537d3e03498451c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void VertexBufferAllocationTests::TestTinyAllocations</definition>
+        <argsstring>(const std::string &amp;name, DrawMode mode)</argsstring>
+        <name>TestTinyAllocations</name>
+        <qualifiedname>VertexBufferAllocationTests::TestTinyAllocations</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>DrawMode</type>
+          <declname>mode</declname>
+          <defname>draw_mode</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tests/vertex_buffer_allocation_tests.h" line="35" column="8" bodyfile="src/tests/vertex_buffer_allocation_tests.cpp" bodystart="256" bodyend="320"/>
+      </memberdef>
+      <memberdef kind="function" id="da/de8/classVertexBufferAllocationTests_1a27caa7b3df39f54ff78cc768a241dbe8" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void VertexBufferAllocationTests::TestMixedSizes</definition>
+        <argsstring>(const std::string &amp;name, DrawMode mode)</argsstring>
+        <name>TestMixedSizes</name>
+        <qualifiedname>VertexBufferAllocationTests::TestMixedSizes</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>DrawMode</type>
+          <declname>mode</declname>
+          <defname>draw_mode</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tests/vertex_buffer_allocation_tests.h" line="36" column="8" bodyfile="src/tests/vertex_buffer_allocation_tests.cpp" bodystart="192" bodyend="254"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Tests behavior of pathological xemu GL buffer allocations due to use of certain vertex specification methods. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>TestSuite</label>
+        <link refid="d2/d3e/classTestSuite"/>
+      </node>
+      <node id="1">
+        <label>VertexBufferAllocationTests</label>
+        <link refid="da/de8/classVertexBufferAllocationTests"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="4">
+        <label>PBKitPlusPlus::NV2AState</label>
+      </node>
+      <node id="3">
+        <label>TestHost</label>
+        <link refid="d6/d80/classTestHost"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>TestSuite</label>
+        <link refid="d2/d3e/classTestSuite"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>host_</edgelabel>
+        </childnode>
+      </node>
+      <node id="1">
+        <label>VertexBufferAllocationTests</label>
+        <link refid="da/de8/classVertexBufferAllocationTests"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="src/tests/vertex_buffer_allocation_tests.h" line="19" column="1" bodyfile="src/tests/vertex_buffer_allocation_tests.h" bodystart="19" bodyend="37"/>
+    <listofallmembers>
+      <member refid="da/de8/classVertexBufferAllocationTests_1a98567bffa4249601d5b57b9ad7287df6" prot="public" virt="virtual"><scope>VertexBufferAllocationTests</scope><name>Deinitialize</name></member>
+      <member refid="d2/d3e/classTestSuite_1a165d9da1dec525ffdd299e2dcfaec2ef" prot="public" virt="non-virtual"><scope>VertexBufferAllocationTests</scope><name>DisableTests</name></member>
+      <member refid="da/de8/classVertexBufferAllocationTests_1a1a9874a08158adf05bf2935e0d04849ba075fec87c1ad7573604f8743bda94955" prot="public" virt="non-virtual"><scope>VertexBufferAllocationTests</scope><name>DRAW_ARRAYS</name></member>
+      <member refid="da/de8/classVertexBufferAllocationTests_1a1a9874a08158adf05bf2935e0d04849ba6be689703acbf5fbf10e45cd633d8250" prot="public" virt="non-virtual"><scope>VertexBufferAllocationTests</scope><name>DRAW_INLINE_ARRAYS</name></member>
+      <member refid="da/de8/classVertexBufferAllocationTests_1a1a9874a08158adf05bf2935e0d04849baac5d7f7b9dfa210adf5a4f251fbacc0f" prot="public" virt="non-virtual"><scope>VertexBufferAllocationTests</scope><name>DRAW_INLINE_BUFFERS</name></member>
+      <member refid="da/de8/classVertexBufferAllocationTests_1a1a9874a08158adf05bf2935e0d04849ba5c6ce978be799f82f2999fa83b89c694" prot="public" virt="non-virtual"><scope>VertexBufferAllocationTests</scope><name>DRAW_INLINE_ELEMENTS</name></member>
+      <member refid="da/de8/classVertexBufferAllocationTests_1a1a9874a08158adf05bf2935e0d04849b" prot="public" virt="non-virtual"><scope>VertexBufferAllocationTests</scope><name>DrawMode</name></member>
+      <member refid="d2/d3e/classTestSuite_1a7059e61572d914cff83ae22da3ea1957" prot="public" virt="non-virtual"><scope>VertexBufferAllocationTests</scope><name>HasEnabledTests</name></member>
+      <member refid="d2/d3e/classTestSuite_1a454f5c2050b66b598a2f2fcffd45ae48" prot="protected" virt="non-virtual"><scope>VertexBufferAllocationTests</scope><name>host_</name></member>
+      <member refid="da/de8/classVertexBufferAllocationTests_1a551eb0c2fa51498c87dfd65452af1bc2" prot="public" virt="virtual"><scope>VertexBufferAllocationTests</scope><name>Initialize</name></member>
+      <member refid="d2/d3e/classTestSuite_1a15144024801f2f885727f7926c826c87" prot="public" virt="non-virtual"><scope>VertexBufferAllocationTests</scope><name>Name</name></member>
+      <member refid="d2/d3e/classTestSuite_1a2e81678d3ac733d517616bd67a837465" prot="protected" virt="non-virtual"><scope>VertexBufferAllocationTests</scope><name>output_dir_</name></member>
+      <member refid="d2/d3e/classTestSuite_1ac50b006a0a46396cde6073c3e569bde7" prot="protected" virt="non-virtual"><scope>VertexBufferAllocationTests</scope><name>Profile</name></member>
+      <member refid="d2/d3e/classTestSuite_1a40546218e5f7324690e0455706694763" prot="public" virt="non-virtual"><scope>VertexBufferAllocationTests</scope><name>Run</name></member>
+      <member refid="d2/d3e/classTestSuite_1a7f99d1a92beb6b58219b841b60d56322" prot="public" virt="non-virtual"><scope>VertexBufferAllocationTests</scope><name>RunAll</name></member>
+      <member refid="d2/d3e/classTestSuite_1a0d580dbb0e1630ecdc989d5c852e8f91" prot="protected" virt="non-virtual"><scope>VertexBufferAllocationTests</scope><name>SetDefaultTextureFormat</name></member>
+      <member refid="d2/d3e/classTestSuite_1ad3fb7cc9d8db8740c5188da083312b8d" prot="public" virt="virtual"><scope>VertexBufferAllocationTests</scope><name>SetupTest</name></member>
+      <member refid="d2/d3e/classTestSuite_1ac59f02a9549a146ed62e6185c0acec8b" prot="protected" virt="non-virtual"><scope>VertexBufferAllocationTests</scope><name>suite_name_</name></member>
+      <member refid="d2/d3e/classTestSuite_1a90bc6959d04c41e07eed51f80a435d70" prot="public" virt="virtual"><scope>VertexBufferAllocationTests</scope><name>TearDownTest</name></member>
+      <member refid="da/de8/classVertexBufferAllocationTests_1a27caa7b3df39f54ff78cc768a241dbe8" prot="private" virt="non-virtual"><scope>VertexBufferAllocationTests</scope><name>TestMixedSizes</name></member>
+      <member refid="d2/d3e/classTestSuite_1a80f0bc74d8d511547708827e5a549a63" prot="public" virt="non-virtual"><scope>VertexBufferAllocationTests</scope><name>TestNames</name></member>
+      <member refid="d2/d3e/classTestSuite_1a7bc0a6c4d360f6f487779e8f4282d0a1" prot="protected" virt="non-virtual"><scope>VertexBufferAllocationTests</scope><name>tests_</name></member>
+      <member refid="d2/d3e/classTestSuite_1a57b1ed01dd40328456bf0854043ca68b" prot="public" virt="non-virtual"><scope>VertexBufferAllocationTests</scope><name>TestSuite</name></member>
+      <member refid="d2/d3e/classTestSuite_1a253b4d7ef576ab6950da2f9748d0afa9" prot="public" virt="non-virtual"><scope>VertexBufferAllocationTests</scope><name>TestSuite</name></member>
+      <member refid="da/de8/classVertexBufferAllocationTests_1a15370bfddfacb340b537d3e03498451c" prot="private" virt="non-virtual"><scope>VertexBufferAllocationTests</scope><name>TestTinyAllocations</name></member>
+      <member refid="da/de8/classVertexBufferAllocationTests_1ac04f8b68c951872246ead9942e8047cf" prot="public" virt="non-virtual"><scope>VertexBufferAllocationTests</scope><name>VertexBufferAllocationTests</name></member>
+      <member refid="d2/d3e/classTestSuite_1a1743f0a04119de901cb819111d51192d" prot="public" virt="virtual"><scope>VertexBufferAllocationTests</scope><name>~TestSuite</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

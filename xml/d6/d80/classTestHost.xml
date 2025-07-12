@@ -1,0 +1,129 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="d6/d80/classTestHost" kind="class" language="C++" prot="public">
+    <compoundname>TestHost</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">PBKitPlusPlus::NV2AState</basecompoundref>
+    <includes refid="df/d43/test__host_8h" local="no">test_host.h</includes>
+    <innerclass refid="d1/dc6/structTestHost_1_1ProfileResults" prot="public">TestHost::ProfileResults</innerclass>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="d6/d80/classTestHost_1a56bf99cdd1f9bbdc1dd89b58591455d9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>TestHost::TestHost</definition>
+        <argsstring>(uint32_t framebuffer_width, uint32_t framebuffer_height, uint32_t max_texture_width=256, uint32_t max_texture_height=256, uint32_t max_texture_depth=4)</argsstring>
+        <name>TestHost</name>
+        <qualifiedname>TestHost::TestHost</qualifiedname>
+        <param>
+          <type>uint32_t</type>
+          <declname>framebuffer_width</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>framebuffer_height</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>max_texture_width</declname>
+          <defval>256</defval>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>max_texture_height</declname>
+          <defval>256</defval>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>max_texture_depth</declname>
+          <defval>4</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/test_host.h" line="24" column="3" bodyfile="src/test_host.cpp" bodystart="27" bodyend="29"/>
+      </memberdef>
+      <memberdef kind="function" id="d6/d80/classTestHost_1ad4dde48e4a1c7ac6c5477aeff87052a3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TestHost::FinishDraw</definition>
+        <argsstring>(const std::string &amp;suite_name, const std::string &amp;test_name, const ProfileResults &amp;results)</argsstring>
+        <name>FinishDraw</name>
+        <qualifiedname>TestHost::FinishDraw</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>suite_name</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>test_name</declname>
+        </param>
+        <param>
+          <type>const <ref refid="d1/dc6/structTestHost_1_1ProfileResults" kindref="compound">ProfileResults</ref> &amp;</type>
+          <declname>results</declname>
+        </param>
+        <briefdescription>
+<para>Renders test results and swaps back buffer. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/test_host.h" line="31" column="8" bodyfile="src/test_host.cpp" bodystart="56" bodyend="105"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="d6/d80/classTestHost_1a24b83c50f1d0b792c2089b41903d580e" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TestHost::EnsureFolderExists</definition>
+        <argsstring>(const std::string &amp;folder_path)</argsstring>
+        <name>EnsureFolderExists</name>
+        <qualifiedname>TestHost::EnsureFolderExists</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>folder_path</declname>
+        </param>
+        <briefdescription>
+<para>Creates the given directory if it does not already exist. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/test_host.h" line="28" column="15" bodyfile="src/test_host.cpp" bodystart="31" bodyend="54"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Provides utility methods for use by <ref refid="d2/d3e/classTestSuite" kindref="compound">TestSuite</ref> subclasses. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>PBKitPlusPlus::NV2AState</label>
+      </node>
+      <node id="1">
+        <label>TestHost</label>
+        <link refid="d6/d80/classTestHost"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>PBKitPlusPlus::NV2AState</label>
+      </node>
+      <node id="1">
+        <label>TestHost</label>
+        <link refid="d6/d80/classTestHost"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="src/test_host.h" line="12" column="1" bodyfile="src/test_host.h" bodystart="12" bodyend="32"/>
+    <listofallmembers>
+      <member refid="d6/d80/classTestHost_1a24b83c50f1d0b792c2089b41903d580e" prot="public" virt="non-virtual"><scope>TestHost</scope><name>EnsureFolderExists</name></member>
+      <member refid="d6/d80/classTestHost_1ad4dde48e4a1c7ac6c5477aeff87052a3" prot="public" virt="non-virtual"><scope>TestHost</scope><name>FinishDraw</name></member>
+      <member refid="d6/d80/classTestHost_1a56bf99cdd1f9bbdc1dd89b58591455d9" prot="public" virt="non-virtual"><scope>TestHost</scope><name>TestHost</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
