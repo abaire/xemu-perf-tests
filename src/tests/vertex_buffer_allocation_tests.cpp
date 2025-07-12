@@ -27,6 +27,27 @@ static constexpr uint32_t kArrayEntriesPerVertex = 15;
 
 static constexpr uint32_t kSmallestVertexBufferSize = kArrayEntriesPerVertex * 4;
 
+static std::string MakeTestName(const std::string &prefix, VertexBufferAllocationTests::DrawMode draw_mode) {
+  std::string ret = prefix;
+
+  switch (draw_mode) {
+    case VertexBufferAllocationTests::DRAW_ARRAYS:
+      ret += "-arrays";
+      break;
+    case VertexBufferAllocationTests::DRAW_INLINE_BUFFERS:
+      ret += "-inlinebuffers";
+      break;
+    case VertexBufferAllocationTests::DRAW_INLINE_ARRAYS:
+      ret += "-inlinearrays";
+      break;
+    case VertexBufferAllocationTests::DRAW_INLINE_ELEMENTS:
+      ret += "-inlineelements";
+      break;
+  }
+
+  return ret;
+}
+
 /**
  * Initializes the test suite and creates test cases.
  *
@@ -56,27 +77,6 @@ static constexpr uint32_t kSmallestVertexBufferSize = kArrayEntriesPerVertex * 4
  * @tc TinyAlloc-inlineelements
  *  Tests NV097_ARRAY_ELEMENT16 / NV097_ARRAY_ELEMENT32 with a large number of single quad draws.
  */
-static std::string MakeTestName(const std::string &prefix, VertexBufferAllocationTests::DrawMode draw_mode) {
-  std::string ret = prefix;
-
-  switch (draw_mode) {
-    case VertexBufferAllocationTests::DRAW_ARRAYS:
-      ret += "-arrays";
-      break;
-    case VertexBufferAllocationTests::DRAW_INLINE_BUFFERS:
-      ret += "-inlinebuffers";
-      break;
-    case VertexBufferAllocationTests::DRAW_INLINE_ARRAYS:
-      ret += "-inlinearrays";
-      break;
-    case VertexBufferAllocationTests::DRAW_INLINE_ELEMENTS:
-      ret += "-inlineelements";
-      break;
-  }
-
-  return ret;
-}
-
 VertexBufferAllocationTests::VertexBufferAllocationTests(TestHost &host, std::string output_dir, const Config &config)
     : TestSuite(host, std::move(output_dir), "Vertex buffer allocation", config) {
   for (auto draw_mode : {DRAW_ARRAYS, DRAW_INLINE_BUFFERS, DRAW_INLINE_ARRAYS, DRAW_INLINE_ELEMENTS}) {
