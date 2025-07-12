@@ -14,7 +14,7 @@ class VertexBuffer;
 using namespace PBKitPlusPlus;
 
 /**
- * Tests behavior of pathological GL buffer allocations due to use of certain vertex specification methods.
+ * Tests behavior of pathological xemu GL buffer allocations due to use of certain vertex specification methods.
  */
 class VertexBufferAllocationTests : public TestSuite {
  public:
