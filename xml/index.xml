@@ -1,0 +1,337 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.9.8" xml:lang="en-US">
+  <compound refid="da/d85/structTestSuite_1_1Config" kind="struct"><name>TestSuite::Config</name>
+  </compound>
+  <compound refid="d3/d92/classHighVertexCountTests" kind="class"><name>HighVertexCountTests</name>
+    <member refid="d3/d92/classHighVertexCountTests_1a127ac3b576ca528cb4da87b2f539ce77" kind="enum"><name>DrawMode</name></member>
+    <member refid="d3/d92/classHighVertexCountTests_1a127ac3b576ca528cb4da87b2f539ce77a419ede857b5ab9b2b16cd9ed7a18f68a" kind="enumvalue"><name>DRAW_ARRAYS</name></member>
+    <member refid="d3/d92/classHighVertexCountTests_1a127ac3b576ca528cb4da87b2f539ce77aa55754ff3729598ae9d28f28f6d5218c" kind="enumvalue"><name>DRAW_INLINE_BUFFERS</name></member>
+    <member refid="d3/d92/classHighVertexCountTests_1a127ac3b576ca528cb4da87b2f539ce77a898badfa9ecf70988d89febee7138fc8" kind="enumvalue"><name>DRAW_INLINE_ARRAYS</name></member>
+    <member refid="d3/d92/classHighVertexCountTests_1a127ac3b576ca528cb4da87b2f539ce77a53826efa73f385c5c5132466b75de0d8" kind="enumvalue"><name>DRAW_INLINE_ELEMENTS</name></member>
+    <member refid="d3/d92/classHighVertexCountTests_1af2f69af60d78a946bdfff44e5555953e" kind="variable"><name>vertex_buffer_</name></member>
+    <member refid="d3/d92/classHighVertexCountTests_1a84ccab73baa863ab38d3b39bbd2c06a5" kind="variable"><name>index_buffer_</name></member>
+    <member refid="d3/d92/classHighVertexCountTests_1ace411422001572ada56bb4f67f6a76f0" kind="function"><name>HighVertexCountTests</name></member>
+    <member refid="d3/d92/classHighVertexCountTests_1a06c25f50a98dbbb691f788a63210cc5f" kind="function"><name>Initialize</name></member>
+    <member refid="d3/d92/classHighVertexCountTests_1a44dacf4aefa7e12420825dfa3672f756" kind="function"><name>Deinitialize</name></member>
+    <member refid="d3/d92/classHighVertexCountTests_1ac859ff2322f023d351aba1d701e2676b" kind="function"><name>Test</name></member>
+  </compound>
+  <compound refid="d2/d5b/classJSONParser" kind="class"><name>JSONParser</name>
+    <member refid="d2/d5b/classJSONParser_1a33f03cda6d3c02f5ad1b9ea5f60f4908" kind="variable"><name>object_list_</name></member>
+    <member refid="d2/d5b/classJSONParser_1a70a2f17bc44a45f512d5abfe6c6df0df" kind="variable"><name>json_string_</name></member>
+    <member refid="d2/d5b/classJSONParser_1a1393eb49fbbba9bdf19940867784c7f4" kind="variable"><name>root_node_</name></member>
+    <member refid="d2/d5b/classJSONParser_1a76fbb770099b664746927cfd02e01d1f" kind="function"><name>JSONParser</name></member>
+    <member refid="d2/d5b/classJSONParser_1ae56b2c03060f25fe9f1c7fa3e9763ee3" kind="function"><name>JSONParser</name></member>
+    <member refid="d2/d5b/classJSONParser_1a2871641d030b9971e53be0c63d5514e4" kind="function"><name>JSONParser</name></member>
+    <member refid="d2/d5b/classJSONParser_1aeddf07bb96ca6be577587cada694847d" kind="function"><name>JSONParser</name></member>
+    <member refid="d2/d5b/classJSONParser_1ac81d7ca7f7ade79a0559b42f356d3037" kind="function"><name>operator=</name></member>
+    <member refid="d2/d5b/classJSONParser_1a053d216314135d387c5bd5dbaa707a21" kind="function"><name>operator=</name></member>
+    <member refid="d2/d5b/classJSONParser_1a50a94959af6353251fb8b04417ff5f18" kind="function"><name>root</name></member>
+    <member refid="d2/d5b/classJSONParser_1aeeb06b5a0c81ce200d30113b33de8700" kind="function"><name>Alloc</name></member>
+  </compound>
+  <compound refid="db/d67/classLogger" kind="class"><name>Logger</name>
+    <member refid="db/d67/classLogger_1a2781cec627b2aacc1c7754e6a4b99f20" kind="variable"><name>log_path_</name></member>
+    <member refid="db/d67/classLogger_1ad78d095540ab03207306101cc04eb6d5" kind="variable"><name>singleton_</name></member>
+    <member refid="db/d67/classLogger_1a2713330e1365a031b17a1b88e67c88ec" kind="function"><name>Initialize</name></member>
+    <member refid="db/d67/classLogger_1a6b8ef01cad46c6883e6794f51e4ed5cd" kind="function"><name>Log</name></member>
+    <member refid="db/d67/classLogger_1acc2101a1ed61b773eae89043a1ede341" kind="function"><name>Logger</name></member>
+  </compound>
+  <compound refid="d7/d12/structMenuItem" kind="struct"><name>MenuItem</name>
+    <member refid="d7/d12/structMenuItem_1a5223156aba1b53704f58586fb950836e" kind="variable"><name>width</name></member>
+    <member refid="d7/d12/structMenuItem_1a9a57af2165f97959149adee20a4eb86d" kind="variable"><name>height</name></member>
+    <member refid="d7/d12/structMenuItem_1a0e46de23f339da33aebb4b14ada546a7" kind="variable"><name>name</name></member>
+    <member refid="d7/d12/structMenuItem_1a9636ec4c0e64d70d0aaf7618dd1c9050" kind="variable"><name>cursor_position</name></member>
+    <member refid="d7/d12/structMenuItem_1abb595a376ca6b4d42fb79f0158d3a81a" kind="variable"><name>submenu</name></member>
+    <member refid="d7/d12/structMenuItem_1a3d57d9e9b6fc38b4f8eb9240392ebf48" kind="variable"><name>active_submenu</name></member>
+    <member refid="d7/d12/structMenuItem_1a7514ab030c91963292036dda32d0b0cc" kind="variable"><name>parent</name></member>
+    <member refid="d7/d12/structMenuItem_1a1896433a20c1f876bbb9078d3f083566" kind="variable"><name>menu_background_color_</name></member>
+    <member refid="d7/d12/structMenuItem_1a77bd4e666f8432542cde7113ad486366" kind="function"><name>MenuItem</name></member>
+    <member refid="d7/d12/structMenuItem_1a28f03d665c7424c9083adc20a4b59c3c" kind="function"><name>~MenuItem</name></member>
+    <member refid="d7/d12/structMenuItem_1a0d50ee8b9d0f414ab623db5d92dea184" kind="function"><name>IsEnterable</name></member>
+    <member refid="d7/d12/structMenuItem_1a2aa4e882bfe3f59f56dda1447e6d64ff" kind="function"><name>Draw</name></member>
+    <member refid="d7/d12/structMenuItem_1a1926f4d5fb710557daf011158ad6a116" kind="function"><name>OnEnter</name></member>
+    <member refid="d7/d12/structMenuItem_1a669389f33ac051bc9e40d4bc77b7f9bd" kind="function"><name>Activate</name></member>
+    <member refid="d7/d12/structMenuItem_1a33cb0911168774cdb71453743184be22" kind="function"><name>ActivateCurrentSuite</name></member>
+    <member refid="d7/d12/structMenuItem_1af8658a68106074fd149199db606feec1" kind="function"><name>Deactivate</name></member>
+    <member refid="d7/d12/structMenuItem_1a526e3928d3afe426dad05f3f66c0dbc6" kind="function"><name>CursorUp</name></member>
+    <member refid="d7/d12/structMenuItem_1a992b1237ace72dc386a5305fd348a8f7" kind="function"><name>CursorDown</name></member>
+    <member refid="d7/d12/structMenuItem_1aa7d56249433e4afeba04d11d0489b995" kind="function"><name>CursorLeft</name></member>
+    <member refid="d7/d12/structMenuItem_1a38b421507ab8ad89270258a75158b070" kind="function"><name>CursorRight</name></member>
+    <member refid="d7/d12/structMenuItem_1aba17e419992b01aac5a69da5ac316afb" kind="function"><name>CursorUpAndActivate</name></member>
+    <member refid="d7/d12/structMenuItem_1adae7ed1dfe85080eeb1be24b93348f6c" kind="function"><name>CursorDownAndActivate</name></member>
+    <member refid="d7/d12/structMenuItem_1a5db1f67f8202519bd9a2164e500f5a6a" kind="function"><name>SetBackgroundColor</name></member>
+    <member refid="d7/d12/structMenuItem_1aec8652d5bc122cf7de1a4b3bfdabe453" kind="function"><name>PrepareDraw</name></member>
+    <member refid="d7/d12/structMenuItem_1a6e267a86c0948a9f5df7cfa4f076cc48" kind="function"><name>Swap</name></member>
+  </compound>
+  <compound refid="d9/d00/structMenuItemCallable" kind="struct"><name>MenuItemCallable</name>
+    <member refid="d9/d00/structMenuItemCallable_1a34c602ae9d8f3d36838aa1f06f3c1a30" kind="variable"><name>on_activate</name></member>
+    <member refid="d9/d00/structMenuItemCallable_1a76f8c7065260822cccf2fdaed9142b69" kind="function"><name>MenuItemCallable</name></member>
+    <member refid="d9/d00/structMenuItemCallable_1a532da1b84aeeb4458b2a2ac18ae4afab" kind="function"><name>Draw</name></member>
+    <member refid="d9/d00/structMenuItemCallable_1aea6c4cf912a999a5d049a37b02f5731c" kind="function"><name>Activate</name></member>
+    <member refid="d9/d00/structMenuItemCallable_1a6917839c3c6aa19562f8aca695cdc253" kind="function"><name>ActivateCurrentSuite</name></member>
+  </compound>
+  <compound refid="d0/d0e/structMenuItemOption" kind="struct"><name>MenuItemOption</name>
+    <member refid="d0/d0e/structMenuItemOption_1a2648fa914ea5088bc6bd9a0c2f93e8e6" kind="variable"><name>label</name></member>
+    <member refid="d0/d0e/structMenuItemOption_1a926098e9defef6ae43b50593d4c1ac03" kind="variable"><name>values</name></member>
+    <member refid="d0/d0e/structMenuItemOption_1a7329b974a2c5a5989e03e703e4f88781" kind="variable"><name>current_option</name></member>
+    <member refid="d0/d0e/structMenuItemOption_1a9c9fb32291a8b784ddec5a1b819b6974" kind="variable"><name>on_apply</name></member>
+    <member refid="d0/d0e/structMenuItemOption_1ab55aa5c9e47d6c0b8da2987fa8f57b30" kind="function"><name>MenuItemOption</name></member>
+    <member refid="d0/d0e/structMenuItemOption_1aac6c59fec058fb4c1f7285c1d789a03b" kind="function"><name>MenuItemOption</name></member>
+    <member refid="d0/d0e/structMenuItemOption_1ac76b99f36e5e3da355fc125b3dc66331" kind="function"><name>UpdateName</name></member>
+    <member refid="d0/d0e/structMenuItemOption_1a932425a0391f3828300622f228d9e5f2" kind="function"><name>Activate</name></member>
+    <member refid="d0/d0e/structMenuItemOption_1aa4bf2a18b4e4fb0a0dd7bdb8a4c210c8" kind="function"><name>CursorLeft</name></member>
+    <member refid="d0/d0e/structMenuItemOption_1a15cd7848ceaf928412777fb345764f1d" kind="function"><name>CursorRight</name></member>
+  </compound>
+  <compound refid="dc/d52/structMenuItemOptions" kind="struct"><name>MenuItemOptions</name>
+    <member refid="dc/d52/structMenuItemOptions_1a70fa3bd0c6573eedefe5108ac61a3385" kind="variable"><name>on_exit</name></member>
+    <member refid="dc/d52/structMenuItemOptions_1a137842249d3f9a58e96b3e95ba52014c" kind="variable"><name>start_time</name></member>
+    <member refid="dc/d52/structMenuItemOptions_1ab99b2263bb7aaa61135fd04defa6de6e" kind="variable"><name>timer_valid</name></member>
+    <member refid="dc/d52/structMenuItemOptions_1a81a3268574093272e058240a8743b750" kind="variable"><name>timer_cancelled</name></member>
+    <member refid="dc/d52/structMenuItemOptions_1a6befb6136d1125ae3e204ba1ae35f8a4" kind="function"><name>MenuItemOptions</name></member>
+    <member refid="dc/d52/structMenuItemOptions_1abf8835c41b267696f233257d6a056523" kind="function"><name>Draw</name></member>
+    <member refid="dc/d52/structMenuItemOptions_1a29f588ef0fd7e6e109a459cbb63235b9" kind="function"><name>Activate</name></member>
+    <member refid="dc/d52/structMenuItemOptions_1a6812f0c52395c559667c101f16179f67" kind="function"><name>ActivateCurrentSuite</name></member>
+    <member refid="dc/d52/structMenuItemOptions_1a37ac37540ca907abe1061fc4f35bbaa0" kind="function"><name>Deactivate</name></member>
+    <member refid="dc/d52/structMenuItemOptions_1ad77818f68d88f5b30d213d6ed821f0b1" kind="function"><name>CursorUp</name></member>
+    <member refid="dc/d52/structMenuItemOptions_1a10dfa24f75508118aeb84863a7803724" kind="function"><name>CursorDown</name></member>
+    <member refid="dc/d52/structMenuItemOptions_1a31d1fe4618a16a165f5a5ea2571b34bb" kind="function"><name>CursorLeft</name></member>
+    <member refid="dc/d52/structMenuItemOptions_1aed717217f20c6d83ea3a61b5549c01fc" kind="function"><name>CursorRight</name></member>
+  </compound>
+  <compound refid="d7/d64/structMenuItemRoot" kind="struct"><name>MenuItemRoot</name>
+    <member refid="d7/d64/structMenuItemRoot_1a46b6f91d231311d16bb2f2c6f753bdac" kind="variable"><name>on_run_all</name></member>
+    <member refid="d7/d64/structMenuItemRoot_1a20ad4b0e284cf7f22e5cfad241311d2f" kind="variable"><name>on_exit</name></member>
+    <member refid="d7/d64/structMenuItemRoot_1a0eca6dc73f5c4c5fe7a15da15c855c3d" kind="variable"><name>start_time</name></member>
+    <member refid="d7/d64/structMenuItemRoot_1a01ded6162d466da2fbad13f7745297bc" kind="variable"><name>timer_valid</name></member>
+    <member refid="d7/d64/structMenuItemRoot_1a97ae2ae096d46020173ab0c1e160e268" kind="variable"><name>timer_cancelled</name></member>
+    <member refid="d7/d64/structMenuItemRoot_1adde8b6624c437ec099a35275a37fe1ac" kind="variable"><name>disable_autorun_</name></member>
+    <member refid="d7/d64/structMenuItemRoot_1a62b60582a3546a45930dfd1ac3554136" kind="variable"><name>autorun_immediately_</name></member>
+    <member refid="d7/d64/structMenuItemRoot_1a1abe415709b3ed1f78eedf3ef55fee39" kind="function"><name>MenuItemRoot</name></member>
+    <member refid="d7/d64/structMenuItemRoot_1aefd59f84c7b9284c736fc00f9e2492d4" kind="function"><name>Draw</name></member>
+    <member refid="d7/d64/structMenuItemRoot_1a9c45ac478442c74b0fada12892019787" kind="function"><name>Activate</name></member>
+    <member refid="d7/d64/structMenuItemRoot_1ac54d211a67039fc14f4e80deba76fdcd" kind="function"><name>ActivateCurrentSuite</name></member>
+    <member refid="d7/d64/structMenuItemRoot_1a8cec25815eec82b609e1668478423436" kind="function"><name>Deactivate</name></member>
+    <member refid="d7/d64/structMenuItemRoot_1afcc9bd52ff7fe9ecd3efd3e378ef957e" kind="function"><name>CursorUp</name></member>
+    <member refid="d7/d64/structMenuItemRoot_1aaf3f12131badaaf3a3e114c5567806f3" kind="function"><name>CursorDown</name></member>
+    <member refid="d7/d64/structMenuItemRoot_1a6fd9ab2ec69c223f6babebb0570790c6" kind="function"><name>CursorLeft</name></member>
+    <member refid="d7/d64/structMenuItemRoot_1a783a8c071b7da7babd1603d14bcf4818" kind="function"><name>CursorRight</name></member>
+  </compound>
+  <compound refid="de/d5e/structMenuItemSuite" kind="struct"><name>MenuItemSuite</name>
+    <member refid="de/d5e/structMenuItemSuite_1a91d74d5b7ab08f6d7408b2851b2762d5" kind="variable"><name>suite</name></member>
+    <member refid="de/d5e/structMenuItemSuite_1a27024c6a4c56aa4590994b06c4477258" kind="function"><name>MenuItemSuite</name></member>
+    <member refid="de/d5e/structMenuItemSuite_1ac1d4ddb0b3a5d74c72e0ce95008258a4" kind="function"><name>ActivateCurrentSuite</name></member>
+  </compound>
+  <compound refid="d8/d0e/structMenuItemTest" kind="struct"><name>MenuItemTest</name>
+    <member refid="d8/d0e/structMenuItemTest_1a1f2ce666446d5f391b8567f4f0445c3c" kind="variable"><name>suite</name></member>
+    <member refid="d8/d0e/structMenuItemTest_1ae376ee1f35494b7122d4c9fa67b9c114" kind="variable"><name>has_run_once_</name></member>
+    <member refid="d8/d0e/structMenuItemTest_1aa18841a9db1b3b30ef320d57da800b65" kind="function"><name>MenuItemTest</name></member>
+    <member refid="d8/d0e/structMenuItemTest_1a2503062495af4abf876b545c9c237d08" kind="function"><name>IsEnterable</name></member>
+    <member refid="d8/d0e/structMenuItemTest_1a2d6d61d34e2419687396d5e47d58ab62" kind="function"><name>Draw</name></member>
+    <member refid="d8/d0e/structMenuItemTest_1a4f6ca4ccd28568a2c84ccbf73a563c23" kind="function"><name>OnEnter</name></member>
+    <member refid="d8/d0e/structMenuItemTest_1a8d7c50a0407eccebaff40574afb2c5e8" kind="function"><name>Activate</name></member>
+    <member refid="d8/d0e/structMenuItemTest_1a433b75050d2e3f1eb7a121f31911f035" kind="function"><name>Deactivate</name></member>
+    <member refid="d8/d0e/structMenuItemTest_1adac684803d2855fce5ae4a450d1182b0" kind="function"><name>ActivateCurrentSuite</name></member>
+    <member refid="d8/d0e/structMenuItemTest_1a18f933319c3975e59a038c9503e73b9f" kind="function"><name>CursorUp</name></member>
+    <member refid="d8/d0e/structMenuItemTest_1af543f8502770ef2f33adb1b7685a0be4" kind="function"><name>CursorDown</name></member>
+    <member refid="d8/d0e/structMenuItemTest_1a7df6fa98df63abac9d399d2216e8740a" kind="function"><name>CursorLeft</name></member>
+    <member refid="d8/d0e/structMenuItemTest_1adb8acce21319e0445c2eb61a27bc4a75" kind="function"><name>CursorRight</name></member>
+  </compound>
+  <compound refid="d1/dc6/structTestHost_1_1ProfileResults" kind="struct"><name>TestHost::ProfileResults</name>
+    <member refid="d1/dc6/structTestHost_1_1ProfileResults_1a35a87a8eca1779cad448be62c317ceef" kind="variable"><name>iterations</name></member>
+    <member refid="d1/dc6/structTestHost_1_1ProfileResults_1ac8ed26813ee3c6eb470d14bbc2b2671b" kind="variable"><name>total_time_microseconds</name></member>
+    <member refid="d1/dc6/structTestHost_1_1ProfileResults_1a4dada5cd71522c80d074f237689824b1" kind="variable"><name>average_time_microseconds</name></member>
+    <member refid="d1/dc6/structTestHost_1_1ProfileResults_1a1d60a4a9b34d461598aba61ba0562d2e" kind="variable"><name>maximum_time_microseconds</name></member>
+    <member refid="d1/dc6/structTestHost_1_1ProfileResults_1a84ec286d48aa6690f556ca2695787e0e" kind="variable"><name>minimum_time_microseconds</name></member>
+    <member refid="d1/dc6/structTestHost_1_1ProfileResults_1af312934329908c83d3c011c7f5832797" kind="variable"><name>raw_results</name></member>
+  </compound>
+  <compound refid="d0/d98/classRuntimeConfig" kind="class"><name>RuntimeConfig</name>
+    <member refid="d0/d98/classRuntimeConfig_1a53d0ad09bd863533db55bc1918436821" kind="enum"><name>SkipConfiguration</name></member>
+    <member refid="d0/d98/classRuntimeConfig_1a53d0ad09bd863533db55bc1918436821a5b39c8b553c821e7cddc6da64b5bd2ee" kind="enumvalue"><name>DEFAULT</name></member>
+    <member refid="d0/d98/classRuntimeConfig_1a53d0ad09bd863533db55bc1918436821a203ec08f57cb105eeb2b121ba6503b52" kind="enumvalue"><name>SKIPPED</name></member>
+    <member refid="d0/d98/classRuntimeConfig_1a53d0ad09bd863533db55bc1918436821a2b373f495b7ff443d0244c6a5e436023" kind="enumvalue"><name>UNSKIPPED</name></member>
+    <member refid="d0/d98/classRuntimeConfig_1a82dbd30ac65d1e180a436f620a9a3253" kind="variable"><name>disable_autorun_</name></member>
+    <member refid="d0/d98/classRuntimeConfig_1a86bf2d2cdd9ad0200158b461b64acb04" kind="variable"><name>enable_autorun_immediately_</name></member>
+    <member refid="d0/d98/classRuntimeConfig_1a839dd4750252137dc5d0fbc54f34956e" kind="variable"><name>enable_shutdown_on_completion_</name></member>
+    <member refid="d0/d98/classRuntimeConfig_1a78613c6ad8ea5c5d9add504ef45ea724" kind="variable"><name>skip_tests_by_default_</name></member>
+    <member refid="d0/d98/classRuntimeConfig_1aad2ce726210206fa4398a2d63b811388" kind="variable"><name>reboot_or_shutdown_delay_ms_</name></member>
+    <member refid="d0/d98/classRuntimeConfig_1a909ad1d37589976ec8df8dd848e7abbd" kind="variable"><name>output_directory_path_</name></member>
+    <member refid="d0/d98/classRuntimeConfig_1a5e69eff9458234b7cd10f8283b7ae8a7" kind="variable"><name>configured_test_suites_</name></member>
+    <member refid="d0/d98/classRuntimeConfig_1a93266abd31cd76445e637c54c9ac0ace" kind="variable"><name>configured_test_cases_</name></member>
+    <member refid="d0/d98/classRuntimeConfig_1a5bb5fdf8d9ba569c2ab2a5b549d987d0" kind="function"><name>RuntimeConfig</name></member>
+    <member refid="d0/d98/classRuntimeConfig_1a357e29abface33d5bc0b18d9445327f7" kind="function"><name>RuntimeConfig</name></member>
+    <member refid="d0/d98/classRuntimeConfig_1a14a49d34275e82a2b06bd365d1216c51" kind="function"><name>LoadConfig</name></member>
+    <member refid="d0/d98/classRuntimeConfig_1a01982f42fa9b49444100ab893e9d4e2b" kind="function"><name>LoadConfigBuffer</name></member>
+    <member refid="d0/d98/classRuntimeConfig_1ab234dceaf1d88e90e733321869a025d5" kind="function"><name>ApplyConfig</name></member>
+    <member refid="d0/d98/classRuntimeConfig_1a9a8c5be5090df2ecc1e79265a285be93" kind="function"><name>disable_autorun</name></member>
+    <member refid="d0/d98/classRuntimeConfig_1a1a8773d0ba2f6d1ffcd0eb1c4d6c3590" kind="function"><name>enable_autorun_immediately</name></member>
+    <member refid="d0/d98/classRuntimeConfig_1a053e22e1fdaa8f0cfab669d86bdc747f" kind="function"><name>enable_shutdown_on_completion</name></member>
+    <member refid="d0/d98/classRuntimeConfig_1a917790f13b1e41f33450c5601d33922b" kind="function"><name>skip_tests_by_default</name></member>
+    <member refid="d0/d98/classRuntimeConfig_1a6f43f70103750517751c0e0f0698a894" kind="function"><name>reboot_or_shutdown_delay_ms</name></member>
+    <member refid="d0/d98/classRuntimeConfig_1a648142e0700bcf91e6d8743fc2cd8e68" kind="function"><name>output_directory_path</name></member>
+    <member refid="d0/d98/classRuntimeConfig_1ad0597a9477a5dbcb7227e8685e9d3468" kind="function"><name>SanitizePath</name></member>
+  </compound>
+  <compound refid="de/d15/classTestDriver" kind="class"><name>TestDriver</name>
+    <member refid="de/d15/classTestDriver_1ab3a733db5aa94b8362f7462af1c97629" kind="variable"><name>running_</name></member>
+    <member refid="de/d15/classTestDriver_1af45481fcfcdfd7d67ee19c076e0ddd3a" kind="variable"><name>test_suites_</name></member>
+    <member refid="de/d15/classTestDriver_1afd91fb20033e016a8a99afe9d910e807" kind="variable"><name>gamepads_</name></member>
+    <member refid="de/d15/classTestDriver_1a4f9e680074101f30aefc9a0b1de279b8" kind="variable"><name>active_menu_</name></member>
+    <member refid="de/d15/classTestDriver_1a9ced81f87f1602105e5887d021df1654" kind="variable"><name>root_menu_</name></member>
+    <member refid="de/d15/classTestDriver_1a737eb1f98772557bd0f28bcb1b9e4766" kind="variable"><name>options_menu_</name></member>
+    <member refid="de/d15/classTestDriver_1a35a31f91b1993d0525fd3b648a372415" kind="function"><name>TestDriver</name></member>
+    <member refid="de/d15/classTestDriver_1a1be16e8753bbf0da5a7f4bc1b4f8a527" kind="function"><name>~TestDriver</name></member>
+    <member refid="de/d15/classTestDriver_1ad6ab07d409a35e75014b8559c8d76d34" kind="function"><name>Run</name></member>
+    <member refid="de/d15/classTestDriver_1a3b1624ebd57df5adc0e70a013053fee8" kind="function"><name>RunAllTestsNonInteractive</name></member>
+    <member refid="de/d15/classTestDriver_1a2498dd5eacb6362699437cf7bd37d110" kind="function"><name>OnControllerAdded</name></member>
+    <member refid="de/d15/classTestDriver_1a65b69d44c051e4148457d886b251d38d" kind="function"><name>OnControllerRemoved</name></member>
+    <member refid="de/d15/classTestDriver_1a37b25261a1d34250e03d3e2006406437" kind="function"><name>OnControllerButtonEvent</name></member>
+    <member refid="de/d15/classTestDriver_1af64491df77108eefdadad8355aaee970" kind="function"><name>OnButtonActivated</name></member>
+    <member refid="de/d15/classTestDriver_1ada324a59bbcf8b190292a684ee6e1edd" kind="function"><name>ShowDebugMessageAndExit</name></member>
+    <member refid="de/d15/classTestDriver_1a912292fea94207b2ee58f229164500ab" kind="function"><name>OnBack</name></member>
+    <member refid="de/d15/classTestDriver_1a79843f494073f2b0bc81be0e708d6892" kind="function"><name>OnStart</name></member>
+    <member refid="de/d15/classTestDriver_1aa7b776628d5a036bc290c6999a98ee5e" kind="function"><name>OnBlack</name></member>
+    <member refid="de/d15/classTestDriver_1a64a192349c65a22e9c415abf42dd0388" kind="function"><name>OnWhite</name></member>
+    <member refid="de/d15/classTestDriver_1a593b2bad1a0cfe36e91fea4de5219348" kind="function"><name>OnUp</name></member>
+    <member refid="de/d15/classTestDriver_1ae2aac20df8196aafda09d66a1a476e65" kind="function"><name>OnDown</name></member>
+    <member refid="de/d15/classTestDriver_1ac60543db783ab933d6037f5300bfbcc1" kind="function"><name>OnLeft</name></member>
+    <member refid="de/d15/classTestDriver_1a49bce18bc3a34e610351573bcbb68cc8" kind="function"><name>OnRight</name></member>
+    <member refid="de/d15/classTestDriver_1adbeb4554ceace70a1fff867364da50b4" kind="function"><name>OnA</name></member>
+    <member refid="de/d15/classTestDriver_1a0eb444857cc4e7c7e7787a76f2e78e74" kind="function"><name>OnB</name></member>
+    <member refid="de/d15/classTestDriver_1a118c91cc650042c1e1204aca474ab159" kind="function"><name>OnX</name></member>
+    <member refid="de/d15/classTestDriver_1aa8a3a873ab01cb2c308468bc66370422" kind="function"><name>OnY</name></member>
+  </compound>
+  <compound refid="d6/d80/classTestHost" kind="class"><name>TestHost</name>
+    <member refid="d6/d80/classTestHost_1a56bf99cdd1f9bbdc1dd89b58591455d9" kind="function"><name>TestHost</name></member>
+    <member refid="d6/d80/classTestHost_1ad4dde48e4a1c7ac6c5477aeff87052a3" kind="function"><name>FinishDraw</name></member>
+    <member refid="d6/d80/classTestHost_1a24b83c50f1d0b792c2089b41903d580e" kind="function"><name>EnsureFolderExists</name></member>
+  </compound>
+  <compound refid="d2/d3e/classTestSuite" kind="class"><name>TestSuite</name>
+    <member refid="d2/d3e/classTestSuite_1a454f5c2050b66b598a2f2fcffd45ae48" kind="variable"><name>host_</name></member>
+    <member refid="d2/d3e/classTestSuite_1a2e81678d3ac733d517616bd67a837465" kind="variable"><name>output_dir_</name></member>
+    <member refid="d2/d3e/classTestSuite_1ac59f02a9549a146ed62e6185c0acec8b" kind="variable"><name>suite_name_</name></member>
+    <member refid="d2/d3e/classTestSuite_1a7bc0a6c4d360f6f487779e8f4282d0a1" kind="variable"><name>tests_</name></member>
+    <member refid="d2/d3e/classTestSuite_1a57b1ed01dd40328456bf0854043ca68b" kind="function"><name>TestSuite</name></member>
+    <member refid="d2/d3e/classTestSuite_1a253b4d7ef576ab6950da2f9748d0afa9" kind="function"><name>TestSuite</name></member>
+    <member refid="d2/d3e/classTestSuite_1a1743f0a04119de901cb819111d51192d" kind="function"><name>~TestSuite</name></member>
+    <member refid="d2/d3e/classTestSuite_1a15144024801f2f885727f7926c826c87" kind="function"><name>Name</name></member>
+    <member refid="d2/d3e/classTestSuite_1a1c4756eb905d6d4d35e1630107396c38" kind="function"><name>Initialize</name></member>
+    <member refid="d2/d3e/classTestSuite_1a137c1c57f8ad999bd78a8f7f8f2cf69e" kind="function"><name>Deinitialize</name></member>
+    <member refid="d2/d3e/classTestSuite_1ad3fb7cc9d8db8740c5188da083312b8d" kind="function"><name>SetupTest</name></member>
+    <member refid="d2/d3e/classTestSuite_1a90bc6959d04c41e07eed51f80a435d70" kind="function"><name>TearDownTest</name></member>
+    <member refid="d2/d3e/classTestSuite_1a165d9da1dec525ffdd299e2dcfaec2ef" kind="function"><name>DisableTests</name></member>
+    <member refid="d2/d3e/classTestSuite_1a80f0bc74d8d511547708827e5a549a63" kind="function"><name>TestNames</name></member>
+    <member refid="d2/d3e/classTestSuite_1a7059e61572d914cff83ae22da3ea1957" kind="function"><name>HasEnabledTests</name></member>
+    <member refid="d2/d3e/classTestSuite_1a40546218e5f7324690e0455706694763" kind="function"><name>Run</name></member>
+    <member refid="d2/d3e/classTestSuite_1a7f99d1a92beb6b58219b841b60d56322" kind="function"><name>RunAll</name></member>
+    <member refid="d2/d3e/classTestSuite_1ac50b006a0a46396cde6073c3e569bde7" kind="function"><name>Profile</name></member>
+    <member refid="d2/d3e/classTestSuite_1a0d580dbb0e1630ecdc989d5c852e8f91" kind="function"><name>SetDefaultTextureFormat</name></member>
+  </compound>
+  <compound refid="da/de8/classVertexBufferAllocationTests" kind="class"><name>VertexBufferAllocationTests</name>
+    <member refid="da/de8/classVertexBufferAllocationTests_1a1a9874a08158adf05bf2935e0d04849b" kind="enum"><name>DrawMode</name></member>
+    <member refid="da/de8/classVertexBufferAllocationTests_1a1a9874a08158adf05bf2935e0d04849ba075fec87c1ad7573604f8743bda94955" kind="enumvalue"><name>DRAW_ARRAYS</name></member>
+    <member refid="da/de8/classVertexBufferAllocationTests_1a1a9874a08158adf05bf2935e0d04849baac5d7f7b9dfa210adf5a4f251fbacc0f" kind="enumvalue"><name>DRAW_INLINE_BUFFERS</name></member>
+    <member refid="da/de8/classVertexBufferAllocationTests_1a1a9874a08158adf05bf2935e0d04849ba6be689703acbf5fbf10e45cd633d8250" kind="enumvalue"><name>DRAW_INLINE_ARRAYS</name></member>
+    <member refid="da/de8/classVertexBufferAllocationTests_1a1a9874a08158adf05bf2935e0d04849ba5c6ce978be799f82f2999fa83b89c694" kind="enumvalue"><name>DRAW_INLINE_ELEMENTS</name></member>
+    <member refid="da/de8/classVertexBufferAllocationTests_1ac04f8b68c951872246ead9942e8047cf" kind="function"><name>VertexBufferAllocationTests</name></member>
+    <member refid="da/de8/classVertexBufferAllocationTests_1a551eb0c2fa51498c87dfd65452af1bc2" kind="function"><name>Initialize</name></member>
+    <member refid="da/de8/classVertexBufferAllocationTests_1a98567bffa4249601d5b57b9ad7287df6" kind="function"><name>Deinitialize</name></member>
+    <member refid="da/de8/classVertexBufferAllocationTests_1a15370bfddfacb340b537d3e03498451c" kind="function"><name>TestTinyAllocations</name></member>
+    <member refid="da/de8/classVertexBufferAllocationTests_1a27caa7b3df39f54ff78cc768a241dbe8" kind="function"><name>TestMixedSizes</name></member>
+  </compound>
+  <compound refid="de/dc6/namespacePBKitPlusPlus" kind="namespace"><name>PBKitPlusPlus</name>
+  </compound>
+  <compound refid="d1/d24/namespaceXboxMath" kind="namespace"><name>XboxMath</name>
+  </compound>
+  <compound refid="d9/d77/debug__output_8cpp" kind="file"><name>debug_output.cpp</name>
+    <member refid="d9/d77/debug__output_8cpp_1a223496da92021626a4430fed0af667bd" kind="function"><name>_putchar</name></member>
+    <member refid="d9/d77/debug__output_8cpp_1a93aa8310c8b2db6063c6cd3b4a495615" kind="function"><name>PrintAssertAndWaitForever</name></member>
+  </compound>
+  <compound refid="d3/dc0/debug__output_8h" kind="file"><name>debug_output.h</name>
+    <member refid="d3/dc0/debug__output_8h_1aad4e5b6078e35a063d909d9a2db2e5e0" kind="define"><name>ASSERT</name></member>
+    <member refid="d3/dc0/debug__output_8h_1a9af2aef5c8565e5aabd16d354459237e" kind="function"><name>PrintMsg</name></member>
+    <member refid="d3/dc0/debug__output_8h_1a93aa8310c8b2db6063c6cd3b4a495615" kind="function"><name>PrintAssertAndWaitForever</name></member>
+  </compound>
+  <compound refid="d3/d30/logger_8cpp" kind="file"><name>logger.cpp</name>
+  </compound>
+  <compound refid="d1/d8c/logger_8h" kind="file"><name>logger.h</name>
+  </compound>
+  <compound refid="df/d0a/main_8cpp" kind="file"><name>main.cpp</name>
+    <member refid="df/d0a/main_8cpp_1a64e2f4043b2ed0f0f4b7ec43a1a5e5bc" kind="define"><name>REG_TEST</name></member>
+    <member refid="df/d0a/main_8cpp_1ae67329bb64313218f0f492f58d7ccae3" kind="variable"><name>kLogFileName</name></member>
+    <member refid="df/d0a/main_8cpp_1acb39c6399adaa6c087861cc657dee648" kind="variable"><name>kFramebufferWidth</name></member>
+    <member refid="df/d0a/main_8cpp_1a817086409909840b1494436d5e82bf0f" kind="variable"><name>kFramebufferHeight</name></member>
+    <member refid="df/d0a/main_8cpp_1af7faef16fae4590f92c6978278f693f5" kind="variable"><name>kBitsPerPixel</name></member>
+    <member refid="df/d0a/main_8cpp_1aa0034d92adc55836af916ec0958634af" kind="variable"><name>kDelayOnFailureMilliseconds</name></member>
+    <member refid="df/d0a/main_8cpp_1a395a6e3c048886b0ec41e1b094b67775" kind="variable"><name>kSMCSlaveAddress</name></member>
+    <member refid="df/d0a/main_8cpp_1af90ab1de7fc15f23afe5be261339f7ee" kind="variable"><name>kSMCRegisterPower</name></member>
+    <member refid="df/d0a/main_8cpp_1a3ebda9513b2ea64ec6aba2bf682839f1" kind="variable"><name>kSMCPowerShutdown</name></member>
+    <member refid="df/d0a/main_8cpp_1adc5e158b4ec4ef4c59b06f2603d116b6" kind="function"><name>EnsureDriveMounted</name></member>
+    <member refid="df/d0a/main_8cpp_1a3837c464bf49c131ec7b2af0d5417406" kind="function"><name>LoadConfig</name></member>
+    <member refid="df/d0a/main_8cpp_1a12b17794b734d21a44354814bc795eb6" kind="function"><name>RunTests</name></member>
+    <member refid="df/d0a/main_8cpp_1a3270df67667ede836b08618e0e4f7a54" kind="function"><name>RegisterSuites</name></member>
+    <member refid="df/d0a/main_8cpp_1a704350e4ecd8b0deecaeba8ecac93d4f" kind="function"><name>Shutdown</name></member>
+    <member refid="df/d0a/main_8cpp_1a83fd25562f3679c53632f099ceb5f031" kind="function"><name>automount_d_drive</name></member>
+    <member refid="df/d0a/main_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="d9/dcf/menu__item_8cpp" kind="file"><name>menu_item.cpp</name>
+    <member refid="d9/dcf/menu__item_8cpp_1adc3af3c9fbf9f2abd22b583b3572df16" kind="variable"><name>kAutoTestAllTimeoutMilliseconds</name></member>
+    <member refid="d9/dcf/menu__item_8cpp_1a89f4f23c8d640b7c960ecf8f9d6077e8" kind="variable"><name>kNumItemsPerPage</name></member>
+    <member refid="d9/dcf/menu__item_8cpp_1a588ca188d441ce0f182cd66c9e95877e" kind="variable"><name>kNumItemsPerHalfPage</name></member>
+  </compound>
+  <compound refid="d3/d5d/menu__item_8h" kind="file"><name>menu_item.h</name>
+  </compound>
+  <compound refid="db/d3c/runtime__config_8cpp" kind="file"><name>runtime_config.cpp</name>
+    <member refid="db/d3c/runtime__config_8cpp_1a53938fdfb4ab6e2b829793e6a6bd1332" kind="define"><name>MAX_CONFIG_FILE_SIZE</name></member>
+    <member refid="db/d3c/runtime__config_8cpp_1a62f74829d167c47b607a186ec244e606" kind="function"><name>ParseTestSuites</name></member>
+    <member refid="db/d3c/runtime__config_8cpp_1afb34d495eef769d999f00d63c9e88526" kind="function"><name>LoadBool</name></member>
+    <member refid="db/d3c/runtime__config_8cpp_1ae4f964c713767a4f52c9d353b3ff9f91" kind="function"><name>LoadString</name></member>
+    <member refid="db/d3c/runtime__config_8cpp_1a4e5d975781352dcc085386f7311bf6db" kind="function"><name>LoadUint32</name></member>
+    <member refid="db/d3c/runtime__config_8cpp_1aa239632fa292ca65bf781e7fcfc66ba7" kind="function"><name>MakeSkipConfiguration</name></member>
+    <member refid="db/d3c/runtime__config_8cpp_1add210cb2cd5842cf02c0c7b1696c9f3f" kind="function"><name>ParseTestCase</name></member>
+    <member refid="db/d3c/runtime__config_8cpp_1a3bff3bb087b68553dea34fce9eb2e450" kind="function"><name>ParseTestCases</name></member>
+  </compound>
+  <compound refid="d4/d3c/runtime__config_8h" kind="file"><name>runtime_config.h</name>
+  </compound>
+  <compound refid="d7/d0a/test__driver_8cpp" kind="file"><name>test_driver.cpp</name>
+    <member refid="d7/d0a/test__driver_8cpp_1af62eeb989244e1ee682f573ec79a0fe6" kind="variable"><name>kButtonRepeatMilliseconds</name></member>
+  </compound>
+  <compound refid="dd/dab/test__driver_8h" kind="file"><name>test_driver.h</name>
+    <member refid="dd/dab/test__driver_8h_1ac136007fea48993cf8c255cd98495fc6" kind="variable"><name>kMaxGamepads</name></member>
+  </compound>
+  <compound refid="d2/d61/test__host_8cpp" kind="file"><name>test_host.cpp</name>
+    <member refid="d2/d61/test__host_8cpp_1af362949cded6691a7c7851c4af1b1ce0" kind="define"><name>MAX_FILE_PATH_SIZE</name></member>
+    <member refid="d2/d61/test__host_8cpp_1a1da41d527b391b557b30acdc9e2cf425" kind="define"><name>MAX_FILENAME_SIZE</name></member>
+    <member refid="d2/d61/test__host_8cpp_1a195de3c7fb6006bd9cdaa173de94530b" kind="variable"><name>kResultsOverlayColor</name></member>
+    <member refid="d2/d61/test__host_8cpp_1a77e84b79ce20c95d551e7dd4fbe3c374" kind="function"><name>pb_print_with_floats</name></member>
+  </compound>
+  <compound refid="df/d43/test__host_8h" kind="file"><name>test_host.h</name>
+    <member refid="df/d43/test__host_8h_1a77e84b79ce20c95d551e7dd4fbe3c374" kind="function"><name>pb_print_with_floats</name></member>
+  </compound>
+  <compound refid="d3/d4c/high__vertex__count__tests_8cpp" kind="file"><name>high_vertex_count_tests.cpp</name>
+    <member refid="d3/d4c/high__vertex__count__tests_8cpp_1a6fe7aeaf946693b76dfb768c3563c0f6" kind="variable"><name>kHighVertexCountTest</name></member>
+    <member refid="d3/d4c/high__vertex__count__tests_8cpp_1ad85c904bd1e06601da9f7d52aa94dc58" kind="variable"><name>kMaxVertexCount</name></member>
+    <member refid="d3/d4c/high__vertex__count__tests_8cpp_1a1d37b14519414f7491a5308e2e81171d" kind="function"><name>MakeTestName</name></member>
+    <member refid="d3/d4c/high__vertex__count__tests_8cpp_1a4ad5a9088a8d71a91f93f46658be5287" kind="function"><name>CreateGeometry</name></member>
+  </compound>
+  <compound refid="d8/d40/high__vertex__count__tests_8h" kind="file"><name>high_vertex_count_tests.h</name>
+  </compound>
+  <compound refid="dc/d6c/test__suite_8cpp" kind="file"><name>test_suite.cpp</name>
+    <member refid="dc/d6c/test__suite_8cpp_1ae1de504b43f0d2fb4384f0bcd6318813" kind="define"><name>SET_MASK</name></member>
+    <member refid="dc/d6c/test__suite_8cpp_1a1fe724121fa24f39680178351d4ccd79" kind="variable"><name>kMaxClockDesyncRecoveryAttempts</name></member>
+  </compound>
+  <compound refid="d6/d7a/test__suite_8h" kind="file"><name>test_suite.h</name>
+  </compound>
+  <compound refid="d0/de9/vertex__buffer__allocation__tests_8cpp" kind="file"><name>vertex_buffer_allocation_tests.cpp</name>
+    <member refid="d0/de9/vertex__buffer__allocation__tests_8cpp_1a2cd568a3cfc75ec95ed88c15a57b2994" kind="variable"><name>kTinyAllocationTest</name></member>
+    <member refid="d0/de9/vertex__buffer__allocation__tests_8cpp_1a06449dfdbed244cbadc7dbaed6d6d8d5" kind="variable"><name>kMixedVertexCountTest</name></member>
+    <member refid="d0/de9/vertex__buffer__allocation__tests_8cpp_1adbdb5f5adbfcd2848146d5fcbd80f964" kind="variable"><name>kMixedVertexBufferSizes</name></member>
+    <member refid="d0/de9/vertex__buffer__allocation__tests_8cpp_1a813b1e0fc4ec2dca20c9f4082d3f5d52" kind="variable"><name>kVertexAttributes</name></member>
+    <member refid="d0/de9/vertex__buffer__allocation__tests_8cpp_1a7c3b74d02207017a306b868b07f58cb0" kind="variable"><name>kArrayEntriesPerVertex</name></member>
+    <member refid="d0/de9/vertex__buffer__allocation__tests_8cpp_1a90c8c61f53b980a5092d6dbb0710bacb" kind="variable"><name>kSmallestVertexBufferSize</name></member>
+    <member refid="d0/de9/vertex__buffer__allocation__tests_8cpp_1a5995386e8c434264fc1843d0512d4139" kind="function"><name>MakeTestName</name></member>
+    <member refid="d0/de9/vertex__buffer__allocation__tests_8cpp_1a3bb7121379986cde0e2b081c7c7db1a0" kind="function"><name>CreateGeometry</name></member>
+  </compound>
+  <compound refid="d7/d54/vertex__buffer__allocation__tests_8h" kind="file"><name>vertex_buffer_allocation_tests.h</name>
+  </compound>
+  <compound refid="dir_68267d1309a1af8e8297ef4c3efbcdba" kind="dir"><name>src</name>
+  </compound>
+  <compound refid="dir_d93a1d4020dea85bb71b237545b5e722" kind="dir"><name>src/tests</name>
+  </compound>
+</doxygenindex>

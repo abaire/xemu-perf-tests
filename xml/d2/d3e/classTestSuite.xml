@@ -1,0 +1,391 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="d2/d3e/classTestSuite" kind="class" language="C++" prot="public">
+    <compoundname>TestSuite</compoundname>
+    <derivedcompoundref refid="d3/d92/classHighVertexCountTests" prot="public" virt="non-virtual">HighVertexCountTests</derivedcompoundref>
+    <derivedcompoundref refid="da/de8/classVertexBufferAllocationTests" prot="public" virt="non-virtual">VertexBufferAllocationTests</derivedcompoundref>
+    <includes refid="d6/d7a/test__suite_8h" local="no">test_suite.h</includes>
+    <innerclass refid="da/d85/structTestSuite_1_1Config" prot="public">TestSuite::Config</innerclass>
+    <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="d2/d3e/classTestSuite_1a454f5c2050b66b598a2f2fcffd45ae48" prot="protected" static="no" mutable="no">
+        <type><ref refid="d6/d80/classTestHost" kindref="compound">TestHost</ref> &amp;</type>
+        <definition>TestHost&amp; TestSuite::host_</definition>
+        <argsstring></argsstring>
+        <name>host_</name>
+        <qualifiedname>TestSuite::host_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tests/test_suite.h" line="56" column="12" bodyfile="src/tests/test_suite.h" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d2/d3e/classTestSuite_1a2e81678d3ac733d517616bd67a837465" prot="protected" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string TestSuite::output_dir_</definition>
+        <argsstring></argsstring>
+        <name>output_dir_</name>
+        <qualifiedname>TestSuite::output_dir_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tests/test_suite.h" line="57" column="15" bodyfile="src/tests/test_suite.h" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d2/d3e/classTestSuite_1ac59f02a9549a146ed62e6185c0acec8b" prot="protected" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string TestSuite::suite_name_</definition>
+        <argsstring></argsstring>
+        <name>suite_name_</name>
+        <qualifiedname>TestSuite::suite_name_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tests/test_suite.h" line="58" column="15" bodyfile="src/tests/test_suite.h" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d2/d3e/classTestSuite_1a7bc0a6c4d360f6f487779e8f4282d0a1" prot="protected" static="no" mutable="no">
+        <type>std::map&lt; std::string, std::function&lt; void(void)&gt; &gt;</type>
+        <definition>std::map&lt;std::string, std::function&lt;void(void)&gt; &gt; TestSuite::tests_</definition>
+        <argsstring></argsstring>
+        <name>tests_</name>
+        <qualifiedname>TestSuite::tests_</qualifiedname>
+        <initializer>{}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tests/test_suite.h" line="61" column="12" bodyfile="src/tests/test_suite.h" bodystart="61" bodyend="61"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="d2/d3e/classTestSuite_1a57b1ed01dd40328456bf0854043ca68b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>TestSuite::TestSuite</definition>
+        <argsstring>()=delete</argsstring>
+        <name>TestSuite</name>
+        <qualifiedname>TestSuite::TestSuite</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tests/test_suite.h" line="22" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/d3e/classTestSuite_1a253b4d7ef576ab6950da2f9748d0afa9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>TestSuite::TestSuite</definition>
+        <argsstring>(TestHost &amp;host, std::string output_dir, std::string suite_name, const Config &amp;config)</argsstring>
+        <name>TestSuite</name>
+        <qualifiedname>TestSuite::TestSuite</qualifiedname>
+        <param>
+          <type><ref refid="d6/d80/classTestHost" kindref="compound">TestHost</ref> &amp;</type>
+          <declname>host</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>output_dir</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>suite_name</declname>
+        </param>
+        <param>
+          <type>const <ref refid="da/d85/structTestSuite_1_1Config" kindref="compound">Config</ref> &amp;</type>
+          <declname>config</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tests/test_suite.h" line="23" column="3" bodyfile="src/tests/test_suite.cpp" bodystart="25" bodyend="30"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/d3e/classTestSuite_1a1743f0a04119de901cb819111d51192d" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>virtual TestSuite::~TestSuite</definition>
+        <argsstring>()=default</argsstring>
+        <name>~TestSuite</name>
+        <qualifiedname>TestSuite::~TestSuite</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tests/test_suite.h" line="24" column="11"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/d3e/classTestSuite_1a15144024801f2f885727f7926c826c87" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const std::string &amp;</type>
+        <definition>const std::string &amp; TestSuite::Name</definition>
+        <argsstring>() const</argsstring>
+        <name>Name</name>
+        <qualifiedname>TestSuite::Name</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tests/test_suite.h" line="26" column="22" bodyfile="src/tests/test_suite.h" bodystart="26" bodyend="26"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/d3e/classTestSuite_1a1c4756eb905d6d4d35e1630107396c38" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void TestSuite::Initialize</definition>
+        <argsstring>()</argsstring>
+        <name>Initialize</name>
+        <qualifiedname>TestSuite::Initialize</qualifiedname>
+        <reimplementedby refid="d3/d92/classHighVertexCountTests_1a06c25f50a98dbbb691f788a63210cc5f">Initialize</reimplementedby>
+        <reimplementedby refid="da/de8/classVertexBufferAllocationTests_1a551eb0c2fa51498c87dfd65452af1bc2">Initialize</reimplementedby>
+        <briefdescription>
+<para>Called to initialize the test suite. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tests/test_suite.h" line="29" column="16" bodyfile="src/tests/test_suite.cpp" bodystart="78" bodyend="270"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/d3e/classTestSuite_1a137c1c57f8ad999bd78a8f7f8f2cf69e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void TestSuite::Deinitialize</definition>
+        <argsstring>()</argsstring>
+        <name>Deinitialize</name>
+        <qualifiedname>TestSuite::Deinitialize</qualifiedname>
+        <reimplementedby refid="d3/d92/classHighVertexCountTests_1a44dacf4aefa7e12420825dfa3672f756">Deinitialize</reimplementedby>
+        <reimplementedby refid="da/de8/classVertexBufferAllocationTests_1a98567bffa4249601d5b57b9ad7287df6">Deinitialize</reimplementedby>
+        <briefdescription>
+<para>Called to tear down the test suite. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tests/test_suite.h" line="32" column="16" bodyfile="src/tests/test_suite.h" bodystart="32" bodyend="32"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/d3e/classTestSuite_1ad3fb7cc9d8db8740c5188da083312b8d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void TestSuite::SetupTest</definition>
+        <argsstring>()</argsstring>
+        <name>SetupTest</name>
+        <qualifiedname>TestSuite::SetupTest</qualifiedname>
+        <briefdescription>
+<para>Called before running an individual test within this suite. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tests/test_suite.h" line="35" column="16" bodyfile="src/tests/test_suite.h" bodystart="35" bodyend="35"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/d3e/classTestSuite_1a90bc6959d04c41e07eed51f80a435d70" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void TestSuite::TearDownTest</definition>
+        <argsstring>()</argsstring>
+        <name>TearDownTest</name>
+        <qualifiedname>TestSuite::TearDownTest</qualifiedname>
+        <briefdescription>
+<para>Called after running an individual test within this suite. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tests/test_suite.h" line="38" column="16" bodyfile="src/tests/test_suite.h" bodystart="38" bodyend="38"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/d3e/classTestSuite_1a165d9da1dec525ffdd299e2dcfaec2ef" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TestSuite::DisableTests</definition>
+        <argsstring>(const std::set&lt; std::string &gt; &amp;tests_to_skip)</argsstring>
+        <name>DisableTests</name>
+        <qualifiedname>TestSuite::DisableTests</qualifiedname>
+        <param>
+          <type>const std::set&lt; std::string &gt; &amp;</type>
+          <declname>tests_to_skip</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tests/test_suite.h" line="40" column="8" bodyfile="src/tests/test_suite.cpp" bodystart="42" bodyend="46"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/d3e/classTestSuite_1a80f0bc74d8d511547708827e5a549a63" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; std::string &gt;</type>
+        <definition>std::vector&lt; std::string &gt; TestSuite::TestNames</definition>
+        <argsstring>() const</argsstring>
+        <name>TestNames</name>
+        <qualifiedname>TestSuite::TestNames</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tests/test_suite.h" line="42" column="16" bodyfile="src/tests/test_suite.cpp" bodystart="32" bodyend="40"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/d3e/classTestSuite_1a7059e61572d914cff83ae22da3ea1957" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool TestSuite::HasEnabledTests</definition>
+        <argsstring>() const</argsstring>
+        <name>HasEnabledTests</name>
+        <qualifiedname>TestSuite::HasEnabledTests</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tests/test_suite.h" line="43" column="9" bodyfile="src/tests/test_suite.h" bodystart="43" bodyend="43"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/d3e/classTestSuite_1a40546218e5f7324690e0455706694763" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TestSuite::Run</definition>
+        <argsstring>(const std::string &amp;test_name)</argsstring>
+        <name>Run</name>
+        <qualifiedname>TestSuite::Run</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>test_name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tests/test_suite.h" line="45" column="8" bodyfile="src/tests/test_suite.cpp" bodystart="48" bodyend="57"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/d3e/classTestSuite_1a7f99d1a92beb6b58219b841b60d56322" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TestSuite::RunAll</definition>
+        <argsstring>()</argsstring>
+        <name>RunAll</name>
+        <qualifiedname>TestSuite::RunAll</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tests/test_suite.h" line="47" column="8" bodyfile="src/tests/test_suite.cpp" bodystart="59" bodyend="64"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-func">
+      <memberdef kind="function" id="d2/d3e/classTestSuite_1ac50b006a0a46396cde6073c3e569bde7" prot="protected" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="d1/dc6/structTestHost_1_1ProfileResults" kindref="compound">TestHost::ProfileResults</ref></type>
+        <definition>TestHost::ProfileResults TestSuite::Profile</definition>
+        <argsstring>(const std::string &amp;test_name, uint32_t num_iterations, const std::function&lt; void(void)&gt; &amp;body) const</argsstring>
+        <name>Profile</name>
+        <qualifiedname>TestSuite::Profile</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>test_name</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>num_iterations</declname>
+        </param>
+        <param>
+          <type>const std::function&lt; void(void)&gt; &amp;</type>
+          <declname>body</declname>
+        </param>
+        <briefdescription>
+<para>Runs the given body function a number of times and calculates profiling information. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tests/test_suite.h" line="51" column="28" bodyfile="src/tests/test_suite.cpp" bodystart="272" bodyend="331"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/d3e/classTestSuite_1a0d580dbb0e1630ecdc989d5c852e8f91" prot="protected" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TestSuite::SetDefaultTextureFormat</definition>
+        <argsstring>() const</argsstring>
+        <name>SetDefaultTextureFormat</name>
+        <qualifiedname>TestSuite::SetDefaultTextureFormat</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tests/test_suite.h" line="53" column="8" bodyfile="src/tests/test_suite.cpp" bodystart="66" bodyend="76"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Base class for all test suites. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>HighVertexCountTests</label>
+        <link refid="d3/d92/classHighVertexCountTests"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>TestSuite</label>
+        <link refid="d2/d3e/classTestSuite"/>
+      </node>
+      <node id="3">
+        <label>VertexBufferAllocationTests</label>
+        <link refid="da/de8/classVertexBufferAllocationTests"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="3">
+        <label>PBKitPlusPlus::NV2AState</label>
+      </node>
+      <node id="2">
+        <label>TestHost</label>
+        <link refid="d6/d80/classTestHost"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>TestSuite</label>
+        <link refid="d2/d3e/classTestSuite"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>host_</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="src/tests/test_suite.h" line="16" column="1" bodyfile="src/tests/test_suite.h" bodystart="16" bodyend="62"/>
+    <listofallmembers>
+      <member refid="d2/d3e/classTestSuite_1a137c1c57f8ad999bd78a8f7f8f2cf69e" prot="public" virt="virtual"><scope>TestSuite</scope><name>Deinitialize</name></member>
+      <member refid="d2/d3e/classTestSuite_1a165d9da1dec525ffdd299e2dcfaec2ef" prot="public" virt="non-virtual"><scope>TestSuite</scope><name>DisableTests</name></member>
+      <member refid="d2/d3e/classTestSuite_1a7059e61572d914cff83ae22da3ea1957" prot="public" virt="non-virtual"><scope>TestSuite</scope><name>HasEnabledTests</name></member>
+      <member refid="d2/d3e/classTestSuite_1a454f5c2050b66b598a2f2fcffd45ae48" prot="protected" virt="non-virtual"><scope>TestSuite</scope><name>host_</name></member>
+      <member refid="d2/d3e/classTestSuite_1a1c4756eb905d6d4d35e1630107396c38" prot="public" virt="virtual"><scope>TestSuite</scope><name>Initialize</name></member>
+      <member refid="d2/d3e/classTestSuite_1a15144024801f2f885727f7926c826c87" prot="public" virt="non-virtual"><scope>TestSuite</scope><name>Name</name></member>
+      <member refid="d2/d3e/classTestSuite_1a2e81678d3ac733d517616bd67a837465" prot="protected" virt="non-virtual"><scope>TestSuite</scope><name>output_dir_</name></member>
+      <member refid="d2/d3e/classTestSuite_1ac50b006a0a46396cde6073c3e569bde7" prot="protected" virt="non-virtual"><scope>TestSuite</scope><name>Profile</name></member>
+      <member refid="d2/d3e/classTestSuite_1a40546218e5f7324690e0455706694763" prot="public" virt="non-virtual"><scope>TestSuite</scope><name>Run</name></member>
+      <member refid="d2/d3e/classTestSuite_1a7f99d1a92beb6b58219b841b60d56322" prot="public" virt="non-virtual"><scope>TestSuite</scope><name>RunAll</name></member>
+      <member refid="d2/d3e/classTestSuite_1a0d580dbb0e1630ecdc989d5c852e8f91" prot="protected" virt="non-virtual"><scope>TestSuite</scope><name>SetDefaultTextureFormat</name></member>
+      <member refid="d2/d3e/classTestSuite_1ad3fb7cc9d8db8740c5188da083312b8d" prot="public" virt="virtual"><scope>TestSuite</scope><name>SetupTest</name></member>
+      <member refid="d2/d3e/classTestSuite_1ac59f02a9549a146ed62e6185c0acec8b" prot="protected" virt="non-virtual"><scope>TestSuite</scope><name>suite_name_</name></member>
+      <member refid="d2/d3e/classTestSuite_1a90bc6959d04c41e07eed51f80a435d70" prot="public" virt="virtual"><scope>TestSuite</scope><name>TearDownTest</name></member>
+      <member refid="d2/d3e/classTestSuite_1a80f0bc74d8d511547708827e5a549a63" prot="public" virt="non-virtual"><scope>TestSuite</scope><name>TestNames</name></member>
+      <member refid="d2/d3e/classTestSuite_1a7bc0a6c4d360f6f487779e8f4282d0a1" prot="protected" virt="non-virtual"><scope>TestSuite</scope><name>tests_</name></member>
+      <member refid="d2/d3e/classTestSuite_1a57b1ed01dd40328456bf0854043ca68b" prot="public" virt="non-virtual"><scope>TestSuite</scope><name>TestSuite</name></member>
+      <member refid="d2/d3e/classTestSuite_1a253b4d7ef576ab6950da2f9748d0afa9" prot="public" virt="non-virtual"><scope>TestSuite</scope><name>TestSuite</name></member>
+      <member refid="d2/d3e/classTestSuite_1a1743f0a04119de901cb819111d51192d" prot="public" virt="virtual"><scope>TestSuite</scope><name>~TestSuite</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

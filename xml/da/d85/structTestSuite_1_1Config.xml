@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="da/d85/structTestSuite_1_1Config" kind="struct" language="C++" prot="public">
+    <compoundname>TestSuite::Config</compoundname>
+    <includes refid="d6/d7a/test__suite_8h" local="no">test_suite.h</includes>
+    <briefdescription>
+<para>Runtime configuration for TestSuites. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/tests/test_suite.h" line="19" column="3" bodyfile="src/tests/test_suite.h" bodystart="19" bodyend="19"/>
+    <listofallmembers>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

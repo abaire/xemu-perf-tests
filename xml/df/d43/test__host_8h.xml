@@ -1,0 +1,143 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="df/d43/test__host_8h" kind="file" language="C++">
+    <compoundname>test_host.h</compoundname>
+    <includes local="no">cstdint</includes>
+    <includes local="no">string</includes>
+    <includes local="yes">nv2astate.h</includes>
+    <includedby refid="df/d0a/main_8cpp" local="yes">src/main.cpp</includedby>
+    <includedby refid="dd/dab/test__driver_8h" local="yes">src/test_driver.h</includedby>
+    <includedby refid="d2/d61/test__host_8cpp" local="yes">src/test_host.cpp</includedby>
+    <includedby refid="d3/d4c/high__vertex__count__tests_8cpp" local="yes">src/tests/high_vertex_count_tests.cpp</includedby>
+    <includedby refid="d8/d40/high__vertex__count__tests_8h" local="yes">src/tests/high_vertex_count_tests.h</includedby>
+    <includedby refid="dc/d6c/test__suite_8cpp" local="yes">src/tests/test_suite.cpp</includedby>
+    <includedby refid="d6/d7a/test__suite_8h" local="yes">src/tests/test_suite.h</includedby>
+    <includedby refid="d0/de9/vertex__buffer__allocation__tests_8cpp" local="yes">src/tests/vertex_buffer_allocation_tests.cpp</includedby>
+    <includedby refid="d7/d54/vertex__buffer__allocation__tests_8h" local="yes">src/tests/vertex_buffer_allocation_tests.h</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>src/test_host.h</label>
+        <link refid="df/d43/test__host_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>cstdint</label>
+      </node>
+      <node id="4">
+        <label>nv2astate.h</label>
+      </node>
+      <node id="3">
+        <label>string</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="5">
+        <label>src/runtime_config.h</label>
+        <link refid="d4/d3c/runtime__config_8h_source"/>
+      </node>
+      <node id="2">
+        <label>src/test_driver.h</label>
+        <link refid="dd/dab/test__driver_8h_source"/>
+      </node>
+      <node id="1">
+        <label>src/test_host.h</label>
+        <link refid="df/d43/test__host_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>src/tests/high_vertex_count_tests.h</label>
+        <link refid="d8/d40/high__vertex__count__tests_8h_source"/>
+      </node>
+      <node id="4">
+        <label>src/tests/test_suite.h</label>
+        <link refid="d6/d7a/test__suite_8h_source"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>src/tests/vertex_buffer_allocation_tests.h</label>
+        <link refid="d7/d54/vertex__buffer__allocation__tests_8h_source"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="d6/d80/classTestHost" prot="public">TestHost</innerclass>
+    <innerclass refid="d1/dc6/structTestHost_1_1ProfileResults" prot="public">TestHost::ProfileResults</innerclass>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="df/d43/test__host_8h_1a77e84b79ce20c95d551e7dd4fbe3c374" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void pb_print_with_floats</definition>
+        <argsstring>(const char *format,...)</argsstring>
+        <name>pb_print_with_floats</name>
+        <param>
+          <type>const char *</type>
+          <declname>format</declname>
+        </param>
+        <param>
+          <type>...</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/test_host.h" line="34" column="6" bodyfile="src/test_host.cpp" bodystart="107" bodyend="119" declfile="src/test_host.h" declline="34" declcolumn="6"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>XEMU_PERF_TESTS_TEST_HOST_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>XEMU_PERF_TESTS_TEST_HOST_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cstdint&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;nv2astate.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12" refid="d6/d80/classTestHost" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="d6/d80/classTestHost" kindref="compound">TestHost</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>PBKitPlusPlus::NV2AState<sp/>{</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="14" refid="d1/dc6/structTestHost_1_1ProfileResults" refkind="compound"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="d1/dc6/structTestHost_1_1ProfileResults" kindref="compound">ProfileResults</ref><sp/>{</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>iterations;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>total_time_microseconds;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>average_time_microseconds;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>maximum_time_microseconds;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>minimum_time_microseconds;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;uint32_t&gt;<sp/>raw_results;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/>};</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><ref refid="d6/d80/classTestHost" kindref="compound">TestHost</ref>(uint32_t<sp/>framebuffer_width,<sp/>uint32_t<sp/>framebuffer_height,<sp/>uint32_t<sp/>max_texture_width<sp/>=<sp/>256,</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t<sp/>max_texture_height<sp/>=<sp/>256,<sp/>uint32_t<sp/>max_texture_depth<sp/>=<sp/>4);</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d6/d80/classTestHost_1a24b83c50f1d0b792c2089b41903d580e" kindref="member">EnsureFolderExists</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;folder_path);</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d6/d80/classTestHost_1ad4dde48e4a1c7ac6c5477aeff87052a3" kindref="member">FinishDraw</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;suite_name,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;test_name,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="d1/dc6/structTestHost_1_1ProfileResults" kindref="compound">ProfileResults</ref><sp/>&amp;results);</highlight></codeline>
+<codeline lineno="32"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>pb_print_with_floats(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*format,<sp/>...);</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/><sp/></highlight><highlight class="comment">//<sp/>XEMU_PERF_TESTS_TEST_HOST_H</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="src/test_host.h"/>
+  </compounddef>
+</doxygen>
