@@ -194,3 +194,7 @@ To perform automatic deployment after builds:
 1. Set `Arguments` to
    `<your_xbox_ip> -- mkdir e:\$CMakeCurrentTargetName$ && %syncdir $CMakeCurrentBuildDir$/xbe/xbe_file e:\$CMakeCurrentTargetName$ -f`
 1. Set `Working directory` to `$ProjectFileDir$`
+
+# Docs
+
+[Docs are generated with Doxygen and served via GitHub pages](https://abaire.github.io/xemu-perf-tests)
