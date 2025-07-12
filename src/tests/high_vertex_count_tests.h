@@ -14,7 +14,7 @@ class VertexBuffer;
 using namespace PBKitPlusPlus;
 
 /**
- * Tests behavior when massive numbers of vertices are specified without an END
+ * Tests behavior when large numbers of vertices are specified without an END
  * call.
  */
 class HighVertexCountTests : public TestSuite {

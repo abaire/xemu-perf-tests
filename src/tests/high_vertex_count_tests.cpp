@@ -35,6 +35,22 @@ static std::string MakeTestName(const std::string &prefix, HighVertexCountTests:
   return ret;
 }
 
+/**
+ * Initializes the test suite and creates test cases.
+ *
+ * @tc HighVtxCount-arrays
+ *  Tests NV097_DRAW_ARRAYS with a very large number of vertices.
+ *
+ * @tc HighVtxCount-inlinebuffers
+ *  Tests immediate mode (e.g., NV097_SET_VERTEX3F) with a very large number of vertices.
+ *
+ * @tc HighVtxCount-inlinearrays
+ *  Tests NV097_INLINE_ARRAY with a very large number of vertices.
+ *
+ * @tc HighVtxCount-inlineelements
+ *  Tests NV097_ARRAY_ELEMENT16 / NV097_ARRAY_ELEMENT32 with a very large number of vertices.
+ *
+ */
 HighVertexCountTests::HighVertexCountTests(TestHost &host, std::string output_dir, const Config &config)
     : TestSuite(host, std::move(output_dir), "High vertex count", config) {
   for (auto draw_mode : {DRAW_ARRAYS, DRAW_INLINE_BUFFERS, DRAW_INLINE_ARRAYS, DRAW_INLINE_ELEMENTS}) {

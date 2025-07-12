@@ -28,8 +28,33 @@ static constexpr uint32_t kArrayEntriesPerVertex = 15;
 static constexpr uint32_t kSmallestVertexBufferSize = kArrayEntriesPerVertex * 4;
 
 /**
- * @tc TinyAlloc - Test the behavior of many tiny (single quad) draws.
- * @tc MixedVtxAlloc - Test the behavior of many draws of varying length.
+ * Initializes the test suite and creates test cases.
+ *
+ * @tc MixedVtxAlloc-arrays
+ *  Tests NV097_DRAW_ARRAYS with multiple successive draws using a variety of different vertex counts.
+ *
+ * @tc MixedVtxAlloc-inlinebuffers
+ *  Tests immediate mode (e.g., NV097_SET_VERTEX3F) with multiple successive draws using a variety of different vertex
+ *  counts.
+ *
+ * @tc MixedVtxAlloc-inlinearrays
+ *  Tests NV097_INLINE_ARRAY with multiple successive draws using a variety of different vertex counts.
+ *
+ * @tc MixedVtxAlloc-inlineelements
+ *  Tests NV097_ARRAY_ELEMENT16 / NV097_ARRAY_ELEMENT32 with multiple successive draws using a variety of different
+ *  vertex counts.
+ *
+ * @tc TinyAlloc-arrays
+ *  Tests NV097_DRAW_ARRAYS with a large number of single quad draws.
+ *
+ * @tc TinyAlloc-inlinebuffers
+ *  Tests immediate mode (e.g., NV097_SET_VERTEX3F) with a large number of single quad draws.
+ *
+ * @tc TinyAlloc-inlinearrays
+ *  Tests NV097_INLINE_ARRAY with a large number of single quad draws.
+ *
+ * @tc TinyAlloc-inlineelements
+ *  Tests NV097_ARRAY_ELEMENT16 / NV097_ARRAY_ELEMENT32 with a large number of single quad draws.
  */
 static std::string MakeTestName(const std::string &prefix, VertexBufferAllocationTests::DrawMode draw_mode) {
   std::string ret = prefix;
