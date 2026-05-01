@@ -13,8 +13,8 @@
 
 #include "debug_output.h"
 #include "logger.h"
-#include "pushbuffer.h"
 #include "shaders/vertex_shader_program.h"
+#include "xbox_math_matrix.h"
 #include "xbox_math_types.h"
 
 using namespace XboxMath;
@@ -83,7 +83,7 @@ void TestHost::FinishDraw(const std::string &suite_name, const std::string &test
 
   pb_draw_text_screen();
 
-  PBKitPlusPlus::NV2AState::FinishDraw();
+  NV2AState::FinishDraw();
 
   Logger::Log() << "  {" << std::endl;
   Logger::Log() << R"(    "name": ")" << suite_name << "::" << test_name << "\"," << std::endl;
@@ -102,6 +102,18 @@ void TestHost::FinishDraw(const std::string &suite_name, const std::string &test
   Logger::Log() << std::endl;
   Logger::Log() << "    ]" << std::endl;
   Logger::Log() << "  }," << std::endl;
+}
+
+void TestHost::SetupFixedFunctionPassthrough() {
+  SetVertexShaderProgram(nullptr);
+  SetWindowClip(GetFramebufferWidth(), GetFramebufferHeight());
+  SetViewportOffset(0, 0, 0, 0);
+  SetViewportScale(1.f, 1.f, 1.f, 1.f);
+
+  matrix4_t matrix;
+  MatrixSetIdentity(matrix);
+  SetFixedFunctionModelViewMatrix(matrix);
+  SetFixedFunctionProjectionMatrix(matrix);
 }
 
 void pb_print_with_floats(const char *format, ...) {

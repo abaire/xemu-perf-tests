@@ -23,6 +23,8 @@
 #include "test_driver.h"
 #include "test_host.h"
 #include "tests/high_vertex_count_tests.h"
+#include "tests/primitive_type_tests.h"
+#include "tests/tiny_draw_tests.h"
 #include "tests/vertex_buffer_allocation_tests.h"
 
 static constexpr const char* kLogFileName = "results.txt";
@@ -219,6 +221,8 @@ static void RegisterSuites(TestHost& host, RuntimeConfig& runtime_config,
 
   // -- Begin REG_TEST --
   REG_TEST(HighVertexCountTests)
+  REG_TEST(PrimitiveTypeTests)
+  REG_TEST(TinyDrawTests)
   REG_TEST(VertexBufferAllocationTests)
   // -- End REG_TEST --
 

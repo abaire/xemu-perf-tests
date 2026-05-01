@@ -76,10 +76,14 @@ add_library(
         perf_tests
         tests/high_vertex_count_tests.cpp
         tests/high_vertex_count_tests.h
-        tests/vertex_buffer_allocation_tests.cpp
-        tests/vertex_buffer_allocation_tests.h
+        tests/primitive_type_tests.cpp
+        tests/primitive_type_tests.h
         tests/test_suite.cpp
         tests/test_suite.h
+        tests/tiny_draw_tests.cpp
+        tests/tiny_draw_tests.h
+        tests/vertex_buffer_allocation_tests.cpp
+        tests/vertex_buffer_allocation_tests.h
 )
 
 set_compile_and_link_options(perf_tests)

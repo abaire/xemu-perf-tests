@@ -29,6 +29,9 @@ class TestHost : public PBKitPlusPlus::NV2AState {
 
   //! Renders test results and swaps back buffer.
   void FinishDraw(const std::string &suite_name, const std::string &test_name, const ProfileResults &results);
+
+  //! Sets up the projection matrix for passthrough operation / direct addressing of pixels.
+  void SetupFixedFunctionPassthrough();
 };
 
 void pb_print_with_floats(const char *format, ...);
