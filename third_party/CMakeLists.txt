@@ -8,7 +8,7 @@ set(PRINTF_ARTIFACT "${PRINTF_INSTALL_DIR}/${CMAKE_STATIC_LIBRARY_PREFIX}printf$
 ExternalProject_Add(
         printf_project
         GIT_REPOSITORY "https://github.com/mpaland/printf.git"
-        GIT_TAG "master"
+        GIT_TAG "d3b984684bb8a8bdc48cc7a1abecb93ce59bbe3e"
         GIT_SHALLOW TRUE
 
         SOURCE_DIR "${PRINTF_SOURCE_DIR}"
@@ -67,7 +67,7 @@ set(TINYJSON_ARTIFACT "${TINYJSON_INSTALL_DIR}/${CMAKE_STATIC_LIBRARY_PREFIX}tin
 ExternalProject_Add(
         tinyjson_project
         GIT_REPOSITORY "https://github.com/rafagafe/tiny-json.git"
-        GIT_TAG "master"
+        GIT_TAG "025cdde5f2574290d8b2a8524bc257db2829bb7c"
         GIT_SHALLOW TRUE
 
         SOURCE_DIR "${TINYJSON_SOURCE_DIR}"
