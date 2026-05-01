@@ -217,8 +217,10 @@ static void RegisterSuites(TestHost& host, RuntimeConfig& runtime_config,
     test_suites.push_back(suite);                                              \
   }
 
+  // -- Begin REG_TEST --
   REG_TEST(HighVertexCountTests)
   REG_TEST(VertexBufferAllocationTests)
+  // -- End REG_TEST --
 
 #undef REG_TEST
 }

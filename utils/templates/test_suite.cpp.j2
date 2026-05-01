@@ -1,0 +1,34 @@
+#include "{{ header_name }}"
+#include "test_host.h"
+
+static constexpr char kDummyTest[] = "DummyTest";
+
+{{ class_name }}::{{ class_name }}(TestHost &host, std::string output_dir, const Config &config)
+    : TestSuite(host, std::move(output_dir), "{{ suite_name_pretty }}", config) {
+  tests_[kDummyTest] = [this]() { Test(); };
+}
+
+/**
+ * Initializes the test suite and creates test cases.
+ *
+ * @tc DummyTest
+ *  TODO: Add a tc entry for each output file, describing what it tested.
+ */
+void {{ class_name }}::Initialize() {
+  TestSuite::Initialize();
+}
+
+void {{ class_name }}::Test() {
+  host_.PrepareDraw();
+
+  TestHost::ProfileResults results{};
+
+  results = Profile(kDummyTest, 10, [this] {
+    for (auto i = 0; i < 10; ++i) {
+      pb_print("TODO: Test something");
+      pb_draw_text_screen();
+    }
+  });
+
+  host_.FinishDraw(suite_name_, kDummyTest, results);
+}

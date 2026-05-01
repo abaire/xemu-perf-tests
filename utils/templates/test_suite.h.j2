@@ -1,0 +1,20 @@
+#ifndef XEMU_PERF_TESTS_{{ suite_name_snake|upper }}_TESTS_H
+#define XEMU_PERF_TESTS_{{ suite_name_snake|upper }}_TESTS_H
+
+#include "test_suite.h"
+
+
+/**
+ * TODO: Write a description of what this suite does.
+ */
+class {{ class_name }} : public TestSuite {
+ public:
+  {{ class_name }}(TestHost &host, std::string output_dir, const Config &config);
+
+  void Initialize() override;
+
+ private:
+  void Test();
+};
+
+#endif  // XEMU_PERF_TESTS_{{ suite_name_snake|upper }}_TESTS_H
