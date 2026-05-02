@@ -74,6 +74,8 @@ generate_nv2a_vshinc_files(
 
 add_library(
         perf_tests
+        tests/fill_rate_tests.cpp
+        tests/fill_rate_tests.h
         tests/high_vertex_count_tests.cpp
         tests/high_vertex_count_tests.h
         tests/primitive_type_tests.cpp
