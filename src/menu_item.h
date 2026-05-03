@@ -82,6 +82,9 @@ struct MenuItemTest : public MenuItem {
   void CursorLeft(bool is_repeat) override {}
   void CursorRight(bool is_repeat) override {}
 
+  static void SetOneShotMode(bool val) { one_shot_mode_ = val; }
+  static bool one_shot_mode_;
+
   std::shared_ptr<TestSuite> suite;
   bool has_run_once_{false};
 };

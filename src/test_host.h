@@ -32,6 +32,12 @@ class TestHost : public PBKitPlusPlus::NV2AState {
 
   //! Sets up the projection matrix for passthrough operation / direct addressing of pixels.
   void SetupFixedFunctionPassthrough();
+
+  [[nodiscard]] bool GetSaveResults() const { return save_results_; }
+  void SetSaveResults(bool enable = true) { save_results_ = enable; }
+
+ private:
+  bool save_results_{true};
 };
 
 void pb_print_with_floats(const char *format, ...);

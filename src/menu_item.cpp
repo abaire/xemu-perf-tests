@@ -18,6 +18,7 @@ static constexpr uint32_t kNumItemsPerPage = 12;
 static constexpr uint32_t kNumItemsPerHalfPage = kNumItemsPerPage >> 1;
 
 uint32_t MenuItem::menu_background_color_ = 0xFF3E003E;
+bool MenuItemTest::one_shot_mode_ = true;
 
 void MenuItem::PrepareDraw(uint32_t background_color) const {
   pb_wait_for_vbl();
@@ -199,7 +200,7 @@ MenuItemTest::MenuItemTest(std::shared_ptr<TestSuite> suite, std::string name, u
     : MenuItem(std::move(name), width, height), suite(std::move(suite)) {}
 
 void MenuItemTest::Draw() {
-  if (has_run_once_) {
+  if (one_shot_mode_ && has_run_once_) {
     return;
   }
 

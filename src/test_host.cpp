@@ -81,27 +81,33 @@ void TestHost::FinishDraw(const std::string &suite_name, const std::string &test
   pb_print_with_floats("  Min: %f ms\n", micro_to_milliseconds(results.minimum_time_microseconds));
   pb_print_with_floats("  Max: %f ms\n", micro_to_milliseconds(results.maximum_time_microseconds));
 
+  if (!save_results_) {
+    pb_printat(1, 50, "No save");
+  }
+
   pb_draw_text_screen();
 
   NV2AState::FinishDraw();
 
-  Logger::Log() << "  {" << std::endl;
-  Logger::Log() << R"(    "name": ")" << suite_name << "::" << test_name << "\"," << std::endl;
-  Logger::Log() << "    \"iterations\": " << results.iterations << "," << std::endl;
-  Logger::Log() << "    \"total_us\": " << results.total_time_microseconds << "," << std::endl;
-  Logger::Log() << "    \"average_us\": " << results.average_time_microseconds << "," << std::endl;
-  Logger::Log() << "    \"min_us\": " << results.minimum_time_microseconds << "," << std::endl;
-  Logger::Log() << "    \"max_us\": " << results.maximum_time_microseconds << "," << std::endl;
-  Logger::Log() << "    \"raw_results\": [";
-  std::string separator = "";
-  for (auto val : results.raw_results) {
-    Logger::Log() << separator << std::endl;
-    separator = ",";
-    Logger::Log() << "      " << val;
+  if (save_results_) {
+    Logger::Log() << "  {" << std::endl;
+    Logger::Log() << R"(    "name": ")" << suite_name << "::" << test_name << "\"," << std::endl;
+    Logger::Log() << "    \"iterations\": " << results.iterations << "," << std::endl;
+    Logger::Log() << "    \"total_us\": " << results.total_time_microseconds << "," << std::endl;
+    Logger::Log() << "    \"average_us\": " << results.average_time_microseconds << "," << std::endl;
+    Logger::Log() << "    \"min_us\": " << results.minimum_time_microseconds << "," << std::endl;
+    Logger::Log() << "    \"max_us\": " << results.maximum_time_microseconds << "," << std::endl;
+    Logger::Log() << "    \"raw_results\": [";
+    std::string separator = "";
+    for (auto val : results.raw_results) {
+      Logger::Log() << separator << std::endl;
+      separator = ",";
+      Logger::Log() << "      " << val;
+    }
+    Logger::Log() << std::endl;
+    Logger::Log() << "    ]" << std::endl;
+    Logger::Log() << "  }," << std::endl;
   }
-  Logger::Log() << std::endl;
-  Logger::Log() << "    ]" << std::endl;
-  Logger::Log() << "  }," << std::endl;
 }
 
 void TestHost::SetupFixedFunctionPassthrough() {

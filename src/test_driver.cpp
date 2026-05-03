@@ -19,7 +19,7 @@ static constexpr auto kButtonRepeatMilliseconds = 150;
 TestDriver::TestDriver(TestHost &host, const std::vector<std::shared_ptr<TestSuite>> &test_suites,
                        uint32_t framebuffer_width, uint32_t framebuffer_height, bool show_options_menu,
                        bool disable_autorun, bool autorun_immediately)
-    : test_suites_(test_suites) {
+    : test_host_(host), test_suites_(test_suites) {
   auto on_run_all = [this]() { RunAllTestsNonInteractive(); };
   auto on_exit = [this]() { running_ = false; };
   root_menu_ = std::make_shared<MenuItemRoot>(test_suites, on_run_all, on_exit, framebuffer_width, framebuffer_height,
@@ -81,6 +81,12 @@ void TestDriver::Run() {
         OnButtonActivated(pair.first, true);
         button_repeat_map[pair.first] = std::chrono::high_resolution_clock::now();
       }
+    }
+
+    if (!test_host_.GetSaveResults()) {
+      active_menu_->SetBackgroundColor(0xFF440000);
+    } else {
+      active_menu_->SetBackgroundColor(0xFF3E113E);
     }
 
     active_menu_->Draw();
@@ -252,7 +258,14 @@ void TestDriver::OnX(bool is_repeat) {
   active_menu_->ActivateCurrentSuite();
 }
 
-void TestDriver::OnY(bool is_repeat) {}
+void TestDriver::OnY(bool is_repeat) {
+  if (is_repeat) {
+    return;
+  }
+  bool save_results = !test_host_.GetSaveResults();
+  test_host_.SetSaveResults(save_results);
+  MenuItemTest::SetOneShotMode(save_results);
+}
 
 void TestDriver::OnUp(bool is_repeat) { active_menu_->CursorUp(is_repeat); }
 

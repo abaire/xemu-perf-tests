@@ -57,6 +57,7 @@ class TestDriver {
  private:
   volatile bool running_{true};
 
+  TestHost &test_host_;
   const std::vector<std::shared_ptr<TestSuite>> &test_suites_;
   SDL_GameController *gamepads_[kMaxGamepads]{nullptr};
 
