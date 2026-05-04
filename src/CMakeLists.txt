@@ -69,6 +69,7 @@ generate_nv2a_vshinc_files(
         INCLUDE_DIRECTORIES_VARIABLE _VERTEX_SHADER_INCLUDE_DIRS
         GENERATION_TARGET_VARIABLE _VERTEX_SHADER_GEN_TARGET
         SOURCES
+        shaders/diffuse_from_uniform.vsh
         shaders/passthrough.vsh
 )
 
@@ -84,6 +85,8 @@ add_library(
         tests/test_suite.h
         tests/tiny_draw_tests.cpp
         tests/tiny_draw_tests.h
+        tests/uniform_thrash_tests.cpp
+        tests/uniform_thrash_tests.h
         tests/vertex_buffer_allocation_tests.cpp
         tests/vertex_buffer_allocation_tests.h
 )

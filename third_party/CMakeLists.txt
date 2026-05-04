@@ -18,6 +18,7 @@ ExternalProject_Add(
         CONFIGURE_COMMAND ""
 
         BUILD_COMMAND
+        "${CMAKE_COMMAND}" -E env "NXDK_DIR=${NXDK_DIR}"
         "${CMAKE_C_COMPILER}"
         -O3
         -Wno-everything
@@ -77,6 +78,7 @@ ExternalProject_Add(
         CONFIGURE_COMMAND ""
 
         BUILD_COMMAND
+        "${CMAKE_COMMAND}" -E env "NXDK_DIR=${NXDK_DIR}"
         "${CMAKE_C_COMPILER}"
         -O3
         -Wno-everything
