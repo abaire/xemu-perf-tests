@@ -45,7 +45,7 @@ jobs:
         cmake --build build -- -j$(grep -c processor /proc/cpuinfo)
 
     - name: Upload artifacts
-      uses: actions/upload-artifact@v6
+      uses: actions/upload-artifact@v7
       with:
         name: xemu_perf_tests_xiso
         path: build/src/xiso/xemu-perf-tests_xiso/xemu-perf-tests_xiso.iso
