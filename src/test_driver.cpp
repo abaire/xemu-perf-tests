@@ -83,15 +83,21 @@ void TestDriver::Run() {
       }
     }
 
-    if (!test_host_.GetSaveResults()) {
-      active_menu_->SetBackgroundColor(0xFF440000);
-    } else {
-      active_menu_->SetBackgroundColor(0xFF3E113E);
+    switch (MenuItemTest::GetRunMode()) {
+      case MenuItemTest::RunMode::SINGLE_FRAME:
+        active_menu_->SetBackgroundColor(0xFF114411);
+        break;
+
+      case MenuItemTest::RunMode::CONTINUOUS:
+        active_menu_->SetBackgroundColor(0xFF551111);
+        break;
     }
 
     active_menu_->Draw();
 
-    Sleep(10);
+    if (test_host_.GetSaveResults()) {
+      Sleep(10);
+    }
   }
 }
 
@@ -262,9 +268,17 @@ void TestDriver::OnY(bool is_repeat) {
   if (is_repeat) {
     return;
   }
-  bool save_results = !test_host_.GetSaveResults();
-  test_host_.SetSaveResults(save_results);
-  MenuItemTest::SetOneShotMode(save_results);
+
+  switch (MenuItemTest::GetRunMode()) {
+    case MenuItemTest::RunMode::SINGLE_FRAME:
+      MenuItemTest::SetRunMode(MenuItemTest::RunMode::CONTINUOUS);
+      test_host_.SetSaveResults(false);
+      break;
+
+    case MenuItemTest::RunMode::CONTINUOUS:
+      MenuItemTest::SetRunMode(MenuItemTest::RunMode::SINGLE_FRAME);
+      test_host_.SetSaveResults(true);
+  }
 }
 
 void TestDriver::OnUp(bool is_repeat) { active_menu_->CursorUp(is_repeat); }

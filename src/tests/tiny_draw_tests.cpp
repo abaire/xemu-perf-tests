@@ -6,7 +6,22 @@
 static constexpr char kTinyDrawTest[] = "TinyDraw";
 
 static constexpr uint32_t kIterations = 10;
-static constexpr uint32_t kNumDraws = 1000;
+static constexpr uint32_t kNumDrawsSingleFrame = 1000;
+
+// Measured using a 1.0 devkit, close to the 60 fps limit.
+static constexpr uint32_t GetNumDrawsForMode(TinyDrawTests::DrawMode mode) {
+  switch (mode) {
+    case TinyDrawTests::DrawMode::DRAW_ARRAYS:
+      return 380;
+    case TinyDrawTests::DrawMode::DRAW_INLINE_BUFFERS:
+      return 420;
+    case TinyDrawTests::DrawMode::DRAW_INLINE_ARRAYS:
+      return 290;
+    case TinyDrawTests::DrawMode::DRAW_INLINE_ELEMENTS:
+      return 370;
+  }
+  return 0;
+};
 
 static uint32_t kVertexAttributes = TestHost::POSITION | TestHost::DIFFUSE;
 static TestHost::DrawPrimitive kPrimitive = TestHost::PRIMITIVE_TRIANGLES;
@@ -119,34 +134,35 @@ void TinyDrawTests::Test(const std::string &test_name, DrawMode draw_mode, bool 
   }
 
   TestHost::ProfileResults results{};
+  const uint32_t num_draws = host_.GetSaveResults() ? kNumDrawsSingleFrame : GetNumDrawsForMode(draw_mode);
   switch (draw_mode) {
     case DrawMode::DRAW_ARRAYS:
-      results = Profile(test_name, kIterations, [this] {
-        for (auto i = 0; i < kNumDraws; ++i) {
+      results = Profile(test_name, kIterations, [this, num_draws] {
+        for (auto i = 0; i < num_draws; ++i) {
           host_.DrawArrays(kVertexAttributes, kPrimitive);
         }
       });
       break;
 
     case DrawMode::DRAW_INLINE_BUFFERS:
-      results = Profile(test_name, kIterations, [this] {
-        for (auto i = 0; i < kNumDraws; ++i) {
+      results = Profile(test_name, kIterations, [this, num_draws] {
+        for (auto i = 0; i < num_draws; ++i) {
           host_.DrawInlineBuffer(kVertexAttributes, kPrimitive);
         }
       });
       break;
 
     case DrawMode::DRAW_INLINE_ELEMENTS:
-      results = Profile(test_name, kIterations, [this] {
-        for (auto i = 0; i < kNumDraws; ++i) {
+      results = Profile(test_name, kIterations, [this, num_draws] {
+        for (auto i = 0; i < num_draws; ++i) {
           host_.DrawInlineElements16(index_buffer_, kVertexAttributes, kPrimitive);
         }
       });
       break;
 
     case DrawMode::DRAW_INLINE_ARRAYS:
-      results = Profile(test_name, kIterations, [this] {
-        for (auto i = 0; i < kNumDraws; ++i) {
+      results = Profile(test_name, kIterations, [this, num_draws] {
+        for (auto i = 0; i < num_draws; ++i) {
           host_.DrawInlineArray(kVertexAttributes, kPrimitive);
         }
       });

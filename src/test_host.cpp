@@ -26,7 +26,12 @@ static constexpr uint32_t kResultsOverlayColor = 0x88000000;
 
 TestHost::TestHost(uint32_t framebuffer_width, uint32_t framebuffer_height, uint32_t max_texture_width,
                    uint32_t max_texture_height, uint32_t max_texture_depth)
-    : NV2AState(framebuffer_width, framebuffer_height, max_texture_width, max_texture_height, max_texture_depth) {}
+    : NV2AState(framebuffer_width, framebuffer_height, max_texture_width, max_texture_height, max_texture_depth) {
+  LARGE_INTEGER frequency;
+  QueryPerformanceFrequency(&frequency);
+  perf_counter_frequency_ = static_cast<double>(frequency.QuadPart);
+  QueryPerformanceCounter(&last_frame_time_);
+}
 
 void TestHost::EnsureFolderExists(const std::string &folder_path) {
   if (folder_path.length() > MAX_FILE_PATH_SIZE) {
@@ -53,8 +58,7 @@ void TestHost::EnsureFolderExists(const std::string &folder_path) {
   }
 }
 
-void TestHost::FinishDraw(const std::string &suite_name, const std::string &test_name,
-                          const TestHost::ProfileResults &results) {
+void TestHost::FinishDraw(const std::string &suite_name, const std::string &test_name, const ProfileResults &results) {
   SetVertexShaderProgram(nullptr);
   SetXDKDefaultViewportAndFixedFunctionMatrices();
 
@@ -75,14 +79,16 @@ void TestHost::FinishDraw(const std::string &suite_name, const std::string &test
   };
 
   pb_print("%s::%s\n", suite_name.c_str(), test_name.c_str());
-  pb_print("  %lu iterations\n", results.iterations);
-  pb_print_with_floats("  Total: %f ms\n", micro_to_milliseconds(results.total_time_microseconds));
-  pb_print_with_floats("  Avg: %f ms\n", micro_to_milliseconds(results.average_time_microseconds));
-  pb_print_with_floats("  Min: %f ms\n", micro_to_milliseconds(results.minimum_time_microseconds));
-  pb_print_with_floats("  Max: %f ms\n", micro_to_milliseconds(results.maximum_time_microseconds));
-
-  if (!save_results_) {
-    pb_printat(1, 50, "No save");
+  if (save_results_) {
+    pb_print("  %lu iterations\n", results.iterations);
+    pb_print_with_floats("  Total: %f ms\n", micro_to_milliseconds(results.total_time_microseconds));
+    pb_print_with_floats("  Avg: %f ms\n", micro_to_milliseconds(results.average_time_microseconds));
+    pb_print_with_floats("  Min: %f ms\n", micro_to_milliseconds(results.minimum_time_microseconds));
+    pb_print_with_floats("  Max: %f ms\n", micro_to_milliseconds(results.maximum_time_microseconds));
+  } else {
+    pb_print("Continuous mode: saving disabled\n");
+    pb_print_with_floats("Average FPS: %f\n", average_frame_rate_);
+    pb_print_with_floats("Average MSPF: %f\n", average_mspf_);
   }
 
   pb_draw_text_screen();
@@ -98,7 +104,7 @@ void TestHost::FinishDraw(const std::string &suite_name, const std::string &test
     Logger::Log() << "    \"min_us\": " << results.minimum_time_microseconds << "," << std::endl;
     Logger::Log() << "    \"max_us\": " << results.maximum_time_microseconds << "," << std::endl;
     Logger::Log() << "    \"raw_results\": [";
-    std::string separator = "";
+    std::string separator;
     for (auto val : results.raw_results) {
       Logger::Log() << separator << std::endl;
       separator = ",";
@@ -107,6 +113,26 @@ void TestHost::FinishDraw(const std::string &suite_name, const std::string &test
     Logger::Log() << std::endl;
     Logger::Log() << "    ]" << std::endl;
     Logger::Log() << "  }," << std::endl;
+  } else {
+    LARGE_INTEGER now;
+    QueryPerformanceCounter(&now);
+    auto delta =
+        static_cast<float>(static_cast<double>(now.QuadPart - last_frame_time_.QuadPart) / perf_counter_frequency_);
+    last_frame_time_ = now;
+
+    frame_times_[current_frame_index_] = delta;
+    current_frame_index_ = (current_frame_index_ + 1) % kFrameTimeWindow;
+
+    if (!current_frame_index_) {
+      float sum = 0;
+      for (float frame_time : frame_times_) {
+        sum += frame_time;
+      }
+
+      float avg_delta = sum / kFrameTimeWindow;
+      average_mspf_ = avg_delta * 1000.f;
+      average_frame_rate_ = 1.0f / avg_delta;
+    }
   }
 }
 
@@ -134,4 +160,13 @@ void pb_print_with_floats(const char *format, ...) {
   while (*str != 0) {
     pb_print_char(*str++);
   }
+}
+
+[[nodiscard]] uint32_t TestHost::GetMicrosecondsSince(const LARGE_INTEGER &previous) const {
+  LARGE_INTEGER now;
+  QueryPerformanceCounter(&now);
+
+  double delta = (double)(now.QuadPart - previous.QuadPart) / perf_counter_frequency_;
+  return static_cast<uint32_t>(delta * 1000000.f);
+  ;
 }

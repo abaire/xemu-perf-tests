@@ -12,22 +12,22 @@ using namespace PBKitPlusPlus;
 
 static constexpr char kHighVertexCountTest[] = "HighVtxCount";
 
-static constexpr uint32_t kMaxVertexCount = 0x07FFFF;
+static constexpr uint32_t kMaxVertexCountSingleFrame = 0x07FFFF;
 
 static std::string MakeTestName(const std::string &prefix, HighVertexCountTests::DrawMode draw_mode) {
   std::string ret = prefix;
 
   switch (draw_mode) {
-    case HighVertexCountTests::DRAW_ARRAYS:
+    case HighVertexCountTests::DrawMode::DRAW_ARRAYS:
       ret += "-arrays";
       break;
-    case HighVertexCountTests::DRAW_INLINE_BUFFERS:
+    case HighVertexCountTests::DrawMode::DRAW_INLINE_BUFFERS:
       ret += "-inlinebuffers";
       break;
-    case HighVertexCountTests::DRAW_INLINE_ARRAYS:
+    case HighVertexCountTests::DrawMode::DRAW_INLINE_ARRAYS:
       ret += "-inlinearrays";
       break;
-    case HighVertexCountTests::DRAW_INLINE_ELEMENTS:
+    case HighVertexCountTests::DrawMode::DRAW_INLINE_ELEMENTS:
       ret += "-inlineelements";
       break;
   }
@@ -53,14 +53,15 @@ static std::string MakeTestName(const std::string &prefix, HighVertexCountTests:
  */
 HighVertexCountTests::HighVertexCountTests(TestHost &host, std::string output_dir, const Config &config)
     : TestSuite(host, std::move(output_dir), "High vertex count", config) {
-  for (auto draw_mode : {DRAW_ARRAYS, DRAW_INLINE_BUFFERS, DRAW_INLINE_ARRAYS, DRAW_INLINE_ELEMENTS}) {
+  for (auto draw_mode : {DrawMode::DRAW_ARRAYS, DrawMode::DRAW_INLINE_BUFFERS, DrawMode::DRAW_INLINE_ARRAYS,
+                         DrawMode::DRAW_INLINE_ELEMENTS}) {
     std::string name = MakeTestName(kHighVertexCountTest, draw_mode);
     tests_[name] = [this, name, draw_mode]() { Test(name, draw_mode); };
   }
 }
 
 static void CreateGeometry(TestHost &host, std::shared_ptr<VertexBuffer> &vertex_buffer,
-                           std::vector<uint32_t> &index_buffer) {
+                           std::vector<uint32_t> &index_buffer, uint32_t max_vertex_count) {
   vertex_buffer.reset();
   index_buffer.clear();
 
@@ -89,7 +90,7 @@ static void CreateGeometry(TestHost &host, std::shared_ptr<VertexBuffer> &vertex
 
   // Note, this value will also be under the separate DrawArrays limit of 0xFFFF vertices. That may be a general
   // hardware limit.
-  const uint32_t target_quads = kMaxVertexCount / (4 * kArrayEntriesPerVertex);
+  const uint32_t target_quads = max_vertex_count / (4 * kArrayEntriesPerVertex);
 
   const auto quads_per_row = static_cast<int>((framebuffer_width - (kInset * 2.f)) / kQuadSize);
   const float bottom_row_y = (framebuffer_height - kQuadSize);
@@ -190,22 +191,40 @@ static void CreateGeometry(TestHost &host, std::shared_ptr<VertexBuffer> &vertex
 void HighVertexCountTests::Initialize() {
   TestSuite::Initialize();
 
-  CreateGeometry(host_, vertex_buffer_, index_buffer_);
+  CreateGeometry(host_, single_frame_geometry_.vertex_buffer, single_frame_geometry_.index_buffer,
+                 kMaxVertexCountSingleFrame);
+
+  auto create = [this](DrawMode mode, uint32_t max_vertex_count) {
+    auto mode_index = static_cast<int>(mode);
+    CreateGeometry(host_, continuous_geometry_[mode_index].vertex_buffer, continuous_geometry_[mode_index].index_buffer,
+                   max_vertex_count);
+  };
+
+  create(DrawMode::DRAW_ARRAYS, 0xF0000);
+  create(DrawMode::DRAW_INLINE_ARRAYS, 0xBA00);
+  create(DrawMode::DRAW_INLINE_BUFFERS, 0x3800);
+  create(DrawMode::DRAW_INLINE_ELEMENTS, 0x170000);
 }
 
 void HighVertexCountTests::Deinitialize() {
   host_.ClearVertexBuffer();
-  vertex_buffer_.reset();
-  index_buffer_.clear();
+  single_frame_geometry_.reset();
+  for (auto &i : continuous_geometry_) {
+    i.reset();
+  }
+
   TestSuite::Deinitialize();
 }
 
 //! Test the arbitrary maximum number of vertices per draw.
 void HighVertexCountTests::Test(const std::string &name, DrawMode draw_mode) {
+  const auto &geometry =
+      host_.GetSaveResults() ? single_frame_geometry_ : continuous_geometry_[static_cast<int>(draw_mode)];
+
   auto shader = std::make_shared<PassthroughVertexShader>();
   host_.SetVertexShaderProgram(shader);
 
-  host_.SetVertexBuffer(vertex_buffer_);
+  host_.SetVertexBuffer(geometry.vertex_buffer);
 
   static constexpr uint32_t kBackgroundColor = 0xFF444444;
   host_.PrepareDraw(kBackgroundColor);
@@ -217,20 +236,21 @@ void HighVertexCountTests::Test(const std::string &name, DrawMode draw_mode) {
 
   TestHost::ProfileResults results{};
   switch (draw_mode) {
-    case DRAW_ARRAYS:
+    case DrawMode::DRAW_ARRAYS:
       results = Profile(name, 100, [this, &attributes] { host_.DrawArrays(attributes, kPrimitive); });
       break;
 
-    case DRAW_INLINE_BUFFERS:
+    case DrawMode::DRAW_INLINE_BUFFERS:
       results = Profile(name, 5, [this, &attributes] { host_.DrawInlineBuffer(attributes, kPrimitive); });
       break;
 
-    case DRAW_INLINE_ELEMENTS:
-      results =
-          Profile(name, 50, [this, &attributes] { host_.DrawInlineElements16(index_buffer_, attributes, kPrimitive); });
+    case DrawMode::DRAW_INLINE_ELEMENTS:
+      results = Profile(name, 50, [this, &attributes, &geometry] {
+        host_.DrawInlineElements16(geometry.index_buffer, attributes, kPrimitive);
+      });
       break;
 
-    case DRAW_INLINE_ARRAYS:
+    case DrawMode::DRAW_INLINE_ARRAYS:
       results = Profile(name, 10, [this, &attributes] { host_.DrawInlineArray(attributes, kPrimitive); });
       break;
   }

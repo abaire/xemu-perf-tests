@@ -14,7 +14,7 @@ class PrimitiveTypeTests : public TestSuite {
   void Initialize() override;
 
  private:
-  void Test(const std::string &name, const TestHost::DrawPrimitive primitive, bool use_vsh);
+  void Test(const std::string &name, TestHost::DrawPrimitive primitive, bool use_vsh);
 };
 
 #endif  // XEMU_PERF_TESTS_PRIMITIVE_TYPE_TESTS_H

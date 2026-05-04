@@ -18,7 +18,7 @@ static constexpr uint32_t kNumItemsPerPage = 12;
 static constexpr uint32_t kNumItemsPerHalfPage = kNumItemsPerPage >> 1;
 
 uint32_t MenuItem::menu_background_color_ = 0xFF3E003E;
-bool MenuItemTest::one_shot_mode_ = true;
+MenuItemTest::RunMode MenuItemTest::run_mode_ = RunMode::SINGLE_FRAME;
 
 void MenuItem::PrepareDraw(uint32_t background_color) const {
   pb_wait_for_vbl();
@@ -200,12 +200,11 @@ MenuItemTest::MenuItemTest(std::shared_ptr<TestSuite> suite, std::string name, u
     : MenuItem(std::move(name), width, height), suite(std::move(suite)) {}
 
 void MenuItemTest::Draw() {
-  if (one_shot_mode_ && has_run_once_) {
+  if (run_mode_ == RunMode::SINGLE_FRAME && frame_count) {
     return;
   }
 
-  suite->Run(name);
-  has_run_once_ = true;
+  suite->Run(name, frame_count++);
 }
 
 void MenuItemTest::OnEnter() {
@@ -214,16 +213,16 @@ void MenuItemTest::OnEnter() {
   pb_print("Running %s", name.c_str());
   Swap();
 
-  if (has_run_once_) {
+  if (frame_count) {
     suite->Deinitialize();
   }
   suite->Initialize();
-  has_run_once_ = false;
+  frame_count = 0;
 }
 
 bool MenuItemTest::Deactivate() {
   suite->Deinitialize();
-  has_run_once_ = false;
+  frame_count = 0;
   return MenuItem::Deactivate();
 }
 
@@ -238,6 +237,10 @@ void MenuItemTest::CursorDown(bool is_repeat) {
     parent->CursorDownAndActivate();
   }
 }
+
+void MenuItemTest::CursorLeft(bool is_repeat) { suite->UpdateUserContext(-1); }
+
+void MenuItemTest::CursorRight(bool is_repeat) { suite->UpdateUserContext(+1); }
 
 MenuItemSuite::MenuItemSuite(const std::shared_ptr<TestSuite> &suite, uint32_t width, uint32_t height)
     : MenuItem(suite->Name(), width, height), suite(suite) {

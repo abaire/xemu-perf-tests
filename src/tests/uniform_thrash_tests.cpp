@@ -6,14 +6,13 @@
 
 static constexpr char kTestName[] = "UniformThrash";
 
-static constexpr uint32_t kNumDraws = 100;
+static constexpr uint32_t kIterations = 10;
+static constexpr uint32_t kNumDrawsSingleFrame = 100;
+static constexpr uint32_t kNumDrawsMultiFrame = 830;
 
 // clang-format off
 static const uint32_t kShader[] = {
 #include "diffuse_from_uniform.vshinc"
-
-
-
 };
 // clang-format on
 
@@ -78,13 +77,14 @@ void UniformThrashTests::Test() {
 
   static constexpr float kTopMargin = 96.f;
   const float kQuadWidth = ceilf(host_.GetFramebufferWidthF() / 10.f);
-  const float kQuadHeight = ceilf(host_.GetFramebufferHeightF() - kTopMargin) / (kNumDraws / 10.f);
+  const uint32_t num_draws = host_.GetSaveResults() ? kNumDrawsSingleFrame : kNumDrawsMultiFrame;
+  const float kQuadHeight = ceilf(host_.GetFramebufferHeightF() - kTopMargin) / (static_cast<float>(num_draws) / 10.f);
 
   static constexpr float kZ = 1.f;
 
-  results = Profile(kTestName, 10, [this, shader, kQuadWidth, kQuadHeight] {
+  results = Profile(kTestName, kIterations, [this, shader, kQuadWidth, kQuadHeight, num_draws] {
     XboxMath::vector_t diffuse;
-    for (auto i = 0; i < kNumDraws; ++i) {
+    for (auto i = 0; i < num_draws; ++i) {
       SetVertexColor(diffuse, i);
       shader->SetUniform4F(96 - PBKitPlusPlus::VertexShaderProgram::kShaderUserConstantOffset, diffuse);
       shader->PrepareDraw();

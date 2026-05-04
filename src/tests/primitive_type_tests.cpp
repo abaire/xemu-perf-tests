@@ -7,8 +7,17 @@
 static constexpr char kTestName[] = "PrimitiveType";
 
 static constexpr uint32_t kIterations = 10;
-static constexpr uint32_t kNumPrimitives = 1000;
+static constexpr uint32_t kNumPrimitivesSingleFrame = 1000;
 static uint32_t kVertexAttributes = TestHost::POSITION | TestHost::DIFFUSE;
+
+// Measured using a 1.0 devkit, close to the 60 fps limit.
+static constexpr uint32_t kPrimitiveCountByPrimitive[] = {
+    [TestHost::PRIMITIVE_POINTS] = 5050,       [TestHost::PRIMITIVE_LINES] = 1430,
+    [TestHost::PRIMITIVE_LINE_LOOP] = 1510,    [TestHost::PRIMITIVE_LINE_STRIP] = 1510,
+    [TestHost::PRIMITIVE_TRIANGLES] = 1770,    [TestHost::PRIMITIVE_TRIANGLE_STRIP] = 5230,
+    [TestHost::PRIMITIVE_TRIANGLE_FAN] = 4470, [TestHost::PRIMITIVE_QUADS] = 1330,
+    [TestHost::PRIMITIVE_QUAD_STRIP] = 2610,   [TestHost::PRIMITIVE_POLYGON] = 4550,
+};
 
 static std::string MakeTestName(const std::string &prefix, TestHost::DrawPrimitive primitive, bool use_vsh) {
   std::string ret = prefix;
@@ -129,7 +138,7 @@ static void SetVertexColor(PBKitPlusPlus::Vertex &vertex, uint32_t index) {
   vertex.SetDiffuse(r, g, b);
 }
 
-static void CreateGeometry(TestHost &host_, TestHost::DrawPrimitive primitive) {
+static void CreateGeometry(TestHost &host_, TestHost::DrawPrimitive primitive, uint32_t num_primitives) {
   static constexpr float kZ = 1.f;
   static constexpr float kW = 1.f;
 
@@ -154,14 +163,14 @@ static void CreateGeometry(TestHost &host_, TestHost::DrawPrimitive primitive) {
 
   switch (primitive) {
     case TestHost::PRIMITIVE_POINTS: {
-      vbuf = host_.AllocateVertexBuffer(kNumPrimitives);
+      vbuf = host_.AllocateVertexBuffer(num_primitives);
       auto vertex = vbuf->Lock();
 
       const float aspect = span_x / span_y;
-      const uint32_t cols = static_cast<uint32_t>(fmaxf(1.f, roundf(sqrtf(kNumPrimitives * aspect))));
-      const uint32_t rows = (kNumPrimitives + cols - 1) / cols;
+      const uint32_t cols = static_cast<uint32_t>(fmaxf(1.f, roundf(sqrtf(num_primitives * aspect))));
+      const uint32_t rows = (num_primitives + cols - 1) / cols;
 
-      for (uint32_t i = 0; i < kNumPrimitives; ++i) {
+      for (uint32_t i = 0; i < num_primitives; ++i) {
         uint32_t col = i % cols;
         uint32_t row = i / cols;
 
@@ -174,10 +183,10 @@ static void CreateGeometry(TestHost &host_, TestHost::DrawPrimitive primitive) {
     } break;
 
     case TestHost::PRIMITIVE_LINES: {
-      vbuf = host_.AllocateVertexBuffer(2 * kNumPrimitives);
+      vbuf = host_.AllocateVertexBuffer(2 * num_primitives);
       auto vertex = vbuf->Lock();
-      for (uint32_t i = 0; i < kNumPrimitives; ++i) {
-        float x = left + (span_x * i / (kNumPrimitives - 1));
+      for (uint32_t i = 0; i < num_primitives; ++i) {
+        float x = left + (span_x * i / (num_primitives - 1));
         setvtx(vertex, x, top);
         setvtx(vertex, x, top + span_y);
       }
@@ -186,11 +195,11 @@ static void CreateGeometry(TestHost &host_, TestHost::DrawPrimitive primitive) {
 
     case TestHost::PRIMITIVE_LINE_LOOP:
     case TestHost::PRIMITIVE_LINE_STRIP: {
-      // Both require kNumPrimitives + 1 vertices for a continuous chain
-      vbuf = host_.AllocateVertexBuffer(kNumPrimitives + 1);
+      // Both require num_primitives + 1 vertices for a continuous chain
+      vbuf = host_.AllocateVertexBuffer(num_primitives + 1);
       auto vertex = vbuf->Lock();
-      for (uint32_t i = 0; i <= kNumPrimitives; ++i) {
-        float x = left + (span_x * i / kNumPrimitives);
+      for (uint32_t i = 0; i <= num_primitives; ++i) {
+        float x = left + (span_x * i / num_primitives);
         float y = top + (i % 2 == 0 ? 0 : span_y);
         setvtx(vertex, x, y);
       }
@@ -198,22 +207,22 @@ static void CreateGeometry(TestHost &host_, TestHost::DrawPrimitive primitive) {
     } break;
 
     case TestHost::PRIMITIVE_TRIANGLES: {
-      vbuf = host_.AllocateVertexBuffer(kNumPrimitives * 3);
+      vbuf = host_.AllocateVertexBuffer(num_primitives * 3);
       auto vertex = vbuf->Lock();
-      for (uint32_t i = 0; i < kNumPrimitives; ++i) {
-        float x_off = left + (span_x * i / kNumPrimitives);
+      for (uint32_t i = 0; i < num_primitives; ++i) {
+        float x_off = left + (span_x * i / num_primitives);
         setvtx(vertex, x_off, top + span_y);
-        setvtx(vertex, x_off + (span_x / kNumPrimitives / 2), top);
-        setvtx(vertex, x_off + (span_x / kNumPrimitives), top + span_y);
+        setvtx(vertex, x_off + (span_x / num_primitives / 2), top);
+        setvtx(vertex, x_off + (span_x / num_primitives), top + span_y);
       }
       vbuf->Unlock();
     } break;
 
     case TestHost::PRIMITIVE_TRIANGLE_STRIP: {
-      vbuf = host_.AllocateVertexBuffer(kNumPrimitives + 2);
+      vbuf = host_.AllocateVertexBuffer(num_primitives + 2);
       auto vertex = vbuf->Lock();
-      for (uint32_t i = 0; i < kNumPrimitives + 2; ++i) {
-        float x = left + (span_x * (i / 2) / (kNumPrimitives / 2.0f));
+      for (uint32_t i = 0; i < num_primitives + 2; ++i) {
+        float x = left + (span_x * (i / 2) / (num_primitives / 2.0f));
         float y = (i % 2 == 0) ? top + span_y : top;
         setvtx(vertex, x, y);
       }
@@ -221,23 +230,23 @@ static void CreateGeometry(TestHost &host_, TestHost::DrawPrimitive primitive) {
     } break;
 
     case TestHost::PRIMITIVE_TRIANGLE_FAN: {
-      vbuf = host_.AllocateVertexBuffer(kNumPrimitives + 2);
+      vbuf = host_.AllocateVertexBuffer(num_primitives + 2);
       auto vertex = vbuf->Lock();
       setvtx(vertex, center_x, center_y);  // Center hub
 
-      for (uint32_t i = 0; i <= kNumPrimitives; ++i) {
-        float angle = (2.f * M_PI * i) / kNumPrimitives;
+      for (uint32_t i = 0; i <= num_primitives; ++i) {
+        float angle = (2.f * M_PI * i) / num_primitives;
         setvtx(vertex, center_x + cosf(angle) * (span_x * 0.5f), center_y + sinf(angle) * (span_y * 0.5f));
       }
       vbuf->Unlock();
     } break;
 
     case TestHost::PRIMITIVE_QUADS: {
-      vbuf = host_.AllocateVertexBuffer(kNumPrimitives * 4);
+      vbuf = host_.AllocateVertexBuffer(num_primitives * 4);
       auto vertex = vbuf->Lock();
-      for (uint32_t i = 0; i < kNumPrimitives; ++i) {
-        float x_start = left + (span_x * i / kNumPrimitives);
-        float x_end = x_start + (span_x / kNumPrimitives) * 0.8f;
+      for (uint32_t i = 0; i < num_primitives; ++i) {
+        float x_start = left + (span_x * i / num_primitives);
+        float x_end = x_start + (span_x / num_primitives) * 0.8f;
         setvtx(vertex, x_start, top);
         setvtx(vertex, x_end, top);
         setvtx(vertex, x_end, top + span_y);
@@ -247,10 +256,10 @@ static void CreateGeometry(TestHost &host_, TestHost::DrawPrimitive primitive) {
     } break;
 
     case TestHost::PRIMITIVE_QUAD_STRIP: {
-      vbuf = host_.AllocateVertexBuffer(2 * kNumPrimitives + 2);
+      vbuf = host_.AllocateVertexBuffer(2 * num_primitives + 2);
       auto vertex = vbuf->Lock();
-      for (uint32_t i = 0; i <= kNumPrimitives; ++i) {
-        float x = left + (span_x * i / kNumPrimitives);
+      for (uint32_t i = 0; i <= num_primitives; ++i) {
+        float x = left + (span_x * i / num_primitives);
         setvtx(vertex, x, top + span_y);
         setvtx(vertex, x, top);
       }
@@ -258,10 +267,10 @@ static void CreateGeometry(TestHost &host_, TestHost::DrawPrimitive primitive) {
     } break;
 
     case TestHost::PRIMITIVE_POLYGON: {
-      vbuf = host_.AllocateVertexBuffer(kNumPrimitives);
+      vbuf = host_.AllocateVertexBuffer(num_primitives);
       auto vertex = vbuf->Lock();
-      for (uint32_t i = 0; i < kNumPrimitives; ++i) {
-        float angle = (2.f * M_PI * i) / kNumPrimitives;
+      for (uint32_t i = 0; i < num_primitives; ++i) {
+        float angle = (2.f * M_PI * i) / num_primitives;
         setvtx(vertex, center_x + cosf(angle) * (span_x * 0.5f), center_y + sinf(angle) * (span_y * 0.5f));
       }
       vbuf->Unlock();
@@ -282,7 +291,9 @@ void PrimitiveTypeTests::Test(const std::string &name, TestHost::DrawPrimitive p
 
   TestHost::ProfileResults results{};
 
-  CreateGeometry(host_, primitive);
+  const uint32_t num_primitives =
+      host_.GetSaveResults() ? kNumPrimitivesSingleFrame : kPrimitiveCountByPrimitive[primitive];
+  CreateGeometry(host_, primitive, num_primitives);
 
   results = Profile(kTestName, kIterations, [this, primitive] { host_.DrawInlineArray(kVertexAttributes, primitive); });
 

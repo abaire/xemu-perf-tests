@@ -1,6 +1,5 @@
 #include "fill_rate_tests.h"
 
-#include <SDL.h>
 #include <pbkit/pbkit.h>
 
 #include "test_host.h"
@@ -8,16 +7,27 @@
 #include "texture_generator.h"
 
 static constexpr uint32_t kIterations = 10;
-static constexpr uint32_t kNumDraws = 500;
+static constexpr uint32_t kNumDrawsSingleFrame = 50;
+// Measured using a 1.0 devkit, close to the 60 fps limit.
+static constexpr uint32_t kDrawCountByTextureMode[] = {
+    [false] = 21,
+    [true] = 11,
+};
+
 static uint32_t kVertexAttributes = TestHost::POSITION | TestHost::DIFFUSE | TestHost::TEXCOORD0 | TestHost::TEXCOORD1 |
                                     TestHost::TEXCOORD2 | TestHost::TEXCOORD3;
 static constexpr auto kTextureWidth = 128;
 static constexpr auto kTextureHeight = 128;
 
+static constexpr const char *GetTestName(bool use_texture) {
+  return use_texture ? "FillRate-Textured" : "FillRate-Solid";
+}
+
 FillRateTests::FillRateTests(TestHost &host, std::string output_dir, const Config &config)
     : TestSuite(host, std::move(output_dir), "FillRate", config) {
-  tests_["FillRate-Solid"] = [this]() { TestFillRate(false); };
-  tests_["FillRate-Textured"] = [this]() { TestFillRate(true); };
+  for (auto use_texture : {false, true}) {
+    tests_[GetTestName(use_texture)] = [this, use_texture]() { TestFillRate(use_texture); };
+  }
 }
 
 void FillRateTests::Initialize() {
@@ -97,22 +107,28 @@ void FillRateTests::TestFillRate(bool use_texture) {
 
     host_.SetCombinerControl(3, true);
     host_.SetCombinerFactorC0(0, 0.25f, 0.25f, 0.25f, 0.25f);
-    host_.SetInputColorCombiner(0, PBKitPlusPlus::NV2AState::SRC_TEX0, false, PBKitPlusPlus::NV2AState::MAP_UNSIGNED_IDENTITY,
-      PBKitPlusPlus::NV2AState::SRC_C0, false, PBKitPlusPlus::NV2AState::MAP_UNSIGNED_IDENTITY,
-      PBKitPlusPlus::NV2AState::SRC_TEX1, false, PBKitPlusPlus::NV2AState::MAP_UNSIGNED_IDENTITY,
-      PBKitPlusPlus::NV2AState::SRC_C0);
-    host_.SetOutputColorCombiner(0, PBKitPlusPlus::NV2AState::DST_DISCARD, PBKitPlusPlus::NV2AState::DST_DISCARD, PBKitPlusPlus::NV2AState::DST_R0);
-    host_.SetInputColorCombiner(1, PBKitPlusPlus::NV2AState::SRC_TEX2, false, PBKitPlusPlus::NV2AState::MAP_UNSIGNED_IDENTITY,
-      PBKitPlusPlus::NV2AState::SRC_C0, false, PBKitPlusPlus::NV2AState::MAP_UNSIGNED_IDENTITY,
-      PBKitPlusPlus::NV2AState::SRC_TEX3, false, PBKitPlusPlus::NV2AState::MAP_UNSIGNED_IDENTITY,
-      PBKitPlusPlus::NV2AState::SRC_C0);
-    host_.SetOutputColorCombiner(1, PBKitPlusPlus::NV2AState::DST_DISCARD, PBKitPlusPlus::NV2AState::DST_DISCARD, PBKitPlusPlus::NV2AState::DST_R1);
+    host_.SetInputColorCombiner(0, PBKitPlusPlus::NV2AState::SRC_TEX0, false,
+                                PBKitPlusPlus::NV2AState::MAP_UNSIGNED_IDENTITY, PBKitPlusPlus::NV2AState::SRC_C0,
+                                false, PBKitPlusPlus::NV2AState::MAP_UNSIGNED_IDENTITY,
+                                PBKitPlusPlus::NV2AState::SRC_TEX1, false,
+                                PBKitPlusPlus::NV2AState::MAP_UNSIGNED_IDENTITY, PBKitPlusPlus::NV2AState::SRC_C0);
+    host_.SetOutputColorCombiner(0, PBKitPlusPlus::NV2AState::DST_DISCARD, PBKitPlusPlus::NV2AState::DST_DISCARD,
+                                 PBKitPlusPlus::NV2AState::DST_R0);
+    host_.SetInputColorCombiner(1, PBKitPlusPlus::NV2AState::SRC_TEX2, false,
+                                PBKitPlusPlus::NV2AState::MAP_UNSIGNED_IDENTITY, PBKitPlusPlus::NV2AState::SRC_C0,
+                                false, PBKitPlusPlus::NV2AState::MAP_UNSIGNED_IDENTITY,
+                                PBKitPlusPlus::NV2AState::SRC_TEX3, false,
+                                PBKitPlusPlus::NV2AState::MAP_UNSIGNED_IDENTITY, PBKitPlusPlus::NV2AState::SRC_C0);
+    host_.SetOutputColorCombiner(1, PBKitPlusPlus::NV2AState::DST_DISCARD, PBKitPlusPlus::NV2AState::DST_DISCARD,
+                                 PBKitPlusPlus::NV2AState::DST_R1);
 
-    host_.SetInputColorCombiner(2, PBKitPlusPlus::NV2AState::SRC_R0, false, PBKitPlusPlus::NV2AState::MAP_UNSIGNED_IDENTITY,
-      PBKitPlusPlus::NV2AState::SRC_ZERO, false, PBKitPlusPlus::NV2AState::MAP_UNSIGNED_INVERT,
-      PBKitPlusPlus::NV2AState::SRC_R1, false, PBKitPlusPlus::NV2AState::MAP_UNSIGNED_IDENTITY,
-      PBKitPlusPlus::NV2AState::SRC_ZERO, false, PBKitPlusPlus::NV2AState::MAP_UNSIGNED_INVERT);
-    host_.SetOutputColorCombiner(2, PBKitPlusPlus::NV2AState::DST_DISCARD, PBKitPlusPlus::NV2AState::DST_DISCARD, PBKitPlusPlus::NV2AState::DST_R0);
+    host_.SetInputColorCombiner(
+        2, PBKitPlusPlus::NV2AState::SRC_R0, false, PBKitPlusPlus::NV2AState::MAP_UNSIGNED_IDENTITY,
+        PBKitPlusPlus::NV2AState::SRC_ZERO, false, PBKitPlusPlus::NV2AState::MAP_UNSIGNED_INVERT,
+        PBKitPlusPlus::NV2AState::SRC_R1, false, PBKitPlusPlus::NV2AState::MAP_UNSIGNED_IDENTITY,
+        PBKitPlusPlus::NV2AState::SRC_ZERO, false, PBKitPlusPlus::NV2AState::MAP_UNSIGNED_INVERT);
+    host_.SetOutputColorCombiner(2, PBKitPlusPlus::NV2AState::DST_DISCARD, PBKitPlusPlus::NV2AState::DST_DISCARD,
+                                 PBKitPlusPlus::NV2AState::DST_R0);
 
     host_.SetFinalCombiner0Just(TestHost::SRC_R0);
 
@@ -125,10 +141,11 @@ void FillRateTests::TestFillRate(bool use_texture) {
 
   TestHost::ProfileResults results{};
 
-  std::string test_name = use_texture ? "FillRate-Textured" : "FillRate-Solid";
+  std::string test_name = GetTestName(use_texture);
+  const auto num_draws = host_.GetSaveResults() ? kNumDrawsSingleFrame : kDrawCountByTextureMode[use_texture];
 
-  results = Profile(test_name, kIterations, [this] {
-    for (auto i = 0; i < kNumDraws; ++i) {
+  results = Profile(test_name, kIterations, [this, num_draws] {
+    for (auto i = 0; i < num_draws; ++i) {
       host_.DrawArrays(kVertexAttributes, TestHost::PRIMITIVE_TRIANGLE_STRIP);
     }
   });
