@@ -18,7 +18,7 @@ using namespace PBKitPlusPlus;
  */
 class VertexBufferAllocationTests : public TestSuite {
  public:
-  enum DrawMode {
+  enum class DrawMode {
     DRAW_ARRAYS,
     DRAW_INLINE_BUFFERS,
     DRAW_INLINE_ARRAYS,

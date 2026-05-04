@@ -68,6 +68,11 @@ struct MenuItemCallable : public MenuItem {
 };
 
 struct MenuItemTest : public MenuItem {
+  enum class RunMode {
+    SINGLE_FRAME,
+    CONTINUOUS,
+  };
+
   MenuItemTest(std::shared_ptr<TestSuite> suite, std::string name, uint32_t width, uint32_t height);
 
   [[nodiscard]] bool IsEnterable() const override { return true; }
@@ -79,14 +84,16 @@ struct MenuItemTest : public MenuItem {
   void ActivateCurrentSuite() override {}
   void CursorUp(bool is_repeat) override;
   void CursorDown(bool is_repeat) override;
-  void CursorLeft(bool is_repeat) override {}
-  void CursorRight(bool is_repeat) override {}
+  void CursorLeft(bool is_repeat) override;
+  void CursorRight(bool is_repeat) override;
 
-  static void SetOneShotMode(bool val) { one_shot_mode_ = val; }
-  static bool one_shot_mode_;
+  static void SetRunMode(RunMode val) { run_mode_ = val; }
+  static RunMode GetRunMode() { return run_mode_; }
 
+ private:
+  static RunMode run_mode_;
   std::shared_ptr<TestSuite> suite;
-  bool has_run_once_{false};
+  uint32_t frame_count = 0;
 };
 
 struct MenuItemSuite : public MenuItem {

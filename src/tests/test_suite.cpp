@@ -1,14 +1,9 @@
 #include "test_suite.h"
 
-#include <chrono>
-#include <fstream>
 #include <sstream>
 
-#include "configure.h"
 #include "debug_output.h"
-#include "logger.h"
 #include "nxdk_ext.h"
-// #include "pbkit_ext.h"
 #include "pushbuffer.h"
 #include "test_host.h"
 #include "texture_format.h"
@@ -17,8 +12,6 @@
 
 using namespace PBKitPlusPlus;
 using namespace XboxMath;
-
-static constexpr uint32_t kMaxClockDesyncRecoveryAttempts = 4;
 
 #define SET_MASK(mask, val) (((val) << (__builtin_ffs(mask) - 1)) & (mask))
 
@@ -45,10 +38,14 @@ void TestSuite::DisableTests(const std::set<std::string>& tests_to_skip) {
   }
 }
 
-void TestSuite::Run(const std::string& test_name) {
+void TestSuite::Run(const std::string& test_name, uint32_t frame_count) {
   auto it = tests_.find(test_name);
   if (it == tests_.end()) {
     ASSERT(!"Invalid test name");
+  }
+
+  if (!frame_count) {
+    host_.PreTest();
   }
 
   SetupTest();
@@ -59,7 +56,7 @@ void TestSuite::Run(const std::string& test_name) {
 void TestSuite::RunAll() {
   auto names = TestNames();
   for (const auto& test_name : names) {
-    Run(test_name);
+    Run(test_name, true);
   }
 }
 
@@ -271,61 +268,56 @@ void TestSuite::Initialize() {
 
 TestHost::ProfileResults TestSuite::Profile(const std::string& test_name, uint32_t num_iterations,
                                             const std::function<void(void)>& body) const {
-  for (auto clock_desync_retry = 0; clock_desync_retry < kMaxClockDesyncRecoveryAttempts; ++clock_desync_retry) {
-    TestHost::ProfileResults ret{
-        .iterations = num_iterations,
-        .total_time_microseconds = 0xFFFFFFFF,
-        .average_time_microseconds = 0xFFFFFFFF,
-        .maximum_time_microseconds = 0,
-        .minimum_time_microseconds = 0xFFFFFFFF,
-    };
+  TestHost::ProfileResults ret{
+      .iterations = num_iterations,
+      .total_time_microseconds = 0xFFFFFFFF,
+      .average_time_microseconds = 0xFFFFFFFF,
+      .maximum_time_microseconds = 0,
+      .minimum_time_microseconds = 0xFFFFFFFF,
+  };
 
-    auto run_times = std::make_unique<uint32_t[]>(num_iterations);
-
-    PrintMsg("Starting %s::%s\n", suite_name_.c_str(), test_name.c_str());
-
-    auto profile_start = std::chrono::steady_clock::now();
-    std::chrono::duration<long long, std::ratio<1, 1000000>> duration{};
-
-    for (auto i = 0; i < num_iterations; ++i) {
-      auto iteration_start = std::chrono::steady_clock::now();
-      body();
-      duration =
-          std::chrono::duration_cast<std::chrono::microseconds>(std::chrono::steady_clock::now() - iteration_start);
-      if (duration.count() < 0) {
-        goto desync_detected;
-      }
-      run_times[i] = static_cast<uint32_t>((duration.count()));
-    }
-
-    duration = std::chrono::duration_cast<std::chrono::microseconds>(std::chrono::steady_clock::now() - profile_start);
-    if (duration.count() < 0) {
-      goto desync_detected;
-    }
-
-    PrintMsg("  Completed '%s::%s' in %fms\n", suite_name_.c_str(), test_name.c_str(),
-             static_cast<double>(ret.total_time_microseconds) / 1000.f);
-
-    ret.iterations = num_iterations;
-    ret.total_time_microseconds = 0;
-    for (auto i = 0; i < num_iterations; ++i) {
-      auto time = run_times[i];
-      ret.raw_results.emplace_back(time);
-      ret.total_time_microseconds += time;
-      if (time < ret.minimum_time_microseconds) {
-        ret.minimum_time_microseconds = time;
-      }
-      if (time > ret.maximum_time_microseconds) {
-        ret.maximum_time_microseconds = time;
-      }
-    }
-    ret.average_time_microseconds = ret.total_time_microseconds / num_iterations;
-
-    return ret;
-
-  desync_detected:
-    PrintMsg("Clock desync detected, retrying %d\n", clock_desync_retry + 1);
+  if (!host_.GetSaveResults()) {
+    num_iterations = 1;
   }
 
-  ASSERT(!"Failed to recover from clock desync during profiling");
+  auto run_times = std::make_unique<uint32_t[]>(num_iterations);
+
+  PrintMsg("Starting %s::%s\n", suite_name_.c_str(), test_name.c_str());
+
+  LARGE_INTEGER profile_start;
+  LARGE_INTEGER iteration_start;
+
+  QueryPerformanceCounter(&profile_start);
+
+  for (auto i = 0; i < num_iterations; ++i) {
+    QueryPerformanceCounter(&iteration_start);
+    body();
+    run_times[i] = host_.GetMicrosecondsSince(iteration_start);
+  }
+
+  auto duration = host_.GetMicrosecondsSince(profile_start);
+
+  PrintMsg("  Completed '%s::%s' in %fms\n", suite_name_.c_str(), test_name.c_str(),
+           static_cast<double>(duration) / 1000.f);
+
+  if (!host_.GetSaveResults()) {
+    return ret;
+  }
+
+  ret.iterations = num_iterations;
+  ret.total_time_microseconds = 0;
+  for (auto i = 0; i < num_iterations; ++i) {
+    auto time = run_times[i];
+    ret.raw_results.emplace_back(time);
+    ret.total_time_microseconds += time;
+    if (time < ret.minimum_time_microseconds) {
+      ret.minimum_time_microseconds = time;
+    }
+    if (time > ret.maximum_time_microseconds) {
+      ret.maximum_time_microseconds = time;
+    }
+  }
+  ret.average_time_microseconds = ret.total_time_microseconds / num_iterations;
+
+  return ret;
 }

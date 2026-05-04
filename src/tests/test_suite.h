@@ -32,9 +32,11 @@ class TestSuite {
   virtual void Deinitialize() {}
 
   //! Called before running an individual test within this suite.
+  //! In multiframe mode, this will be called each frame.
   virtual void SetupTest() {}
 
   //! Called after running an individual test within this suite.
+  //! In multiframe mode, this will be called each frame.
   virtual void TearDownTest() {}
 
   void DisableTests(const std::set<std::string> &tests_to_skip);
@@ -42,9 +44,12 @@ class TestSuite {
   [[nodiscard]] std::vector<std::string> TestNames() const;
   [[nodiscard]] bool HasEnabledTests() const { return !tests_.empty(); };
 
-  void Run(const std::string &test_name);
+  void Run(const std::string &test_name, uint32_t frame_count);
 
   void RunAll();
+
+  //! General purpose +1/-1 callback allowing user interaction via the left/right DPAD.
+  virtual void UpdateUserContext(int direction) {};
 
  protected:
   //! Runs the given body function a number of times and calculates profiling information.

@@ -36,8 +36,26 @@ class TestHost : public PBKitPlusPlus::NV2AState {
   [[nodiscard]] bool GetSaveResults() const { return save_results_; }
   void SetSaveResults(bool enable = true) { save_results_ = enable; }
 
+  [[nodiscard]] const double &GetPerformanceCounterFrequency() const { return perf_counter_frequency_; }
+  [[nodiscard]] uint32_t GetMicrosecondsSince(const LARGE_INTEGER &previous) const;
+
+  void PreTest() {
+    current_frame_index_ = 0;
+    last_frame_time_.QuadPart = 0;
+    average_frame_rate_ = 0.f;
+    average_mspf_ = 0.f;
+  }
+
  private:
   bool save_results_{true};
+
+  static constexpr auto kFrameTimeWindow = 10;
+  double perf_counter_frequency_;
+  LARGE_INTEGER last_frame_time_;
+  uint32_t current_frame_index_ = 0;
+  float frame_times_[kFrameTimeWindow] = {0.f};
+  float average_frame_rate_ = 0.f;
+  float average_mspf_ = 0.f;
 };
 
 void pb_print_with_floats(const char *format, ...);

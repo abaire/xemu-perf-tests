@@ -19,7 +19,7 @@ using namespace PBKitPlusPlus;
  */
 class HighVertexCountTests : public TestSuite {
  public:
-  enum DrawMode {
+  enum class DrawMode : int {
     DRAW_ARRAYS,
     DRAW_INLINE_BUFFERS,
     DRAW_INLINE_ARRAYS,
@@ -36,8 +36,18 @@ class HighVertexCountTests : public TestSuite {
   void Test(const std::string &name, DrawMode mode);
 
  private:
-  std::shared_ptr<VertexBuffer> vertex_buffer_;
-  std::vector<uint32_t> index_buffer_;
+  struct GeometryHolder {
+    std::shared_ptr<VertexBuffer> vertex_buffer;
+    std::vector<uint32_t> index_buffer;
+
+    void reset() {
+      vertex_buffer.reset();
+      index_buffer.clear();
+    }
+  };
+
+  GeometryHolder single_frame_geometry_;
+  GeometryHolder continuous_geometry_[4];
 };
 
 #endif  // XEMU_PERF_TESTS_HIGH_VERTEX_COUNT_TESTS_H
