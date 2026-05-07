@@ -26,6 +26,7 @@
 #include "tests/fill_rate_tests.h"
 #include "tests/high_vertex_count_tests.h"
 #include "tests/primitive_type_tests.h"
+#include "tests/surface_rendering_tests.h"
 #include "tests/tiny_draw_tests.h"
 #include "tests/uniform_thrash_tests.h"
 #include "tests/vertex_buffer_allocation_tests.h"
@@ -227,6 +228,7 @@ static void RegisterSuites(TestHost& host, RuntimeConfig& runtime_config,
   REG_TEST(FillRateTests)
   REG_TEST(HighVertexCountTests)
   REG_TEST(PrimitiveTypeTests)
+  REG_TEST(SurfaceRenderingTests)
   REG_TEST(TinyDrawTests)
   REG_TEST(UniformThrashTests)
   REG_TEST(VertexBufferAllocationTests)
