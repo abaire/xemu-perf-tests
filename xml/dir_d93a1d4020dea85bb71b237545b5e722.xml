@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="dir_d93a1d4020dea85bb71b237545b5e722" kind="dir">
+    <compoundname>src/tests</compoundname>
+    <innerfile refid="d6/da7/busy__pfifo__tests_8cpp">busy_pfifo_tests.cpp</innerfile>
+    <innerfile refid="d3/dd2/busy__pfifo__tests_8h">busy_pfifo_tests.h</innerfile>
+    <innerfile refid="d6/d62/fill__rate__tests_8cpp">fill_rate_tests.cpp</innerfile>
+    <innerfile refid="df/d6d/fill__rate__tests_8h">fill_rate_tests.h</innerfile>
+    <innerfile refid="d3/d4c/high__vertex__count__tests_8cpp">high_vertex_count_tests.cpp</innerfile>
+    <innerfile refid="d8/d40/high__vertex__count__tests_8h">high_vertex_count_tests.h</innerfile>
+    <innerfile refid="d4/d5c/primitive__type__tests_8cpp">primitive_type_tests.cpp</innerfile>
+    <innerfile refid="d3/d55/primitive__type__tests_8h">primitive_type_tests.h</innerfile>
+    <innerfile refid="d6/d74/surface__rendering__tests_8cpp">surface_rendering_tests.cpp</innerfile>
+    <innerfile refid="de/dfd/surface__rendering__tests_8h">surface_rendering_tests.h</innerfile>
+    <innerfile refid="dc/d6c/test__suite_8cpp">test_suite.cpp</innerfile>
+    <innerfile refid="d6/d7a/test__suite_8h">test_suite.h</innerfile>
+    <innerfile refid="d6/d3f/tiny__draw__tests_8cpp">tiny_draw_tests.cpp</innerfile>
+    <innerfile refid="d2/db2/tiny__draw__tests_8h">tiny_draw_tests.h</innerfile>
+    <innerfile refid="db/d65/uniform__thrash__tests_8cpp">uniform_thrash_tests.cpp</innerfile>
+    <innerfile refid="de/d3d/uniform__thrash__tests_8h">uniform_thrash_tests.h</innerfile>
+    <innerfile refid="d0/de9/vertex__buffer__allocation__tests_8cpp">vertex_buffer_allocation_tests.cpp</innerfile>
+    <innerfile refid="d7/d54/vertex__buffer__allocation__tests_8h">vertex_buffer_allocation_tests.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/tests/"/>
+  </compounddef>
+</doxygen>

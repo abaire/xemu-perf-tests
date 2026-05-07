@@ -1,0 +1,19 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="Node000000" href="$d2/d3e/classTestSuite.html" title=" " alt="" coords="5,179,87,204"/>
+<area shape="rect" id="Node000001" href="$d1/d48/classBusyPfifoTests.html" title=" " alt="" coords="177,5,293,31"/>
+<area shape="poly" id="edge9_Node000000_Node000001" title=" " alt="" coords="53,165,81,102,104,68,133,40,154,28,176,21,178,26,156,33,136,44,108,72,86,104,58,167"/>
+<area shape="rect" id="Node000002" href="$d6/d3c/classFillRateTests.html" title=" " alt="" coords="183,55,287,80"/>
+<area shape="poly" id="edge10_Node000000_Node000002" title=" " alt="" coords="60,165,91,126,111,106,133,89,157,78,182,71,184,76,159,83,136,94,114,110,95,129,64,168"/>
+<area shape="rect" id="Node000003" href="$d3/d92/classHighVertexCountTests.html" title=" " alt="" coords="153,104,318,129"/>
+<area shape="poly" id="edge11_Node000000_Node000003" title=" " alt="" coords="76,169,134,138,169,127,170,132,136,143,79,173"/>
+<area shape="rect" id="Node000004" href="$de/da7/classPrimitiveTypeTests.html" title=" " alt="" coords="163,153,307,179"/>
+<area shape="poly" id="edge12_Node000000_Node000004" title=" " alt="" coords="100,181,163,173,164,178,101,187"/>
+<area shape="rect" id="Node000005" href="$dc/d27/classSurfaceRenderingTests.html" title=" " alt="" coords="150,203,321,228"/>
+<area shape="poly" id="edge13_Node000000_Node000005" title=" " alt="" coords="101,196,150,202,150,207,100,201"/>
+<area shape="rect" id="Node000006" href="$da/dd4/classTinyDrawTests.html" title=" " alt="" coords="177,252,294,277"/>
+<area shape="poly" id="edge14_Node000000_Node000006" title=" " alt="" coords="80,209,136,237,177,250,176,255,134,242,77,213"/>
+<area shape="rect" id="Node000007" href="$d1/dc1/classUniformThrashTests.html" title=" " alt="" coords="159,301,311,327"/>
+<area shape="poly" id="edge15_Node000000_Node000007" title=" " alt="" coords="65,214,95,252,114,271,136,286,164,299,161,304,133,291,111,275,91,255,61,217"/>
+<area shape="rect" id="Node000008" href="$da/de8/classVertexBufferAllocationTests.html" title=" " alt="" coords="135,351,336,376"/>
+<area shape="poly" id="edge16_Node000000_Node000008" title=" " alt="" coords="58,216,87,277,109,309,136,336,159,348,156,353,133,340,105,312,82,280,53,218"/>
+</map>

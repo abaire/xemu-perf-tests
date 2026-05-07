@@ -1,0 +1,383 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="d6/d62/fill__rate__tests_8cpp" kind="file" language="C++">
+    <compoundname>fill_rate_tests.cpp</compoundname>
+    <includes refid="df/d6d/fill__rate__tests_8h" local="yes">fill_rate_tests.h</includes>
+    <includes local="no">pbkit/pbkit.h</includes>
+    <includes refid="df/d43/test__host_8h" local="yes">test_host.h</includes>
+    <includes local="yes">texture_format.h</includes>
+    <includes local="yes">texture_generator.h</includes>
+    <incdepgraph>
+      <node id="10">
+        <label>test_host.h</label>
+        <link refid="df/d43/test__host_8h_source"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>src/tests/fill_rate_tests.cpp</label>
+        <link refid="d6/d62/fill__rate__tests_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>fill_rate_tests.h</label>
+        <link refid="df/d6d/fill__rate__tests_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>test_suite.h</label>
+        <link refid="d6/d7a/test__suite_8h_source"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>chrono</label>
+      </node>
+      <node id="11">
+        <label>cstdint</label>
+      </node>
+      <node id="5">
+        <label>functional</label>
+      </node>
+      <node id="6">
+        <label>map</label>
+      </node>
+      <node id="14">
+        <label>memory</label>
+      </node>
+      <node id="12">
+        <label>nv2astate.h</label>
+      </node>
+      <node id="15">
+        <label>pbkit/pbkit.h</label>
+      </node>
+      <node id="7">
+        <label>set</label>
+      </node>
+      <node id="8">
+        <label>string</label>
+      </node>
+      <node id="16">
+        <label>texture_format.h</label>
+      </node>
+      <node id="17">
+        <label>texture_generator.h</label>
+      </node>
+      <node id="9">
+        <label>vector</label>
+      </node>
+      <node id="13">
+        <label>vertex_buffer.h</label>
+      </node>
+    </incdepgraph>
+    <sectiondef kind="var">
+      <memberdef kind="variable" id="d6/d62/fill__rate__tests_8cpp_1a4a153d4f1f3903688d0c90ec90bc185b" prot="public" static="yes" constexpr="yes" mutable="no">
+        <type>constexpr uint32_t</type>
+        <definition>constexpr uint32_t kIterations</definition>
+        <argsstring></argsstring>
+        <name>kIterations</name>
+        <initializer>= 10</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tests/fill_rate_tests.cpp" line="9" column="27" bodyfile="src/tests/fill_rate_tests.cpp" bodystart="9" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d6/d62/fill__rate__tests_8cpp_1a07ea30267fa2f8c208f9ce3e8e32fcb1" prot="public" static="yes" constexpr="yes" mutable="no">
+        <type>constexpr uint32_t</type>
+        <definition>constexpr uint32_t kNumDrawsSingleFrame</definition>
+        <argsstring></argsstring>
+        <name>kNumDrawsSingleFrame</name>
+        <initializer>= 50</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tests/fill_rate_tests.cpp" line="10" column="27" bodyfile="src/tests/fill_rate_tests.cpp" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d6/d62/fill__rate__tests_8cpp_1a25c9132fcf6feb3076816e7f89ab7b2e" prot="public" static="yes" constexpr="yes" mutable="no">
+        <type>constexpr uint32_t</type>
+        <definition>constexpr uint32_t kDrawCountByTextureMode[]</definition>
+        <argsstring>[]</argsstring>
+        <name>kDrawCountByTextureMode</name>
+        <initializer>= {
+    [false] = 21,
+    [true] = 11,
+}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tests/fill_rate_tests.cpp" line="12" column="27" bodyfile="src/tests/fill_rate_tests.cpp" bodystart="12" bodyend="15"/>
+      </memberdef>
+      <memberdef kind="variable" id="d6/d62/fill__rate__tests_8cpp_1a813b1e0fc4ec2dca20c9f4082d3f5d52" prot="public" static="yes" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t kVertexAttributes</definition>
+        <argsstring></argsstring>
+        <name>kVertexAttributes</name>
+        <initializer>= TestHost::POSITION | TestHost::DIFFUSE | TestHost::TEXCOORD0 | TestHost::TEXCOORD1 |
+                                    TestHost::TEXCOORD2 | TestHost::TEXCOORD3</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tests/fill_rate_tests.cpp" line="17" column="17" bodyfile="src/tests/fill_rate_tests.cpp" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d6/d62/fill__rate__tests_8cpp_1a3443a4c17ab95e8b1a1b62372f78ac57" prot="public" static="yes" constexpr="yes" mutable="no">
+        <type>constexpr auto</type>
+        <definition>constexpr auto kTextureWidth</definition>
+        <argsstring></argsstring>
+        <name>kTextureWidth</name>
+        <initializer>= 128</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tests/fill_rate_tests.cpp" line="19" column="23" bodyfile="src/tests/fill_rate_tests.cpp" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d6/d62/fill__rate__tests_8cpp_1a17da84b5c919ece3614a43aaf285131d" prot="public" static="yes" constexpr="yes" mutable="no">
+        <type>constexpr auto</type>
+        <definition>constexpr auto kTextureHeight</definition>
+        <argsstring></argsstring>
+        <name>kTextureHeight</name>
+        <initializer>= 128</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tests/fill_rate_tests.cpp" line="20" column="23" bodyfile="src/tests/fill_rate_tests.cpp" bodystart="20" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="d6/d62/fill__rate__tests_8cpp_1a11e0cbea5417dcc941eeba38389404d3" prot="public" static="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>constexpr const char *</type>
+        <definition>static constexpr const char * GetTestName</definition>
+        <argsstring>(bool use_texture)</argsstring>
+        <name>GetTestName</name>
+        <param>
+          <type>bool</type>
+          <declname>use_texture</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tests/fill_rate_tests.cpp" line="22" column="29" bodyfile="src/tests/fill_rate_tests.cpp" bodystart="22" bodyend="24"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;fill_rate_tests.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;pbkit/pbkit.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;test_host.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;texture_format.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;texture_generator.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/>uint32_t<sp/>kIterations<sp/>=<sp/>10;</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/>uint32_t<sp/>kNumDrawsSingleFrame<sp/>=<sp/>50;</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Measured<sp/>using<sp/>a<sp/>1.0<sp/>devkit,<sp/>close<sp/>to<sp/>the<sp/>60<sp/>fps<sp/>limit.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/>uint32_t<sp/>kDrawCountByTextureMode[]<sp/>=<sp/>{</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/>[</highlight><highlight class="keyword">false</highlight><highlight class="normal">]<sp/>=<sp/>21,</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/>[</highlight><highlight class="keyword">true</highlight><highlight class="normal">]<sp/>=<sp/>11,</highlight></codeline>
+<codeline lineno="15"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>uint32_t<sp/>kVertexAttributes<sp/>=<sp/>TestHost::POSITION<sp/>|<sp/>TestHost::DIFFUSE<sp/>|<sp/>TestHost::TEXCOORD0<sp/>|<sp/>TestHost::TEXCOORD1<sp/>|</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TestHost::TEXCOORD2<sp/>|<sp/>TestHost::TEXCOORD3;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>kTextureWidth<sp/>=<sp/>128;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>kTextureHeight<sp/>=<sp/>128;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*GetTestName(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>use_texture)<sp/>{</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>use_texture<sp/>?<sp/></highlight><highlight class="stringliteral">&quot;FillRate-Textured&quot;</highlight><highlight class="normal"><sp/>:<sp/></highlight><highlight class="stringliteral">&quot;FillRate-Solid&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal">FillRateTests::FillRateTests(<ref refid="d6/d80/classTestHost" kindref="compound">TestHost</ref><sp/>&amp;host,<sp/>std::string<sp/>output_dir,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Config<sp/>&amp;config)</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/><ref refid="d2/d3e/classTestSuite" kindref="compound">TestSuite</ref>(host,<sp/>std::move(output_dir),<sp/></highlight><highlight class="stringliteral">&quot;FillRate&quot;</highlight><highlight class="normal">,<sp/>config)<sp/>{</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>use_texture<sp/>:<sp/>{</highlight><highlight class="keyword">false</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">})<sp/>{</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/>tests_[GetTestName(use_texture)]<sp/>=<sp/>[</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>use_texture]()<sp/>{<sp/>TestFillRate(use_texture);<sp/>};</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="31"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d6/d3c/classFillRateTests_1a1d8fe47e38be93d1d00b977dc6a0b0a5" kindref="member">FillRateTests::Initialize</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><ref refid="d2/d3e/classTestSuite_1a1c4756eb905d6d4d35e1630107396c38" kindref="member">TestSuite::Initialize</ref>();</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/>host_.SetFinalCombiner0Just(TestHost::SRC_DIFFUSE);</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/>host_.SetFinalCombiner1Just(TestHost::SRC_ZERO,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/>PBKitPlusPlus::GenerateSwizzledRGBTestPattern(host_.GetTextureMemoryForStage(0),<sp/>kTextureWidth,<sp/>kTextureHeight);</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/>PBKitPlusPlus::GenerateRGBRadialATestPattern(host_.GetTextureMemoryForStage(1),<sp/>kTextureWidth,<sp/>kTextureHeight);</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/>PBKitPlusPlus::GenerateSwizzledRGBRadialGradient(host_.GetTextureMemoryForStage(2),<sp/>kTextureWidth,<sp/>kTextureHeight);</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/>PBKitPlusPlus::GenerateSwizzledRGBMaxContrastNoisePattern(host_.GetTextureMemoryForStage(3),<sp/>kTextureWidth,</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>kTextureHeight);</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/>vertex_buffer_<sp/>=<sp/>host_.AllocateVertexBuffer(4);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>vertex<sp/>=<sp/>vertex_buffer_-&gt;Lock();</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>width<sp/>=<sp/>host_.GetFramebufferWidthF();</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>height<sp/>=<sp/>host_.GetFramebufferHeightF();</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/>vertex-&gt;SetPosition(0.0f,<sp/>0.0f,<sp/>1.0f);</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/>vertex-&gt;SetDiffuse(1.0f,<sp/>1.0f,<sp/>1.0f);</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/>vertex-&gt;SetTexCoord0(0.0f,<sp/>0.0f);</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/>vertex-&gt;SetTexCoord1(0.0f,<sp/>0.0f);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/>vertex-&gt;SetTexCoord2(0.0f,<sp/>0.0f);</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/>vertex-&gt;SetTexCoord3(0.0f,<sp/>0.0f);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/>++vertex;</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/>vertex-&gt;SetPosition(width,<sp/>0.0f,<sp/>1.0f);</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/>vertex-&gt;SetDiffuse(0.0f,<sp/>1.0f,<sp/>1.0f);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/>vertex-&gt;SetTexCoord0(1.0f,<sp/>0.0f);</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/>vertex-&gt;SetTexCoord1(1.0f,<sp/>0.0f);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/>vertex-&gt;SetTexCoord2(1.0f,<sp/>0.0f);</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/>vertex-&gt;SetTexCoord3(1.0f,<sp/>0.0f);</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/>++vertex;</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/>vertex-&gt;SetPosition(0.0f,<sp/>height,<sp/>1.0f);</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/>vertex-&gt;SetDiffuse(1.0f,<sp/>0.0f,<sp/>1.0f);</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/>vertex-&gt;SetTexCoord0(0.0f,<sp/>1.0f);</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/>vertex-&gt;SetTexCoord1(0.0f,<sp/>1.0f);</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/>vertex-&gt;SetTexCoord2(0.0f,<sp/>1.0f);</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/>vertex-&gt;SetTexCoord3(0.0f,<sp/>1.0f);</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/>++vertex;</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/>vertex-&gt;SetPosition(width,<sp/>height,<sp/>1.0f);</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/>vertex-&gt;SetDiffuse(1.0f,<sp/>1.0f,<sp/>0.0f);</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/>vertex-&gt;SetTexCoord0(1.0f,<sp/>1.0f);</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/>vertex-&gt;SetTexCoord1(1.0f,<sp/>1.0f);</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/>vertex-&gt;SetTexCoord2(1.0f,<sp/>1.0f);</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/>vertex-&gt;SetTexCoord3(1.0f,<sp/>1.0f);</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/>++vertex;</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/>vertex_buffer_-&gt;Unlock();</highlight></codeline>
+<codeline lineno="84"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d6/d3c/classFillRateTests_1a008dff947d76b636bfe8a8cb63cc1f86" kindref="member">FillRateTests::Deinitialize</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/>host_.ClearVertexBuffer();</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><ref refid="d2/d3e/classTestSuite_1a137c1c57f8ad999bd78a8f7f8f2cf69e" kindref="member">TestSuite::Deinitialize</ref>();</highlight></codeline>
+<codeline lineno="89"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>FillRateTests::TestFillRate(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>use_texture)<sp/>{</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/>host_.PrepareDraw(0xFF222222);</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/>host_.SetVertexShaderProgram(</highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/>host_.<ref refid="d6/d80/classTestHost_1a7f054a648c0f5f8b985a23bac20cd3b6" kindref="member">SetupFixedFunctionPassthrough</ref>();</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(use_texture)<sp/>{</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>4;<sp/>++i)<sp/>{</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>&amp;texture_stage<sp/>=<sp/>host_.GetTextureStage(i);</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>texture_stage.SetFormat(PBKitPlusPlus::GetTextureFormatInfo(NV097_SET_TEXTURE_FORMAT_COLOR_SZ_A8B8G8R8));</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>texture_stage.SetTextureDimensions(kTextureWidth,<sp/>kTextureHeight);</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>texture_stage.SetUWrap(PBKitPlusPlus::TextureStage::WRAP_REPEAT,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>texture_stage.SetVWrap(PBKitPlusPlus::TextureStage::WRAP_MIRROR,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>texture_stage.SetEnabled(</highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/>host_.SetupTextureStages();</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/>host_.SetCombinerControl(3,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/>host_.SetCombinerFactorC0(0,<sp/>0.25f,<sp/>0.25f,<sp/>0.25f,<sp/>0.25f);</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/>host_.SetInputColorCombiner(0,<sp/>PBKitPlusPlus::NV2AState::SRC_TEX0,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>PBKitPlusPlus::NV2AState::MAP_UNSIGNED_IDENTITY,<sp/>PBKitPlusPlus::NV2AState::SRC_C0,</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">,<sp/>PBKitPlusPlus::NV2AState::MAP_UNSIGNED_IDENTITY,</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>PBKitPlusPlus::NV2AState::SRC_TEX1,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>PBKitPlusPlus::NV2AState::MAP_UNSIGNED_IDENTITY,<sp/>PBKitPlusPlus::NV2AState::SRC_C0);</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/>host_.SetOutputColorCombiner(0,<sp/>PBKitPlusPlus::NV2AState::DST_DISCARD,<sp/>PBKitPlusPlus::NV2AState::DST_DISCARD,</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>PBKitPlusPlus::NV2AState::DST_R0);</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/>host_.SetInputColorCombiner(1,<sp/>PBKitPlusPlus::NV2AState::SRC_TEX2,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>PBKitPlusPlus::NV2AState::MAP_UNSIGNED_IDENTITY,<sp/>PBKitPlusPlus::NV2AState::SRC_C0,</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">,<sp/>PBKitPlusPlus::NV2AState::MAP_UNSIGNED_IDENTITY,</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>PBKitPlusPlus::NV2AState::SRC_TEX3,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>PBKitPlusPlus::NV2AState::MAP_UNSIGNED_IDENTITY,<sp/>PBKitPlusPlus::NV2AState::SRC_C0);</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/>host_.SetOutputColorCombiner(1,<sp/>PBKitPlusPlus::NV2AState::DST_DISCARD,<sp/>PBKitPlusPlus::NV2AState::DST_DISCARD,</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>PBKitPlusPlus::NV2AState::DST_R1);</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/>host_.SetInputColorCombiner(</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>2,<sp/>PBKitPlusPlus::NV2AState::SRC_R0,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">,<sp/>PBKitPlusPlus::NV2AState::MAP_UNSIGNED_IDENTITY,</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>PBKitPlusPlus::NV2AState::SRC_ZERO,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">,<sp/>PBKitPlusPlus::NV2AState::MAP_UNSIGNED_INVERT,</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>PBKitPlusPlus::NV2AState::SRC_R1,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">,<sp/>PBKitPlusPlus::NV2AState::MAP_UNSIGNED_IDENTITY,</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>PBKitPlusPlus::NV2AState::SRC_ZERO,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">,<sp/>PBKitPlusPlus::NV2AState::MAP_UNSIGNED_INVERT);</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/>host_.SetOutputColorCombiner(2,<sp/>PBKitPlusPlus::NV2AState::DST_DISCARD,<sp/>PBKitPlusPlus::NV2AState::DST_DISCARD,</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>PBKitPlusPlus::NV2AState::DST_R0);</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/>host_.SetFinalCombiner0Just(TestHost::SRC_R0);</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/>host_.SetShaderStageProgram(TestHost::STAGE_2D_PROJECTIVE,<sp/>TestHost::STAGE_2D_PROJECTIVE,</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TestHost::STAGE_2D_PROJECTIVE,<sp/>TestHost::STAGE_2D_PROJECTIVE);</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"></highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/>host_.SetFinalCombiner0Just(TestHost::SRC_DIFFUSE);</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><ref refid="d1/dc6/structTestHost_1_1ProfileResults" kindref="compound">TestHost::ProfileResults</ref><sp/>results{};</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"></highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/>std::string<sp/>test_name<sp/>=<sp/>GetTestName(use_texture);</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>num_draws<sp/>=<sp/>host_.GetSaveResults()<sp/>?<sp/>kNumDrawsSingleFrame<sp/>:<sp/>kDrawCountByTextureMode[use_texture];</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"></highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/>results<sp/>=<sp/><ref refid="d2/d3e/classTestSuite_1ac50b006a0a46396cde6073c3e569bde7" kindref="member">Profile</ref>(test_name,<sp/>kIterations,<sp/>[</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>num_draws]<sp/>{</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>num_draws;<sp/>++i)<sp/>{</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>host_.DrawArrays(kVertexAttributes,<sp/>TestHost::PRIMITIVE_TRIANGLE_STRIP);</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/>});</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"></highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/>host_.SetShaderStageProgram(TestHost::STAGE_NONE);</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/>host_.SetTextureStageEnabled(0,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/>host_.SetTextureStageEnabled(1,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/>host_.SetTextureStageEnabled(2,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/>host_.SetTextureStageEnabled(3,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"></highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/>host_.<ref refid="d6/d80/classTestHost_1ad4dde48e4a1c7ac6c5477aeff87052a3" kindref="member">FinishDraw</ref>(suite_name_,<sp/>test_name,<sp/>results);</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/>host_.SetCombinerControl();</highlight></codeline>
+<codeline lineno="161"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="src/tests/fill_rate_tests.cpp"/>
+  </compounddef>
+</doxygen>

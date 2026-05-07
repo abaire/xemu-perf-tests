@@ -1,0 +1,359 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="d6/d80/classTestHost" kind="class" language="C++" prot="public">
+    <compoundname>TestHost</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">PBKitPlusPlus::NV2AState</basecompoundref>
+    <includes refid="df/d43/test__host_8h" local="no">test_host.h</includes>
+    <innerclass refid="d1/dc6/structTestHost_1_1ProfileResults" prot="public">TestHost::ProfileResults</innerclass>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="d6/d80/classTestHost_1ac1164ad632c1c8a050f38d0defb72ba4" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool TestHost::save_results_</definition>
+        <argsstring></argsstring>
+        <name>save_results_</name>
+        <qualifiedname>TestHost::save_results_</qualifiedname>
+        <initializer>{true}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/test_host.h" line="50" column="8" bodyfile="src/test_host.h" bodystart="50" bodyend="50"/>
+      </memberdef>
+      <memberdef kind="variable" id="d6/d80/classTestHost_1a49b77cb96f34662d1a1f25fb872e277a" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double TestHost::perf_counter_frequency_</definition>
+        <argsstring></argsstring>
+        <name>perf_counter_frequency_</name>
+        <qualifiedname>TestHost::perf_counter_frequency_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/test_host.h" line="53" column="10" bodyfile="src/test_host.h" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d6/d80/classTestHost_1afad9b097484782dd3e0ef90f53620128" prot="private" static="no" mutable="no">
+        <type>LARGE_INTEGER</type>
+        <definition>LARGE_INTEGER TestHost::last_frame_time_</definition>
+        <argsstring></argsstring>
+        <name>last_frame_time_</name>
+        <qualifiedname>TestHost::last_frame_time_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/test_host.h" line="54" column="17" bodyfile="src/test_host.h" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d6/d80/classTestHost_1a44a27292cdcc045d5c57bc016c5d1ed2" prot="private" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t TestHost::current_frame_index_</definition>
+        <argsstring></argsstring>
+        <name>current_frame_index_</name>
+        <qualifiedname>TestHost::current_frame_index_</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/test_host.h" line="55" column="12" bodyfile="src/test_host.h" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d6/d80/classTestHost_1a6571486c3e0878b1e38f4e93bb6f8e3d" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float TestHost::frame_times_[kFrameTimeWindow]</definition>
+        <argsstring>[kFrameTimeWindow]</argsstring>
+        <name>frame_times_</name>
+        <qualifiedname>TestHost::frame_times_</qualifiedname>
+        <initializer>= {0.f}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/test_host.h" line="56" column="9" bodyfile="src/test_host.h" bodystart="56" bodyend="56"/>
+      </memberdef>
+      <memberdef kind="variable" id="d6/d80/classTestHost_1a147210c9db4e3810e731ae76fe2efcd1" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float TestHost::average_frame_rate_</definition>
+        <argsstring></argsstring>
+        <name>average_frame_rate_</name>
+        <qualifiedname>TestHost::average_frame_rate_</qualifiedname>
+        <initializer>= 0.f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/test_host.h" line="57" column="9" bodyfile="src/test_host.h" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d6/d80/classTestHost_1ab4f6a6c770f4de723f14ddb0c3803727" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float TestHost::average_mspf_</definition>
+        <argsstring></argsstring>
+        <name>average_mspf_</name>
+        <qualifiedname>TestHost::average_mspf_</qualifiedname>
+        <initializer>= 0.f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/test_host.h" line="58" column="9" bodyfile="src/test_host.h" bodystart="58" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="d6/d80/classTestHost_1a88c5efd5898ec857a5d63a7c772a8a95" prot="private" static="yes" constexpr="yes" mutable="no">
+        <type>constexpr auto</type>
+        <definition>constexpr auto TestHost::kFrameTimeWindow</definition>
+        <argsstring></argsstring>
+        <name>kFrameTimeWindow</name>
+        <qualifiedname>TestHost::kFrameTimeWindow</qualifiedname>
+        <initializer>= 10</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/test_host.h" line="52" column="25" bodyfile="src/test_host.h" bodystart="52" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="d6/d80/classTestHost_1a56bf99cdd1f9bbdc1dd89b58591455d9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>TestHost::TestHost</definition>
+        <argsstring>(uint32_t framebuffer_width, uint32_t framebuffer_height, uint32_t max_texture_width=256, uint32_t max_texture_height=256, uint32_t max_texture_depth=4)</argsstring>
+        <name>TestHost</name>
+        <qualifiedname>TestHost::TestHost</qualifiedname>
+        <param>
+          <type>uint32_t</type>
+          <declname>framebuffer_width</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>framebuffer_height</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>max_texture_width</declname>
+          <defval>256</defval>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>max_texture_height</declname>
+          <defval>256</defval>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>max_texture_depth</declname>
+          <defval>4</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/test_host.h" line="24" column="3" bodyfile="src/test_host.cpp" bodystart="27" bodyend="34"/>
+      </memberdef>
+      <memberdef kind="function" id="d6/d80/classTestHost_1ad4dde48e4a1c7ac6c5477aeff87052a3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TestHost::FinishDraw</definition>
+        <argsstring>(const std::string &amp;suite_name, const std::string &amp;test_name, const ProfileResults &amp;results)</argsstring>
+        <name>FinishDraw</name>
+        <qualifiedname>TestHost::FinishDraw</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>suite_name</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>test_name</declname>
+        </param>
+        <param>
+          <type>const <ref refid="d1/dc6/structTestHost_1_1ProfileResults" kindref="compound">ProfileResults</ref> &amp;</type>
+          <declname>results</declname>
+        </param>
+        <briefdescription>
+<para>Renders test results and swaps back buffer. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/test_host.h" line="31" column="8" bodyfile="src/test_host.cpp" bodystart="61" bodyend="137"/>
+      </memberdef>
+      <memberdef kind="function" id="d6/d80/classTestHost_1a7f054a648c0f5f8b985a23bac20cd3b6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TestHost::SetupFixedFunctionPassthrough</definition>
+        <argsstring>()</argsstring>
+        <name>SetupFixedFunctionPassthrough</name>
+        <qualifiedname>TestHost::SetupFixedFunctionPassthrough</qualifiedname>
+        <briefdescription>
+<para>Sets up the projection matrix for passthrough operation / direct addressing of pixels. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/test_host.h" line="34" column="8" bodyfile="src/test_host.cpp" bodystart="139" bodyend="149"/>
+      </memberdef>
+      <memberdef kind="function" id="d6/d80/classTestHost_1a2413d6bea509877c02bf550a68dba3a1" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool TestHost::GetSaveResults</definition>
+        <argsstring>() const</argsstring>
+        <name>GetSaveResults</name>
+        <qualifiedname>TestHost::GetSaveResults</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/test_host.h" line="36" column="9" bodyfile="src/test_host.h" bodystart="36" bodyend="36"/>
+      </memberdef>
+      <memberdef kind="function" id="d6/d80/classTestHost_1a93e74f05fb04b7222a5ccdd9967d25ec" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void TestHost::SetSaveResults</definition>
+        <argsstring>(bool enable=true)</argsstring>
+        <name>SetSaveResults</name>
+        <qualifiedname>TestHost::SetSaveResults</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>enable</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/test_host.h" line="37" column="8" bodyfile="src/test_host.h" bodystart="37" bodyend="37"/>
+      </memberdef>
+      <memberdef kind="function" id="d6/d80/classTestHost_1ab430ced08ee958dc583212e1aaeb699f" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const double &amp;</type>
+        <definition>const double &amp; TestHost::GetPerformanceCounterFrequency</definition>
+        <argsstring>() const</argsstring>
+        <name>GetPerformanceCounterFrequency</name>
+        <qualifiedname>TestHost::GetPerformanceCounterFrequency</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/test_host.h" line="39" column="17" bodyfile="src/test_host.h" bodystart="39" bodyend="39"/>
+      </memberdef>
+      <memberdef kind="function" id="d6/d80/classTestHost_1a43bdc7a2f49d32c9bb1912a0e3e24d7d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>uint32_t TestHost::GetMicrosecondsSince</definition>
+        <argsstring>(const LARGE_INTEGER &amp;previous) const</argsstring>
+        <name>GetMicrosecondsSince</name>
+        <qualifiedname>TestHost::GetMicrosecondsSince</qualifiedname>
+        <param>
+          <type>const LARGE_INTEGER &amp;</type>
+          <declname>previous</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/test_host.h" line="40" column="13" bodyfile="src/test_host.cpp" bodystart="165" bodyend="172"/>
+      </memberdef>
+      <memberdef kind="function" id="d6/d80/classTestHost_1ad703bef00b7925829da252259859feaa" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void TestHost::PreTest</definition>
+        <argsstring>()</argsstring>
+        <name>PreTest</name>
+        <qualifiedname>TestHost::PreTest</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/test_host.h" line="42" column="8" bodyfile="src/test_host.h" bodystart="42" bodyend="47"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="d6/d80/classTestHost_1a24b83c50f1d0b792c2089b41903d580e" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TestHost::EnsureFolderExists</definition>
+        <argsstring>(const std::string &amp;folder_path)</argsstring>
+        <name>EnsureFolderExists</name>
+        <qualifiedname>TestHost::EnsureFolderExists</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>folder_path</declname>
+        </param>
+        <briefdescription>
+<para>Creates the given directory if it does not already exist. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/test_host.h" line="28" column="15" bodyfile="src/test_host.cpp" bodystart="36" bodyend="59"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Provides utility methods for use by <ref refid="d2/d3e/classTestSuite" kindref="compound">TestSuite</ref> subclasses. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>PBKitPlusPlus::NV2AState</label>
+      </node>
+      <node id="1">
+        <label>TestHost</label>
+        <link refid="d6/d80/classTestHost"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>PBKitPlusPlus::NV2AState</label>
+      </node>
+      <node id="1">
+        <label>TestHost</label>
+        <link refid="d6/d80/classTestHost"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="src/test_host.h" line="12" column="1" bodyfile="src/test_host.h" bodystart="12" bodyend="59"/>
+    <listofallmembers>
+      <member refid="d6/d80/classTestHost_1a147210c9db4e3810e731ae76fe2efcd1" prot="private" virt="non-virtual"><scope>TestHost</scope><name>average_frame_rate_</name></member>
+      <member refid="d6/d80/classTestHost_1ab4f6a6c770f4de723f14ddb0c3803727" prot="private" virt="non-virtual"><scope>TestHost</scope><name>average_mspf_</name></member>
+      <member refid="d6/d80/classTestHost_1a44a27292cdcc045d5c57bc016c5d1ed2" prot="private" virt="non-virtual"><scope>TestHost</scope><name>current_frame_index_</name></member>
+      <member refid="d6/d80/classTestHost_1a24b83c50f1d0b792c2089b41903d580e" prot="public" virt="non-virtual"><scope>TestHost</scope><name>EnsureFolderExists</name></member>
+      <member refid="d6/d80/classTestHost_1ad4dde48e4a1c7ac6c5477aeff87052a3" prot="public" virt="non-virtual"><scope>TestHost</scope><name>FinishDraw</name></member>
+      <member refid="d6/d80/classTestHost_1a6571486c3e0878b1e38f4e93bb6f8e3d" prot="private" virt="non-virtual"><scope>TestHost</scope><name>frame_times_</name></member>
+      <member refid="d6/d80/classTestHost_1a43bdc7a2f49d32c9bb1912a0e3e24d7d" prot="public" virt="non-virtual"><scope>TestHost</scope><name>GetMicrosecondsSince</name></member>
+      <member refid="d6/d80/classTestHost_1ab430ced08ee958dc583212e1aaeb699f" prot="public" virt="non-virtual"><scope>TestHost</scope><name>GetPerformanceCounterFrequency</name></member>
+      <member refid="d6/d80/classTestHost_1a2413d6bea509877c02bf550a68dba3a1" prot="public" virt="non-virtual"><scope>TestHost</scope><name>GetSaveResults</name></member>
+      <member refid="d6/d80/classTestHost_1a88c5efd5898ec857a5d63a7c772a8a95" prot="private" virt="non-virtual"><scope>TestHost</scope><name>kFrameTimeWindow</name></member>
+      <member refid="d6/d80/classTestHost_1afad9b097484782dd3e0ef90f53620128" prot="private" virt="non-virtual"><scope>TestHost</scope><name>last_frame_time_</name></member>
+      <member refid="d6/d80/classTestHost_1a49b77cb96f34662d1a1f25fb872e277a" prot="private" virt="non-virtual"><scope>TestHost</scope><name>perf_counter_frequency_</name></member>
+      <member refid="d6/d80/classTestHost_1ad703bef00b7925829da252259859feaa" prot="public" virt="non-virtual"><scope>TestHost</scope><name>PreTest</name></member>
+      <member refid="d6/d80/classTestHost_1ac1164ad632c1c8a050f38d0defb72ba4" prot="private" virt="non-virtual"><scope>TestHost</scope><name>save_results_</name></member>
+      <member refid="d6/d80/classTestHost_1a93e74f05fb04b7222a5ccdd9967d25ec" prot="public" virt="non-virtual"><scope>TestHost</scope><name>SetSaveResults</name></member>
+      <member refid="d6/d80/classTestHost_1a7f054a648c0f5f8b985a23bac20cd3b6" prot="public" virt="non-virtual"><scope>TestHost</scope><name>SetupFixedFunctionPassthrough</name></member>
+      <member refid="d6/d80/classTestHost_1a56bf99cdd1f9bbdc1dd89b58591455d9" prot="public" virt="non-virtual"><scope>TestHost</scope><name>TestHost</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

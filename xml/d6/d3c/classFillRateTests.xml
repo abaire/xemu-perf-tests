@@ -1,0 +1,171 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="d6/d3c/classFillRateTests" kind="class" language="C++" prot="public">
+    <compoundname>FillRateTests</compoundname>
+    <basecompoundref refid="d2/d3e/classTestSuite" prot="public" virt="non-virtual">TestSuite</basecompoundref>
+    <includes refid="df/d6d/fill__rate__tests_8h" local="no">fill_rate_tests.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="d6/d3c/classFillRateTests_1a2bbd7c439faf04981460204374980261" prot="private" static="no" mutable="no">
+        <type>std::shared_ptr&lt; PBKitPlusPlus::VertexBuffer &gt;</type>
+        <definition>std::shared_ptr&lt;PBKitPlusPlus::VertexBuffer&gt; FillRateTests::vertex_buffer_</definition>
+        <argsstring></argsstring>
+        <name>vertex_buffer_</name>
+        <qualifiedname>FillRateTests::vertex_buffer_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tests/fill_rate_tests.h" line="22" column="19" bodyfile="src/tests/fill_rate_tests.h" bodystart="22" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="d6/d3c/classFillRateTests_1a045d23f1ca6807fd8742c4cf5ebd6a8a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>FillRateTests::FillRateTests</definition>
+        <argsstring>(TestHost &amp;host, std::string output_dir, const Config &amp;config)</argsstring>
+        <name>FillRateTests</name>
+        <qualifiedname>FillRateTests::FillRateTests</qualifiedname>
+        <param>
+          <type><ref refid="d6/d80/classTestHost" kindref="compound">TestHost</ref> &amp;</type>
+          <declname>host</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>output_dir</declname>
+        </param>
+        <param>
+          <type>const <ref refid="da/d85/structTestSuite_1_1Config" kindref="compound">Config</ref> &amp;</type>
+          <declname>config</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tests/fill_rate_tests.h" line="14" column="3" bodyfile="src/tests/fill_rate_tests.cpp" bodystart="26" bodyend="31"/>
+      </memberdef>
+      <memberdef kind="function" id="d6/d3c/classFillRateTests_1a1d8fe47e38be93d1d00b977dc6a0b0a5" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void FillRateTests::Initialize</definition>
+        <argsstring>() override</argsstring>
+        <name>Initialize</name>
+        <qualifiedname>FillRateTests::Initialize</qualifiedname>
+        <reimplements refid="d2/d3e/classTestSuite_1a1c4756eb905d6d4d35e1630107396c38">Initialize</reimplements>
+        <briefdescription>
+<para>Called to initialize the test suite. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tests/fill_rate_tests.h" line="16" column="8" bodyfile="src/tests/fill_rate_tests.cpp" bodystart="33" bodyend="84"/>
+      </memberdef>
+      <memberdef kind="function" id="d6/d3c/classFillRateTests_1a008dff947d76b636bfe8a8cb63cc1f86" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void FillRateTests::Deinitialize</definition>
+        <argsstring>() override</argsstring>
+        <name>Deinitialize</name>
+        <qualifiedname>FillRateTests::Deinitialize</qualifiedname>
+        <reimplements refid="d2/d3e/classTestSuite_1a137c1c57f8ad999bd78a8f7f8f2cf69e">Deinitialize</reimplements>
+        <briefdescription>
+<para>Called to tear down the test suite. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tests/fill_rate_tests.h" line="17" column="8" bodyfile="src/tests/fill_rate_tests.cpp" bodystart="86" bodyend="89"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="d6/d3c/classFillRateTests_1adef30d168931a09f547ad2195e8be075" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void FillRateTests::TestFillRate</definition>
+        <argsstring>(bool use_texture)</argsstring>
+        <name>TestFillRate</name>
+        <qualifiedname>FillRateTests::TestFillRate</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>use_texture</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tests/fill_rate_tests.h" line="20" column="8" bodyfile="src/tests/fill_rate_tests.cpp" bodystart="91" bodyend="161"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Benchmarks fill rate by drawing hundreds of full screen quads. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>FillRateTests</label>
+        <link refid="d6/d3c/classFillRateTests"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>TestSuite</label>
+        <link refid="d2/d3e/classTestSuite"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>FillRateTests</label>
+        <link refid="d6/d3c/classFillRateTests"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>PBKitPlusPlus::NV2AState</label>
+      </node>
+      <node id="3">
+        <label>TestHost</label>
+        <link refid="d6/d80/classTestHost"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>TestSuite</label>
+        <link refid="d2/d3e/classTestSuite"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>host_</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="src/tests/fill_rate_tests.h" line="12" column="1" bodyfile="src/tests/fill_rate_tests.h" bodystart="12" bodyend="23"/>
+    <listofallmembers>
+      <member refid="d6/d3c/classFillRateTests_1a008dff947d76b636bfe8a8cb63cc1f86" prot="public" virt="virtual"><scope>FillRateTests</scope><name>Deinitialize</name></member>
+      <member refid="d2/d3e/classTestSuite_1a165d9da1dec525ffdd299e2dcfaec2ef" prot="public" virt="non-virtual"><scope>FillRateTests</scope><name>DisableTests</name></member>
+      <member refid="d6/d3c/classFillRateTests_1a045d23f1ca6807fd8742c4cf5ebd6a8a" prot="public" virt="non-virtual"><scope>FillRateTests</scope><name>FillRateTests</name></member>
+      <member refid="d2/d3e/classTestSuite_1a7059e61572d914cff83ae22da3ea1957" prot="public" virt="non-virtual"><scope>FillRateTests</scope><name>HasEnabledTests</name></member>
+      <member refid="d2/d3e/classTestSuite_1a454f5c2050b66b598a2f2fcffd45ae48" prot="protected" virt="non-virtual"><scope>FillRateTests</scope><name>host_</name></member>
+      <member refid="d6/d3c/classFillRateTests_1a1d8fe47e38be93d1d00b977dc6a0b0a5" prot="public" virt="virtual"><scope>FillRateTests</scope><name>Initialize</name></member>
+      <member refid="d2/d3e/classTestSuite_1a15144024801f2f885727f7926c826c87" prot="public" virt="non-virtual"><scope>FillRateTests</scope><name>Name</name></member>
+      <member refid="d2/d3e/classTestSuite_1a2e81678d3ac733d517616bd67a837465" prot="protected" virt="non-virtual"><scope>FillRateTests</scope><name>output_dir_</name></member>
+      <member refid="d2/d3e/classTestSuite_1ac50b006a0a46396cde6073c3e569bde7" prot="protected" virt="non-virtual"><scope>FillRateTests</scope><name>Profile</name></member>
+      <member refid="d2/d3e/classTestSuite_1aa87e9c8f05a49f660701e91271fb0ede" prot="public" virt="non-virtual"><scope>FillRateTests</scope><name>Run</name></member>
+      <member refid="d2/d3e/classTestSuite_1a7f99d1a92beb6b58219b841b60d56322" prot="public" virt="non-virtual"><scope>FillRateTests</scope><name>RunAll</name></member>
+      <member refid="d2/d3e/classTestSuite_1a0d580dbb0e1630ecdc989d5c852e8f91" prot="protected" virt="non-virtual"><scope>FillRateTests</scope><name>SetDefaultTextureFormat</name></member>
+      <member refid="d2/d3e/classTestSuite_1ad3fb7cc9d8db8740c5188da083312b8d" prot="public" virt="virtual"><scope>FillRateTests</scope><name>SetupTest</name></member>
+      <member refid="d2/d3e/classTestSuite_1ac59f02a9549a146ed62e6185c0acec8b" prot="protected" virt="non-virtual"><scope>FillRateTests</scope><name>suite_name_</name></member>
+      <member refid="d2/d3e/classTestSuite_1a90bc6959d04c41e07eed51f80a435d70" prot="public" virt="virtual"><scope>FillRateTests</scope><name>TearDownTest</name></member>
+      <member refid="d6/d3c/classFillRateTests_1adef30d168931a09f547ad2195e8be075" prot="private" virt="non-virtual"><scope>FillRateTests</scope><name>TestFillRate</name></member>
+      <member refid="d2/d3e/classTestSuite_1a80f0bc74d8d511547708827e5a549a63" prot="public" virt="non-virtual"><scope>FillRateTests</scope><name>TestNames</name></member>
+      <member refid="d2/d3e/classTestSuite_1a7bc0a6c4d360f6f487779e8f4282d0a1" prot="protected" virt="non-virtual"><scope>FillRateTests</scope><name>tests_</name></member>
+      <member refid="d2/d3e/classTestSuite_1a57b1ed01dd40328456bf0854043ca68b" prot="public" virt="non-virtual"><scope>FillRateTests</scope><name>TestSuite</name></member>
+      <member refid="d2/d3e/classTestSuite_1a253b4d7ef576ab6950da2f9748d0afa9" prot="public" virt="non-virtual"><scope>FillRateTests</scope><name>TestSuite</name></member>
+      <member refid="d2/d3e/classTestSuite_1ac12e8f49c702522380d9824e4acfd53b" prot="public" virt="virtual"><scope>FillRateTests</scope><name>UpdateUserContext</name></member>
+      <member refid="d6/d3c/classFillRateTests_1a2bbd7c439faf04981460204374980261" prot="private" virt="non-virtual"><scope>FillRateTests</scope><name>vertex_buffer_</name></member>
+      <member refid="d2/d3e/classTestSuite_1a1743f0a04119de901cb819111d51192d" prot="public" virt="virtual"><scope>FillRateTests</scope><name>~TestSuite</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

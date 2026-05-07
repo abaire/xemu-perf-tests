@@ -1,0 +1,137 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="d1/dc1/classUniformThrashTests" kind="class" language="C++" prot="public">
+    <compoundname>UniformThrashTests</compoundname>
+    <basecompoundref refid="d2/d3e/classTestSuite" prot="public" virt="non-virtual">TestSuite</basecompoundref>
+    <includes refid="de/d3d/uniform__thrash__tests_8h" local="no">uniform_thrash_tests.h</includes>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="d1/dc1/classUniformThrashTests_1a72d44ad2736989da32fed77d84f3463d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>UniformThrashTests::UniformThrashTests</definition>
+        <argsstring>(TestHost &amp;host, std::string output_dir, const Config &amp;config)</argsstring>
+        <name>UniformThrashTests</name>
+        <qualifiedname>UniformThrashTests::UniformThrashTests</qualifiedname>
+        <param>
+          <type><ref refid="d6/d80/classTestHost" kindref="compound">TestHost</ref> &amp;</type>
+          <declname>host</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>output_dir</declname>
+        </param>
+        <param>
+          <type>const <ref refid="da/d85/structTestSuite_1_1Config" kindref="compound">Config</ref> &amp;</type>
+          <declname>config</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tests/uniform_thrash_tests.h" line="11" column="3" bodyfile="src/tests/uniform_thrash_tests.cpp" bodystart="19" bodyend="22"/>
+      </memberdef>
+      <memberdef kind="function" id="d1/dc1/classUniformThrashTests_1a80b4d88995248fc3dffd471374040230" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void UniformThrashTests::Initialize</definition>
+        <argsstring>() override</argsstring>
+        <name>Initialize</name>
+        <qualifiedname>UniformThrashTests::Initialize</qualifiedname>
+        <reimplements refid="d2/d3e/classTestSuite_1a1c4756eb905d6d4d35e1630107396c38">Initialize</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Initializes the test suite and creates test cases.</para>
+<para><simplesect kind="remark"><para>UniformThrash Renders a moderate number of quads, changing the uniform constants between each quad. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tests/uniform_thrash_tests.h" line="13" column="8" bodyfile="src/tests/uniform_thrash_tests.cpp" bodystart="30" bodyend="30"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="d1/dc1/classUniformThrashTests_1af4833de1a61c71c2091976f841cc3d7f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void UniformThrashTests::Test</definition>
+        <argsstring>()</argsstring>
+        <name>Test</name>
+        <qualifiedname>UniformThrashTests::Test</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tests/uniform_thrash_tests.h" line="16" column="8" bodyfile="src/tests/uniform_thrash_tests.cpp" bodystart="69" bodyend="106"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Performs pathological updates to vertex shader uniforms. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>TestSuite</label>
+        <link refid="d2/d3e/classTestSuite"/>
+      </node>
+      <node id="1">
+        <label>UniformThrashTests</label>
+        <link refid="d1/dc1/classUniformThrashTests"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="4">
+        <label>PBKitPlusPlus::NV2AState</label>
+      </node>
+      <node id="3">
+        <label>TestHost</label>
+        <link refid="d6/d80/classTestHost"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>TestSuite</label>
+        <link refid="d2/d3e/classTestSuite"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>host_</edgelabel>
+        </childnode>
+      </node>
+      <node id="1">
+        <label>UniformThrashTests</label>
+        <link refid="d1/dc1/classUniformThrashTests"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="src/tests/uniform_thrash_tests.h" line="9" column="1" bodyfile="src/tests/uniform_thrash_tests.h" bodystart="9" bodyend="17"/>
+    <listofallmembers>
+      <member refid="d2/d3e/classTestSuite_1a137c1c57f8ad999bd78a8f7f8f2cf69e" prot="public" virt="virtual"><scope>UniformThrashTests</scope><name>Deinitialize</name></member>
+      <member refid="d2/d3e/classTestSuite_1a165d9da1dec525ffdd299e2dcfaec2ef" prot="public" virt="non-virtual"><scope>UniformThrashTests</scope><name>DisableTests</name></member>
+      <member refid="d2/d3e/classTestSuite_1a7059e61572d914cff83ae22da3ea1957" prot="public" virt="non-virtual"><scope>UniformThrashTests</scope><name>HasEnabledTests</name></member>
+      <member refid="d2/d3e/classTestSuite_1a454f5c2050b66b598a2f2fcffd45ae48" prot="protected" virt="non-virtual"><scope>UniformThrashTests</scope><name>host_</name></member>
+      <member refid="d1/dc1/classUniformThrashTests_1a80b4d88995248fc3dffd471374040230" prot="public" virt="virtual"><scope>UniformThrashTests</scope><name>Initialize</name></member>
+      <member refid="d2/d3e/classTestSuite_1a15144024801f2f885727f7926c826c87" prot="public" virt="non-virtual"><scope>UniformThrashTests</scope><name>Name</name></member>
+      <member refid="d2/d3e/classTestSuite_1a2e81678d3ac733d517616bd67a837465" prot="protected" virt="non-virtual"><scope>UniformThrashTests</scope><name>output_dir_</name></member>
+      <member refid="d2/d3e/classTestSuite_1ac50b006a0a46396cde6073c3e569bde7" prot="protected" virt="non-virtual"><scope>UniformThrashTests</scope><name>Profile</name></member>
+      <member refid="d2/d3e/classTestSuite_1aa87e9c8f05a49f660701e91271fb0ede" prot="public" virt="non-virtual"><scope>UniformThrashTests</scope><name>Run</name></member>
+      <member refid="d2/d3e/classTestSuite_1a7f99d1a92beb6b58219b841b60d56322" prot="public" virt="non-virtual"><scope>UniformThrashTests</scope><name>RunAll</name></member>
+      <member refid="d2/d3e/classTestSuite_1a0d580dbb0e1630ecdc989d5c852e8f91" prot="protected" virt="non-virtual"><scope>UniformThrashTests</scope><name>SetDefaultTextureFormat</name></member>
+      <member refid="d2/d3e/classTestSuite_1ad3fb7cc9d8db8740c5188da083312b8d" prot="public" virt="virtual"><scope>UniformThrashTests</scope><name>SetupTest</name></member>
+      <member refid="d2/d3e/classTestSuite_1ac59f02a9549a146ed62e6185c0acec8b" prot="protected" virt="non-virtual"><scope>UniformThrashTests</scope><name>suite_name_</name></member>
+      <member refid="d2/d3e/classTestSuite_1a90bc6959d04c41e07eed51f80a435d70" prot="public" virt="virtual"><scope>UniformThrashTests</scope><name>TearDownTest</name></member>
+      <member refid="d1/dc1/classUniformThrashTests_1af4833de1a61c71c2091976f841cc3d7f" prot="private" virt="non-virtual"><scope>UniformThrashTests</scope><name>Test</name></member>
+      <member refid="d2/d3e/classTestSuite_1a80f0bc74d8d511547708827e5a549a63" prot="public" virt="non-virtual"><scope>UniformThrashTests</scope><name>TestNames</name></member>
+      <member refid="d2/d3e/classTestSuite_1a7bc0a6c4d360f6f487779e8f4282d0a1" prot="protected" virt="non-virtual"><scope>UniformThrashTests</scope><name>tests_</name></member>
+      <member refid="d2/d3e/classTestSuite_1a57b1ed01dd40328456bf0854043ca68b" prot="public" virt="non-virtual"><scope>UniformThrashTests</scope><name>TestSuite</name></member>
+      <member refid="d2/d3e/classTestSuite_1a253b4d7ef576ab6950da2f9748d0afa9" prot="public" virt="non-virtual"><scope>UniformThrashTests</scope><name>TestSuite</name></member>
+      <member refid="d1/dc1/classUniformThrashTests_1a72d44ad2736989da32fed77d84f3463d" prot="public" virt="non-virtual"><scope>UniformThrashTests</scope><name>UniformThrashTests</name></member>
+      <member refid="d2/d3e/classTestSuite_1ac12e8f49c702522380d9824e4acfd53b" prot="public" virt="virtual"><scope>UniformThrashTests</scope><name>UpdateUserContext</name></member>
+      <member refid="d2/d3e/classTestSuite_1a1743f0a04119de901cb819111d51192d" prot="public" virt="virtual"><scope>UniformThrashTests</scope><name>~TestSuite</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
