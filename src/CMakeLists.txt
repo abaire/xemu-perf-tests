@@ -75,6 +75,8 @@ generate_nv2a_vshinc_files(
 
 add_library(
         perf_tests
+        tests/busy_pfifo_tests.cpp
+        tests/busy_pfifo_tests.h
         tests/fill_rate_tests.cpp
         tests/fill_rate_tests.h
         tests/high_vertex_count_tests.cpp
