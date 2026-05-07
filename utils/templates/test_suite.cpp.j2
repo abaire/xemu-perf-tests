@@ -2,6 +2,9 @@
 #include "test_host.h"
 
 static constexpr char kDummyTest[] = "DummyTest";
+static constexpr uint32_t kIterations = 10;
+static constexpr uint32_t kNumDrawsSingleFrame = 10;
+static constexpr uint32_t kNumDrawsMultiframe60FPS = 5;
 
 {{ class_name }}::{{ class_name }}(TestHost &host, std::string output_dir, const Config &config)
     : TestSuite(host, std::move(output_dir), "{{ suite_name_pretty }}", config) {
@@ -23,8 +26,9 @@ void {{ class_name }}::Test() {
 
   TestHost::ProfileResults results{};
 
-  results = Profile(kDummyTest, 10, [this] {
-    for (auto i = 0; i < 10; ++i) {
+  const uint32_t num_draws = host_.GetSaveResults() ? kNumDrawsSingleFrame : kNumDrawsMultiframe60FPS;
+  results = Profile(kDummyTest, kIterations, [this, num_draws] {
+    for (auto i = 0; i < num_draws; ++i) {
       pb_print("TODO: Test something");
       pb_draw_text_screen();
     }
