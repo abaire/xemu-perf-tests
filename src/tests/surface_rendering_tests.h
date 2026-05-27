@@ -14,6 +14,9 @@ class SurfaceRenderingTests : public TestSuite {
 
  private:
   void Test();
+
+  void TestXemuForceSurfaceDownloadPath();
+
 };
 
 #endif  // XEMU_PERF_TESTS_SURFACE_RENDERING_TESTS_H
