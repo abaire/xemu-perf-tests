@@ -1,12 +1,19 @@
 #include "tiny_draw_tests.h"
 
 #include "shaders/passthrough_vertex_shader.h"
+#include "shaders/vertex_shader_program.h"
 #include "test_host.h"
 
 static constexpr char kTinyDrawTest[] = "TinyDraw";
 
 static constexpr uint32_t kIterations = 10;
 static constexpr uint32_t kNumDrawsSingleFrame = 1000;
+
+// clang-format off
+static const uint32_t kLongPassthroughShader[] = {
+#include "long_passthrough.vshinc"
+};
+// clang-format on
 
 // Measured using a 1.0 devkit, close to the 60 fps limit.
 static constexpr uint32_t GetNumDrawsForMode(TinyDrawTests::DrawMode mode) {
@@ -26,7 +33,8 @@ static constexpr uint32_t GetNumDrawsForMode(TinyDrawTests::DrawMode mode) {
 static uint32_t kVertexAttributes = TestHost::POSITION | TestHost::DIFFUSE;
 static TestHost::DrawPrimitive kPrimitive = TestHost::PRIMITIVE_TRIANGLES;
 
-static std::string MakeTestName(const std::string &prefix, TinyDrawTests::DrawMode draw_mode, bool use_vsh) {
+static std::string MakeTestName(const std::string &prefix, TinyDrawTests::DrawMode draw_mode,
+                                TinyDrawTests::ShaderMode shader_mode) {
   std::string ret = prefix;
 
   switch (draw_mode) {
@@ -44,8 +52,15 @@ static std::string MakeTestName(const std::string &prefix, TinyDrawTests::DrawMo
       break;
   }
 
-  if (use_vsh) {
-    ret += "-vsh";
+  switch (shader_mode) {
+    case TinyDrawTests::ShaderMode::FIXED_FUNCTION:
+      break;
+    case TinyDrawTests::ShaderMode::PASSTHROUGH:
+      ret += "-vsh";
+      break;
+    case TinyDrawTests::ShaderMode::LONG_PASSTHROUGH:
+      ret += "-vshlong";
+      break;
   }
 
   return ret;
@@ -55,9 +70,9 @@ TinyDrawTests::TinyDrawTests(TestHost &host, std::string output_dir, const Confi
     : TestSuite(host, std::move(output_dir), "TinyDraw", config) {
   for (auto draw_mode : {DrawMode::DRAW_ARRAYS, DrawMode::DRAW_INLINE_BUFFERS, DrawMode::DRAW_INLINE_ARRAYS,
                          DrawMode::DRAW_INLINE_ELEMENTS}) {
-    for (auto use_vsh : {false, true}) {
-      std::string name = MakeTestName(kTinyDrawTest, draw_mode, use_vsh);
-      tests_[name] = [this, name, draw_mode, use_vsh]() { Test(name, draw_mode, use_vsh); };
+    for (auto shader_mode : {ShaderMode::FIXED_FUNCTION, ShaderMode::PASSTHROUGH, ShaderMode::LONG_PASSTHROUGH}) {
+      std::string name = MakeTestName(kTinyDrawTest, draw_mode, shader_mode);
+      tests_[name] = [this, name, draw_mode, shader_mode]() { Test(name, draw_mode, shader_mode); };
     }
   }
 }
@@ -71,11 +86,19 @@ TinyDrawTests::TinyDrawTests(TestHost &host, std::string output_dir, const Confi
  * @tc TinyDraw-arrays-vsh
  *   Renders hundreds of tiny triangles using individual DRAW_ARRAYS calls. Custom vertex shader.
  *
+ * @tc TinyDraw-arrays-vshlong
+ *   Renders hundreds of tiny triangles using individual DRAW_ARRAYS calls.
+ *   Custom vertex shader that fills all 136 instruction slots.
+ *
  * @tc TinyDraw-inlinebuffers
  *   Renders hundreds of tiny triangles using individual DRAW_INLINE_BUFFERS calls. Fixed function pipeline.
  *
  * @tc TinyDraw-inlinebuffers-vsh
  *   Renders hundreds of tiny triangles using individual DRAW_INLINE_BUFFERS calls. Custom vertex shader.
+ *
+ * @tc TinyDraw-inlinebuffers-vshlong
+ *   Renders hundreds of tiny triangles using individual DRAW_INLINE_BUFFERS calls.
+ *   Custom vertex shader that fills all 136 instruction slots.
  *
  * @tc TinyDraw-inlinearrays
  *   Renders hundreds of tiny triangles using individual DRAW_INLINE_ARRAYS calls. Fixed function pipeline.
@@ -83,11 +106,19 @@ TinyDrawTests::TinyDrawTests(TestHost &host, std::string output_dir, const Confi
  * @tc TinyDraw-inlinearrays-vsh
  *   Renders hundreds of tiny triangles using individual DRAW_INLINE_ARRAYS calls. Custom vertex shader.
  *
+ * @tc TinyDraw-inlinearrays-vshlong
+ *   Renders hundreds of tiny triangles using individual DRAW_INLINE_ARRAYS calls.
+ *   Custom vertex shader that fills all 136 instruction slots.
+ *
  * @tc TinyDraw-inlineelements
  *   Renders hundreds of tiny triangles using individual DRAW_INLINE_ELEMENTS calls. Fixed function pipeline.
  *
  * @tc TinyDraw-inlineelements-vsh
  *   Renders hundreds of tiny triangles using individual DRAW_INLINE_ELEMENTS calls. Custom vertex shader.
+ *
+ * @tc TinyDraw-inlineelements-vshlong
+ *   Renders hundreds of tiny triangles using individual DRAW_INLINE_ELEMENTS calls.
+ *   Custom vertex shader that fills all 136 instruction slots.
  *
  */
 void TinyDrawTests::Initialize() {
@@ -122,15 +153,26 @@ void TinyDrawTests::Deinitialize() {
   TestSuite::Deinitialize();
 }
 
-void TinyDrawTests::Test(const std::string &test_name, DrawMode draw_mode, bool use_vsh) {
+void TinyDrawTests::Test(const std::string &test_name, DrawMode draw_mode, ShaderMode shader_mode) {
   host_.PrepareDraw(0xFF333333);
 
-  if (use_vsh) {
-    auto shader = std::make_shared<PBKitPlusPlus::PassthroughVertexShader>();
-    host_.SetVertexShaderProgram(shader);
-  } else {
-    host_.SetVertexShaderProgram(nullptr);
-    host_.SetupFixedFunctionPassthrough();
+  switch (shader_mode) {
+    case ShaderMode::FIXED_FUNCTION:
+      host_.SetVertexShaderProgram(nullptr);
+      host_.SetupFixedFunctionPassthrough();
+      break;
+
+    case ShaderMode::PASSTHROUGH:
+      host_.SetVertexShaderProgram(std::make_shared<PBKitPlusPlus::PassthroughVertexShader>());
+      break;
+
+    case ShaderMode::LONG_PASSTHROUGH: {
+      auto shader =
+          std::make_shared<PBKitPlusPlus::VertexShaderProgram>(kLongPassthroughShader, sizeof(kLongPassthroughShader));
+      // See long_passthrough.vsh.
+      shader->SetUniformF(0, 0.f, 0.5f, 0.25f, 1.f);
+      host_.SetVertexShaderProgram(shader);
+    } break;
   }
 
   TestHost::ProfileResults results{};

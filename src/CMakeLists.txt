@@ -70,6 +70,7 @@ generate_nv2a_vshinc_files(
         GENERATION_TARGET_VARIABLE _VERTEX_SHADER_GEN_TARGET
         SOURCES
         shaders/diffuse_from_uniform.vsh
+        shaders/long_passthrough.vsh
         shaders/passthrough.vsh
 )
 
@@ -83,6 +84,8 @@ add_library(
         tests/high_vertex_count_tests.h
         tests/primitive_type_tests.cpp
         tests/primitive_type_tests.h
+        tests/program_thrash_tests.cpp
+        tests/program_thrash_tests.h
         tests/surface_rendering_tests.cpp
         tests/surface_rendering_tests.h
         tests/test_suite.cpp

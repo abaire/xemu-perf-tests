@@ -23,6 +23,12 @@ class TinyDrawTests : public TestSuite {
     DRAW_INLINE_ELEMENTS,
   };
 
+  enum class ShaderMode {
+    FIXED_FUNCTION,
+    PASSTHROUGH,
+    LONG_PASSTHROUGH,
+  };
+
  public:
   TinyDrawTests(TestHost &host, std::string output_dir, const Config &config);
 
@@ -30,7 +36,7 @@ class TinyDrawTests : public TestSuite {
   void Deinitialize() override;
 
  private:
-  void Test(const std::string &test_name, DrawMode draw_mode, bool use_vsh);
+  void Test(const std::string &test_name, DrawMode draw_mode, ShaderMode shader_mode);
 
  private:
   std::shared_ptr<PBKitPlusPlus::VertexBuffer> vertex_buffer_;
