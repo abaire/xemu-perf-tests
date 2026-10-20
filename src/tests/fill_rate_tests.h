@@ -1,10 +1,11 @@
 #ifndef XEMU_PERF_TESTS_FILL_RATE_TESTS_H
 #define XEMU_PERF_TESTS_FILL_RATE_TESTS_H
 
-#include "test_suite.h"
-#include "vertex_buffer.h"
 #include <memory>
 #include <vector>
+
+#include "test_suite.h"
+#include "vertex_buffer.h"
 
 /**
  * Benchmarks fill rate by drawing hundreds of full screen quads.
