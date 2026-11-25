@@ -104,7 +104,13 @@ void TestDriver::Run() {
 void TestDriver::RunAllTestsNonInteractive() {
   for (auto &suite : test_suites_) {
     suite->Initialize();
-    suite->RunAll();
+    if (sustained_mode_) {
+      for (const auto &test_name : suite->TestNames()) {
+        suite->RunSustained(test_name, sustained_warmup_frames_, sustained_measure_frames_);
+      }
+    } else {
+      suite->RunAll();
+    }
     suite->Deinitialize();
   }
   running_ = false;

@@ -16,7 +16,7 @@ BusyPfifoTests::BusyPfifoTests(TestHost &host, std::string output_dir, const Con
  * Initializes the test suite and creates test cases.
  *
  * @tc PFIFOSaturation
- *  Saturates the PFIFO queue and renders simple draws.
+ *  Saturates the PFIFO queue and renders simple draws. In sustained mode, `load` sets the number of draws per frame.
  */
 void BusyPfifoTests::Initialize() {
   TestSuite::Initialize();
@@ -82,7 +82,9 @@ void BusyPfifoTests::Test() {
 
   TestHost::ProfileResults results{};
 
-  const uint32_t num_draws = host_.GetSaveResults() ? kNumDrawsSingleFrame : kNumDrawsMultiFrame;
+  // In continuous/sustained mode the draw count is the "load" knob, tunable via the runtime config so that the test can
+  // be calibrated to the 60fps budget on hardware.
+  const uint32_t num_draws = host_.GetSaveResults() ? kNumDrawsSingleFrame : GetLoad(kTestName, kNumDrawsMultiFrame);
   results = Profile(kTestName, 10, [this, num_draws] {
     static constexpr float kZ = 1.f;
     static constexpr float kW = 1.f;

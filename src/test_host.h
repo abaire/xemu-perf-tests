@@ -1,8 +1,11 @@
 #ifndef XEMU_PERF_TESTS_TEST_HOST_H
 #define XEMU_PERF_TESTS_TEST_HOST_H
 
+#include <pbkit/pbkit.h>
+
 #include <cstdint>
 #include <string>
+#include <vector>
 
 #include "nv2astate.h"
 
@@ -27,6 +30,10 @@ class TestHost : public PBKitPlusPlus::NV2AState {
   //! Creates the given directory if it does not already exist.
   static void EnsureFolderExists(const std::string &folder_path);
 
+  //! Waits for vblank, clears the framebuffer, and (in sustained mode) marks the start of the frame's timed region.
+  //! Hides NV2AState::PrepareDraw so that all tests get sustained-mode timing without modification.
+  void PrepareDraw(uint32_t argb = 0xFF000000, uint32_t depth_value = 0xFFFFFFFF, uint8_t stencil_value = 0x00);
+
   //! Renders test results and swaps back buffer.
   void FinishDraw(const std::string &suite_name, const std::string &test_name, const ProfileResults &results);
 
@@ -46,8 +53,64 @@ class TestHost : public PBKitPlusPlus::NV2AState {
     average_mspf_ = 0.f;
   }
 
+  //! Begins collecting per-frame timing for a sustained (multi-frame, non-interactive) run.
+  //! While active, FinishDraw skips the results overlay and records timing for each frame.
+  void BeginSustainedCapture(uint32_t expected_frames);
+
+  //! Marks the start of a frame in sustained mode. Must be called before the test body issues any work.
+  void BeginSustainedFrame();
+
+  //! Enables/disables recording of frames passed to FinishDraw (used to discard warmup frames).
+  void SetSustainedRecording(bool enable) { sustained_recording_ = enable; }
+
+  //! Ends sustained capture and writes a results record to the log.
+  void EndSustainedCapture(const std::string &suite_name, const std::string &test_name, uint32_t load,
+                           uint32_t warmup_frames);
+
+  [[nodiscard]] bool IsSustainedCaptureActive() const { return sustained_active_; }
+
+  //! Blocks until the GPU has finished all work submitted so far.
+  //!
+  //! Pushes a NV097_BACK_END_WRITE_SEMAPHORE_RELEASE and spins on the RAM value the GPU writes, rather than polling GPU
+  //! registers via pb_busy(). Under xemu each register read is an MMIO access that contends for the same locks the
+  //! benchmarks are trying to measure, so polling would perturb the results.
+  //!
+  //! Returns false if the fence timed out, in which case this falls back to pb_busy().
+  bool WaitForGPUIdle();
+
+ private:
+  void FinishSustainedFrame();
+  void EnsureSemaphoreInitialized();
+
  private:
   bool save_results_{true};
+
+  //! Timing for a single frame in sustained mode.
+  struct SustainedFrame {
+    //! Time from frame start until all work has been submitted to the pushbuffer.
+    uint32_t submit_us;
+    //! Time from frame start until the GPU reports idle. Primary metric; not quantized by vsync.
+    uint32_t busy_us;
+    //! Time from the previous frame's flip to this frame's flip.
+    uint32_t frame_us;
+    //! Number of vblanks between the previous flip and this one.
+    uint32_t vblanks;
+  };
+
+  bool sustained_active_{false};
+  bool sustained_recording_{false};
+  //! True until the first PrepareDraw of the current frame re-stamps the frame start.
+  bool sustained_awaiting_prepare_{false};
+  LARGE_INTEGER sustained_frame_start_{};
+  LARGE_INTEGER sustained_last_flip_{};
+  DWORD sustained_last_vbl_{0};
+  std::vector<SustainedFrame> sustained_frames_;
+  uint32_t sustained_fence_timeouts_{0};
+
+  //! RAM written by the GPU on NV097_BACK_END_WRITE_SEMAPHORE_RELEASE.
+  volatile uint32_t *semaphore_memory_{nullptr};
+  struct s_CtxDma semaphore_dma_ctx_{};
+  uint32_t semaphore_value_{0};
 
   static constexpr auto kFrameTimeWindow = 10;
   double perf_counter_frequency_;

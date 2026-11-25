@@ -13,7 +13,7 @@ include(FetchContent)
 FetchContent_Declare(
         pbkitplusplus
         GIT_REPOSITORY https://github.com/abaire/pbkitplusplus
-        GIT_TAG e91d509e4f75d6d815807d80443e4e56aab89772
+        GIT_TAG f7990a1102fa0db4f9cc826ddbaf6bebcf7b83a6
 )
 
 set(NO_OPT ON CACHE INTERNAL "Force pbkitplusplus debug build")

@@ -15,6 +15,16 @@ class RuntimeConfig {
     UNSKIPPED,
   };
 
+  enum class RunMode {
+    //! Each test renders once (repeating its body a few times) and logs submission timing.
+    SINGLE,
+    //! Each test runs for warmup + measure frames in continuous (60fps-budget) mode and logs per-frame timing.
+    SUSTAINED,
+  };
+
+  //! Map of test case name to configured load.
+  typedef std::map<std::string, uint32_t> TestLoads;
+
  public:
   RuntimeConfig() = default;
   explicit RuntimeConfig(const RuntimeConfig&) = delete;
@@ -49,6 +59,10 @@ class RuntimeConfig {
 
   [[nodiscard]] const std::string& output_directory_path() const { return output_directory_path_; }
 
+  [[nodiscard]] RunMode run_mode() const { return run_mode_; }
+  [[nodiscard]] uint32_t warmup_frames() const { return warmup_frames_; }
+  [[nodiscard]] uint32_t measure_frames() const { return measure_frames_; }
+
   static std::string SanitizePath(const std::string& path);
 
  private:
@@ -59,6 +73,13 @@ class RuntimeConfig {
   uint32_t reboot_or_shutdown_delay_ms_ = 10000;
 
   std::string output_directory_path_ = SanitizePath(DEFAULT_OUTPUT_DIRECTORY_PATH);
+
+  RunMode run_mode_ = RunMode::SINGLE;
+  uint32_t warmup_frames_ = 30;
+  uint32_t measure_frames_ = 240;
+
+  //! Map of test suite name to a map of test case to configured load.
+  std::map<std::string, TestLoads> configured_test_loads_;
 
   //! Map of test suite name to skip config.
   std::map<std::string, SkipConfiguration> configured_test_suites_;

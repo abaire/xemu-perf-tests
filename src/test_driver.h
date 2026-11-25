@@ -33,6 +33,13 @@ class TestDriver {
   //! Runs all tests automatically without reacting to any user input.
   void RunAllTestsNonInteractive();
 
+  //! Causes RunAllTestsNonInteractive to run each test in sustained mode for the given number of frames.
+  void EnableSustainedMode(uint32_t warmup_frames, uint32_t measure_frames) {
+    sustained_mode_ = true;
+    sustained_warmup_frames_ = warmup_frames;
+    sustained_measure_frames_ = measure_frames;
+  }
+
  private:
   void OnControllerAdded(const SDL_ControllerDeviceEvent &event);
   void OnControllerRemoved(const SDL_ControllerDeviceEvent &event);
@@ -64,6 +71,10 @@ class TestDriver {
   std::shared_ptr<MenuItem> active_menu_;
   std::shared_ptr<MenuItem> root_menu_;
   std::shared_ptr<MenuItem> options_menu_;
+
+  bool sustained_mode_{false};
+  uint32_t sustained_warmup_frames_{0};
+  uint32_t sustained_measure_frames_{0};
 };
 
 #endif  // XEMU_PERF_TESTS_TEST_DRIVER_H

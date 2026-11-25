@@ -40,7 +40,10 @@ Behavior can optionally be determined via a JSON configuration file loaded from 
     "enable_shutdown_on_completion": false,
     "skip_tests_by_default": false,
     "delay_milliseconds_between_tests": 0,
-    "output_directory_path": "e:/xemu_perf_tests"
+    "output_directory_path": "e:/xemu_perf_tests",
+    "run_mode": "single",
+    "warmup_frames": 30,
+    "measure_frames": 240
   }
 }
 ```
@@ -51,6 +54,37 @@ first.
 
 When building from source, the `sample-config.json` file in the `resources` directory can be copied to
 `resources/xemu_perf_tests_config.json` and modified in order to change the default behavior of the final xiso.
+
+#### Sustained mode
+
+Setting `"run_mode": "sustained"` makes the non-interactive "run all" path run each test in continuous (60 FPS budget)
+mode. Each test runs for `warmup_frames` unrecorded frames and then `measure_frames` recorded frames. Each test writes
+one record to `results.txt` with:
+
+* `busy_us`: time from the start of the frame (just after the vblank wait and clear in `PrepareDraw`) until the GPU is
+  idle. This is the primary metric. GPU completion is detected with a `NV097_BACK_END_WRITE_SEMAPHORE_RELEASE` fence
+  that the GPU writes to RAM, rather than by polling GPU registers with `pb_busy()`. Under xemu, register polling is
+  MMIO that contends for the same locks the benchmarks measure. It is not quantized by vsync, so improvements show up even when they don't change
+  the frame rate.
+* `submit_us`: time until all of the frame's work has been pushed. pbkit blocks when the pushbuffer is full, so this can
+  be close to `busy_us` for heavy tests.
+* `frame_us`: time from one flip to the next.
+* `missed_vblanks`: the number of extra vblanks that elapsed between flips.
+* `fence_timeouts`: the number of frames whose semaphore fence did not complete within 2 seconds. The wait falls back
+  to `pb_busy()` for those frames. This should always be 0.
+* the raw per-frame `busy_us` and vblank counts.
+
+The distributions report mean, min, p50, p95, p99 and max, all in microseconds.
+
+A test can expose a work-scaling knob through `GetLoad(test_name, default)`, so it can be tuned to the 60 FPS budget on
+hardware without recompiling. Set the knob in a top-level `"loads"` object, keyed by `"Suite::Test"`. It is kept
+separate from `"test_suites"` so that tools that rewrite the test filter don't discard it:
+
+```json
+"loads": {
+  "BusyPfifo::PFIFOSaturation": 7
+}
+```
 
 #### Filtering test suites/cases
 

@@ -192,6 +192,9 @@ static void RunTests(RuntimeConfig& config, TestHost& host, std::vector<std::sha
 
   TestDriver driver(host, test_suites, kFramebufferWidth, kFramebufferHeight, false, config.disable_autorun(),
                     config.enable_autorun_immediately());
+  if (config.run_mode() == RuntimeConfig::RunMode::SUSTAINED) {
+    driver.EnableSustainedMode(config.warmup_frames(), config.measure_frames());
+  }
 
   Logger::Log() << "[" << std::endl;
   driver.Run();

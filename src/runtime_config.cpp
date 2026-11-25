@@ -168,6 +168,56 @@ bool RuntimeConfig::LoadConfigBuffer(const std::string& config_content, std::vec
     return false;
   }
 
+  {
+    std::string run_mode;
+    if (!LoadString(settings, "run_mode", run_mode)) {
+      errors.emplace_back("settings[run_mode] must be a string");
+      return false;
+    }
+    if (run_mode.empty() || run_mode == "single") {
+      run_mode_ = RunMode::SINGLE;
+    } else if (run_mode == "sustained") {
+      run_mode_ = RunMode::SUSTAINED;
+    } else {
+      errors.emplace_back("settings[run_mode] must be one of 'single', 'sustained'");
+      return false;
+    }
+  }
+
+  if (!LoadUint32(settings, "warmup_frames", warmup_frames_)) {
+    errors.emplace_back("settings[warmup_frames] must be an integer");
+    return false;
+  }
+
+  if (!LoadUint32(settings, "measure_frames", measure_frames_)) {
+    errors.emplace_back("settings[measure_frames] must be an integer");
+    return false;
+  }
+
+  // Loads live in their own top-level object, keyed by "Suite::Test", so that tools which rewrite "test_suites" to
+  // filter tests (e.g., xemu-perf-tester) do not discard calibration data.
+  auto loads = json_getProperty(root, "loads");
+  if (loads) {
+    if (json_getType(loads) != JSON_OBJ) {
+      errors.emplace_back("'loads' not an object");
+      return false;
+    }
+    for (auto element = json_getChild(loads); element; element = json_getSibling(element)) {
+      std::string fq_name = json_getName(element);
+      auto separator = fq_name.find("::");
+      if (separator == std::string::npos) {
+        errors.emplace_back("loads[" + fq_name + "] must be named 'Suite::Test'. Ignoring");
+        continue;
+      }
+      if (json_getType(element) != JSON_INTEGER || json_getInteger(element) < 0) {
+        errors.emplace_back("loads[" + fq_name + "] must be a non-negative integer");
+        return false;
+      }
+      configured_test_loads_[fq_name.substr(0, separator)][fq_name.substr(separator + 2)] =
+          static_cast<uint32_t>(json_getInteger(element) & 0xFFFFFFFF);
+    }
+  }
+
   auto test_suites = json_getProperty(root, "test_suites");
   if (!test_suites) {
     return true;
@@ -319,6 +369,13 @@ bool RuntimeConfig::ApplyConfig(std::vector<std::shared_ptr<TestSuite>>& test_su
 
     if (!skipped_test_cases.empty()) {
       suite->DisableTests(skipped_test_cases);
+    }
+
+    auto loads = configured_test_loads_.find(suite->Name());
+    if (loads != configured_test_loads_.end()) {
+      for (auto& [test_name, load] : loads->second) {
+        suite->SetLoad(test_name, load);
+      }
     }
 
     if (suite->HasEnabledTests()) {

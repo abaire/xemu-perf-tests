@@ -60,6 +60,48 @@ void TestSuite::RunAll() {
   }
 }
 
+void TestSuite::RunSustained(const std::string& test_name, uint32_t warmup_frames, uint32_t measure_frames) {
+  auto it = tests_.find(test_name);
+  if (it == tests_.end()) {
+    ASSERT(!"Invalid test name");
+  }
+
+  PrintMsg("Starting sustained %s::%s\n", suite_name_.c_str(), test_name.c_str());
+
+  // Sustained mode uses the same workload as interactive continuous mode.
+  const bool previous_save_results = host_.GetSaveResults();
+  host_.SetSaveResults(false);
+  host_.PreTest();
+  host_.BeginSustainedCapture(measure_frames);
+
+  const uint32_t total_frames = warmup_frames + measure_frames;
+  for (uint32_t frame = 0; frame < total_frames; ++frame) {
+    host_.SetSustainedRecording(frame >= warmup_frames);
+    host_.BeginSustainedFrame();
+    SetupTest();
+    it->second();
+    TearDownTest();
+  }
+
+  uint32_t load = 0;
+  auto load_it = effective_loads_.find(test_name);
+  if (load_it != effective_loads_.end()) {
+    load = load_it->second;
+  }
+  host_.EndSustainedCapture(suite_name_, test_name, load, warmup_frames);
+  host_.SetSaveResults(previous_save_results);
+}
+
+uint32_t TestSuite::GetLoad(const std::string& test_name, uint32_t default_value) const {
+  uint32_t ret = default_value;
+  auto it = loads_.find(test_name);
+  if (it != loads_.end()) {
+    ret = it->second;
+  }
+  effective_loads_[test_name] = ret;
+  return ret;
+}
+
 void TestSuite::SetDefaultTextureFormat() const {
   const TextureFormatInfo& texture_format = GetTextureFormatInfo(NV097_SET_TEXTURE_FORMAT_COLOR_SZ_X8R8G8B8);
   host_.SetTextureFormat(texture_format, 0);
