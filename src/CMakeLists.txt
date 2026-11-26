@@ -13,7 +13,7 @@ include(FetchContent)
 FetchContent_Declare(
         pbkitplusplus
         GIT_REPOSITORY https://github.com/abaire/pbkitplusplus
-        GIT_TAG f7990a1102fa0db4f9cc826ddbaf6bebcf7b83a6
+        GIT_TAG c43c7dd1f1f36d480fea1b9272c6d05fa014d376
 )
 
 set(NO_OPT ON CACHE INTERNAL "Force pbkitplusplus debug build")
@@ -82,6 +82,10 @@ add_library(
         tests/fill_rate_tests.h
         tests/high_vertex_count_tests.cpp
         tests/high_vertex_count_tests.h
+        tests/pfifo_contention_tests.cpp
+        tests/pfifo_contention_tests.h
+        tests/push_cost_tests.cpp
+        tests/push_cost_tests.h
         tests/primitive_type_tests.cpp
         tests/primitive_type_tests.h
         tests/program_thrash_tests.cpp

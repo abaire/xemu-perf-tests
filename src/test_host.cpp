@@ -72,14 +72,14 @@ void TestHost::PrepareDraw(uint32_t argb, uint32_t depth_value, uint8_t stencil_
   if (sustained_active_ && sustained_awaiting_prepare_) {
     // NV2AState::PrepareDraw waits for vblank and then clears, so the frame's timed region starts here, roughly aligned
     // to the vblank that began the frame.
-    QueryPerformanceCounter(&sustained_frame_start_);
+    StampSustainedFrameStart();
     sustained_awaiting_prepare_ = false;
   }
 }
 
 void TestHost::FinishDraw(const std::string &suite_name, const std::string &test_name, const ProfileResults &results) {
   if (sustained_active_) {
-    FinishSustainedFrame();
+    FinishSustainedFrame(true);
     return;
   }
 
@@ -251,19 +251,44 @@ void TestHost::BeginSustainedCapture(uint32_t expected_frames) {
   sustained_frames_.reserve(expected_frames);
   sustained_active_ = true;
   sustained_recording_ = false;
-  sustained_last_flip_.QuadPart = 0;
+  sustained_last_recorded_end_.QuadPart = 0;
+  sustained_skipped_missed_vblanks_ = 0;
   sustained_last_vbl_ = pb_get_vbl_counter();
   BeginSustainedFrame();
 }
 
-void TestHost::BeginSustainedFrame() {
-  QueryPerformanceCounter(&sustained_frame_start_);
-  sustained_awaiting_prepare_ = true;
+void TestHost::FinishDrawWithoutPresent() {
+  if (sustained_active_) {
+    FinishSustainedFrame(false);
+    return;
+  }
+
+  WaitForGPUIdle();
 }
 
-void TestHost::FinishSustainedFrame() {
+void TestHost::StampSustainedFrameStart() {
+  sustained_frame_start_resets_ = PBKitPlusPlus::Pushbuffer::GetResetStats();
+  QueryPerformanceCounter(&sustained_frame_start_);
+}
+
+void TestHost::BeginSustainedFrame() {
+  StampSustainedFrameStart();
+  sustained_awaiting_prepare_ = true;
+  sustained_skip_current_frame_ = false;
+}
+
+void TestHost::FinishSustainedFrame(bool present) {
   SustainedFrame frame{};
   frame.submit_us = GetMicrosecondsSince(sustained_frame_start_);
+  {
+    const auto resets = PBKitPlusPlus::Pushbuffer::GetResetStats();
+    frame.resets = resets.resets - sustained_frame_start_resets_.resets;
+    // Reset waits are measured with KeQueryPerformanceCounter, which runs at a different rate than the counter behind
+    // QueryPerformanceCounter used for the other timings.
+    frame.reset_wait_us =
+        static_cast<uint32_t>(static_cast<double>(resets.wait_ticks - sustained_frame_start_resets_.wait_ticks) *
+                              1000000.0 / static_cast<double>(KeQueryPerformanceFrequency()));
+  }
 
   // Waiting for the GPU to go idle is what exposes emulator-side PFIFO/PGRAPH costs to the guest.
   if (!WaitForGPUIdle()) {
@@ -271,25 +296,41 @@ void TestHost::FinishSustainedFrame() {
   }
   frame.busy_us = GetMicrosecondsSince(sustained_frame_start_);
 
-  while (pb_finished()) {
-    /* Not ready to swap yet */
+  if (present) {
+    while (pb_finished()) {
+      /* Not ready to swap yet */
+    }
   }
 
-  LARGE_INTEGER now;
-  QueryPerformanceCounter(&now);
-  if (sustained_last_flip_.QuadPart) {
-    frame.frame_us = static_cast<uint32_t>(static_cast<double>(now.QuadPart - sustained_last_flip_.QuadPart) *
-                                           1000000.0 / perf_counter_frequency_);
-  }
-  sustained_last_flip_ = now;
+  sustained_last_busy_us_ = frame.busy_us;
 
   auto vbl = pb_get_vbl_counter();
   frame.vblanks = vbl - sustained_last_vbl_;
   sustained_last_vbl_ = vbl;
 
-  if (sustained_recording_) {
-    sustained_frames_.push_back(frame);
+  if (!sustained_recording_) {
+    return;
   }
+
+  // Every frame, recorded or not, is expected to take exactly one vblank, so a skipped frame that overruns still
+  // counts.
+  if (sustained_skip_current_frame_) {
+    if (frame.vblanks > 1) {
+      sustained_skipped_missed_vblanks_ += frame.vblanks - 1;
+    }
+    return;
+  }
+
+  // Measured between recorded frames, so for a test that skips frames this spans the skipped ones too.
+  LARGE_INTEGER now;
+  QueryPerformanceCounter(&now);
+  if (sustained_last_recorded_end_.QuadPart) {
+    frame.frame_us = static_cast<uint32_t>(static_cast<double>(now.QuadPart - sustained_last_recorded_end_.QuadPart) *
+                                           1000000.0 / perf_counter_frequency_);
+  }
+  sustained_last_recorded_end_ = now;
+
+  sustained_frames_.push_back(frame);
 }
 
 static uint32_t Percentile(std::vector<uint32_t> &sorted_values, uint32_t percentile) {
@@ -335,53 +376,87 @@ static void LogRawArray(const char *name, const std::vector<uint32_t> &values, b
   Logger::Log() << line << std::endl;
 }
 
-void TestHost::EndSustainedCapture(const std::string &suite_name, const std::string &test_name, uint32_t load,
-                                   uint32_t warmup_frames) {
+TestHost::SustainedSummary TestHost::EndSustainedCapture(const std::string &suite_name, const std::string &test_name,
+                                                         uint32_t load, bool aborted) {
   sustained_active_ = false;
   sustained_recording_ = false;
+  sustained_aborted_ = aborted;
 
+  uint32_t missed_vblanks = sustained_skipped_missed_vblanks_;
+  std::vector<uint32_t> busy;
+  busy.reserve(sustained_frames_.size());
+  uint32_t max_resets = 0;
+  for (auto &f : sustained_frames_) {
+    busy.push_back(f.busy_us);
+    if (f.vblanks > 1) {
+      missed_vblanks += f.vblanks - 1;
+    }
+    max_resets = std::max(max_resets, f.resets);
+  }
+  std::sort(busy.begin(), busy.end());
+
+  SustainedSummary summary{};
+  summary.frames = sustained_frames_.size();
+  summary.missed_vblanks = missed_vblanks;
+  summary.fence_timeouts = sustained_fence_timeouts_;
+  summary.aborted = aborted;
+  summary.max_resets = max_resets;
+  summary.busy_p50_us = Percentile(busy, 50);
+  summary.busy_p95_us = Percentile(busy, 95);
+  sustained_summary_ = summary;
+
+  PrintMsg("  Sustained '%s::%s' load %lu: %lu frames, busy p95 %lu us, %lu missed vblanks%s\n", suite_name.c_str(),
+           test_name.c_str(), static_cast<unsigned long>(load), static_cast<unsigned long>(summary.frames),
+           static_cast<unsigned long>(summary.busy_p95_us), static_cast<unsigned long>(missed_vblanks),
+           aborted ? ", aborted" : "");
+
+  return summary;
+}
+
+void TestHost::LogSustainedCapture(const std::string &suite_name, const std::string &test_name, uint32_t load,
+                                   uint32_t warmup_frames, const char *calibration_label) {
   std::vector<uint32_t> submit;
+  std::vector<uint32_t> reset_wait;
+  std::vector<uint32_t> submit_minus_reset;
+  std::vector<uint32_t> resets;
   std::vector<uint32_t> busy;
   std::vector<uint32_t> frame;
   std::vector<uint32_t> vblanks;
-  uint32_t missed_vblanks = 0;
-  submit.reserve(sustained_frames_.size());
-  busy.reserve(sustained_frames_.size());
-  frame.reserve(sustained_frames_.size());
-  vblanks.reserve(sustained_frames_.size());
 
   for (auto &f : sustained_frames_) {
     submit.push_back(f.submit_us);
+    reset_wait.push_back(f.reset_wait_us);
+    submit_minus_reset.push_back(f.submit_us > f.reset_wait_us ? f.submit_us - f.reset_wait_us : 0);
+    resets.push_back(f.resets);
     busy.push_back(f.busy_us);
-    // The first frame of a capture has no previous flip to measure against.
+    // The first recorded frame has no previous recorded frame to measure against.
     if (f.frame_us) {
       frame.push_back(f.frame_us);
     }
     vblanks.push_back(f.vblanks);
-    if (f.vblanks > 1) {
-      missed_vblanks += f.vblanks - 1;
-    }
   }
-
-  PrintMsg("  Sustained '%s::%s' load %lu: %lu frames, %lu missed vblanks\n", suite_name.c_str(), test_name.c_str(),
-           static_cast<unsigned long>(load), static_cast<unsigned long>(sustained_frames_.size()),
-           static_cast<unsigned long>(missed_vblanks));
 
   Logger::Log() << "  {" << std::endl;
   Logger::Log() << R"(    "name": ")" << suite_name << "::" << test_name << "\"," << std::endl;
   Logger::Log() << R"(    "mode": "sustained",)" << std::endl;
+  if (calibration_label) {
+    Logger::Log() << R"(    "calibration": ")" << calibration_label << "\"," << std::endl;
+  }
   Logger::Log() << "    \"load\": " << load << "," << std::endl;
   Logger::Log() << "    \"warmup_frames\": " << warmup_frames << "," << std::endl;
   Logger::Log() << "    \"frames\": " << sustained_frames_.size() << "," << std::endl;
-  Logger::Log() << "    \"missed_vblanks\": " << missed_vblanks << "," << std::endl;
+  Logger::Log() << "    \"aborted\": " << (sustained_aborted_ ? "true" : "false") << "," << std::endl;
+  Logger::Log() << "    \"missed_vblanks\": " << sustained_summary_.missed_vblanks << "," << std::endl;
   Logger::Log() << "    \"fence_timeouts\": " << sustained_fence_timeouts_ << "," << std::endl;
   LogDistribution("submit_us", submit);
+  LogDistribution("submit_minus_reset_us", submit_minus_reset);
+  LogDistribution("reset_wait_us", reset_wait);
+  LogDistribution("resets", resets);
   LogDistribution("busy_us", busy);
   LogDistribution("frame_us", frame);
+  LogRawArray("raw_submit_us", submit, true);
+  LogRawArray("raw_reset_wait_us", reset_wait, true);
   LogRawArray("raw_busy_us", busy, true);
   LogRawArray("raw_vblanks", vblanks, false);
   Logger::Log() << "  }," << std::endl;
-
-  sustained_frames_.clear();
-  sustained_frames_.shrink_to_fit();
 }

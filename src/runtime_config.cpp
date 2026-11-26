@@ -39,33 +39,37 @@ class JSONParser : jsonPool_t {
   json_t const* root_node_{};
 };
 
-bool RuntimeConfig::LoadConfig(const char* config_file_path, std::vector<std::string>& errors) {
-  std::string dos_style_path = config_file_path;
+//! Reads the JSON file at `path` into `out`.
+static bool ReadJSONFile(const char* path, std::string& out, std::vector<std::string>& errors) {
+  std::string dos_style_path = path;
   std::replace(dos_style_path.begin(), dos_style_path.end(), '/', '\\');
 
-  std::string json_string;
-
-  {
-    std::ifstream config_file(dos_style_path.c_str());
-    if (!config_file) {
-      errors.push_back(std::string("Missing config file at ") + config_file_path);
-      return false;
-    }
-
-    config_file.seekg(0, std::ios::end);
-    auto end_pos = config_file.tellg();
-    config_file.seekg(0, std::ios::beg);
-    std::streamsize file_size = end_pos - config_file.tellg();
-
-    if (file_size > MAX_CONFIG_FILE_SIZE || file_size == -1) {
-      errors.push_back(std::string("Config file at ") + config_file_path + " is too large.");
-      return false;
-    }
-
-    json_string.resize(file_size);
-    config_file.read(&json_string[0], file_size);
+  std::ifstream file(dos_style_path.c_str());
+  if (!file) {
+    errors.push_back(std::string("Missing file at ") + path);
+    return false;
   }
 
+  file.seekg(0, std::ios::end);
+  auto end_pos = file.tellg();
+  file.seekg(0, std::ios::beg);
+  std::streamsize file_size = end_pos - file.tellg();
+
+  if (file_size > MAX_CONFIG_FILE_SIZE || file_size == -1) {
+    errors.push_back(std::string("File at ") + path + " is too large.");
+    return false;
+  }
+
+  out.resize(file_size);
+  file.read(&out[0], file_size);
+  return true;
+}
+
+bool RuntimeConfig::LoadConfig(const char* config_file_path, std::vector<std::string>& errors) {
+  std::string json_string;
+  if (!ReadJSONFile(config_file_path, json_string, errors)) {
+    return false;
+  }
   return LoadConfigBuffer(json_string, errors);
 }
 
@@ -115,6 +119,60 @@ static bool LoadUint32(json_t const* object, const char* key, uint32_t& out) {
   out = static_cast<uint32_t>(value & 0xFFFFFFFF);
   return true;
 };
+
+//! Parses an optional "loads" object, keyed by "Suite::Test", into `out`.
+static bool ParseLoads(json_t const* loads, std::vector<std::string>& errors,
+                       std::map<std::string, RuntimeConfig::TestLoads>& out) {
+  if (!loads) {
+    return true;
+  }
+  if (json_getType(loads) != JSON_OBJ) {
+    errors.emplace_back("'loads' not an object");
+    return false;
+  }
+  for (auto element = json_getChild(loads); element; element = json_getSibling(element)) {
+    std::string fq_name = json_getName(element);
+    auto separator = fq_name.find("::");
+    if (separator == std::string::npos) {
+      errors.emplace_back("loads[" + fq_name + "] must be named 'Suite::Test'. Ignoring");
+      continue;
+    }
+    if (json_getType(element) != JSON_INTEGER || json_getInteger(element) < 0) {
+      errors.emplace_back("loads[" + fq_name + "] must be a non-negative integer");
+      return false;
+    }
+    out[fq_name.substr(0, separator)][fq_name.substr(separator + 2)] =
+        static_cast<uint32_t>(json_getInteger(element) & 0xFFFFFFFF);
+  }
+  return true;
+}
+
+bool RuntimeConfig::LoadCalibrationBaseline(const char* calibration_file_path, std::vector<std::string>& errors) {
+  std::string json_string;
+  if (!ReadJSONFile(calibration_file_path, json_string, errors)) {
+    return false;
+  }
+
+  const JSONParser parser{json_string.c_str()};
+
+  auto root = parser.root();
+  if (!root) {
+    errors.push_back(std::string("Failed to parse calibration baseline at ") + calibration_file_path);
+    return false;
+  }
+
+  return ParseLoads(json_getProperty(root, "loads"), errors, baseline_test_loads_);
+}
+
+std::map<std::string, uint32_t> RuntimeConfig::baseline_loads() const {
+  std::map<std::string, uint32_t> ret;
+  for (auto& [suite_name, loads] : baseline_test_loads_) {
+    for (auto& [test_name, load] : loads) {
+      ret[suite_name + "::" + test_name] = load;
+    }
+  }
+  return ret;
+}
 
 bool RuntimeConfig::LoadConfigBuffer(const std::string& config_content, std::vector<std::string>& errors) {
   std::map<std::string, std::vector<std::string>> test_config;
@@ -178,8 +236,10 @@ bool RuntimeConfig::LoadConfigBuffer(const std::string& config_content, std::vec
       run_mode_ = RunMode::SINGLE;
     } else if (run_mode == "sustained") {
       run_mode_ = RunMode::SUSTAINED;
+    } else if (run_mode == "calibrate") {
+      run_mode_ = RunMode::CALIBRATE;
     } else {
-      errors.emplace_back("settings[run_mode] must be one of 'single', 'sustained'");
+      errors.emplace_back("settings[run_mode] must be one of 'single', 'sustained', 'calibrate'");
       return false;
     }
   }
@@ -194,28 +254,20 @@ bool RuntimeConfig::LoadConfigBuffer(const std::string& config_content, std::vec
     return false;
   }
 
+  if (!LoadUint32(settings, "calibration_probe_frames", calibration_probe_frames_)) {
+    errors.emplace_back("settings[calibration_probe_frames] must be an integer");
+    return false;
+  }
+
+  if (!LoadUint32(settings, "calibration_target_busy_p95_us", calibration_target_busy_p95_us_)) {
+    errors.emplace_back("settings[calibration_target_busy_p95_us] must be an integer");
+    return false;
+  }
+
   // Loads live in their own top-level object, keyed by "Suite::Test", so that tools which rewrite "test_suites" to
   // filter tests (e.g., xemu-perf-tester) do not discard calibration data.
-  auto loads = json_getProperty(root, "loads");
-  if (loads) {
-    if (json_getType(loads) != JSON_OBJ) {
-      errors.emplace_back("'loads' not an object");
-      return false;
-    }
-    for (auto element = json_getChild(loads); element; element = json_getSibling(element)) {
-      std::string fq_name = json_getName(element);
-      auto separator = fq_name.find("::");
-      if (separator == std::string::npos) {
-        errors.emplace_back("loads[" + fq_name + "] must be named 'Suite::Test'. Ignoring");
-        continue;
-      }
-      if (json_getType(element) != JSON_INTEGER || json_getInteger(element) < 0) {
-        errors.emplace_back("loads[" + fq_name + "] must be a non-negative integer");
-        return false;
-      }
-      configured_test_loads_[fq_name.substr(0, separator)][fq_name.substr(separator + 2)] =
-          static_cast<uint32_t>(json_getInteger(element) & 0xFFFFFFFF);
-    }
+  if (!ParseLoads(json_getProperty(root, "loads"), errors, configured_test_loads_)) {
+    return false;
   }
 
   auto test_suites = json_getProperty(root, "test_suites");
@@ -369,6 +421,13 @@ bool RuntimeConfig::ApplyConfig(std::vector<std::shared_ptr<TestSuite>>& test_su
 
     if (!skipped_test_cases.empty()) {
       suite->DisableTests(skipped_test_cases);
+    }
+
+    auto baseline_loads = baseline_test_loads_.find(suite->Name());
+    if (baseline_loads != baseline_test_loads_.end()) {
+      for (auto& [test_name, load] : baseline_loads->second) {
+        suite->SetBaselineLoad(test_name, load);
+      }
     }
 
     auto loads = configured_test_loads_.find(suite->Name());

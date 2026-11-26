@@ -19,26 +19,36 @@
 
 #include "debug_output.h"
 #include "logger.h"
+#include "pushbuffer.h"
 #include "runtime_config.h"
 #include "test_driver.h"
 #include "test_host.h"
 #include "tests/busy_pfifo_tests.h"
 #include "tests/fill_rate_tests.h"
 #include "tests/high_vertex_count_tests.h"
+#include "tests/pfifo_contention_tests.h"
 #include "tests/primitive_type_tests.h"
 #include "tests/program_thrash_tests.h"
+#include "tests/push_cost_tests.h"
 #include "tests/surface_rendering_tests.h"
 #include "tests/tiny_draw_tests.h"
 #include "tests/uniform_thrash_tests.h"
 #include "tests/vertex_buffer_allocation_tests.h"
 
 static constexpr const char* kLogFileName = "results.txt";
+static constexpr const char* kCalibrationFileName = "calibration.json";
+// Hardware calibration bundled with the xiso, providing the default load for each test.
+static constexpr const char* kCalibrationBaselinePath = "d:\\calibration.json";
 
 static const int kFramebufferWidth = 640;
 static const int kFramebufferHeight = 480;
 static const int kBitsPerPixel = 32;
 
 static constexpr int kDelayOnFailureMilliseconds = 4000;
+
+// Large enough that a frame of any of the tests at its calibrated load fits between pushbuffer resets. Each reset waits
+// for the GPU to go idle, so a reset in the middle of a frame would distort its measurements. Must be a power of 2.
+static constexpr uint32_t kPushbufferBytes = 8 * 1024 * 1024;
 
 const UCHAR kSMCSlaveAddress = 0x20;
 const UCHAR kSMCRegisterPower = 0x02;
@@ -62,12 +72,15 @@ int main() {
     return 1;
   }
 
+  pb_size(kPushbufferBytes);
   int status = pb_init();
   if (status) {
     debugPrint("pb_init Error %d\n", status);
     Sleep(kDelayOnFailureMilliseconds);
     return 1;
   }
+  // Must happen before the TestHost is constructed, which would otherwise initialize it for the default size.
+  PBKitPlusPlus::Pushbuffer::Initialize(kPushbufferBytes);
 
   debugPrint("Initializing...\n");
   pb_show_debug_screen();
@@ -89,6 +102,17 @@ int main() {
   }
 
   RuntimeConfig config;
+  {
+    std::vector<std::string> errors;
+    if (!config.LoadCalibrationBaseline(kCalibrationBaselinePath, errors)) {
+      debugPrint("Failed to load calibration baseline, using placeholder loads.\n");
+      for (auto& err : errors) {
+        debugPrint("%s\n", err.c_str());
+      }
+      pb_show_debug_screen();
+      Sleep(kDelayOnFailureMilliseconds);
+    }
+  }
   {
     std::vector<std::string> errors;
     if (!LoadConfig(config, errors)) {
@@ -194,6 +218,15 @@ static void RunTests(RuntimeConfig& config, TestHost& host, std::vector<std::sha
                     config.enable_autorun_immediately());
   if (config.run_mode() == RuntimeConfig::RunMode::SUSTAINED) {
     driver.EnableSustainedMode(config.warmup_frames(), config.measure_frames());
+  } else if (config.run_mode() == RuntimeConfig::RunMode::CALIBRATE) {
+    driver.EnableCalibrationMode(
+        {
+            .warmup_frames = config.warmup_frames(),
+            .probe_frames = config.calibration_probe_frames(),
+            .confirm_frames = config.measure_frames(),
+            .target_busy_p95_us = config.calibration_target_busy_p95_us(),
+        },
+        config.output_directory_path() + "\\" + kCalibrationFileName, config.baseline_loads());
   }
 
   Logger::Log() << "[" << std::endl;
@@ -231,7 +264,9 @@ static void RegisterSuites(TestHost& host, RuntimeConfig& runtime_config,
   REG_TEST(BusyPfifoTests)
   REG_TEST(FillRateTests)
   REG_TEST(HighVertexCountTests)
+  REG_TEST(PfifoContentionTests)
   REG_TEST(PrimitiveTypeTests)
+  REG_TEST(PushCostTests)
   REG_TEST(ProgramThrashTests)
   REG_TEST(SurfaceRenderingTests)
   REG_TEST(TinyDrawTests)

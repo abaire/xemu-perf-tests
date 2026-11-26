@@ -12,6 +12,9 @@
 #include <windows.h>
 #pragma clang diagnostic pop
 
+#include <fstream>
+
+#include "debug_output.h"
 #include "menu_item.h"
 
 static constexpr auto kButtonRepeatMilliseconds = 150;
@@ -102,6 +105,12 @@ void TestDriver::Run() {
 }
 
 void TestDriver::RunAllTestsNonInteractive() {
+  if (calibration_mode_) {
+    RunCalibration();
+    running_ = false;
+    return;
+  }
+
   for (auto &suite : test_suites_) {
     suite->Initialize();
     if (sustained_mode_) {
@@ -294,3 +303,88 @@ void TestDriver::OnDown(bool is_repeat) { active_menu_->CursorDown(is_repeat); }
 void TestDriver::OnLeft(bool is_repeat) { active_menu_->CursorLeft(is_repeat); }
 
 void TestDriver::OnRight(bool is_repeat) { active_menu_->CursorRight(is_repeat); }
+
+void TestDriver::RunCalibration() {
+  struct Entry {
+    std::string name;
+    TestSuite::CalibrationResult result;
+  };
+  std::vector<Entry> entries;
+
+  for (auto &suite : test_suites_) {
+    suite->Initialize();
+    for (const auto &test_name : suite->TestNames()) {
+      entries.push_back({suite->Name() + "::" + test_name, suite->Calibrate(test_name, calibration_settings_)});
+    }
+    suite->Deinitialize();
+  }
+
+  DeleteFile(calibration_file_path_.c_str());
+  std::ofstream out(calibration_file_path_.c_str());
+  if (!out) {
+    debugPrint("Failed to open %s\n", calibration_file_path_.c_str());
+    return;
+  }
+
+  out << "{" << std::endl;
+  out << "  \"hardware\": {" << std::endl;
+  out << "    \"flags\": " << XboxHardwareInfo.Flags << "," << std::endl;
+  out << "    \"devkit_kernel\": " << ((XboxHardwareInfo.Flags & XBOX_HW_FLAG_DEVKIT_KERNEL) ? "true" : "false") << ","
+      << std::endl;
+  out << "    \"gpu_revision\": " << static_cast<uint32_t>(XboxHardwareInfo.GpuRevision) << "," << std::endl;
+  out << "    \"mcp_revision\": " << static_cast<uint32_t>(XboxHardwareInfo.McpRevision) << std::endl;
+  out << "  }," << std::endl;
+  out << "  \"calibration\": {" << std::endl;
+  out << "    \"target_busy_p95_us\": " << calibration_settings_.target_busy_p95_us << "," << std::endl;
+  out << "    \"warmup_frames\": " << calibration_settings_.warmup_frames << "," << std::endl;
+  out << "    \"probe_frames\": " << calibration_settings_.probe_frames << "," << std::endl;
+  out << "    \"confirm_frames\": " << calibration_settings_.confirm_frames << std::endl;
+  out << "  }," << std::endl;
+
+  // Start from the existing baseline so that tests which were filtered out of this run keep their loads, then replace
+  // the loads of tests that met the target. Only loads that met the target are suitable for use in benchmark runs, so
+  // a test that was recalibrated but failed keeps its previous load (its failure is reported in "results").
+  auto loads = calibration_baseline_loads_;
+  for (const auto &entry : entries) {
+    if (entry.result.status == "ok" || entry.result.status == "hit_cap") {
+      loads[entry.name] = entry.result.load;
+    }
+  }
+  out << "  \"loads\": {";
+  const char *separator = "";
+  for (const auto &[name, load] : loads) {
+    out << separator << std::endl << "    \"" << name << "\": " << load;
+    separator = ",";
+  }
+  out << std::endl << "  }," << std::endl;
+
+  out << "  \"results\": [";
+  separator = "";
+  for (const auto &entry : entries) {
+    const auto &r = entry.result;
+    out << separator << std::endl;
+    out << "    {\"name\": \"" << entry.name << "\", \"status\": \"" << r.status << "\", \"load\": " << r.load
+        << ", \"runs\": " << r.runs << ", \"busy_p50_us\": " << r.summary.busy_p50_us
+        << ", \"busy_p95_us\": " << r.summary.busy_p95_us << ", \"missed_vblanks\": " << r.summary.missed_vblanks
+        << ", \"fence_timeouts\": " << r.summary.fence_timeouts << ", \"max_resets\": " << r.summary.max_resets
+        << ", \"history\": [";
+    const char *run_separator = "";
+    for (const auto &run : r.history) {
+      out << run_separator << std::endl;
+      out << "      {\"load\": " << run.load << ", \"kind\": \"" << (run.confirm ? "confirm" : "probe")
+          << "\", \"passed\": " << (run.passed ? "true" : "false") << ", \"frames\": " << run.summary.frames
+          << ", \"aborted\": " << (run.summary.aborted ? "true" : "false")
+          << ", \"busy_p50_us\": " << run.summary.busy_p50_us << ", \"busy_p95_us\": " << run.summary.busy_p95_us
+          << ", \"missed_vblanks\": " << run.summary.missed_vblanks
+          << ", \"fence_timeouts\": " << run.summary.fence_timeouts << ", \"max_resets\": " << run.summary.max_resets
+          << "}";
+      run_separator = ",";
+    }
+    out << (r.history.empty() ? "" : "\n    ") << "]}";
+    separator = ",";
+  }
+  out << std::endl << "  ]" << std::endl;
+  out << "}" << std::endl;
+
+  PrintMsg("Calibration written to %s\n", calibration_file_path_.c_str());
+}

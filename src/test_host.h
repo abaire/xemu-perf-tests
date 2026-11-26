@@ -8,6 +8,7 @@
 #include <vector>
 
 #include "nv2astate.h"
+#include "pushbuffer.h"
 
 /**
  * Provides utility methods for use by TestSuite subclasses.
@@ -37,6 +38,16 @@ class TestHost : public PBKitPlusPlus::NV2AState {
   //! Renders test results and swaps back buffer.
   void FinishDraw(const std::string &suite_name, const std::string &test_name, const ProfileResults &results);
 
+  //! Waits for the GPU to finish the frame's work without presenting it, leaving the displayed image unchanged. In
+  //! sustained mode the frame is timed like any other.
+  void FinishDrawWithoutPresent();
+
+  //! Excludes the current sustained-mode frame from the recorded results.
+  void SkipRecordingCurrentFrame() { sustained_skip_current_frame_ = true; }
+
+  //! First DMA context channel available for use by test suites.
+  static constexpr int32_t kFirstTestContextChannel = PBKitPlusPlus::kNextContextChannel + 1;
+
   //! Sets up the projection matrix for passthrough operation / direct addressing of pixels.
   void SetupFixedFunctionPassthrough();
 
@@ -63,9 +74,32 @@ class TestHost : public PBKitPlusPlus::NV2AState {
   //! Enables/disables recording of frames passed to FinishDraw (used to discard warmup frames).
   void SetSustainedRecording(bool enable) { sustained_recording_ = enable; }
 
-  //! Ends sustained capture and writes a results record to the log.
-  void EndSustainedCapture(const std::string &suite_name, const std::string &test_name, uint32_t load,
-                           uint32_t warmup_frames);
+  //! Summary of a sustained capture.
+  struct SustainedSummary {
+    uint32_t frames;
+    uint32_t busy_p50_us;
+    uint32_t busy_p95_us;
+    uint32_t missed_vblanks;
+    uint32_t fence_timeouts;
+    //! Largest number of pushbuffer resets in any recorded frame. Non-zero means the load no longer fits in the
+    //! pushbuffer, so frames are interrupted by waits for the GPU to go idle.
+    uint32_t max_resets;
+    //! True if the capture was stopped early, in which case it does not represent the requested number of frames.
+    bool aborted;
+  };
+
+  //! Ends sustained capture and returns a summary of it. The recorded frames are kept until the next capture begins, so
+  //! they may be logged with LogSustainedCapture().
+  SustainedSummary EndSustainedCapture(const std::string &suite_name, const std::string &test_name, uint32_t load,
+                                       bool aborted);
+
+  //! Writes a results record for the most recently ended capture. If `calibration_label` is not null it is recorded as
+  //! the record's "calibration" field.
+  void LogSustainedCapture(const std::string &suite_name, const std::string &test_name, uint32_t load,
+                           uint32_t warmup_frames, const char *calibration_label = nullptr);
+
+  //! Returns the busy time of the most recently finished sustained frame, whether or not it was recorded.
+  [[nodiscard]] uint32_t GetLastSustainedFrameBusyUs() const { return sustained_last_busy_us_; }
 
   [[nodiscard]] bool IsSustainedCaptureActive() const { return sustained_active_; }
 
@@ -79,7 +113,10 @@ class TestHost : public PBKitPlusPlus::NV2AState {
   bool WaitForGPUIdle();
 
  private:
-  void FinishSustainedFrame();
+  void FinishSustainedFrame(bool present);
+
+  //! Marks the start of the current frame's timed region.
+  void StampSustainedFrameStart();
   void EnsureSemaphoreInitialized();
 
  private:
@@ -87,13 +124,18 @@ class TestHost : public PBKitPlusPlus::NV2AState {
 
   //! Timing for a single frame in sustained mode.
   struct SustainedFrame {
-    //! Time from frame start until all work has been submitted to the pushbuffer.
+    //! Time from frame start until all work has been submitted to the pushbuffer. Includes `reset_wait_us`.
     uint32_t submit_us;
+    //! Portion of `submit_us` spent in pushbuffer resets, each of which waits for the GPU to finish all submitted work.
+    uint32_t reset_wait_us;
+    //! Number of pushbuffer resets during submission.
+    uint32_t resets;
     //! Time from frame start until the GPU reports idle. Primary metric; not quantized by vsync.
     uint32_t busy_us;
-    //! Time from the previous frame's flip to this frame's flip.
+    //! Time from the end of the previous recorded frame (after its flip, if any) to the end of this one. 0 for the
+    //! first recorded frame.
     uint32_t frame_us;
-    //! Number of vblanks between the previous flip and this one.
+    //! Number of vblanks between the end of the previous frame and the end of this one.
     uint32_t vblanks;
   };
 
@@ -101,8 +143,18 @@ class TestHost : public PBKitPlusPlus::NV2AState {
   bool sustained_recording_{false};
   //! True until the first PrepareDraw of the current frame re-stamps the frame start.
   bool sustained_awaiting_prepare_{false};
+  //! True if the current frame should not be recorded.
+  bool sustained_skip_current_frame_{false};
   LARGE_INTEGER sustained_frame_start_{};
-  LARGE_INTEGER sustained_last_flip_{};
+  //! Pushbuffer reset statistics at `sustained_frame_start_`.
+  PBKitPlusPlus::Pushbuffer::ResetStats sustained_frame_start_resets_{};
+  //! End of the most recent recorded frame, or 0 if none has been recorded yet.
+  LARGE_INTEGER sustained_last_recorded_end_{};
+  //! Missed vblanks during frames that were not recorded because of SkipRecordingCurrentFrame().
+  uint32_t sustained_skipped_missed_vblanks_{0};
+  uint32_t sustained_last_busy_us_{0};
+  bool sustained_aborted_{false};
+  SustainedSummary sustained_summary_{};
   DWORD sustained_last_vbl_{0};
   std::vector<SustainedFrame> sustained_frames_;
   uint32_t sustained_fence_timeouts_{0};
