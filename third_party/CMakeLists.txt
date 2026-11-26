@@ -8,7 +8,7 @@ set(PRINTF_ARTIFACT "${PRINTF_INSTALL_DIR}/${CMAKE_STATIC_LIBRARY_PREFIX}printf$
 ExternalProject_Add(
         printf_project
         GIT_REPOSITORY "https://github.com/mpaland/printf.git"
-        GIT_TAG "d3b984684bb8a8bdc48cc7a1abecb93ce59bbe3e"
+        GIT_TAG "1d3e28cbca2d302df9bcf529de19fcb62d265864"
         GIT_SHALLOW TRUE
 
         SOURCE_DIR "${PRINTF_SOURCE_DIR}"
