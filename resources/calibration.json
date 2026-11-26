@@ -1,0 +1,131 @@
+{
+  "hardware": {
+    "flags": 3,
+    "devkit_kernel": true,
+    "gpu_revision": 163,
+    "mcp_revision": 178
+  },
+  "calibration": {
+    "target_busy_p95_us": 15000,
+    "warmup_frames": 30,
+    "probe_frames": 120,
+    "confirm_frames": 240
+  },
+  "loads": {
+    "PfifoContention::Control": 47440,
+    "PfifoContention::CpuFramebufferWrite": 2108416,
+    "PfifoContention::FillBound": 22,
+    "PfifoContention::HalfRatePresent": 46413,
+    "PfifoContention::LongPushbuffer": 40057,
+    "PfifoContention::MethodChurn": 729937,
+    "PfifoContention::OcclusionSpin": 673,
+    "PfifoContention::SurfaceReadback": 5833,
+    "PfifoContention::TinyKicks": 5286
+  },
+  "results": [
+    {"name": "PfifoContention::Control", "status": "ok", "load": 47440, "runs": 11, "busy_p50_us": 14381, "busy_p95_us": 14978, "missed_vblanks": 0, "fence_timeouts": 0, "max_resets": 0, "history": [
+      {"load": 11329, "kind": "probe", "passed": true, "frames": 120, "aborted": false, "busy_p50_us": 3455, "busy_p95_us": 3521, "missed_vblanks": 0, "fence_timeouts": 0, "max_resets": 0},
+      {"load": 22658, "kind": "probe", "passed": true, "frames": 120, "aborted": false, "busy_p50_us": 6882, "busy_p95_us": 6883, "missed_vblanks": 0, "fence_timeouts": 0, "max_resets": 0},
+      {"load": 45316, "kind": "probe", "passed": true, "frames": 120, "aborted": false, "busy_p50_us": 13731, "busy_p95_us": 14327, "missed_vblanks": 0, "fence_timeouts": 0, "max_resets": 0},
+      {"load": 90632, "kind": "probe", "passed": false, "frames": 120, "aborted": false, "busy_p50_us": 27492, "busy_p95_us": 28089, "missed_vblanks": 120, "fence_timeouts": 0, "max_resets": 1},
+      {"load": 67974, "kind": "probe", "passed": false, "frames": 120, "aborted": false, "busy_p50_us": 20598, "busy_p95_us": 21137, "missed_vblanks": 120, "fence_timeouts": 0, "max_resets": 0},
+      {"load": 56645, "kind": "probe", "passed": false, "frames": 120, "aborted": false, "busy_p50_us": 17168, "busy_p95_us": 17767, "missed_vblanks": 120, "fence_timeouts": 0, "max_resets": 0},
+      {"load": 50980, "kind": "probe", "passed": false, "frames": 120, "aborted": false, "busy_p50_us": 15455, "busy_p95_us": 16052, "missed_vblanks": 0, "fence_timeouts": 0, "max_resets": 0},
+      {"load": 48148, "kind": "probe", "passed": false, "frames": 120, "aborted": false, "busy_p50_us": 14592, "busy_p95_us": 15188, "missed_vblanks": 0, "fence_timeouts": 0, "max_resets": 0},
+      {"load": 46732, "kind": "probe", "passed": true, "frames": 120, "aborted": false, "busy_p50_us": 14170, "busy_p95_us": 14767, "missed_vblanks": 0, "fence_timeouts": 0, "max_resets": 0},
+      {"load": 47440, "kind": "probe", "passed": true, "frames": 120, "aborted": false, "busy_p50_us": 14381, "busy_p95_us": 14979, "missed_vblanks": 0, "fence_timeouts": 0, "max_resets": 0},
+      {"load": 47440, "kind": "confirm", "passed": true, "frames": 240, "aborted": false, "busy_p50_us": 14381, "busy_p95_us": 14978, "missed_vblanks": 0, "fence_timeouts": 0, "max_resets": 0}
+    ]},
+    {"name": "PfifoContention::CpuFramebufferWrite", "status": "ok", "load": 2108416, "runs": 9, "busy_p50_us": 14335, "busy_p95_us": 14932, "missed_vblanks": 0, "fence_timeouts": 0, "max_resets": 0, "history": [
+      {"load": 2108416, "kind": "probe", "passed": true, "frames": 120, "aborted": false, "busy_p50_us": 14335, "busy_p95_us": 14931, "missed_vblanks": 0, "fence_timeouts": 0, "max_resets": 0},
+      {"load": 4216832, "kind": "probe", "passed": false, "frames": 120, "aborted": false, "busy_p50_us": 28665, "busy_p95_us": 29264, "missed_vblanks": 120, "fence_timeouts": 0, "max_resets": 0},
+      {"load": 3162624, "kind": "probe", "passed": false, "frames": 120, "aborted": false, "busy_p50_us": 21505, "busy_p95_us": 22045, "missed_vblanks": 120, "fence_timeouts": 0, "max_resets": 0},
+      {"load": 2635520, "kind": "probe", "passed": false, "frames": 120, "aborted": false, "busy_p50_us": 17923, "busy_p95_us": 18462, "missed_vblanks": 120, "fence_timeouts": 0, "max_resets": 0},
+      {"load": 2371968, "kind": "probe", "passed": false, "frames": 120, "aborted": false, "busy_p50_us": 16126, "busy_p95_us": 16669, "missed_vblanks": 26, "fence_timeouts": 0, "max_resets": 0},
+      {"load": 2240192, "kind": "probe", "passed": false, "frames": 120, "aborted": false, "busy_p50_us": 15231, "busy_p95_us": 15766, "missed_vblanks": 0, "fence_timeouts": 0, "max_resets": 0},
+      {"load": 2174304, "kind": "probe", "passed": false, "frames": 120, "aborted": false, "busy_p50_us": 14783, "busy_p95_us": 15318, "missed_vblanks": 0, "fence_timeouts": 0, "max_resets": 0},
+      {"load": 2141360, "kind": "probe", "passed": false, "frames": 120, "aborted": false, "busy_p50_us": 14559, "busy_p95_us": 15097, "missed_vblanks": 0, "fence_timeouts": 0, "max_resets": 0},
+      {"load": 2108416, "kind": "confirm", "passed": true, "frames": 240, "aborted": false, "busy_p50_us": 14335, "busy_p95_us": 14932, "missed_vblanks": 0, "fence_timeouts": 0, "max_resets": 0}
+    ]},
+    {"name": "PfifoContention::FillBound", "status": "ok", "load": 22, "runs": 7, "busy_p50_us": 14518, "busy_p95_us": 14585, "missed_vblanks": 0, "fence_timeouts": 0, "max_resets": 0, "history": [
+      {"load": 22, "kind": "probe", "passed": true, "frames": 120, "aborted": false, "busy_p50_us": 14520, "busy_p95_us": 14592, "missed_vblanks": 0, "fence_timeouts": 0, "max_resets": 0},
+      {"load": 44, "kind": "probe", "passed": false, "frames": 120, "aborted": false, "busy_p50_us": 29018, "busy_p95_us": 29102, "missed_vblanks": 120, "fence_timeouts": 0, "max_resets": 0},
+      {"load": 33, "kind": "probe", "passed": false, "frames": 120, "aborted": false, "busy_p50_us": 21761, "busy_p95_us": 21832, "missed_vblanks": 120, "fence_timeouts": 0, "max_resets": 0},
+      {"load": 27, "kind": "probe", "passed": false, "frames": 120, "aborted": false, "busy_p50_us": 17793, "busy_p95_us": 17868, "missed_vblanks": 120, "fence_timeouts": 0, "max_resets": 0},
+      {"load": 24, "kind": "probe", "passed": false, "frames": 120, "aborted": false, "busy_p50_us": 15843, "busy_p95_us": 15899, "missed_vblanks": 2, "fence_timeouts": 0, "max_resets": 0},
+      {"load": 23, "kind": "probe", "passed": false, "frames": 120, "aborted": false, "busy_p50_us": 15183, "busy_p95_us": 15247, "missed_vblanks": 0, "fence_timeouts": 0, "max_resets": 0},
+      {"load": 22, "kind": "confirm", "passed": true, "frames": 240, "aborted": false, "busy_p50_us": 14518, "busy_p95_us": 14585, "missed_vblanks": 0, "fence_timeouts": 0, "max_resets": 0}
+    ]},
+    {"name": "PfifoContention::HalfRatePresent", "status": "ok", "load": 46413, "runs": 12, "busy_p50_us": 14225, "busy_p95_us": 14229, "missed_vblanks": 0, "fence_timeouts": 0, "max_resets": 0, "history": [
+      {"load": 11310, "kind": "probe", "passed": true, "frames": 60, "aborted": false, "busy_p50_us": 3499, "busy_p95_us": 4095, "missed_vblanks": 0, "fence_timeouts": 0, "max_resets": 0},
+      {"load": 22620, "kind": "probe", "passed": true, "frames": 60, "aborted": false, "busy_p50_us": 6954, "busy_p95_us": 6955, "missed_vblanks": 0, "fence_timeouts": 0, "max_resets": 0},
+      {"load": 45240, "kind": "probe", "passed": true, "frames": 60, "aborted": false, "busy_p50_us": 13865, "busy_p95_us": 14029, "missed_vblanks": 0, "fence_timeouts": 0, "max_resets": 0},
+      {"load": 90480, "kind": "probe", "passed": false, "frames": 60, "aborted": false, "busy_p50_us": 27722, "busy_p95_us": 27725, "missed_vblanks": 60, "fence_timeouts": 0, "max_resets": 1},
+      {"load": 67860, "kind": "probe", "passed": false, "frames": 60, "aborted": false, "busy_p50_us": 20796, "busy_p95_us": 21393, "missed_vblanks": 60, "fence_timeouts": 0, "max_resets": 0},
+      {"load": 56550, "kind": "probe", "passed": false, "frames": 60, "aborted": false, "busy_p50_us": 17337, "busy_p95_us": 17934, "missed_vblanks": 60, "fence_timeouts": 0, "max_resets": 0},
+      {"load": 50895, "kind": "probe", "passed": false, "frames": 60, "aborted": false, "busy_p50_us": 15586, "busy_p95_us": 15589, "missed_vblanks": 0, "fence_timeouts": 0, "max_resets": 0},
+      {"load": 48067, "kind": "probe", "passed": false, "frames": 60, "aborted": false, "busy_p50_us": 14718, "busy_p95_us": 15315, "missed_vblanks": 0, "fence_timeouts": 0, "max_resets": 0},
+      {"load": 46653, "kind": "probe", "passed": true, "frames": 60, "aborted": false, "busy_p50_us": 14291, "busy_p95_us": 14887, "missed_vblanks": 0, "fence_timeouts": 0, "max_resets": 0},
+      {"load": 47360, "kind": "probe", "passed": true, "frames": 60, "aborted": false, "busy_p50_us": 14504, "busy_p95_us": 14505, "missed_vblanks": 0, "fence_timeouts": 0, "max_resets": 0},
+      {"load": 47360, "kind": "confirm", "passed": false, "frames": 120, "aborted": false, "busy_p50_us": 14505, "busy_p95_us": 15105, "missed_vblanks": 0, "fence_timeouts": 0, "max_resets": 0},
+      {"load": 46413, "kind": "confirm", "passed": true, "frames": 120, "aborted": false, "busy_p50_us": 14225, "busy_p95_us": 14229, "missed_vblanks": 0, "fence_timeouts": 0, "max_resets": 0}
+    ]},
+    {"name": "PfifoContention::LongPushbuffer", "status": "ok", "load": 40057, "runs": 9, "busy_p50_us": 14345, "busy_p95_us": 14942, "missed_vblanks": 0, "fence_timeouts": 0, "max_resets": 0, "history": [
+      {"load": 10682, "kind": "probe", "passed": true, "frames": 120, "aborted": false, "busy_p50_us": 3829, "busy_p95_us": 4363, "missed_vblanks": 0, "fence_timeouts": 0, "max_resets": 0},
+      {"load": 21364, "kind": "probe", "passed": true, "frames": 120, "aborted": false, "busy_p50_us": 7653, "busy_p95_us": 7656, "missed_vblanks": 0, "fence_timeouts": 0, "max_resets": 0},
+      {"load": 42728, "kind": "probe", "passed": false, "frames": 120, "aborted": false, "busy_p50_us": 15301, "busy_p95_us": 15899, "missed_vblanks": 0, "fence_timeouts": 0, "max_resets": 0},
+      {"load": 32046, "kind": "probe", "passed": true, "frames": 120, "aborted": false, "busy_p50_us": 11478, "busy_p95_us": 12022, "missed_vblanks": 0, "fence_timeouts": 0, "max_resets": 0},
+      {"load": 37387, "kind": "probe", "passed": true, "frames": 120, "aborted": false, "busy_p50_us": 13390, "busy_p95_us": 13929, "missed_vblanks": 0, "fence_timeouts": 0, "max_resets": 0},
+      {"load": 40057, "kind": "probe", "passed": true, "frames": 120, "aborted": false, "busy_p50_us": 14345, "busy_p95_us": 14942, "missed_vblanks": 0, "fence_timeouts": 0, "max_resets": 0},
+      {"load": 41392, "kind": "probe", "passed": false, "frames": 120, "aborted": false, "busy_p50_us": 14824, "busy_p95_us": 15361, "missed_vblanks": 0, "fence_timeouts": 0, "max_resets": 0},
+      {"load": 40724, "kind": "probe", "passed": false, "frames": 120, "aborted": false, "busy_p50_us": 14584, "busy_p95_us": 15182, "missed_vblanks": 0, "fence_timeouts": 0, "max_resets": 0},
+      {"load": 40057, "kind": "confirm", "passed": true, "frames": 240, "aborted": false, "busy_p50_us": 14345, "busy_p95_us": 14942, "missed_vblanks": 0, "fence_timeouts": 0, "max_resets": 0}
+    ]},
+    {"name": "PfifoContention::MethodChurn", "status": "ok", "load": 729937, "runs": 9, "busy_p50_us": 14300, "busy_p95_us": 14897, "missed_vblanks": 0, "fence_timeouts": 0, "max_resets": 0, "history": [
+      {"load": 729937, "kind": "probe", "passed": true, "frames": 120, "aborted": false, "busy_p50_us": 14300, "busy_p95_us": 14898, "missed_vblanks": 0, "fence_timeouts": 0, "max_resets": 0},
+      {"load": 1459874, "kind": "probe", "passed": false, "frames": 120, "aborted": false, "busy_p50_us": 28618, "busy_p95_us": 29219, "missed_vblanks": 120, "fence_timeouts": 0, "max_resets": 1},
+      {"load": 1094905, "kind": "probe", "passed": false, "frames": 120, "aborted": false, "busy_p50_us": 21474, "busy_p95_us": 22075, "missed_vblanks": 120, "fence_timeouts": 0, "max_resets": 1},
+      {"load": 912421, "kind": "probe", "passed": false, "frames": 120, "aborted": false, "busy_p50_us": 17912, "busy_p95_us": 18358, "missed_vblanks": 120, "fence_timeouts": 0, "max_resets": 1},
+      {"load": 821179, "kind": "probe", "passed": false, "frames": 120, "aborted": false, "busy_p50_us": 16089, "busy_p95_us": 16696, "missed_vblanks": 29, "fence_timeouts": 0, "max_resets": 0},
+      {"load": 775558, "kind": "probe", "passed": false, "frames": 120, "aborted": false, "busy_p50_us": 15193, "busy_p95_us": 15790, "missed_vblanks": 0, "fence_timeouts": 0, "max_resets": 0},
+      {"load": 752747, "kind": "probe", "passed": false, "frames": 120, "aborted": false, "busy_p50_us": 14756, "busy_p95_us": 15353, "missed_vblanks": 0, "fence_timeouts": 0, "max_resets": 0},
+      {"load": 741342, "kind": "probe", "passed": false, "frames": 120, "aborted": false, "busy_p50_us": 14534, "busy_p95_us": 15131, "missed_vblanks": 0, "fence_timeouts": 0, "max_resets": 0},
+      {"load": 729937, "kind": "confirm", "passed": true, "frames": 240, "aborted": false, "busy_p50_us": 14300, "busy_p95_us": 14897, "missed_vblanks": 0, "fence_timeouts": 0, "max_resets": 0}
+    ]},
+    {"name": "PfifoContention::OcclusionSpin", "status": "ok", "load": 673, "runs": 9, "busy_p50_us": 14223, "busy_p95_us": 14815, "missed_vblanks": 0, "fence_timeouts": 0, "max_resets": 0, "history": [
+      {"load": 634, "kind": "probe", "passed": true, "frames": 120, "aborted": false, "busy_p50_us": 13398, "busy_p95_us": 13938, "missed_vblanks": 0, "fence_timeouts": 0, "max_resets": 0},
+      {"load": 1268, "kind": "probe", "passed": false, "frames": 120, "aborted": false, "busy_p50_us": 26794, "busy_p95_us": 27397, "missed_vblanks": 120, "fence_timeouts": 0, "max_resets": 0},
+      {"load": 951, "kind": "probe", "passed": false, "frames": 120, "aborted": false, "busy_p50_us": 20101, "busy_p95_us": 20696, "missed_vblanks": 120, "fence_timeouts": 0, "max_resets": 0},
+      {"load": 792, "kind": "probe", "passed": false, "frames": 120, "aborted": false, "busy_p50_us": 16744, "busy_p95_us": 17281, "missed_vblanks": 120, "fence_timeouts": 0, "max_resets": 0},
+      {"load": 713, "kind": "probe", "passed": false, "frames": 120, "aborted": false, "busy_p50_us": 15067, "busy_p95_us": 15661, "missed_vblanks": 0, "fence_timeouts": 0, "max_resets": 0},
+      {"load": 673, "kind": "probe", "passed": true, "frames": 120, "aborted": false, "busy_p50_us": 14222, "busy_p95_us": 14817, "missed_vblanks": 0, "fence_timeouts": 0, "max_resets": 0},
+      {"load": 693, "kind": "probe", "passed": false, "frames": 120, "aborted": false, "busy_p50_us": 14644, "busy_p95_us": 15239, "missed_vblanks": 0, "fence_timeouts": 0, "max_resets": 0},
+      {"load": 683, "kind": "probe", "passed": false, "frames": 120, "aborted": false, "busy_p50_us": 14433, "busy_p95_us": 15021, "missed_vblanks": 0, "fence_timeouts": 0, "max_resets": 0},
+      {"load": 673, "kind": "confirm", "passed": true, "frames": 240, "aborted": false, "busy_p50_us": 14223, "busy_p95_us": 14815, "missed_vblanks": 0, "fence_timeouts": 0, "max_resets": 0}
+    ]},
+    {"name": "PfifoContention::SurfaceReadback", "status": "ok", "load": 5833, "runs": 11, "busy_p50_us": 14313, "busy_p95_us": 14911, "missed_vblanks": 0, "fence_timeouts": 0, "max_resets": 0, "history": [
+      {"load": 1393, "kind": "probe", "passed": true, "frames": 120, "aborted": false, "busy_p50_us": 3487, "busy_p95_us": 3488, "missed_vblanks": 0, "fence_timeouts": 0, "max_resets": 0},
+      {"load": 2786, "kind": "probe", "passed": true, "frames": 120, "aborted": false, "busy_p50_us": 6885, "busy_p95_us": 7483, "missed_vblanks": 0, "fence_timeouts": 0, "max_resets": 0},
+      {"load": 5572, "kind": "probe", "passed": true, "frames": 120, "aborted": false, "busy_p50_us": 13671, "busy_p95_us": 14269, "missed_vblanks": 0, "fence_timeouts": 0, "max_resets": 0},
+      {"load": 11144, "kind": "probe", "passed": false, "frames": 120, "aborted": false, "busy_p50_us": 27298, "busy_p95_us": 27895, "missed_vblanks": 120, "fence_timeouts": 0, "max_resets": 1},
+      {"load": 8358, "kind": "probe", "passed": false, "frames": 120, "aborted": false, "busy_p50_us": 20478, "busy_p95_us": 21076, "missed_vblanks": 120, "fence_timeouts": 0, "max_resets": 0},
+      {"load": 6965, "kind": "probe", "passed": false, "frames": 120, "aborted": false, "busy_p50_us": 17083, "busy_p95_us": 17682, "missed_vblanks": 120, "fence_timeouts": 0, "max_resets": 0},
+      {"load": 6268, "kind": "probe", "passed": false, "frames": 120, "aborted": false, "busy_p50_us": 15382, "busy_p95_us": 15979, "missed_vblanks": 0, "fence_timeouts": 0, "max_resets": 0},
+      {"load": 5920, "kind": "probe", "passed": false, "frames": 120, "aborted": false, "busy_p50_us": 14524, "busy_p95_us": 15122, "missed_vblanks": 0, "fence_timeouts": 0, "max_resets": 0},
+      {"load": 5746, "kind": "probe", "passed": true, "frames": 120, "aborted": false, "busy_p50_us": 14099, "busy_p95_us": 14697, "missed_vblanks": 0, "fence_timeouts": 0, "max_resets": 0},
+      {"load": 5833, "kind": "probe", "passed": true, "frames": 120, "aborted": false, "busy_p50_us": 14313, "busy_p95_us": 14910, "missed_vblanks": 0, "fence_timeouts": 0, "max_resets": 0},
+      {"load": 5833, "kind": "confirm", "passed": true, "frames": 240, "aborted": false, "busy_p50_us": 14313, "busy_p95_us": 14911, "missed_vblanks": 0, "fence_timeouts": 0, "max_resets": 0}
+    ]},
+    {"name": "PfifoContention::TinyKicks", "status": "ok", "load": 5286, "runs": 9, "busy_p50_us": 14356, "busy_p95_us": 14952, "missed_vblanks": 0, "fence_timeouts": 0, "max_resets": 0, "history": [
+      {"load": 3889, "kind": "probe", "passed": true, "frames": 120, "aborted": false, "busy_p50_us": 10564, "busy_p95_us": 11160, "missed_vblanks": 0, "fence_timeouts": 0, "max_resets": 0},
+      {"load": 7778, "kind": "probe", "passed": false, "frames": 120, "aborted": false, "busy_p50_us": 21128, "busy_p95_us": 21723, "missed_vblanks": 120, "fence_timeouts": 0, "max_resets": 0},
+      {"load": 5833, "kind": "probe", "passed": false, "frames": 120, "aborted": false, "busy_p50_us": 15840, "busy_p95_us": 16447, "missed_vblanks": 23, "fence_timeouts": 0, "max_resets": 0},
+      {"load": 4861, "kind": "probe", "passed": true, "frames": 120, "aborted": false, "busy_p50_us": 13201, "busy_p95_us": 13737, "missed_vblanks": 0, "fence_timeouts": 0, "max_resets": 0},
+      {"load": 5347, "kind": "probe", "passed": false, "frames": 120, "aborted": false, "busy_p50_us": 14521, "busy_p95_us": 15118, "missed_vblanks": 0, "fence_timeouts": 0, "max_resets": 0},
+      {"load": 5104, "kind": "probe", "passed": true, "frames": 120, "aborted": false, "busy_p50_us": 13861, "busy_p95_us": 14401, "missed_vblanks": 0, "fence_timeouts": 0, "max_resets": 0},
+      {"load": 5225, "kind": "probe", "passed": true, "frames": 120, "aborted": false, "busy_p50_us": 14189, "busy_p95_us": 14786, "missed_vblanks": 0, "fence_timeouts": 0, "max_resets": 0},
+      {"load": 5286, "kind": "probe", "passed": true, "frames": 120, "aborted": false, "busy_p50_us": 14356, "busy_p95_us": 14953, "missed_vblanks": 0, "fence_timeouts": 0, "max_resets": 0},
+      {"load": 5286, "kind": "confirm", "passed": true, "frames": 240, "aborted": false, "busy_p50_us": 14356, "busy_p95_us": 14952, "missed_vblanks": 0, "fence_timeouts": 0, "max_resets": 0}
+    ]}
+  ]
+}

@@ -8,6 +8,8 @@
     "run_mode": "single",
     "warmup_frames": 30,
     "measure_frames": 240,
+    "calibration_probe_frames": 120,
+    "calibration_target_busy_p95_us": 15000,
     "output_directory_path": "e:/xemu_perf_tests"
   },
   "test_suites": {

@@ -1,5 +1,6 @@
 #include "test_suite.h"
 
+#include <algorithm>
 #include <sstream>
 
 #include "debug_output.h"
@@ -60,7 +61,8 @@ void TestSuite::RunAll() {
   }
 }
 
-void TestSuite::RunSustained(const std::string& test_name, uint32_t warmup_frames, uint32_t measure_frames) {
+TestHost::SustainedSummary TestSuite::RunSustained(const std::string& test_name, uint32_t warmup_frames,
+                                                   uint32_t measure_frames, bool log, uint32_t abort_busy_us) {
   auto it = tests_.find(test_name);
   if (it == tests_.end()) {
     ASSERT(!"Invalid test name");
@@ -75,12 +77,24 @@ void TestSuite::RunSustained(const std::string& test_name, uint32_t warmup_frame
   host_.BeginSustainedCapture(measure_frames);
 
   const uint32_t total_frames = warmup_frames + measure_frames;
+  bool aborted = false;
+  uint32_t frames_over_abort = 0;
   for (uint32_t frame = 0; frame < total_frames; ++frame) {
     host_.SetSustainedRecording(frame >= warmup_frames);
     host_.BeginSustainedFrame();
     SetupTest();
     it->second();
     TearDownTest();
+
+    // The first frame is excluded because it includes one-time setup costs such as shader compilation. Two frames in a
+    // row must exceed the threshold so that a single one-off stall does not abort a load that would otherwise pass.
+    if (abort_busy_us && frame) {
+      frames_over_abort = host_.GetLastSustainedFrameBusyUs() > abort_busy_us ? frames_over_abort + 1 : 0;
+      if (frames_over_abort >= 2) {
+        aborted = true;
+        break;
+      }
+    }
   }
 
   uint32_t load = 0;
@@ -88,8 +102,150 @@ void TestSuite::RunSustained(const std::string& test_name, uint32_t warmup_frame
   if (load_it != effective_loads_.end()) {
     load = load_it->second;
   }
-  host_.EndSustainedCapture(suite_name_, test_name, load, warmup_frames);
+  auto summary = host_.EndSustainedCapture(suite_name_, test_name, load, aborted);
+  if (log) {
+    host_.LogSustainedCapture(suite_name_, test_name, load, warmup_frames);
+  }
   host_.SetSaveResults(previous_save_results);
+  return summary;
+}
+
+TestSuite::CalibrationResult TestSuite::Calibrate(const std::string& test_name, const CalibrationSettings& settings) {
+  // Number of times the load may be doubled while searching for a failing load.
+  static constexpr uint32_t kMaxDoublings = 24;
+  // Number of times the confirmation run may step the load down before giving up.
+  static constexpr uint32_t kMaxConfirmAttempts = 3;
+
+  // A run stops once two frames in a row take this long, since it cannot pass. This keeps loads far over budget, which
+  // the search probes when doubling, from taking a very long time.
+  static constexpr uint32_t kAbortBudgetMultiple = 4;
+
+  CalibrationResult result{};
+
+  if (uncalibrated_tests_.count(test_name)) {
+    result.status = "excluded";
+    return result;
+  }
+
+  const uint32_t abort_busy_us = settings.target_busy_p95_us * kAbortBudgetMultiple;
+  auto passes = [&settings](const TestHost::SustainedSummary& summary) {
+    return summary.frames && !summary.aborted && summary.busy_p95_us <= settings.target_busy_p95_us &&
+           !summary.missed_vblanks && !summary.fence_timeouts;
+  };
+  // A run that failed only because of missed vblanks, while its frames were otherwise within the target, may have been
+  // hit by a one-off stall rather than by the load itself. Aborted runs are not retried: a single stall cannot abort a
+  // run, and an aborted run that stopped during warmup has no recorded frames to judge it by.
+  auto failed_sporadically = [&settings](const TestHost::SustainedSummary& summary) {
+    return summary.frames && !summary.aborted && !summary.fence_timeouts &&
+           summary.busy_p95_us <= settings.target_busy_p95_us && summary.missed_vblanks;
+  };
+
+  // Runs the test at `load` (or at its default load if `use_default` is set), retrying once if it fails sporadically.
+  // Confirmation runs are also logged to the results file.
+  auto run = [&](uint32_t load, bool use_default, bool confirm) {
+    for (uint32_t attempt = 0; attempt < 2; ++attempt) {
+      if (use_default) {
+        loads_.erase(test_name);
+        effective_loads_.erase(test_name);
+      } else {
+        SetLoad(test_name, load);
+      }
+      ++result.runs;
+      result.summary = RunSustained(test_name, settings.warmup_frames,
+                                    confirm ? settings.confirm_frames : settings.probe_frames, false, abort_busy_us);
+      const bool passed = passes(result.summary);
+
+      auto load_it = effective_loads_.find(test_name);
+      const uint32_t run_load = load_it == effective_loads_.end() ? 0 : load_it->second;
+      result.history.push_back({.load = run_load, .confirm = confirm, .passed = passed, .summary = result.summary});
+      if (confirm) {
+        host_.LogSustainedCapture(suite_name_, test_name, run_load, settings.warmup_frames,
+                                  passed ? "confirmed" : "rejected");
+      }
+
+      if (passed || !failed_sporadically(result.summary)) {
+        return passed;
+      }
+      PrintMsg("  Retrying %s::%s at load %lu after a sporadic failure\n", suite_name_.c_str(), test_name.c_str(),
+               static_cast<unsigned long>(run_load));
+    }
+    return false;
+  };
+  auto probe = [&](uint32_t load) { return run(load, false, false); };
+  // Precision of the search: stop once the passing and failing loads are within ~2% of each other.
+  auto step = [](uint32_t load) { return std::max<uint32_t>(1, load / 50); };
+
+  PrintMsg("Calibrating %s::%s\n", suite_name_.c_str(), test_name.c_str());
+
+  // Run once without an override to find out whether the test has a load knob, and where to start. This starts from
+  // the calibrated baseline if there is one, otherwise from the test's own default.
+  const bool default_passed = run(0, true, false);
+  auto default_load = effective_loads_.find(test_name);
+  if (default_load == effective_loads_.end()) {
+    result.status = "no_load";
+    return result;
+  }
+
+  // Find a passing load (`low`) and a failing load (`high`).
+  uint32_t low = 0;
+  uint32_t high = 0;
+  const uint32_t start = std::max<uint32_t>(1, default_load->second);
+  if (default_passed) {
+    low = start;
+    for (uint32_t i = 0; i < kMaxDoublings && low <= 0x7FFFFFFF; ++i) {
+      if (!probe(low * 2)) {
+        high = low * 2;
+        break;
+      }
+      low *= 2;
+    }
+  } else {
+    high = start;
+    while (high > 1) {
+      const uint32_t candidate = high / 2;
+      if (probe(candidate)) {
+        low = candidate;
+        break;
+      }
+      high = candidate;
+    }
+    if (!low) {
+      result.status = "over_budget";
+      result.load = 1;
+      return result;
+    }
+  }
+
+  if (high) {
+    while (high - low > step(low)) {
+      const uint32_t mid = low + (high - low) / 2;
+      if (probe(mid)) {
+        low = mid;
+      } else {
+        high = mid;
+      }
+    }
+  }
+
+  // Confirm with a full-length, logged run, backing off if it fails.
+  uint32_t last_confirmed_load = 0;
+  for (uint32_t attempt = 0; attempt < kMaxConfirmAttempts && low; ++attempt) {
+    last_confirmed_load = low;
+    if (run(low, false, true)) {
+      result.status = high ? "ok" : "hit_cap";
+      result.load = low;
+      return result;
+    }
+    low = low > step(low) ? low - step(low) : 0;
+  }
+
+  // Report the last load that was actually run, which matches `result.summary` and the load left set.
+  result.status = "unconfirmed";
+  result.load = last_confirmed_load;
+  if (last_confirmed_load) {
+    SetLoad(test_name, last_confirmed_load);
+  }
+  return result;
 }
 
 uint32_t TestSuite::GetLoad(const std::string& test_name, uint32_t default_value) const {
@@ -97,6 +253,8 @@ uint32_t TestSuite::GetLoad(const std::string& test_name, uint32_t default_value
   auto it = loads_.find(test_name);
   if (it != loads_.end()) {
     ret = it->second;
+  } else if (auto baseline = baseline_loads_.find(test_name); baseline != baseline_loads_.end()) {
+    ret = baseline->second;
   }
   effective_loads_[test_name] = ret;
   return ret;
@@ -324,7 +482,11 @@ TestHost::ProfileResults TestSuite::Profile(const std::string& test_name, uint32
 
   auto run_times = std::make_unique<uint32_t[]>(num_iterations);
 
-  PrintMsg("Starting %s::%s\n", suite_name_.c_str(), test_name.c_str());
+  // Continuous mode runs this once per frame, so it must not print: the debug output would be counted in the frame
+  // time.
+  if (host_.GetSaveResults()) {
+    PrintMsg("Starting %s::%s\n", suite_name_.c_str(), test_name.c_str());
+  }
 
   LARGE_INTEGER profile_start;
   LARGE_INTEGER iteration_start;
@@ -337,14 +499,13 @@ TestHost::ProfileResults TestSuite::Profile(const std::string& test_name, uint32
     run_times[i] = host_.GetMicrosecondsSince(iteration_start);
   }
 
-  auto duration = host_.GetMicrosecondsSince(profile_start);
-
-  PrintMsg("  Completed '%s::%s' in %fms\n", suite_name_.c_str(), test_name.c_str(),
-           static_cast<double>(duration) / 1000.f);
-
   if (!host_.GetSaveResults()) {
     return ret;
   }
+
+  auto duration = host_.GetMicrosecondsSince(profile_start);
+  PrintMsg("  Completed '%s::%s' in %fms\n", suite_name_.c_str(), test_name.c_str(),
+           static_cast<double>(duration) / 1000.f);
 
   ret.iterations = num_iterations;
   ret.total_time_microseconds = 0;

@@ -33,6 +33,16 @@ class TestDriver {
   //! Runs all tests automatically without reacting to any user input.
   void RunAllTestsNonInteractive();
 
+  //! Causes RunAllTestsNonInteractive to calibrate the load of each test and write the results to
+  //! `calibration_file_path`.
+  void EnableCalibrationMode(const TestSuite::CalibrationSettings &settings, std::string calibration_file_path,
+                             std::map<std::string, uint32_t> baseline_loads) {
+    calibration_mode_ = true;
+    calibration_settings_ = settings;
+    calibration_file_path_ = std::move(calibration_file_path);
+    calibration_baseline_loads_ = std::move(baseline_loads);
+  }
+
   //! Causes RunAllTestsNonInteractive to run each test in sustained mode for the given number of frames.
   void EnableSustainedMode(uint32_t warmup_frames, uint32_t measure_frames) {
     sustained_mode_ = true;
@@ -71,6 +81,15 @@ class TestDriver {
   std::shared_ptr<MenuItem> active_menu_;
   std::shared_ptr<MenuItem> root_menu_;
   std::shared_ptr<MenuItem> options_menu_;
+
+  void RunCalibration();
+
+  bool calibration_mode_{false};
+  TestSuite::CalibrationSettings calibration_settings_{};
+  std::string calibration_file_path_;
+  //! Loads from the existing calibration baseline, carried into the new calibration file for tests that are not
+  //! recalibrated.
+  std::map<std::string, uint32_t> calibration_baseline_loads_;
 
   bool sustained_mode_{false};
   uint32_t sustained_warmup_frames_{0};
