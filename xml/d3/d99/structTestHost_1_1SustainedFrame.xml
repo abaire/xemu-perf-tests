@@ -1,0 +1,112 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="d3/d99/structTestHost_1_1SustainedFrame" kind="struct" language="C++" prot="private">
+    <compoundname>TestHost::SustainedFrame</compoundname>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="d3/d99/structTestHost_1_1SustainedFrame_1a3d34b1190e8792c40097d9fb4edb7332" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t TestHost::SustainedFrame::submit_us</definition>
+        <argsstring></argsstring>
+        <name>submit_us</name>
+        <qualifiedname>TestHost::SustainedFrame::submit_us</qualifiedname>
+        <briefdescription>
+<para>Time from frame start until all work has been submitted to the pushbuffer. Includes <computeroutput>reset_wait_us</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/test_host.h" line="128" column="14" bodyfile="src/test_host.h" bodystart="128" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d3/d99/structTestHost_1_1SustainedFrame_1ae317dcdb3da18820a4754cd2e0c6d98c" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t TestHost::SustainedFrame::reset_wait_us</definition>
+        <argsstring></argsstring>
+        <name>reset_wait_us</name>
+        <qualifiedname>TestHost::SustainedFrame::reset_wait_us</qualifiedname>
+        <briefdescription>
+<para>Portion of <computeroutput>submit_us</computeroutput> spent in pushbuffer resets, each of which waits for the GPU to finish all submitted work. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/test_host.h" line="130" column="14" bodyfile="src/test_host.h" bodystart="130" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d3/d99/structTestHost_1_1SustainedFrame_1ac4b5657dfada06f811b2143e3cc69190" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t TestHost::SustainedFrame::resets</definition>
+        <argsstring></argsstring>
+        <name>resets</name>
+        <qualifiedname>TestHost::SustainedFrame::resets</qualifiedname>
+        <briefdescription>
+<para>Number of pushbuffer resets during submission. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/test_host.h" line="132" column="14" bodyfile="src/test_host.h" bodystart="132" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d3/d99/structTestHost_1_1SustainedFrame_1a5d8898e37f25fdf5fb17340cd55a59ef" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t TestHost::SustainedFrame::busy_us</definition>
+        <argsstring></argsstring>
+        <name>busy_us</name>
+        <qualifiedname>TestHost::SustainedFrame::busy_us</qualifiedname>
+        <briefdescription>
+<para>Time from frame start until the GPU reports idle. Primary metric; not quantized by vsync. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/test_host.h" line="134" column="14" bodyfile="src/test_host.h" bodystart="134" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d3/d99/structTestHost_1_1SustainedFrame_1a5ab56373cbb33f12e5493f442a308126" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t TestHost::SustainedFrame::frame_us</definition>
+        <argsstring></argsstring>
+        <name>frame_us</name>
+        <qualifiedname>TestHost::SustainedFrame::frame_us</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Time from the end of the previous recorded frame (after its flip, if any) to the end of this one. 0 for the first recorded frame. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/test_host.h" line="137" column="14" bodyfile="src/test_host.h" bodystart="137" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d3/d99/structTestHost_1_1SustainedFrame_1a033af5bd19fdaaa0b427309ec3d68e38" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t TestHost::SustainedFrame::vblanks</definition>
+        <argsstring></argsstring>
+        <name>vblanks</name>
+        <qualifiedname>TestHost::SustainedFrame::vblanks</qualifiedname>
+        <briefdescription>
+<para>Number of vblanks between the end of the previous frame and the end of this one. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/test_host.h" line="139" column="14" bodyfile="src/test_host.h" bodystart="139" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Timing for a single frame in sustained mode. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/test_host.h" line="126" column="3" bodyfile="src/test_host.h" bodystart="126" bodyend="140"/>
+    <listofallmembers>
+      <member refid="d3/d99/structTestHost_1_1SustainedFrame_1a5d8898e37f25fdf5fb17340cd55a59ef" prot="public" virt="non-virtual"><scope>TestHost::SustainedFrame</scope><name>busy_us</name></member>
+      <member refid="d3/d99/structTestHost_1_1SustainedFrame_1a5ab56373cbb33f12e5493f442a308126" prot="public" virt="non-virtual"><scope>TestHost::SustainedFrame</scope><name>frame_us</name></member>
+      <member refid="d3/d99/structTestHost_1_1SustainedFrame_1ae317dcdb3da18820a4754cd2e0c6d98c" prot="public" virt="non-virtual"><scope>TestHost::SustainedFrame</scope><name>reset_wait_us</name></member>
+      <member refid="d3/d99/structTestHost_1_1SustainedFrame_1ac4b5657dfada06f811b2143e3cc69190" prot="public" virt="non-virtual"><scope>TestHost::SustainedFrame</scope><name>resets</name></member>
+      <member refid="d3/d99/structTestHost_1_1SustainedFrame_1a3d34b1190e8792c40097d9fb4edb7332" prot="public" virt="non-virtual"><scope>TestHost::SustainedFrame</scope><name>submit_us</name></member>
+      <member refid="d3/d99/structTestHost_1_1SustainedFrame_1a033af5bd19fdaaa0b427309ec3d68e38" prot="public" virt="non-virtual"><scope>TestHost::SustainedFrame</scope><name>vblanks</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

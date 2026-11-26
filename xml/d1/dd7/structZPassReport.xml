@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="d1/dd7/structZPassReport" kind="struct" language="C++" prot="public">
+    <compoundname>ZPassReport</compoundname>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="d1/dd7/structZPassReport_1a6f48e48063e994af943becae8c4410f0" prot="public" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t ZPassReport::timestamp</definition>
+        <argsstring></argsstring>
+        <name>timestamp</name>
+        <qualifiedname>ZPassReport::timestamp</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tests/pfifo_contention_tests.cpp" line="84" column="12" bodyfile="src/tests/pfifo_contention_tests.cpp" bodystart="84" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d1/dd7/structZPassReport_1a3e45797c75307c3ae89dd25dec0ef92d" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t ZPassReport::value</definition>
+        <argsstring></argsstring>
+        <name>value</name>
+        <qualifiedname>ZPassReport::value</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tests/pfifo_contention_tests.cpp" line="85" column="12" bodyfile="src/tests/pfifo_contention_tests.cpp" bodystart="85" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d1/dd7/structZPassReport_1a2ddbba5ef16fd21cd0cc8f967e2d9171" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t ZPassReport::reserved</definition>
+        <argsstring></argsstring>
+        <name>reserved</name>
+        <qualifiedname>ZPassReport::reserved</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tests/pfifo_contention_tests.cpp" line="86" column="12" bodyfile="src/tests/pfifo_contention_tests.cpp" bodystart="86" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Layout of a NV097_GET_REPORT result. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/tests/pfifo_contention_tests.cpp" line="83" column="1" bodyfile="src/tests/pfifo_contention_tests.cpp" bodystart="83" bodyend="87"/>
+    <listofallmembers>
+      <member refid="d1/dd7/structZPassReport_1a2ddbba5ef16fd21cd0cc8f967e2d9171" prot="public" virt="non-virtual"><scope>ZPassReport</scope><name>reserved</name></member>
+      <member refid="d1/dd7/structZPassReport_1a6f48e48063e994af943becae8c4410f0" prot="public" virt="non-virtual"><scope>ZPassReport</scope><name>timestamp</name></member>
+      <member refid="d1/dd7/structZPassReport_1a3e45797c75307c3ae89dd25dec0ef92d" prot="public" virt="non-virtual"><scope>ZPassReport</scope><name>value</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

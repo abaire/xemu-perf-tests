@@ -1,0 +1,718 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.15.0" xml:lang="en-US">
+  <compound refid="d1/d48/classBusyPfifoTests" kind="class"><name>BusyPfifoTests</name>
+    <member refid="d1/d48/classBusyPfifoTests_1acdde49dd4ecd64fb96b742f53ceb88e9" kind="function"><name>BusyPfifoTests</name></member>
+    <member refid="d1/d48/classBusyPfifoTests_1a925090388ffb11aaa38f9cb43035f415" kind="function"><name>Initialize</name></member>
+    <member refid="d1/d48/classBusyPfifoTests_1aea5dc0404f73456ec82631d96d222902" kind="function"><name>Test</name></member>
+  </compound>
+  <compound refid="dd/d1b/structTestSuite_1_1CalibrationResult" kind="struct"><name>TestSuite::CalibrationResult</name>
+    <member refid="dd/d1b/structTestSuite_1_1CalibrationResult_1a35ddefc1d8b8ba689b0eab5ec9c2fdc8" kind="variable"><name>status</name></member>
+    <member refid="dd/d1b/structTestSuite_1_1CalibrationResult_1a4fe263f657865de61f50e1d50126d1e2" kind="variable"><name>load</name></member>
+    <member refid="dd/d1b/structTestSuite_1_1CalibrationResult_1a824bb6e31b109b34c1843d608044bf4c" kind="variable"><name>runs</name></member>
+    <member refid="dd/d1b/structTestSuite_1_1CalibrationResult_1a1666c1f53cdf39adb0a422eb2d0f69b0" kind="variable"><name>summary</name></member>
+    <member refid="dd/d1b/structTestSuite_1_1CalibrationResult_1a7f100e2c3e856352aa484b5b0b498d6b" kind="variable"><name>history</name></member>
+  </compound>
+  <compound refid="d8/d1b/structTestSuite_1_1CalibrationSettings" kind="struct"><name>TestSuite::CalibrationSettings</name>
+    <member refid="d8/d1b/structTestSuite_1_1CalibrationSettings_1ac0b11f1b8998a1c6a23eaae0360fcfb4" kind="variable"><name>warmup_frames</name></member>
+    <member refid="d8/d1b/structTestSuite_1_1CalibrationSettings_1ae88f4d057aaab9c475d47683765a4e1e" kind="variable"><name>probe_frames</name></member>
+    <member refid="d8/d1b/structTestSuite_1_1CalibrationSettings_1a6b93c8b52cc4b7a729545e5f90e11044" kind="variable"><name>confirm_frames</name></member>
+    <member refid="d8/d1b/structTestSuite_1_1CalibrationSettings_1ad56b6981a32886035316d54c9bfee345" kind="variable"><name>target_busy_p95_us</name></member>
+  </compound>
+  <compound refid="da/d85/structTestSuite_1_1Config" kind="struct"><name>TestSuite::Config</name>
+  </compound>
+  <compound refid="d6/d3c/classFillRateTests" kind="class"><name>FillRateTests</name>
+    <member refid="d6/d3c/classFillRateTests_1a2bbd7c439faf04981460204374980261" kind="variable"><name>vertex_buffer_</name></member>
+    <member refid="d6/d3c/classFillRateTests_1a045d23f1ca6807fd8742c4cf5ebd6a8a" kind="function"><name>FillRateTests</name></member>
+    <member refid="d6/d3c/classFillRateTests_1a1d8fe47e38be93d1d00b977dc6a0b0a5" kind="function"><name>Initialize</name></member>
+    <member refid="d6/d3c/classFillRateTests_1a008dff947d76b636bfe8a8cb63cc1f86" kind="function"><name>Deinitialize</name></member>
+    <member refid="d6/d3c/classFillRateTests_1adef30d168931a09f547ad2195e8be075" kind="function"><name>TestFillRate</name></member>
+  </compound>
+  <compound refid="d5/dfa/structHighVertexCountTests_1_1GeometryHolder" kind="struct"><name>HighVertexCountTests::GeometryHolder</name>
+    <member refid="d5/dfa/structHighVertexCountTests_1_1GeometryHolder_1a28d2123dd1a3d2b4654e1c919fff4bf2" kind="variable"><name>vertex_buffer</name></member>
+    <member refid="d5/dfa/structHighVertexCountTests_1_1GeometryHolder_1a5021d224a88b4fcd3704979d059c21e0" kind="variable"><name>index_buffer</name></member>
+    <member refid="d5/dfa/structHighVertexCountTests_1_1GeometryHolder_1a822f39269822cdaea9169e7966956dd2" kind="function"><name>reset</name></member>
+  </compound>
+  <compound refid="d3/d92/classHighVertexCountTests" kind="class"><name>HighVertexCountTests</name>
+    <member refid="d3/d92/classHighVertexCountTests_1a81f0b26c0cccabf6ebe7119fa7ba560b" kind="enum"><name>DrawMode</name></member>
+    <member refid="d3/d92/classHighVertexCountTests_1a81f0b26c0cccabf6ebe7119fa7ba560bab04568ac318195cbd402c4bfbcc5a834" kind="enumvalue"><name>DRAW_ARRAYS</name></member>
+    <member refid="d3/d92/classHighVertexCountTests_1a81f0b26c0cccabf6ebe7119fa7ba560ba0843f7a43918ae5bda6160195bdde8a5" kind="enumvalue"><name>DRAW_INLINE_BUFFERS</name></member>
+    <member refid="d3/d92/classHighVertexCountTests_1a81f0b26c0cccabf6ebe7119fa7ba560ba671d51935069f8ae8eb51aa9f51b4b6f" kind="enumvalue"><name>DRAW_INLINE_ARRAYS</name></member>
+    <member refid="d3/d92/classHighVertexCountTests_1a81f0b26c0cccabf6ebe7119fa7ba560bab67bc5e1b697b99d381001313321fe2f" kind="enumvalue"><name>DRAW_INLINE_ELEMENTS</name></member>
+    <member refid="d3/d92/classHighVertexCountTests_1ad952659a2784e85ee734874f8e2e2662" kind="variable"><name>single_frame_geometry_</name></member>
+    <member refid="d3/d92/classHighVertexCountTests_1a555c215137bb00e92ea34abd7073fba1" kind="variable"><name>continuous_geometry_</name></member>
+    <member refid="d3/d92/classHighVertexCountTests_1ace411422001572ada56bb4f67f6a76f0" kind="function"><name>HighVertexCountTests</name></member>
+    <member refid="d3/d92/classHighVertexCountTests_1a06c25f50a98dbbb691f788a63210cc5f" kind="function"><name>Initialize</name></member>
+    <member refid="d3/d92/classHighVertexCountTests_1a44dacf4aefa7e12420825dfa3672f756" kind="function"><name>Deinitialize</name></member>
+    <member refid="d3/d92/classHighVertexCountTests_1ac859ff2322f023d351aba1d701e2676b" kind="function"><name>Test</name></member>
+  </compound>
+  <compound refid="d2/d5b/classJSONParser" kind="class"><name>JSONParser</name>
+    <member refid="d2/d5b/classJSONParser_1a33f03cda6d3c02f5ad1b9ea5f60f4908" kind="variable"><name>object_list_</name></member>
+    <member refid="d2/d5b/classJSONParser_1a70a2f17bc44a45f512d5abfe6c6df0df" kind="variable"><name>json_string_</name></member>
+    <member refid="d2/d5b/classJSONParser_1a1393eb49fbbba9bdf19940867784c7f4" kind="variable"><name>root_node_</name></member>
+    <member refid="d2/d5b/classJSONParser_1a76fbb770099b664746927cfd02e01d1f" kind="function"><name>JSONParser</name></member>
+    <member refid="d2/d5b/classJSONParser_1ae56b2c03060f25fe9f1c7fa3e9763ee3" kind="function"><name>JSONParser</name></member>
+    <member refid="d2/d5b/classJSONParser_1a2871641d030b9971e53be0c63d5514e4" kind="function"><name>JSONParser</name></member>
+    <member refid="d2/d5b/classJSONParser_1aeddf07bb96ca6be577587cada694847d" kind="function"><name>JSONParser</name></member>
+    <member refid="d2/d5b/classJSONParser_1ac81d7ca7f7ade79a0559b42f356d3037" kind="function"><name>operator=</name></member>
+    <member refid="d2/d5b/classJSONParser_1a053d216314135d387c5bd5dbaa707a21" kind="function"><name>operator=</name></member>
+    <member refid="d2/d5b/classJSONParser_1a50a94959af6353251fb8b04417ff5f18" kind="function"><name>root</name></member>
+    <member refid="d2/d5b/classJSONParser_1aeeb06b5a0c81ce200d30113b33de8700" kind="function"><name>Alloc</name></member>
+  </compound>
+  <compound refid="db/d67/classLogger" kind="class"><name>Logger</name>
+    <member refid="db/d67/classLogger_1a2781cec627b2aacc1c7754e6a4b99f20" kind="variable"><name>log_path_</name></member>
+    <member refid="db/d67/classLogger_1ad78d095540ab03207306101cc04eb6d5" kind="variable"><name>singleton_</name></member>
+    <member refid="db/d67/classLogger_1a2713330e1365a031b17a1b88e67c88ec" kind="function"><name>Initialize</name></member>
+    <member refid="db/d67/classLogger_1a6b8ef01cad46c6883e6794f51e4ed5cd" kind="function"><name>Log</name></member>
+    <member refid="db/d67/classLogger_1acc2101a1ed61b773eae89043a1ede341" kind="function"><name>Logger</name></member>
+  </compound>
+  <compound refid="d7/d12/structMenuItem" kind="struct"><name>MenuItem</name>
+    <member refid="d7/d12/structMenuItem_1a5223156aba1b53704f58586fb950836e" kind="variable"><name>width</name></member>
+    <member refid="d7/d12/structMenuItem_1a9a57af2165f97959149adee20a4eb86d" kind="variable"><name>height</name></member>
+    <member refid="d7/d12/structMenuItem_1a0e46de23f339da33aebb4b14ada546a7" kind="variable"><name>name</name></member>
+    <member refid="d7/d12/structMenuItem_1a9636ec4c0e64d70d0aaf7618dd1c9050" kind="variable"><name>cursor_position</name></member>
+    <member refid="d7/d12/structMenuItem_1abb595a376ca6b4d42fb79f0158d3a81a" kind="variable"><name>submenu</name></member>
+    <member refid="d7/d12/structMenuItem_1a3d57d9e9b6fc38b4f8eb9240392ebf48" kind="variable"><name>active_submenu</name></member>
+    <member refid="d7/d12/structMenuItem_1a7514ab030c91963292036dda32d0b0cc" kind="variable"><name>parent</name></member>
+    <member refid="d7/d12/structMenuItem_1a1896433a20c1f876bbb9078d3f083566" kind="variable"><name>menu_background_color_</name></member>
+    <member refid="d7/d12/structMenuItem_1a77bd4e666f8432542cde7113ad486366" kind="function"><name>MenuItem</name></member>
+    <member refid="d7/d12/structMenuItem_1a28f03d665c7424c9083adc20a4b59c3c" kind="function"><name>~MenuItem</name></member>
+    <member refid="d7/d12/structMenuItem_1a0d50ee8b9d0f414ab623db5d92dea184" kind="function"><name>IsEnterable</name></member>
+    <member refid="d7/d12/structMenuItem_1a2aa4e882bfe3f59f56dda1447e6d64ff" kind="function"><name>Draw</name></member>
+    <member refid="d7/d12/structMenuItem_1a1926f4d5fb710557daf011158ad6a116" kind="function"><name>OnEnter</name></member>
+    <member refid="d7/d12/structMenuItem_1a669389f33ac051bc9e40d4bc77b7f9bd" kind="function"><name>Activate</name></member>
+    <member refid="d7/d12/structMenuItem_1a33cb0911168774cdb71453743184be22" kind="function"><name>ActivateCurrentSuite</name></member>
+    <member refid="d7/d12/structMenuItem_1af8658a68106074fd149199db606feec1" kind="function"><name>Deactivate</name></member>
+    <member refid="d7/d12/structMenuItem_1a526e3928d3afe426dad05f3f66c0dbc6" kind="function"><name>CursorUp</name></member>
+    <member refid="d7/d12/structMenuItem_1a992b1237ace72dc386a5305fd348a8f7" kind="function"><name>CursorDown</name></member>
+    <member refid="d7/d12/structMenuItem_1aa7d56249433e4afeba04d11d0489b995" kind="function"><name>CursorLeft</name></member>
+    <member refid="d7/d12/structMenuItem_1a38b421507ab8ad89270258a75158b070" kind="function"><name>CursorRight</name></member>
+    <member refid="d7/d12/structMenuItem_1aba17e419992b01aac5a69da5ac316afb" kind="function"><name>CursorUpAndActivate</name></member>
+    <member refid="d7/d12/structMenuItem_1adae7ed1dfe85080eeb1be24b93348f6c" kind="function"><name>CursorDownAndActivate</name></member>
+    <member refid="d7/d12/structMenuItem_1a5db1f67f8202519bd9a2164e500f5a6a" kind="function"><name>SetBackgroundColor</name></member>
+    <member refid="d7/d12/structMenuItem_1aec8652d5bc122cf7de1a4b3bfdabe453" kind="function"><name>PrepareDraw</name></member>
+    <member refid="d7/d12/structMenuItem_1a6e267a86c0948a9f5df7cfa4f076cc48" kind="function"><name>Swap</name></member>
+  </compound>
+  <compound refid="d9/d00/structMenuItemCallable" kind="struct"><name>MenuItemCallable</name>
+    <member refid="d9/d00/structMenuItemCallable_1a34c602ae9d8f3d36838aa1f06f3c1a30" kind="variable"><name>on_activate</name></member>
+    <member refid="d9/d00/structMenuItemCallable_1a76f8c7065260822cccf2fdaed9142b69" kind="function"><name>MenuItemCallable</name></member>
+    <member refid="d9/d00/structMenuItemCallable_1a532da1b84aeeb4458b2a2ac18ae4afab" kind="function"><name>Draw</name></member>
+    <member refid="d9/d00/structMenuItemCallable_1aea6c4cf912a999a5d049a37b02f5731c" kind="function"><name>Activate</name></member>
+    <member refid="d9/d00/structMenuItemCallable_1a6917839c3c6aa19562f8aca695cdc253" kind="function"><name>ActivateCurrentSuite</name></member>
+  </compound>
+  <compound refid="d0/d0e/structMenuItemOption" kind="struct"><name>MenuItemOption</name>
+    <member refid="d0/d0e/structMenuItemOption_1a2648fa914ea5088bc6bd9a0c2f93e8e6" kind="variable"><name>label</name></member>
+    <member refid="d0/d0e/structMenuItemOption_1a926098e9defef6ae43b50593d4c1ac03" kind="variable"><name>values</name></member>
+    <member refid="d0/d0e/structMenuItemOption_1a7329b974a2c5a5989e03e703e4f88781" kind="variable"><name>current_option</name></member>
+    <member refid="d0/d0e/structMenuItemOption_1a9c9fb32291a8b784ddec5a1b819b6974" kind="variable"><name>on_apply</name></member>
+    <member refid="d0/d0e/structMenuItemOption_1ab55aa5c9e47d6c0b8da2987fa8f57b30" kind="function"><name>MenuItemOption</name></member>
+    <member refid="d0/d0e/structMenuItemOption_1aac6c59fec058fb4c1f7285c1d789a03b" kind="function"><name>MenuItemOption</name></member>
+    <member refid="d0/d0e/structMenuItemOption_1ac76b99f36e5e3da355fc125b3dc66331" kind="function"><name>UpdateName</name></member>
+    <member refid="d0/d0e/structMenuItemOption_1a932425a0391f3828300622f228d9e5f2" kind="function"><name>Activate</name></member>
+    <member refid="d0/d0e/structMenuItemOption_1aa4bf2a18b4e4fb0a0dd7bdb8a4c210c8" kind="function"><name>CursorLeft</name></member>
+    <member refid="d0/d0e/structMenuItemOption_1a15cd7848ceaf928412777fb345764f1d" kind="function"><name>CursorRight</name></member>
+  </compound>
+  <compound refid="dc/d52/structMenuItemOptions" kind="struct"><name>MenuItemOptions</name>
+    <member refid="dc/d52/structMenuItemOptions_1a70fa3bd0c6573eedefe5108ac61a3385" kind="variable"><name>on_exit</name></member>
+    <member refid="dc/d52/structMenuItemOptions_1a137842249d3f9a58e96b3e95ba52014c" kind="variable"><name>start_time</name></member>
+    <member refid="dc/d52/structMenuItemOptions_1ab99b2263bb7aaa61135fd04defa6de6e" kind="variable"><name>timer_valid</name></member>
+    <member refid="dc/d52/structMenuItemOptions_1a81a3268574093272e058240a8743b750" kind="variable"><name>timer_cancelled</name></member>
+    <member refid="dc/d52/structMenuItemOptions_1a6befb6136d1125ae3e204ba1ae35f8a4" kind="function"><name>MenuItemOptions</name></member>
+    <member refid="dc/d52/structMenuItemOptions_1abf8835c41b267696f233257d6a056523" kind="function"><name>Draw</name></member>
+    <member refid="dc/d52/structMenuItemOptions_1a29f588ef0fd7e6e109a459cbb63235b9" kind="function"><name>Activate</name></member>
+    <member refid="dc/d52/structMenuItemOptions_1a6812f0c52395c559667c101f16179f67" kind="function"><name>ActivateCurrentSuite</name></member>
+    <member refid="dc/d52/structMenuItemOptions_1a37ac37540ca907abe1061fc4f35bbaa0" kind="function"><name>Deactivate</name></member>
+    <member refid="dc/d52/structMenuItemOptions_1ad77818f68d88f5b30d213d6ed821f0b1" kind="function"><name>CursorUp</name></member>
+    <member refid="dc/d52/structMenuItemOptions_1a10dfa24f75508118aeb84863a7803724" kind="function"><name>CursorDown</name></member>
+    <member refid="dc/d52/structMenuItemOptions_1a31d1fe4618a16a165f5a5ea2571b34bb" kind="function"><name>CursorLeft</name></member>
+    <member refid="dc/d52/structMenuItemOptions_1aed717217f20c6d83ea3a61b5549c01fc" kind="function"><name>CursorRight</name></member>
+  </compound>
+  <compound refid="d7/d64/structMenuItemRoot" kind="struct"><name>MenuItemRoot</name>
+    <member refid="d7/d64/structMenuItemRoot_1a46b6f91d231311d16bb2f2c6f753bdac" kind="variable"><name>on_run_all</name></member>
+    <member refid="d7/d64/structMenuItemRoot_1a20ad4b0e284cf7f22e5cfad241311d2f" kind="variable"><name>on_exit</name></member>
+    <member refid="d7/d64/structMenuItemRoot_1a0eca6dc73f5c4c5fe7a15da15c855c3d" kind="variable"><name>start_time</name></member>
+    <member refid="d7/d64/structMenuItemRoot_1a01ded6162d466da2fbad13f7745297bc" kind="variable"><name>timer_valid</name></member>
+    <member refid="d7/d64/structMenuItemRoot_1a97ae2ae096d46020173ab0c1e160e268" kind="variable"><name>timer_cancelled</name></member>
+    <member refid="d7/d64/structMenuItemRoot_1adde8b6624c437ec099a35275a37fe1ac" kind="variable"><name>disable_autorun_</name></member>
+    <member refid="d7/d64/structMenuItemRoot_1a62b60582a3546a45930dfd1ac3554136" kind="variable"><name>autorun_immediately_</name></member>
+    <member refid="d7/d64/structMenuItemRoot_1a1abe415709b3ed1f78eedf3ef55fee39" kind="function"><name>MenuItemRoot</name></member>
+    <member refid="d7/d64/structMenuItemRoot_1aefd59f84c7b9284c736fc00f9e2492d4" kind="function"><name>Draw</name></member>
+    <member refid="d7/d64/structMenuItemRoot_1a9c45ac478442c74b0fada12892019787" kind="function"><name>Activate</name></member>
+    <member refid="d7/d64/structMenuItemRoot_1ac54d211a67039fc14f4e80deba76fdcd" kind="function"><name>ActivateCurrentSuite</name></member>
+    <member refid="d7/d64/structMenuItemRoot_1a8cec25815eec82b609e1668478423436" kind="function"><name>Deactivate</name></member>
+    <member refid="d7/d64/structMenuItemRoot_1afcc9bd52ff7fe9ecd3efd3e378ef957e" kind="function"><name>CursorUp</name></member>
+    <member refid="d7/d64/structMenuItemRoot_1aaf3f12131badaaf3a3e114c5567806f3" kind="function"><name>CursorDown</name></member>
+    <member refid="d7/d64/structMenuItemRoot_1a6fd9ab2ec69c223f6babebb0570790c6" kind="function"><name>CursorLeft</name></member>
+    <member refid="d7/d64/structMenuItemRoot_1a783a8c071b7da7babd1603d14bcf4818" kind="function"><name>CursorRight</name></member>
+  </compound>
+  <compound refid="de/d5e/structMenuItemSuite" kind="struct"><name>MenuItemSuite</name>
+    <member refid="de/d5e/structMenuItemSuite_1a91d74d5b7ab08f6d7408b2851b2762d5" kind="variable"><name>suite</name></member>
+    <member refid="de/d5e/structMenuItemSuite_1a27024c6a4c56aa4590994b06c4477258" kind="function"><name>MenuItemSuite</name></member>
+    <member refid="de/d5e/structMenuItemSuite_1ac1d4ddb0b3a5d74c72e0ce95008258a4" kind="function"><name>ActivateCurrentSuite</name></member>
+  </compound>
+  <compound refid="d8/d0e/structMenuItemTest" kind="struct"><name>MenuItemTest</name>
+    <member refid="d8/d0e/structMenuItemTest_1a20de260194fcb72f4613d67c56c5fdca" kind="enum"><name>RunMode</name></member>
+    <member refid="d8/d0e/structMenuItemTest_1a20de260194fcb72f4613d67c56c5fdcaa468ece74676efbc5641d1e44c96bb775" kind="enumvalue"><name>SINGLE_FRAME</name></member>
+    <member refid="d8/d0e/structMenuItemTest_1a20de260194fcb72f4613d67c56c5fdcaab1fa9dd3af034b3ef4291579aa673c07" kind="enumvalue"><name>CONTINUOUS</name></member>
+    <member refid="d8/d0e/structMenuItemTest_1a0b98833e2b34bab08d196127586e9b1d" kind="variable"><name>run_mode_</name></member>
+    <member refid="d8/d0e/structMenuItemTest_1a1f2ce666446d5f391b8567f4f0445c3c" kind="variable"><name>suite</name></member>
+    <member refid="d8/d0e/structMenuItemTest_1ac15ac9d4491b2f4d2c166adbd9ad928d" kind="variable"><name>frame_count</name></member>
+    <member refid="d8/d0e/structMenuItemTest_1aa18841a9db1b3b30ef320d57da800b65" kind="function"><name>MenuItemTest</name></member>
+    <member refid="d8/d0e/structMenuItemTest_1a2503062495af4abf876b545c9c237d08" kind="function"><name>IsEnterable</name></member>
+    <member refid="d8/d0e/structMenuItemTest_1a2d6d61d34e2419687396d5e47d58ab62" kind="function"><name>Draw</name></member>
+    <member refid="d8/d0e/structMenuItemTest_1a4f6ca4ccd28568a2c84ccbf73a563c23" kind="function"><name>OnEnter</name></member>
+    <member refid="d8/d0e/structMenuItemTest_1a8d7c50a0407eccebaff40574afb2c5e8" kind="function"><name>Activate</name></member>
+    <member refid="d8/d0e/structMenuItemTest_1a433b75050d2e3f1eb7a121f31911f035" kind="function"><name>Deactivate</name></member>
+    <member refid="d8/d0e/structMenuItemTest_1adac684803d2855fce5ae4a450d1182b0" kind="function"><name>ActivateCurrentSuite</name></member>
+    <member refid="d8/d0e/structMenuItemTest_1a18f933319c3975e59a038c9503e73b9f" kind="function"><name>CursorUp</name></member>
+    <member refid="d8/d0e/structMenuItemTest_1af543f8502770ef2f33adb1b7685a0be4" kind="function"><name>CursorDown</name></member>
+    <member refid="d8/d0e/structMenuItemTest_1a7df6fa98df63abac9d399d2216e8740a" kind="function"><name>CursorLeft</name></member>
+    <member refid="d8/d0e/structMenuItemTest_1adb8acce21319e0445c2eb61a27bc4a75" kind="function"><name>CursorRight</name></member>
+    <member refid="d8/d0e/structMenuItemTest_1adc12bc07056ec33f5b07a9200cb37643" kind="function"><name>SetRunMode</name></member>
+    <member refid="d8/d0e/structMenuItemTest_1a637b6d8ae9401cf871c54482eaa73b70" kind="function"><name>GetRunMode</name></member>
+  </compound>
+  <compound refid="d0/d48/classPfifoContentionTests" kind="class"><name>PfifoContentionTests</name>
+    <member refid="d0/d48/classPfifoContentionTests_1a67fe1388d748ec54c6e9148959b93c2e" kind="variable"><name>report_memory_</name></member>
+    <member refid="d0/d48/classPfifoContentionTests_1a6d0c1db28d7c97e2816527cd7cec401f" kind="variable"><name>half_rate_frame_</name></member>
+    <member refid="d0/d48/classPfifoContentionTests_1a7a8a25c89ceb0d44e6d38aea7f33ccbd" kind="function"><name>PfifoContentionTests</name></member>
+    <member refid="d0/d48/classPfifoContentionTests_1a7e3fbbe90529d891ae98d8d989c93256" kind="function"><name>Initialize</name></member>
+    <member refid="d0/d48/classPfifoContentionTests_1a344754577f2dc7f373b5d4fc5cdb3f7f" kind="function"><name>TestControl</name></member>
+    <member refid="d0/d48/classPfifoContentionTests_1a86efecd1b97ae9e59240b05ce639035b" kind="function"><name>TestLongPushbuffer</name></member>
+    <member refid="d0/d48/classPfifoContentionTests_1a649c8c97d47a486e7ab0be9b94063015" kind="function"><name>TestMethodChurn</name></member>
+    <member refid="d0/d48/classPfifoContentionTests_1af2f4aa7aa9f794b42147c11fdd6b6797" kind="function"><name>TestTinyKicks</name></member>
+    <member refid="d0/d48/classPfifoContentionTests_1a03514bb895893da41d7745bfefee4747" kind="function"><name>TestHalfRatePresent</name></member>
+    <member refid="d0/d48/classPfifoContentionTests_1a1d043db0681c40b1a43c998aaa821dab" kind="function"><name>TestSurfaceReadback</name></member>
+    <member refid="d0/d48/classPfifoContentionTests_1a8f29513d9e3c0bcd7e66c9438d7bdab8" kind="function"><name>TestOcclusionSpin</name></member>
+    <member refid="d0/d48/classPfifoContentionTests_1a4d53efb2543fc8f237527c40a5c4e2a3" kind="function"><name>TestCpuFramebufferWrite</name></member>
+    <member refid="d0/d48/classPfifoContentionTests_1a0142e8711e2f6fb44f6dc0a89f494b51" kind="function"><name>TestFillBound</name></member>
+    <member refid="d0/d48/classPfifoContentionTests_1afbf8b7b29dff61cb3f1aa3c2d942d5e7" kind="function"><name>RunFrame</name></member>
+    <member refid="d0/d48/classPfifoContentionTests_1afec976641b3c6f58df14dcd3d7b9ba61" kind="function"><name>DrawTinyTriangle</name></member>
+    <member refid="d0/d48/classPfifoContentionTests_1a58c8ee8676a9cd677633d2fa4478159d" kind="function"><name>DrawTinyTriangle</name></member>
+  </compound>
+  <compound refid="de/da7/classPrimitiveTypeTests" kind="class"><name>PrimitiveTypeTests</name>
+    <member refid="de/da7/classPrimitiveTypeTests_1a3084c7886f7e9885722bd32bfbaf5fc3" kind="function"><name>PrimitiveTypeTests</name></member>
+    <member refid="de/da7/classPrimitiveTypeTests_1ab36aa84dbb1068b100fb12c7de590604" kind="function"><name>Initialize</name></member>
+    <member refid="de/da7/classPrimitiveTypeTests_1aca88d433a6e2a43ac5f318ca13bd98eb" kind="function"><name>Test</name></member>
+  </compound>
+  <compound refid="d1/dc6/structTestHost_1_1ProfileResults" kind="struct"><name>TestHost::ProfileResults</name>
+    <member refid="d1/dc6/structTestHost_1_1ProfileResults_1a35a87a8eca1779cad448be62c317ceef" kind="variable"><name>iterations</name></member>
+    <member refid="d1/dc6/structTestHost_1_1ProfileResults_1ac8ed26813ee3c6eb470d14bbc2b2671b" kind="variable"><name>total_time_microseconds</name></member>
+    <member refid="d1/dc6/structTestHost_1_1ProfileResults_1a4dada5cd71522c80d074f237689824b1" kind="variable"><name>average_time_microseconds</name></member>
+    <member refid="d1/dc6/structTestHost_1_1ProfileResults_1a1d60a4a9b34d461598aba61ba0562d2e" kind="variable"><name>maximum_time_microseconds</name></member>
+    <member refid="d1/dc6/structTestHost_1_1ProfileResults_1a84ec286d48aa6690f556ca2695787e0e" kind="variable"><name>minimum_time_microseconds</name></member>
+    <member refid="d1/dc6/structTestHost_1_1ProfileResults_1af312934329908c83d3c011c7f5832797" kind="variable"><name>raw_results</name></member>
+  </compound>
+  <compound refid="d5/dfa/classProgramThrashTests" kind="class"><name>ProgramThrashTests</name>
+    <member refid="d5/dfa/classProgramThrashTests_1a54bcdba0e1a3a451668df6b35f7ec339" kind="variable"><name>vertex_buffer_</name></member>
+    <member refid="d5/dfa/classProgramThrashTests_1a89d0cafc6855a76938a56ddea92e6c3b" kind="variable"><name>num_draws_multi_frame_</name></member>
+    <member refid="d5/dfa/classProgramThrashTests_1aa7e221b38d740f71ea51212f411ef455" kind="variable"><name>active_test_</name></member>
+    <member refid="d5/dfa/classProgramThrashTests_1a948d4d16aea3db16660ca0932fde8adb" kind="function"><name>ProgramThrashTests</name></member>
+    <member refid="d5/dfa/classProgramThrashTests_1a88394e3472c891ebf17206f43ba6709a" kind="function"><name>Initialize</name></member>
+    <member refid="d5/dfa/classProgramThrashTests_1a83ca8db2360fb707b371c542c1aadade" kind="function"><name>Deinitialize</name></member>
+    <member refid="d5/dfa/classProgramThrashTests_1a329effe8e4d3e8078402a71d0c3a9373" kind="function"><name>UpdateUserContext</name></member>
+    <member refid="d5/dfa/classProgramThrashTests_1a13da852b9a1e05c20f8d476e51d11dbd" kind="function"><name>GetNumDraws</name></member>
+    <member refid="d5/dfa/classProgramThrashTests_1ac5ae64ede1ecde6fd0d718c6dfdf586e" kind="function"><name>PrintNumDraws</name></member>
+    <member refid="d5/dfa/classProgramThrashTests_1a24826f95f1e8b57c16d497e6e0b48893" kind="function"><name>TestReupload</name></member>
+    <member refid="d5/dfa/classProgramThrashTests_1abb65a0baa089bfee6beb0d62e18ea5c8" kind="function"><name>TestResident</name></member>
+  </compound>
+  <compound refid="d3/d38/classPushCostTests" kind="class"><name>PushCostTests</name>
+    <member refid="d3/d38/classPushCostTests_1a2778affdbaa96e708213df1b55e54894" kind="variable"><name>ram_buffer_</name></member>
+    <member refid="d3/d38/classPushCostTests_1acf946f18a335331ae2f16ef2916ec086" kind="function"><name>PushCostTests</name></member>
+    <member refid="d3/d38/classPushCostTests_1a03bdf31b5ecbe9bcccf86e744fbc89f7" kind="function"><name>Initialize</name></member>
+    <member refid="d3/d38/classPushCostTests_1a837ea69f71a5f5db5ba0b7997d9f3c1b" kind="function"><name>Deinitialize</name></member>
+    <member refid="d3/d38/classPushCostTests_1a8a1c5832c39a0b66ccfb3483262a267d" kind="function"><name>TestRamWrite</name></member>
+    <member refid="d3/d38/classPushCostTests_1aa7484d7dabac81c32dd3b42944f71818" kind="function"><name>TestPushbufferWrite</name></member>
+    <member refid="d3/d38/classPushCostTests_1ae0ac0f07b706f2b303c35788ceef5a52" kind="function"><name>TestPushbufferSubmit</name></member>
+    <member refid="d3/d38/classPushCostTests_1a6ad68a51e0d0bfe056b2135c780c5956" kind="function"><name>TestPushbufferAPI</name></member>
+    <member refid="d3/d38/classPushCostTests_1a5c50a3329fe027718cdaacc51570f006" kind="function"><name>RunFrame</name></member>
+  </compound>
+  <compound refid="db/dcc/structPfifoContentionTests_1_1report__dma__ctx__" kind="struct"><name>PfifoContentionTests::report_dma_ctx_</name>
+  </compound>
+  <compound refid="dd/df9/structTestSuite_1_1CalibrationResult_1_1Run" kind="struct"><name>TestSuite::CalibrationResult::Run</name>
+    <member refid="dd/df9/structTestSuite_1_1CalibrationResult_1_1Run_1a2a46e82b02f7c9aea05bcea19eed119d" kind="variable"><name>load</name></member>
+    <member refid="dd/df9/structTestSuite_1_1CalibrationResult_1_1Run_1a91016c5f265be9cae0c92358cdfd7808" kind="variable"><name>confirm</name></member>
+    <member refid="dd/df9/structTestSuite_1_1CalibrationResult_1_1Run_1a8c674f9e67440742f2facc94c0b62d25" kind="variable"><name>passed</name></member>
+    <member refid="dd/df9/structTestSuite_1_1CalibrationResult_1_1Run_1a5413da283c3931704f24b552db821cb0" kind="variable"><name>summary</name></member>
+  </compound>
+  <compound refid="d0/d98/classRuntimeConfig" kind="class"><name>RuntimeConfig</name>
+    <member refid="d0/d98/classRuntimeConfig_1a53d0ad09bd863533db55bc1918436821" kind="enum"><name>SkipConfiguration</name></member>
+    <member refid="d0/d98/classRuntimeConfig_1a53d0ad09bd863533db55bc1918436821a5b39c8b553c821e7cddc6da64b5bd2ee" kind="enumvalue"><name>DEFAULT</name></member>
+    <member refid="d0/d98/classRuntimeConfig_1a53d0ad09bd863533db55bc1918436821a203ec08f57cb105eeb2b121ba6503b52" kind="enumvalue"><name>SKIPPED</name></member>
+    <member refid="d0/d98/classRuntimeConfig_1a53d0ad09bd863533db55bc1918436821a2b373f495b7ff443d0244c6a5e436023" kind="enumvalue"><name>UNSKIPPED</name></member>
+    <member refid="d0/d98/classRuntimeConfig_1a1cec199cd9c952f3ee36aad3508de51d" kind="enum"><name>RunMode</name></member>
+    <member refid="d0/d98/classRuntimeConfig_1a1cec199cd9c952f3ee36aad3508de51da0679273e201afd0bf57af3961f8a23b8" kind="enumvalue"><name>SINGLE</name></member>
+    <member refid="d0/d98/classRuntimeConfig_1a1cec199cd9c952f3ee36aad3508de51da4b9ca846723a454c90694243dfc1f4dd" kind="enumvalue"><name>SUSTAINED</name></member>
+    <member refid="d0/d98/classRuntimeConfig_1a1cec199cd9c952f3ee36aad3508de51da9f19f49a589b6bc247398b3f8c8a9aad" kind="enumvalue"><name>CALIBRATE</name></member>
+    <member refid="d0/d98/classRuntimeConfig_1aff756ba6d02de2c73bb81625c07be3a3" kind="typedef"><name>TestLoads</name></member>
+    <member refid="d0/d98/classRuntimeConfig_1a82dbd30ac65d1e180a436f620a9a3253" kind="variable"><name>disable_autorun_</name></member>
+    <member refid="d0/d98/classRuntimeConfig_1a86bf2d2cdd9ad0200158b461b64acb04" kind="variable"><name>enable_autorun_immediately_</name></member>
+    <member refid="d0/d98/classRuntimeConfig_1a839dd4750252137dc5d0fbc54f34956e" kind="variable"><name>enable_shutdown_on_completion_</name></member>
+    <member refid="d0/d98/classRuntimeConfig_1a78613c6ad8ea5c5d9add504ef45ea724" kind="variable"><name>skip_tests_by_default_</name></member>
+    <member refid="d0/d98/classRuntimeConfig_1aad2ce726210206fa4398a2d63b811388" kind="variable"><name>reboot_or_shutdown_delay_ms_</name></member>
+    <member refid="d0/d98/classRuntimeConfig_1a909ad1d37589976ec8df8dd848e7abbd" kind="variable"><name>output_directory_path_</name></member>
+    <member refid="d0/d98/classRuntimeConfig_1a2a694b82f6730329a93bfa0f790f1d6c" kind="variable"><name>run_mode_</name></member>
+    <member refid="d0/d98/classRuntimeConfig_1a7acddd197a03e89604f92298fe751b15" kind="variable"><name>warmup_frames_</name></member>
+    <member refid="d0/d98/classRuntimeConfig_1a977c8bb21450d06e30c522a056cf93cb" kind="variable"><name>measure_frames_</name></member>
+    <member refid="d0/d98/classRuntimeConfig_1acb407dd1c757c218ea74d2f9f41478b3" kind="variable"><name>calibration_probe_frames_</name></member>
+    <member refid="d0/d98/classRuntimeConfig_1af2a52cc156f9d02f328d3a4936479ef6" kind="variable"><name>calibration_target_busy_p95_us_</name></member>
+    <member refid="d0/d98/classRuntimeConfig_1a11a899dcff6dbfb54e63ef372c788f55" kind="variable"><name>configured_test_loads_</name></member>
+    <member refid="d0/d98/classRuntimeConfig_1ae2a0e986e5243751ba425d2cd8c3d39e" kind="variable"><name>baseline_test_loads_</name></member>
+    <member refid="d0/d98/classRuntimeConfig_1a5e69eff9458234b7cd10f8283b7ae8a7" kind="variable"><name>configured_test_suites_</name></member>
+    <member refid="d0/d98/classRuntimeConfig_1a93266abd31cd76445e637c54c9ac0ace" kind="variable"><name>configured_test_cases_</name></member>
+    <member refid="d0/d98/classRuntimeConfig_1a5bb5fdf8d9ba569c2ab2a5b549d987d0" kind="function"><name>RuntimeConfig</name></member>
+    <member refid="d0/d98/classRuntimeConfig_1a357e29abface33d5bc0b18d9445327f7" kind="function"><name>RuntimeConfig</name></member>
+    <member refid="d0/d98/classRuntimeConfig_1a14a49d34275e82a2b06bd365d1216c51" kind="function"><name>LoadConfig</name></member>
+    <member refid="d0/d98/classRuntimeConfig_1a01982f42fa9b49444100ab893e9d4e2b" kind="function"><name>LoadConfigBuffer</name></member>
+    <member refid="d0/d98/classRuntimeConfig_1aa144a07d82ad6a8474c4fe34175decac" kind="function"><name>LoadCalibrationBaseline</name></member>
+    <member refid="d0/d98/classRuntimeConfig_1ab234dceaf1d88e90e733321869a025d5" kind="function"><name>ApplyConfig</name></member>
+    <member refid="d0/d98/classRuntimeConfig_1af61da712447ba61deeb35becd686badd" kind="function"><name>baseline_loads</name></member>
+    <member refid="d0/d98/classRuntimeConfig_1a9a8c5be5090df2ecc1e79265a285be93" kind="function"><name>disable_autorun</name></member>
+    <member refid="d0/d98/classRuntimeConfig_1a1a8773d0ba2f6d1ffcd0eb1c4d6c3590" kind="function"><name>enable_autorun_immediately</name></member>
+    <member refid="d0/d98/classRuntimeConfig_1a053e22e1fdaa8f0cfab669d86bdc747f" kind="function"><name>enable_shutdown_on_completion</name></member>
+    <member refid="d0/d98/classRuntimeConfig_1a917790f13b1e41f33450c5601d33922b" kind="function"><name>skip_tests_by_default</name></member>
+    <member refid="d0/d98/classRuntimeConfig_1a6f43f70103750517751c0e0f0698a894" kind="function"><name>reboot_or_shutdown_delay_ms</name></member>
+    <member refid="d0/d98/classRuntimeConfig_1a648142e0700bcf91e6d8743fc2cd8e68" kind="function"><name>output_directory_path</name></member>
+    <member refid="d0/d98/classRuntimeConfig_1a1e06d4cc2989dcf7bfca8b34cf008384" kind="function"><name>run_mode</name></member>
+    <member refid="d0/d98/classRuntimeConfig_1a1fde32974ae52c964d3fcb5f430bd921" kind="function"><name>warmup_frames</name></member>
+    <member refid="d0/d98/classRuntimeConfig_1a0b0c167218ba2d4f470fba2736b2d6ac" kind="function"><name>measure_frames</name></member>
+    <member refid="d0/d98/classRuntimeConfig_1a4d05a857b29a718cc059f73495d3fbcb" kind="function"><name>calibration_probe_frames</name></member>
+    <member refid="d0/d98/classRuntimeConfig_1a43535dd9da286bcaef979586979848a8" kind="function"><name>calibration_target_busy_p95_us</name></member>
+    <member refid="d0/d98/classRuntimeConfig_1ad0597a9477a5dbcb7227e8685e9d3468" kind="function"><name>SanitizePath</name></member>
+  </compound>
+  <compound refid="d3/d81/structTestHost_1_1semaphore__dma__ctx__" kind="struct"><name>TestHost::semaphore_dma_ctx_</name>
+  </compound>
+  <compound refid="dc/d27/classSurfaceRenderingTests" kind="class"><name>SurfaceRenderingTests</name>
+    <member refid="dc/d27/classSurfaceRenderingTests_1aa8de3517c534bf79671da4e2ef0936bb" kind="function"><name>SurfaceRenderingTests</name></member>
+    <member refid="dc/d27/classSurfaceRenderingTests_1a5101c51fb9a8cd4bf1e6b6ebeebf184d" kind="function"><name>Initialize</name></member>
+    <member refid="dc/d27/classSurfaceRenderingTests_1aec8b12bebd8902684b6f3546d1341cee" kind="function"><name>Test</name></member>
+    <member refid="dc/d27/classSurfaceRenderingTests_1abca3a98396bd4187d2e41bd559a682ee" kind="function"><name>TestXemuForceSurfaceDownloadPath</name></member>
+  </compound>
+  <compound refid="d3/d99/structTestHost_1_1SustainedFrame" kind="struct"><name>TestHost::SustainedFrame</name>
+    <member refid="d3/d99/structTestHost_1_1SustainedFrame_1a3d34b1190e8792c40097d9fb4edb7332" kind="variable"><name>submit_us</name></member>
+    <member refid="d3/d99/structTestHost_1_1SustainedFrame_1ae317dcdb3da18820a4754cd2e0c6d98c" kind="variable"><name>reset_wait_us</name></member>
+    <member refid="d3/d99/structTestHost_1_1SustainedFrame_1ac4b5657dfada06f811b2143e3cc69190" kind="variable"><name>resets</name></member>
+    <member refid="d3/d99/structTestHost_1_1SustainedFrame_1a5d8898e37f25fdf5fb17340cd55a59ef" kind="variable"><name>busy_us</name></member>
+    <member refid="d3/d99/structTestHost_1_1SustainedFrame_1a5ab56373cbb33f12e5493f442a308126" kind="variable"><name>frame_us</name></member>
+    <member refid="d3/d99/structTestHost_1_1SustainedFrame_1a033af5bd19fdaaa0b427309ec3d68e38" kind="variable"><name>vblanks</name></member>
+  </compound>
+  <compound refid="d3/d3d/structTestHost_1_1SustainedSummary" kind="struct"><name>TestHost::SustainedSummary</name>
+    <member refid="d3/d3d/structTestHost_1_1SustainedSummary_1a8b4e668583621864cf18f2cf3680f624" kind="variable"><name>frames</name></member>
+    <member refid="d3/d3d/structTestHost_1_1SustainedSummary_1a262c5e823f1345c4fff26fdfe788a87f" kind="variable"><name>busy_p50_us</name></member>
+    <member refid="d3/d3d/structTestHost_1_1SustainedSummary_1a405385ffc2c24e3c4c5270efcefdd5fa" kind="variable"><name>busy_p95_us</name></member>
+    <member refid="d3/d3d/structTestHost_1_1SustainedSummary_1a224eb14dbfd750a5aae9deaea00e9af7" kind="variable"><name>missed_vblanks</name></member>
+    <member refid="d3/d3d/structTestHost_1_1SustainedSummary_1a6aa0f97e8d7920b21fdac3c5e91e3d22" kind="variable"><name>fence_timeouts</name></member>
+    <member refid="d3/d3d/structTestHost_1_1SustainedSummary_1ae5ab37b792b981755164fee2260480e2" kind="variable"><name>max_resets</name></member>
+    <member refid="d3/d3d/structTestHost_1_1SustainedSummary_1a0ad37c6fb41d4e464582613729fec1d4" kind="variable"><name>aborted</name></member>
+  </compound>
+  <compound refid="de/d15/classTestDriver" kind="class"><name>TestDriver</name>
+    <member refid="de/d15/classTestDriver_1ab3a733db5aa94b8362f7462af1c97629" kind="variable"><name>running_</name></member>
+    <member refid="de/d15/classTestDriver_1ad588c7e5c601d002ec315769e1b9331b" kind="variable"><name>test_host_</name></member>
+    <member refid="de/d15/classTestDriver_1af45481fcfcdfd7d67ee19c076e0ddd3a" kind="variable"><name>test_suites_</name></member>
+    <member refid="de/d15/classTestDriver_1afd91fb20033e016a8a99afe9d910e807" kind="variable"><name>gamepads_</name></member>
+    <member refid="de/d15/classTestDriver_1a4f9e680074101f30aefc9a0b1de279b8" kind="variable"><name>active_menu_</name></member>
+    <member refid="de/d15/classTestDriver_1a9ced81f87f1602105e5887d021df1654" kind="variable"><name>root_menu_</name></member>
+    <member refid="de/d15/classTestDriver_1a737eb1f98772557bd0f28bcb1b9e4766" kind="variable"><name>options_menu_</name></member>
+    <member refid="de/d15/classTestDriver_1ac70b88fb72e261236ec2348250de9a4c" kind="variable"><name>calibration_mode_</name></member>
+    <member refid="de/d15/classTestDriver_1a3dada89ef46161e500c0feca03dbf76e" kind="variable"><name>calibration_settings_</name></member>
+    <member refid="de/d15/classTestDriver_1aaa130917686f89fc0af2c649763d8205" kind="variable"><name>calibration_file_path_</name></member>
+    <member refid="de/d15/classTestDriver_1aed82af539b3cb3e3c1d6a104c1106926" kind="variable"><name>calibration_baseline_loads_</name></member>
+    <member refid="de/d15/classTestDriver_1ad94d549315571e7ae85a95441f34e12d" kind="variable"><name>sustained_mode_</name></member>
+    <member refid="de/d15/classTestDriver_1acbcfbe9cd82d9e3821ab481e7a7e737e" kind="variable"><name>sustained_warmup_frames_</name></member>
+    <member refid="de/d15/classTestDriver_1ad817aea2561a34048aa14ddc538fb301" kind="variable"><name>sustained_measure_frames_</name></member>
+    <member refid="de/d15/classTestDriver_1a35a31f91b1993d0525fd3b648a372415" kind="function"><name>TestDriver</name></member>
+    <member refid="de/d15/classTestDriver_1a1be16e8753bbf0da5a7f4bc1b4f8a527" kind="function"><name>~TestDriver</name></member>
+    <member refid="de/d15/classTestDriver_1ad6ab07d409a35e75014b8559c8d76d34" kind="function"><name>Run</name></member>
+    <member refid="de/d15/classTestDriver_1a3b1624ebd57df5adc0e70a013053fee8" kind="function"><name>RunAllTestsNonInteractive</name></member>
+    <member refid="de/d15/classTestDriver_1aa2760ad39666b7f1e345770be321a545" kind="function"><name>EnableCalibrationMode</name></member>
+    <member refid="de/d15/classTestDriver_1a93a4087729412c75e13825fee9e8a4a6" kind="function"><name>EnableSustainedMode</name></member>
+    <member refid="de/d15/classTestDriver_1a2498dd5eacb6362699437cf7bd37d110" kind="function"><name>OnControllerAdded</name></member>
+    <member refid="de/d15/classTestDriver_1a65b69d44c051e4148457d886b251d38d" kind="function"><name>OnControllerRemoved</name></member>
+    <member refid="de/d15/classTestDriver_1a37b25261a1d34250e03d3e2006406437" kind="function"><name>OnControllerButtonEvent</name></member>
+    <member refid="de/d15/classTestDriver_1af64491df77108eefdadad8355aaee970" kind="function"><name>OnButtonActivated</name></member>
+    <member refid="de/d15/classTestDriver_1ada324a59bbcf8b190292a684ee6e1edd" kind="function"><name>ShowDebugMessageAndExit</name></member>
+    <member refid="de/d15/classTestDriver_1a912292fea94207b2ee58f229164500ab" kind="function"><name>OnBack</name></member>
+    <member refid="de/d15/classTestDriver_1a79843f494073f2b0bc81be0e708d6892" kind="function"><name>OnStart</name></member>
+    <member refid="de/d15/classTestDriver_1aa7b776628d5a036bc290c6999a98ee5e" kind="function"><name>OnBlack</name></member>
+    <member refid="de/d15/classTestDriver_1a64a192349c65a22e9c415abf42dd0388" kind="function"><name>OnWhite</name></member>
+    <member refid="de/d15/classTestDriver_1a593b2bad1a0cfe36e91fea4de5219348" kind="function"><name>OnUp</name></member>
+    <member refid="de/d15/classTestDriver_1ae2aac20df8196aafda09d66a1a476e65" kind="function"><name>OnDown</name></member>
+    <member refid="de/d15/classTestDriver_1ac60543db783ab933d6037f5300bfbcc1" kind="function"><name>OnLeft</name></member>
+    <member refid="de/d15/classTestDriver_1a49bce18bc3a34e610351573bcbb68cc8" kind="function"><name>OnRight</name></member>
+    <member refid="de/d15/classTestDriver_1adbeb4554ceace70a1fff867364da50b4" kind="function"><name>OnA</name></member>
+    <member refid="de/d15/classTestDriver_1a0eb444857cc4e7c7e7787a76f2e78e74" kind="function"><name>OnB</name></member>
+    <member refid="de/d15/classTestDriver_1a118c91cc650042c1e1204aca474ab159" kind="function"><name>OnX</name></member>
+    <member refid="de/d15/classTestDriver_1aa8a3a873ab01cb2c308468bc66370422" kind="function"><name>OnY</name></member>
+    <member refid="de/d15/classTestDriver_1a75aa5fa6645b4057c0222243d3677447" kind="function"><name>RunCalibration</name></member>
+  </compound>
+  <compound refid="d6/d80/classTestHost" kind="class"><name>TestHost</name>
+    <member refid="d6/d80/classTestHost_1a45afd08c65c3e4acd06a4ed18c5f6b72" kind="variable"><name>kFirstTestContextChannel</name></member>
+    <member refid="d6/d80/classTestHost_1ac1164ad632c1c8a050f38d0defb72ba4" kind="variable"><name>save_results_</name></member>
+    <member refid="d6/d80/classTestHost_1a13d5414fa77fd7602bd8c07b4fdd068d" kind="variable"><name>sustained_active_</name></member>
+    <member refid="d6/d80/classTestHost_1a6289be7072b04e1120f6bcba378632f9" kind="variable"><name>sustained_recording_</name></member>
+    <member refid="d6/d80/classTestHost_1aebc1017d135d062898a56696cf1a30b0" kind="variable"><name>sustained_awaiting_prepare_</name></member>
+    <member refid="d6/d80/classTestHost_1a8423a1147269ecc82f844e6315e64c89" kind="variable"><name>sustained_skip_current_frame_</name></member>
+    <member refid="d6/d80/classTestHost_1a2b975896d2e18d028b4d4abd6d1ba119" kind="variable"><name>sustained_frame_start_</name></member>
+    <member refid="d6/d80/classTestHost_1a1628541bebcf86f3566985d3d0d83c39" kind="variable"><name>sustained_frame_start_resets_</name></member>
+    <member refid="d6/d80/classTestHost_1a0ba285d8183eb5f923e8ff73cdc75a20" kind="variable"><name>sustained_last_recorded_end_</name></member>
+    <member refid="d6/d80/classTestHost_1a61321a186302961d8d8805c8db01bde8" kind="variable"><name>sustained_skipped_missed_vblanks_</name></member>
+    <member refid="d6/d80/classTestHost_1a65236810d469126e0ee86fb705cec699" kind="variable"><name>sustained_last_busy_us_</name></member>
+    <member refid="d6/d80/classTestHost_1aaa26ea25bc1b01c6fa747975a73cad2d" kind="variable"><name>sustained_aborted_</name></member>
+    <member refid="d6/d80/classTestHost_1a4c4c730f09ae01f844117da2a2a67898" kind="variable"><name>sustained_summary_</name></member>
+    <member refid="d6/d80/classTestHost_1a02bc3321c2017f67af65c7e8431ea3ee" kind="variable"><name>sustained_last_vbl_</name></member>
+    <member refid="d6/d80/classTestHost_1a1c32841c3ccbaaff6b1be4ef0013610e" kind="variable"><name>sustained_frames_</name></member>
+    <member refid="d6/d80/classTestHost_1a51b076b966c013b1f1452d4bfa51d5dc" kind="variable"><name>sustained_fence_timeouts_</name></member>
+    <member refid="d6/d80/classTestHost_1a383e9afe51d5a2378e7b18534f264806" kind="variable"><name>semaphore_memory_</name></member>
+    <member refid="d6/d80/classTestHost_1af40b52550a6ae058de7a9b2449b804e6" kind="variable"><name>semaphore_value_</name></member>
+    <member refid="d6/d80/classTestHost_1a49b77cb96f34662d1a1f25fb872e277a" kind="variable"><name>perf_counter_frequency_</name></member>
+    <member refid="d6/d80/classTestHost_1afad9b097484782dd3e0ef90f53620128" kind="variable"><name>last_frame_time_</name></member>
+    <member refid="d6/d80/classTestHost_1a44a27292cdcc045d5c57bc016c5d1ed2" kind="variable"><name>current_frame_index_</name></member>
+    <member refid="d6/d80/classTestHost_1a6571486c3e0878b1e38f4e93bb6f8e3d" kind="variable"><name>frame_times_</name></member>
+    <member refid="d6/d80/classTestHost_1a147210c9db4e3810e731ae76fe2efcd1" kind="variable"><name>average_frame_rate_</name></member>
+    <member refid="d6/d80/classTestHost_1ab4f6a6c770f4de723f14ddb0c3803727" kind="variable"><name>average_mspf_</name></member>
+    <member refid="d6/d80/classTestHost_1a88c5efd5898ec857a5d63a7c772a8a95" kind="variable"><name>kFrameTimeWindow</name></member>
+    <member refid="d6/d80/classTestHost_1a56bf99cdd1f9bbdc1dd89b58591455d9" kind="function"><name>TestHost</name></member>
+    <member refid="d6/d80/classTestHost_1a7343d98d694323b7e42ca44a70a5e42a" kind="function"><name>PrepareDraw</name></member>
+    <member refid="d6/d80/classTestHost_1ad4dde48e4a1c7ac6c5477aeff87052a3" kind="function"><name>FinishDraw</name></member>
+    <member refid="d6/d80/classTestHost_1aa87ceadc4fd108e9bf2997d6d42502a1" kind="function"><name>FinishDrawWithoutPresent</name></member>
+    <member refid="d6/d80/classTestHost_1aa6714120bb93a3c81585a0e223e6c210" kind="function"><name>SkipRecordingCurrentFrame</name></member>
+    <member refid="d6/d80/classTestHost_1a7f054a648c0f5f8b985a23bac20cd3b6" kind="function"><name>SetupFixedFunctionPassthrough</name></member>
+    <member refid="d6/d80/classTestHost_1a2413d6bea509877c02bf550a68dba3a1" kind="function"><name>GetSaveResults</name></member>
+    <member refid="d6/d80/classTestHost_1a93e74f05fb04b7222a5ccdd9967d25ec" kind="function"><name>SetSaveResults</name></member>
+    <member refid="d6/d80/classTestHost_1ab430ced08ee958dc583212e1aaeb699f" kind="function"><name>GetPerformanceCounterFrequency</name></member>
+    <member refid="d6/d80/classTestHost_1a43bdc7a2f49d32c9bb1912a0e3e24d7d" kind="function"><name>GetMicrosecondsSince</name></member>
+    <member refid="d6/d80/classTestHost_1ad703bef00b7925829da252259859feaa" kind="function"><name>PreTest</name></member>
+    <member refid="d6/d80/classTestHost_1a314c6e57b9935260658ffec6fef90b27" kind="function"><name>BeginSustainedCapture</name></member>
+    <member refid="d6/d80/classTestHost_1a3e151a1e6226d17e7e45e1c536453053" kind="function"><name>BeginSustainedFrame</name></member>
+    <member refid="d6/d80/classTestHost_1a0ac647ffe8ff956276908a822c1b77ec" kind="function"><name>SetSustainedRecording</name></member>
+    <member refid="d6/d80/classTestHost_1a763eb9c3f46b8f9b2a87fb23384630fe" kind="function"><name>EndSustainedCapture</name></member>
+    <member refid="d6/d80/classTestHost_1a55f1d8161deee38aabaf300b27d0e8a9" kind="function"><name>LogSustainedCapture</name></member>
+    <member refid="d6/d80/classTestHost_1a614545db63ad8315251682966f83c2c0" kind="function"><name>GetLastSustainedFrameBusyUs</name></member>
+    <member refid="d6/d80/classTestHost_1a3648bbe8f3a6774809c8ed484318474f" kind="function"><name>IsSustainedCaptureActive</name></member>
+    <member refid="d6/d80/classTestHost_1ac192b19e6ded9e20da1e83cb949fd709" kind="function"><name>WaitForGPUIdle</name></member>
+    <member refid="d6/d80/classTestHost_1a24b83c50f1d0b792c2089b41903d580e" kind="function"><name>EnsureFolderExists</name></member>
+    <member refid="d6/d80/classTestHost_1ad699e547ded91c631507d8ae7b203b9c" kind="function"><name>FinishSustainedFrame</name></member>
+    <member refid="d6/d80/classTestHost_1adea906d17deb5da55557511d297803e9" kind="function"><name>StampSustainedFrameStart</name></member>
+    <member refid="d6/d80/classTestHost_1a9d9ef9dd1fa65b41b2ce581a295bc088" kind="function"><name>EnsureSemaphoreInitialized</name></member>
+  </compound>
+  <compound refid="d2/d3e/classTestSuite" kind="class"><name>TestSuite</name>
+    <member refid="d2/d3e/classTestSuite_1a454f5c2050b66b598a2f2fcffd45ae48" kind="variable"><name>host_</name></member>
+    <member refid="d2/d3e/classTestSuite_1a2e81678d3ac733d517616bd67a837465" kind="variable"><name>output_dir_</name></member>
+    <member refid="d2/d3e/classTestSuite_1ac59f02a9549a146ed62e6185c0acec8b" kind="variable"><name>suite_name_</name></member>
+    <member refid="d2/d3e/classTestSuite_1a7bc0a6c4d360f6f487779e8f4282d0a1" kind="variable"><name>tests_</name></member>
+    <member refid="d2/d3e/classTestSuite_1a65705c32aa1bf9b6edf9f783ff93853a" kind="variable"><name>loads_</name></member>
+    <member refid="d2/d3e/classTestSuite_1a9a9de80c37a22d46e20e0fa1c4f83786" kind="variable"><name>uncalibrated_tests_</name></member>
+    <member refid="d2/d3e/classTestSuite_1a68776950621caa4be885384fcdbaee03" kind="variable"><name>baseline_loads_</name></member>
+    <member refid="d2/d3e/classTestSuite_1ad94b80e6eafe00ce46732765d47890a1" kind="variable"><name>effective_loads_</name></member>
+    <member refid="d2/d3e/classTestSuite_1a57b1ed01dd40328456bf0854043ca68b" kind="function"><name>TestSuite</name></member>
+    <member refid="d2/d3e/classTestSuite_1a253b4d7ef576ab6950da2f9748d0afa9" kind="function"><name>TestSuite</name></member>
+    <member refid="d2/d3e/classTestSuite_1a1743f0a04119de901cb819111d51192d" kind="function"><name>~TestSuite</name></member>
+    <member refid="d2/d3e/classTestSuite_1a15144024801f2f885727f7926c826c87" kind="function"><name>Name</name></member>
+    <member refid="d2/d3e/classTestSuite_1a1c4756eb905d6d4d35e1630107396c38" kind="function"><name>Initialize</name></member>
+    <member refid="d2/d3e/classTestSuite_1a137c1c57f8ad999bd78a8f7f8f2cf69e" kind="function"><name>Deinitialize</name></member>
+    <member refid="d2/d3e/classTestSuite_1ad3fb7cc9d8db8740c5188da083312b8d" kind="function"><name>SetupTest</name></member>
+    <member refid="d2/d3e/classTestSuite_1a90bc6959d04c41e07eed51f80a435d70" kind="function"><name>TearDownTest</name></member>
+    <member refid="d2/d3e/classTestSuite_1a165d9da1dec525ffdd299e2dcfaec2ef" kind="function"><name>DisableTests</name></member>
+    <member refid="d2/d3e/classTestSuite_1a80f0bc74d8d511547708827e5a549a63" kind="function"><name>TestNames</name></member>
+    <member refid="d2/d3e/classTestSuite_1a7059e61572d914cff83ae22da3ea1957" kind="function"><name>HasEnabledTests</name></member>
+    <member refid="d2/d3e/classTestSuite_1aa87e9c8f05a49f660701e91271fb0ede" kind="function"><name>Run</name></member>
+    <member refid="d2/d3e/classTestSuite_1a7f99d1a92beb6b58219b841b60d56322" kind="function"><name>RunAll</name></member>
+    <member refid="d2/d3e/classTestSuite_1a7eaba7408aed781686f9a5ac37de36d1" kind="function"><name>RunSustained</name></member>
+    <member refid="d2/d3e/classTestSuite_1a1a6ef873dd99dfa1c6f3dca29466d7f7" kind="function"><name>Calibrate</name></member>
+    <member refid="d2/d3e/classTestSuite_1a3f6f68819aac546923d3f0dcbbdfd162" kind="function"><name>SetLoad</name></member>
+    <member refid="d2/d3e/classTestSuite_1ae78f846955f3fb6ba75d7a674c1ccc1c" kind="function"><name>SetBaselineLoad</name></member>
+    <member refid="d2/d3e/classTestSuite_1a43d6c2f3e48099664cdec05863550ef7" kind="function"><name>GetLoad</name></member>
+    <member refid="d2/d3e/classTestSuite_1ac12e8f49c702522380d9824e4acfd53b" kind="function"><name>UpdateUserContext</name></member>
+    <member refid="d2/d3e/classTestSuite_1ac50b006a0a46396cde6073c3e569bde7" kind="function"><name>Profile</name></member>
+    <member refid="d2/d3e/classTestSuite_1a0d580dbb0e1630ecdc989d5c852e8f91" kind="function"><name>SetDefaultTextureFormat</name></member>
+  </compound>
+  <compound refid="da/dd4/classTinyDrawTests" kind="class"><name>TinyDrawTests</name>
+    <member refid="da/dd4/classTinyDrawTests_1a8290d0a4a69a7b27a0635114eaa54279" kind="enum"><name>DrawMode</name></member>
+    <member refid="da/dd4/classTinyDrawTests_1a8290d0a4a69a7b27a0635114eaa54279ab04568ac318195cbd402c4bfbcc5a834" kind="enumvalue"><name>DRAW_ARRAYS</name></member>
+    <member refid="da/dd4/classTinyDrawTests_1a8290d0a4a69a7b27a0635114eaa54279a0843f7a43918ae5bda6160195bdde8a5" kind="enumvalue"><name>DRAW_INLINE_BUFFERS</name></member>
+    <member refid="da/dd4/classTinyDrawTests_1a8290d0a4a69a7b27a0635114eaa54279a671d51935069f8ae8eb51aa9f51b4b6f" kind="enumvalue"><name>DRAW_INLINE_ARRAYS</name></member>
+    <member refid="da/dd4/classTinyDrawTests_1a8290d0a4a69a7b27a0635114eaa54279ab67bc5e1b697b99d381001313321fe2f" kind="enumvalue"><name>DRAW_INLINE_ELEMENTS</name></member>
+    <member refid="da/dd4/classTinyDrawTests_1a07cf9eaf47576917731079c1c9bfcef2" kind="enum"><name>ShaderMode</name></member>
+    <member refid="da/dd4/classTinyDrawTests_1a07cf9eaf47576917731079c1c9bfcef2a7dd38a00f45b42217a277e6f6ae4b71f" kind="enumvalue"><name>FIXED_FUNCTION</name></member>
+    <member refid="da/dd4/classTinyDrawTests_1a07cf9eaf47576917731079c1c9bfcef2aeb8f4226b2bcd1848b8945edb9120428" kind="enumvalue"><name>PASSTHROUGH</name></member>
+    <member refid="da/dd4/classTinyDrawTests_1a07cf9eaf47576917731079c1c9bfcef2a85f52237441cf3099a0ec287092ce9d3" kind="enumvalue"><name>LONG_PASSTHROUGH</name></member>
+    <member refid="da/dd4/classTinyDrawTests_1acc8e41bcb2755c4b09a48eb0d9bde76d" kind="variable"><name>vertex_buffer_</name></member>
+    <member refid="da/dd4/classTinyDrawTests_1af9789e5d386d25b27ad59d1cb2b0a8ed" kind="variable"><name>index_buffer_</name></member>
+    <member refid="da/dd4/classTinyDrawTests_1af481cfee9a3f2bbcde994e3ce16ad8bd" kind="function"><name>TinyDrawTests</name></member>
+    <member refid="da/dd4/classTinyDrawTests_1a86f1e82d193eb4a3dc84eb6902c6b4cd" kind="function"><name>Initialize</name></member>
+    <member refid="da/dd4/classTinyDrawTests_1a4c1420fd436087343f70492b51010dfc" kind="function"><name>Deinitialize</name></member>
+    <member refid="da/dd4/classTinyDrawTests_1af4f425340a92e32a058d3491c4d33530" kind="function"><name>Test</name></member>
+  </compound>
+  <compound refid="d1/dc1/classUniformThrashTests" kind="class"><name>UniformThrashTests</name>
+    <member refid="d1/dc1/classUniformThrashTests_1a72d44ad2736989da32fed77d84f3463d" kind="function"><name>UniformThrashTests</name></member>
+    <member refid="d1/dc1/classUniformThrashTests_1a80b4d88995248fc3dffd471374040230" kind="function"><name>Initialize</name></member>
+    <member refid="d1/dc1/classUniformThrashTests_1af4833de1a61c71c2091976f841cc3d7f" kind="function"><name>Test</name></member>
+  </compound>
+  <compound refid="da/de8/classVertexBufferAllocationTests" kind="class"><name>VertexBufferAllocationTests</name>
+    <member refid="da/de8/classVertexBufferAllocationTests_1a1a9874a08158adf05bf2935e0d04849b" kind="enum"><name>DrawMode</name></member>
+    <member refid="da/de8/classVertexBufferAllocationTests_1a1a9874a08158adf05bf2935e0d04849bab04568ac318195cbd402c4bfbcc5a834" kind="enumvalue"><name>DRAW_ARRAYS</name></member>
+    <member refid="da/de8/classVertexBufferAllocationTests_1a1a9874a08158adf05bf2935e0d04849ba0843f7a43918ae5bda6160195bdde8a5" kind="enumvalue"><name>DRAW_INLINE_BUFFERS</name></member>
+    <member refid="da/de8/classVertexBufferAllocationTests_1a1a9874a08158adf05bf2935e0d04849ba671d51935069f8ae8eb51aa9f51b4b6f" kind="enumvalue"><name>DRAW_INLINE_ARRAYS</name></member>
+    <member refid="da/de8/classVertexBufferAllocationTests_1a1a9874a08158adf05bf2935e0d04849bab67bc5e1b697b99d381001313321fe2f" kind="enumvalue"><name>DRAW_INLINE_ELEMENTS</name></member>
+    <member refid="da/de8/classVertexBufferAllocationTests_1ac04f8b68c951872246ead9942e8047cf" kind="function"><name>VertexBufferAllocationTests</name></member>
+    <member refid="da/de8/classVertexBufferAllocationTests_1a551eb0c2fa51498c87dfd65452af1bc2" kind="function"><name>Initialize</name></member>
+    <member refid="da/de8/classVertexBufferAllocationTests_1a98567bffa4249601d5b57b9ad7287df6" kind="function"><name>Deinitialize</name></member>
+    <member refid="da/de8/classVertexBufferAllocationTests_1a15370bfddfacb340b537d3e03498451c" kind="function"><name>TestTinyAllocations</name></member>
+    <member refid="da/de8/classVertexBufferAllocationTests_1a27caa7b3df39f54ff78cc768a241dbe8" kind="function"><name>TestMixedSizes</name></member>
+  </compound>
+  <compound refid="d1/dd7/structZPassReport" kind="struct"><name>ZPassReport</name>
+    <member refid="d1/dd7/structZPassReport_1a6f48e48063e994af943becae8c4410f0" kind="variable"><name>timestamp</name></member>
+    <member refid="d1/dd7/structZPassReport_1a3e45797c75307c3ae89dd25dec0ef92d" kind="variable"><name>value</name></member>
+    <member refid="d1/dd7/structZPassReport_1a2ddbba5ef16fd21cd0cc8f967e2d9171" kind="variable"><name>reserved</name></member>
+  </compound>
+  <compound refid="de/dc6/namespacePBKitPlusPlus" kind="namespace"><name>PBKitPlusPlus</name>
+  </compound>
+  <compound refid="d1/d24/namespaceXboxMath" kind="namespace"><name>XboxMath</name>
+  </compound>
+  <compound refid="d9/d77/debug__output_8cpp" kind="file"><name>debug_output.cpp</name>
+    <member refid="d9/d77/debug__output_8cpp_1a223496da92021626a4430fed0af667bd" kind="function"><name>_putchar</name></member>
+    <member refid="d9/d77/debug__output_8cpp_1a93aa8310c8b2db6063c6cd3b4a495615" kind="function"><name>PrintAssertAndWaitForever</name></member>
+  </compound>
+  <compound refid="d3/dc0/debug__output_8h" kind="file"><name>debug_output.h</name>
+    <member refid="d3/dc0/debug__output_8h_1aad4e5b6078e35a063d909d9a2db2e5e0" kind="define"><name>ASSERT</name></member>
+    <member refid="d3/dc0/debug__output_8h_1a9af2aef5c8565e5aabd16d354459237e" kind="function"><name>PrintMsg</name></member>
+    <member refid="d3/dc0/debug__output_8h_1a93aa8310c8b2db6063c6cd3b4a495615" kind="function"><name>PrintAssertAndWaitForever</name></member>
+  </compound>
+  <compound refid="d3/d30/logger_8cpp" kind="file"><name>logger.cpp</name>
+  </compound>
+  <compound refid="d1/d8c/logger_8h" kind="file"><name>logger.h</name>
+  </compound>
+  <compound refid="df/d0a/main_8cpp" kind="file"><name>main.cpp</name>
+    <member refid="df/d0a/main_8cpp_1a64e2f4043b2ed0f0f4b7ec43a1a5e5bc" kind="define"><name>REG_TEST</name></member>
+    <member refid="df/d0a/main_8cpp_1ae67329bb64313218f0f492f58d7ccae3" kind="variable"><name>kLogFileName</name></member>
+    <member refid="df/d0a/main_8cpp_1ab16e9051ee5b42e3f03dba5bce04dcbd" kind="variable"><name>kCalibrationFileName</name></member>
+    <member refid="df/d0a/main_8cpp_1a151c0037998151589a3a00d93c304642" kind="variable"><name>kCalibrationBaselinePath</name></member>
+    <member refid="df/d0a/main_8cpp_1acb39c6399adaa6c087861cc657dee648" kind="variable"><name>kFramebufferWidth</name></member>
+    <member refid="df/d0a/main_8cpp_1a817086409909840b1494436d5e82bf0f" kind="variable"><name>kFramebufferHeight</name></member>
+    <member refid="df/d0a/main_8cpp_1af7faef16fae4590f92c6978278f693f5" kind="variable"><name>kBitsPerPixel</name></member>
+    <member refid="df/d0a/main_8cpp_1aa0034d92adc55836af916ec0958634af" kind="variable"><name>kDelayOnFailureMilliseconds</name></member>
+    <member refid="df/d0a/main_8cpp_1ac3056ca4e9f4e191997d0a8bfc955053" kind="variable"><name>kPushbufferBytes</name></member>
+    <member refid="df/d0a/main_8cpp_1a395a6e3c048886b0ec41e1b094b67775" kind="variable"><name>kSMCSlaveAddress</name></member>
+    <member refid="df/d0a/main_8cpp_1af90ab1de7fc15f23afe5be261339f7ee" kind="variable"><name>kSMCRegisterPower</name></member>
+    <member refid="df/d0a/main_8cpp_1a3ebda9513b2ea64ec6aba2bf682839f1" kind="variable"><name>kSMCPowerShutdown</name></member>
+    <member refid="df/d0a/main_8cpp_1adc5e158b4ec4ef4c59b06f2603d116b6" kind="function"><name>EnsureDriveMounted</name></member>
+    <member refid="df/d0a/main_8cpp_1a3837c464bf49c131ec7b2af0d5417406" kind="function"><name>LoadConfig</name></member>
+    <member refid="df/d0a/main_8cpp_1a12b17794b734d21a44354814bc795eb6" kind="function"><name>RunTests</name></member>
+    <member refid="df/d0a/main_8cpp_1a3270df67667ede836b08618e0e4f7a54" kind="function"><name>RegisterSuites</name></member>
+    <member refid="df/d0a/main_8cpp_1a704350e4ecd8b0deecaeba8ecac93d4f" kind="function"><name>Shutdown</name></member>
+    <member refid="df/d0a/main_8cpp_1a83fd25562f3679c53632f099ceb5f031" kind="function"><name>automount_d_drive</name></member>
+    <member refid="df/d0a/main_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="d9/dcf/menu__item_8cpp" kind="file"><name>menu_item.cpp</name>
+    <member refid="d9/dcf/menu__item_8cpp_1adc3af3c9fbf9f2abd22b583b3572df16" kind="variable"><name>kAutoTestAllTimeoutMilliseconds</name></member>
+    <member refid="d9/dcf/menu__item_8cpp_1a89f4f23c8d640b7c960ecf8f9d6077e8" kind="variable"><name>kNumItemsPerPage</name></member>
+    <member refid="d9/dcf/menu__item_8cpp_1a588ca188d441ce0f182cd66c9e95877e" kind="variable"><name>kNumItemsPerHalfPage</name></member>
+  </compound>
+  <compound refid="d3/d5d/menu__item_8h" kind="file"><name>menu_item.h</name>
+  </compound>
+  <compound refid="db/d3c/runtime__config_8cpp" kind="file"><name>runtime_config.cpp</name>
+    <member refid="db/d3c/runtime__config_8cpp_1a53938fdfb4ab6e2b829793e6a6bd1332" kind="define"><name>MAX_CONFIG_FILE_SIZE</name></member>
+    <member refid="db/d3c/runtime__config_8cpp_1a62f74829d167c47b607a186ec244e606" kind="function"><name>ParseTestSuites</name></member>
+    <member refid="db/d3c/runtime__config_8cpp_1af1deb91c742e315c3dcc8a9addf73abd" kind="function"><name>ReadJSONFile</name></member>
+    <member refid="db/d3c/runtime__config_8cpp_1afb34d495eef769d999f00d63c9e88526" kind="function"><name>LoadBool</name></member>
+    <member refid="db/d3c/runtime__config_8cpp_1ae4f964c713767a4f52c9d353b3ff9f91" kind="function"><name>LoadString</name></member>
+    <member refid="db/d3c/runtime__config_8cpp_1a4e5d975781352dcc085386f7311bf6db" kind="function"><name>LoadUint32</name></member>
+    <member refid="db/d3c/runtime__config_8cpp_1aa8eba1a69c5022a4c2601251bc243cbe" kind="function"><name>ParseLoads</name></member>
+    <member refid="db/d3c/runtime__config_8cpp_1aa239632fa292ca65bf781e7fcfc66ba7" kind="function"><name>MakeSkipConfiguration</name></member>
+    <member refid="db/d3c/runtime__config_8cpp_1add210cb2cd5842cf02c0c7b1696c9f3f" kind="function"><name>ParseTestCase</name></member>
+    <member refid="db/d3c/runtime__config_8cpp_1a3bff3bb087b68553dea34fce9eb2e450" kind="function"><name>ParseTestCases</name></member>
+  </compound>
+  <compound refid="d4/d3c/runtime__config_8h" kind="file"><name>runtime_config.h</name>
+  </compound>
+  <compound refid="d7/d0a/test__driver_8cpp" kind="file"><name>test_driver.cpp</name>
+    <member refid="d7/d0a/test__driver_8cpp_1af62eeb989244e1ee682f573ec79a0fe6" kind="variable"><name>kButtonRepeatMilliseconds</name></member>
+  </compound>
+  <compound refid="dd/dab/test__driver_8h" kind="file"><name>test_driver.h</name>
+    <member refid="dd/dab/test__driver_8h_1ac136007fea48993cf8c255cd98495fc6" kind="variable"><name>kMaxGamepads</name></member>
+  </compound>
+  <compound refid="d2/d61/test__host_8cpp" kind="file"><name>test_host.cpp</name>
+    <member refid="d2/d61/test__host_8cpp_1af362949cded6691a7c7851c4af1b1ce0" kind="define"><name>MAX_FILE_PATH_SIZE</name></member>
+    <member refid="d2/d61/test__host_8cpp_1a1da41d527b391b557b30acdc9e2cf425" kind="define"><name>MAX_FILENAME_SIZE</name></member>
+    <member refid="d2/d61/test__host_8cpp_1a195de3c7fb6006bd9cdaa173de94530b" kind="variable"><name>kResultsOverlayColor</name></member>
+    <member refid="d2/d61/test__host_8cpp_1a1c3e07819224ad9abd861eef04b73016" kind="variable"><name>kSemaphoreContextChannel</name></member>
+    <member refid="d2/d61/test__host_8cpp_1a0b28ce0f48523a3884aafd060a155414" kind="variable"><name>kSemaphoreObjectSize</name></member>
+    <member refid="d2/d61/test__host_8cpp_1a31a6203602053875c2b9100d01e4cdd2" kind="variable"><name>kFenceTimeoutMilliseconds</name></member>
+    <member refid="d2/d61/test__host_8cpp_1a77e84b79ce20c95d551e7dd4fbe3c374" kind="function"><name>pb_print_with_floats</name></member>
+    <member refid="d2/d61/test__host_8cpp_1a524a4c275aa96e0aa69f1ec0573ce9e4" kind="function"><name>Percentile</name></member>
+    <member refid="d2/d61/test__host_8cpp_1ab62174ec068682697a99fc5d595d2a91" kind="function"><name>LogDistribution</name></member>
+    <member refid="d2/d61/test__host_8cpp_1a35a5b6bd8bf33cdbd7e3dbe6fcab3d87" kind="function"><name>LogRawArray</name></member>
+  </compound>
+  <compound refid="df/d43/test__host_8h" kind="file"><name>test_host.h</name>
+    <member refid="df/d43/test__host_8h_1a77e84b79ce20c95d551e7dd4fbe3c374" kind="function"><name>pb_print_with_floats</name></member>
+  </compound>
+  <compound refid="d6/da7/busy__pfifo__tests_8cpp" kind="file"><name>busy_pfifo_tests.cpp</name>
+    <member refid="d6/da7/busy__pfifo__tests_8cpp_1a9748afb1f9fc31d71c665afa5c9d65ee" kind="variable"><name>kTestName</name></member>
+    <member refid="d6/da7/busy__pfifo__tests_8cpp_1a8dd059876671923f8adbc282c2a41c68" kind="variable"><name>kNumBloatCommandsPerDraw</name></member>
+    <member refid="d6/da7/busy__pfifo__tests_8cpp_1a07ea30267fa2f8c208f9ce3e8e32fcb1" kind="variable"><name>kNumDrawsSingleFrame</name></member>
+    <member refid="d6/da7/busy__pfifo__tests_8cpp_1a9761d34423238b7afb45c60613a85a3a" kind="variable"><name>kNumDrawsMultiFrame</name></member>
+    <member refid="d6/da7/busy__pfifo__tests_8cpp_1a030adfbfd7fbe3494588b483125bac3c" kind="function"><name>FillPFIFO</name></member>
+    <member refid="d6/da7/busy__pfifo__tests_8cpp_1a64e46a77617b48345827b06703a3a433" kind="function"><name>SetVertexColor</name></member>
+  </compound>
+  <compound refid="d3/dd2/busy__pfifo__tests_8h" kind="file"><name>busy_pfifo_tests.h</name>
+  </compound>
+  <compound refid="d6/d62/fill__rate__tests_8cpp" kind="file"><name>fill_rate_tests.cpp</name>
+    <member refid="d6/d62/fill__rate__tests_8cpp_1a4a153d4f1f3903688d0c90ec90bc185b" kind="variable"><name>kIterations</name></member>
+    <member refid="d6/d62/fill__rate__tests_8cpp_1a07ea30267fa2f8c208f9ce3e8e32fcb1" kind="variable"><name>kNumDrawsSingleFrame</name></member>
+    <member refid="d6/d62/fill__rate__tests_8cpp_1a25c9132fcf6feb3076816e7f89ab7b2e" kind="variable"><name>kDrawCountByTextureMode</name></member>
+    <member refid="d6/d62/fill__rate__tests_8cpp_1a813b1e0fc4ec2dca20c9f4082d3f5d52" kind="variable"><name>kVertexAttributes</name></member>
+    <member refid="d6/d62/fill__rate__tests_8cpp_1a3443a4c17ab95e8b1a1b62372f78ac57" kind="variable"><name>kTextureWidth</name></member>
+    <member refid="d6/d62/fill__rate__tests_8cpp_1a17da84b5c919ece3614a43aaf285131d" kind="variable"><name>kTextureHeight</name></member>
+    <member refid="d6/d62/fill__rate__tests_8cpp_1a11e0cbea5417dcc941eeba38389404d3" kind="function"><name>GetTestName</name></member>
+  </compound>
+  <compound refid="df/d6d/fill__rate__tests_8h" kind="file"><name>fill_rate_tests.h</name>
+  </compound>
+  <compound refid="d3/d4c/high__vertex__count__tests_8cpp" kind="file"><name>high_vertex_count_tests.cpp</name>
+    <member refid="d3/d4c/high__vertex__count__tests_8cpp_1a6fe7aeaf946693b76dfb768c3563c0f6" kind="variable"><name>kHighVertexCountTest</name></member>
+    <member refid="d3/d4c/high__vertex__count__tests_8cpp_1a76ba09c5c8a38d3fc9d7efb2fb3846f4" kind="variable"><name>kMaxVertexCountSingleFrame</name></member>
+    <member refid="d3/d4c/high__vertex__count__tests_8cpp_1a1d37b14519414f7491a5308e2e81171d" kind="function"><name>MakeTestName</name></member>
+    <member refid="d3/d4c/high__vertex__count__tests_8cpp_1acf2d34fe2e5caa6115af05d6fa4f10b5" kind="function"><name>CreateGeometry</name></member>
+  </compound>
+  <compound refid="d8/d40/high__vertex__count__tests_8h" kind="file"><name>high_vertex_count_tests.h</name>
+  </compound>
+  <compound refid="d6/dc6/pfifo__contention__tests_8cpp" kind="file"><name>pfifo_contention_tests.cpp</name>
+    <member refid="d6/dc6/pfifo__contention__tests_8cpp_1ae1de504b43f0d2fb4384f0bcd6318813" kind="define"><name>SET_MASK</name></member>
+    <member refid="d6/dc6/pfifo__contention__tests_8cpp_1afda9127647fc8ac6c20fb7a4a47d30eb" kind="variable"><name>kControlTest</name></member>
+    <member refid="d6/dc6/pfifo__contention__tests_8cpp_1a04f33233002baea1b8d52e6d4b040d63" kind="variable"><name>kLongPushbufferTest</name></member>
+    <member refid="d6/dc6/pfifo__contention__tests_8cpp_1a0cd4ac886d9d1b95f7d34bbacf6bf0b7" kind="variable"><name>kMethodChurnTest</name></member>
+    <member refid="d6/dc6/pfifo__contention__tests_8cpp_1aaba9603b20124a14279b66bb22b9c5c0" kind="variable"><name>kTinyKicksTest</name></member>
+    <member refid="d6/dc6/pfifo__contention__tests_8cpp_1aefcfb3f1cf026278a7121a8043a67723" kind="variable"><name>kHalfRatePresentTest</name></member>
+    <member refid="d6/dc6/pfifo__contention__tests_8cpp_1ac16401306dc5f215963474cba1db33ce" kind="variable"><name>kSurfaceReadbackTest</name></member>
+    <member refid="d6/dc6/pfifo__contention__tests_8cpp_1a0510a680fad6f438ce449f2d62c532af" kind="variable"><name>kOcclusionSpinTest</name></member>
+    <member refid="d6/dc6/pfifo__contention__tests_8cpp_1a65b6daffc91b7e809271995ba7d74b3f" kind="variable"><name>kCpuFramebufferWriteTest</name></member>
+    <member refid="d6/dc6/pfifo__contention__tests_8cpp_1abae4bf1cc8dfee09329d13765ca041ad" kind="variable"><name>kFillBoundTest</name></member>
+    <member refid="d6/dc6/pfifo__contention__tests_8cpp_1a4a153d4f1f3903688d0c90ec90bc185b" kind="variable"><name>kIterations</name></member>
+    <member refid="d6/dc6/pfifo__contention__tests_8cpp_1a322132c4f2cd47623d52393554032be4" kind="variable"><name>kDefaultControlDraws</name></member>
+    <member refid="d6/dc6/pfifo__contention__tests_8cpp_1a5aabf118b30e05ac465db434fa237626" kind="variable"><name>kDefaultLongPushbufferDraws</name></member>
+    <member refid="d6/dc6/pfifo__contention__tests_8cpp_1aa7fd10c25c931d133340718c1cc1ab8d" kind="variable"><name>kDefaultMethodChurnMethods</name></member>
+    <member refid="d6/dc6/pfifo__contention__tests_8cpp_1abded7580e12b30cddc1960ec611f0a23" kind="variable"><name>kDefaultTinyKicksDraws</name></member>
+    <member refid="d6/dc6/pfifo__contention__tests_8cpp_1a66aed84877cc8c3a8f9be4d515bbdab9" kind="variable"><name>kDefaultHalfRatePresentDraws</name></member>
+    <member refid="d6/dc6/pfifo__contention__tests_8cpp_1a3b76d8c918b701922f4c34c805baead2" kind="variable"><name>kDefaultSurfaceReadbackDraws</name></member>
+    <member refid="d6/dc6/pfifo__contention__tests_8cpp_1a410416fef9170104bc6d4e791afa62bc" kind="variable"><name>kDefaultOcclusionSpinQueries</name></member>
+    <member refid="d6/dc6/pfifo__contention__tests_8cpp_1a58282aa64855d8524aca4d9a0b5cb3cc" kind="variable"><name>kDefaultCpuFramebufferWriteDwords</name></member>
+    <member refid="d6/dc6/pfifo__contention__tests_8cpp_1a1a865431a564c33ab97fb18f983bec78" kind="variable"><name>kDefaultFillBoundQuads</name></member>
+    <member refid="d6/dc6/pfifo__contention__tests_8cpp_1a8cc0d172fdec80a99edfe766a1d4dba2" kind="variable"><name>kMethodChurnDraws</name></member>
+    <member refid="d6/dc6/pfifo__contention__tests_8cpp_1a8d118ceecbb029e7914efac3baf52498" kind="variable"><name>kChurnMethods</name></member>
+    <member refid="d6/dc6/pfifo__contention__tests_8cpp_1a93ade8430f6d8c09a830bbf3b76ee358" kind="variable"><name>kNumChurnMethods</name></member>
+    <member refid="d6/dc6/pfifo__contention__tests_8cpp_1a91c248cc6a89df6bbef2ffb7c8feb00b" kind="variable"><name>kCellSize</name></member>
+    <member refid="d6/dc6/pfifo__contention__tests_8cpp_1a049713339d9754de9e239ed9ce69a578" kind="variable"><name>kOffscreenWidth</name></member>
+    <member refid="d6/dc6/pfifo__contention__tests_8cpp_1a4c3b434aeb97499dd1b3b7e4f4c8231b" kind="variable"><name>kOffscreenHeight</name></member>
+    <member refid="d6/dc6/pfifo__contention__tests_8cpp_1aa1a10226bd5a5493c3ff1ef6810c8cea" kind="variable"><name>kHalfRatePresentScreenDraws</name></member>
+    <member refid="d6/dc6/pfifo__contention__tests_8cpp_1ad52e363438edcf4746683325efc14859" kind="variable"><name>kReadbacksPerFrame</name></member>
+    <member refid="d6/dc6/pfifo__contention__tests_8cpp_1a798e1a09ffadad7a839b89632a9d2247" kind="variable"><name>kOcclusionQuadSize</name></member>
+    <member refid="d6/dc6/pfifo__contention__tests_8cpp_1aff9f9737004e29b6c761e09c8ee1c221" kind="variable"><name>kReportPending</name></member>
+    <member refid="d6/dc6/pfifo__contention__tests_8cpp_1a6a549a75c4790102807fce93e8d32db6" kind="variable"><name>kReportTimeoutMilliseconds</name></member>
+    <member refid="d6/dc6/pfifo__contention__tests_8cpp_1a0d0c270ba393fdccd09b6f81e3aeb8fa" kind="variable"><name>kDefaultReportContextChannel</name></member>
+    <member refid="d6/dc6/pfifo__contention__tests_8cpp_1a2f92f5521f279bd08d815c1bdf587533" kind="variable"><name>kReportContextChannel</name></member>
+  </compound>
+  <compound refid="d2/d88/pfifo__contention__tests_8h" kind="file"><name>pfifo_contention_tests.h</name>
+  </compound>
+  <compound refid="d4/d5c/primitive__type__tests_8cpp" kind="file"><name>primitive_type_tests.cpp</name>
+    <member refid="d4/d5c/primitive__type__tests_8cpp_1a9748afb1f9fc31d71c665afa5c9d65ee" kind="variable"><name>kTestName</name></member>
+    <member refid="d4/d5c/primitive__type__tests_8cpp_1a4a153d4f1f3903688d0c90ec90bc185b" kind="variable"><name>kIterations</name></member>
+    <member refid="d4/d5c/primitive__type__tests_8cpp_1a6701b17784754b6fdf369ca4a295a11a" kind="variable"><name>kNumPrimitivesSingleFrame</name></member>
+    <member refid="d4/d5c/primitive__type__tests_8cpp_1a813b1e0fc4ec2dca20c9f4082d3f5d52" kind="variable"><name>kVertexAttributes</name></member>
+    <member refid="d4/d5c/primitive__type__tests_8cpp_1a099204df6976c43130c79120828a5b05" kind="variable"><name>kPrimitiveCountByPrimitive</name></member>
+    <member refid="d4/d5c/primitive__type__tests_8cpp_1a7eee874b57df74e02cedf4e78331d3e1" kind="function"><name>MakeTestName</name></member>
+    <member refid="d4/d5c/primitive__type__tests_8cpp_1acf7fb730f70a10b85f6c77e77bb12aeb" kind="function"><name>SetVertexColor</name></member>
+    <member refid="d4/d5c/primitive__type__tests_8cpp_1a6a958fd953ac56c464374d78a7611d97" kind="function"><name>CreateGeometry</name></member>
+  </compound>
+  <compound refid="d3/d55/primitive__type__tests_8h" kind="file"><name>primitive_type_tests.h</name>
+  </compound>
+  <compound refid="d9/df6/program__thrash__tests_8cpp" kind="file"><name>program_thrash_tests.cpp</name>
+    <member refid="d9/df6/program__thrash__tests_8cpp_1a830d4fb8f7910c077d86ea418244c6db" kind="variable"><name>kReuploadTest</name></member>
+    <member refid="d9/df6/program__thrash__tests_8cpp_1a23916d71738c5a05b910ac1bc122e836" kind="variable"><name>kReuploadLongTest</name></member>
+    <member refid="d9/df6/program__thrash__tests_8cpp_1a80e169ff077ede41e33e7b9c0886973a" kind="variable"><name>kResidentTest</name></member>
+    <member refid="d9/df6/program__thrash__tests_8cpp_1a4a153d4f1f3903688d0c90ec90bc185b" kind="variable"><name>kIterations</name></member>
+    <member refid="d9/df6/program__thrash__tests_8cpp_1a07ea30267fa2f8c208f9ce3e8e32fcb1" kind="variable"><name>kNumDrawsSingleFrame</name></member>
+    <member refid="d9/df6/program__thrash__tests_8cpp_1a422c3754252c807666505d002742e3f8" kind="variable"><name>kNumDrawsReupload</name></member>
+    <member refid="d9/df6/program__thrash__tests_8cpp_1a1c8bfeabb4632f5609bf91cea582c20e" kind="variable"><name>kNumDrawsReuploadLong</name></member>
+    <member refid="d9/df6/program__thrash__tests_8cpp_1a14017434e5ffc8b26c29e2278ca4ebec" kind="variable"><name>kNumDrawsResident</name></member>
+    <member refid="d9/df6/program__thrash__tests_8cpp_1ad4dc8ab2cdfc1b55dd843498162a94e0" kind="variable"><name>kNumDrawsAdjustmentStep</name></member>
+    <member refid="d9/df6/program__thrash__tests_8cpp_1aca3b1aa2949c8b7c6a5bf22ea0862ccd" kind="variable"><name>kSecondProgramSlot</name></member>
+    <member refid="d9/df6/program__thrash__tests_8cpp_1a813b1e0fc4ec2dca20c9f4082d3f5d52" kind="variable"><name>kVertexAttributes</name></member>
+    <member refid="d9/df6/program__thrash__tests_8cpp_1a9abb5fe26cc9aaeaff17e57fe76b7659" kind="variable"><name>kPrimitive</name></member>
+    <member refid="d9/df6/program__thrash__tests_8cpp_1a7b04cd9d4461324c354a503043816cff" kind="variable"><name>kLongPassthroughShader</name></member>
+    <member refid="d9/df6/program__thrash__tests_8cpp_1adda59bd6330d32d97bcc9d3ad588daa7" kind="variable"><name>kDiffuseFromUniformShader</name></member>
+    <member refid="d9/df6/program__thrash__tests_8cpp_1adc901d5f0c67ec42e37da5c55ea5a866" kind="function"><name>LoadProgramAt</name></member>
+  </compound>
+  <compound refid="d8/d76/program__thrash__tests_8h" kind="file"><name>program_thrash_tests.h</name>
+  </compound>
+  <compound refid="da/d29/push__cost__tests_8cpp" kind="file"><name>push_cost_tests.cpp</name>
+    <member refid="da/d29/push__cost__tests_8cpp_1a3886ebf9665e87516d892fa67fe2a22d" kind="variable"><name>kRamWriteTest</name></member>
+    <member refid="da/d29/push__cost__tests_8cpp_1aa808c6697cea9aad4c4176fb03c8e55c" kind="variable"><name>kPushbufferWriteTest</name></member>
+    <member refid="da/d29/push__cost__tests_8cpp_1a9da99fb752370037d3aa9b0838aac1dc" kind="variable"><name>kPushbufferSubmitTest</name></member>
+    <member refid="da/d29/push__cost__tests_8cpp_1aba225cce79c2f34c5456ba9599ec6af0" kind="variable"><name>kPushbufferAPITest</name></member>
+    <member refid="da/d29/push__cost__tests_8cpp_1a4a153d4f1f3903688d0c90ec90bc185b" kind="variable"><name>kIterations</name></member>
+    <member refid="da/d29/push__cost__tests_8cpp_1aea96f4c73dc980002b3fd9f0c98fccd3" kind="variable"><name>kDefaultDwords</name></member>
+    <member refid="da/d29/push__cost__tests_8cpp_1a8ef96f11df0bd4774a7956235c2edd1d" kind="variable"><name>kWindowDwords</name></member>
+    <member refid="da/d29/push__cost__tests_8cpp_1a4bfa0a3709cfe1a123b9bbacf57bf975" kind="variable"><name>kSubmitIntervalDwords</name></member>
+    <member refid="da/d29/push__cost__tests_8cpp_1a54c7b5d0437ad54b019fc120d15e6fa5" kind="variable"><name>kNopHeader</name></member>
+    <member refid="da/d29/push__cost__tests_8cpp_1aedc2556d67843948b1c6aff366187dbe" kind="function"><name>MethodDwords</name></member>
+    <member refid="da/d29/push__cost__tests_8cpp_1a5f2901f3d3d44ff13c6bfc1f4b13be01" kind="function"><name>WriteNops</name></member>
+  </compound>
+  <compound refid="d8/d34/push__cost__tests_8h" kind="file"><name>push_cost_tests.h</name>
+  </compound>
+  <compound refid="d6/d74/surface__rendering__tests_8cpp" kind="file"><name>surface_rendering_tests.cpp</name>
+    <member refid="d6/d74/surface__rendering__tests_8cpp_1aa7d51e22e4421be7fca3c0056181f3b0" kind="variable"><name>kBasicTestName</name></member>
+    <member refid="d6/d74/surface__rendering__tests_8cpp_1a0ef9a8acacdb6007adf52096665f76d9" kind="variable"><name>kXemuSurfaceDownloadTestName</name></member>
+    <member refid="d6/d74/surface__rendering__tests_8cpp_1a4a153d4f1f3903688d0c90ec90bc185b" kind="variable"><name>kIterations</name></member>
+    <member refid="d6/d74/surface__rendering__tests_8cpp_1a07ea30267fa2f8c208f9ce3e8e32fcb1" kind="variable"><name>kNumDrawsSingleFrame</name></member>
+    <member refid="d6/d74/surface__rendering__tests_8cpp_1a5e471bd5d80fd56a984140f70622e4c9" kind="variable"><name>kTextureWidth</name></member>
+    <member refid="d6/d74/surface__rendering__tests_8cpp_1aa68568112c7c845891ebf9821978aa81" kind="variable"><name>kTextureHeight</name></member>
+    <member refid="d6/d74/surface__rendering__tests_8cpp_1aec3b72287c362c2e449e9f3cf620c59f" kind="function"><name>DrawBiTri</name></member>
+  </compound>
+  <compound refid="de/dfd/surface__rendering__tests_8h" kind="file"><name>surface_rendering_tests.h</name>
+  </compound>
+  <compound refid="dc/d6c/test__suite_8cpp" kind="file"><name>test_suite.cpp</name>
+    <member refid="dc/d6c/test__suite_8cpp_1ae1de504b43f0d2fb4384f0bcd6318813" kind="define"><name>SET_MASK</name></member>
+  </compound>
+  <compound refid="d6/d7a/test__suite_8h" kind="file"><name>test_suite.h</name>
+  </compound>
+  <compound refid="d6/d3f/tiny__draw__tests_8cpp" kind="file"><name>tiny_draw_tests.cpp</name>
+    <member refid="d6/d3f/tiny__draw__tests_8cpp_1a0ea7590fe0bd36dbba5925bf93d0d7a5" kind="variable"><name>kTinyDrawTest</name></member>
+    <member refid="d6/d3f/tiny__draw__tests_8cpp_1a4a153d4f1f3903688d0c90ec90bc185b" kind="variable"><name>kIterations</name></member>
+    <member refid="d6/d3f/tiny__draw__tests_8cpp_1a07ea30267fa2f8c208f9ce3e8e32fcb1" kind="variable"><name>kNumDrawsSingleFrame</name></member>
+    <member refid="d6/d3f/tiny__draw__tests_8cpp_1a7b04cd9d4461324c354a503043816cff" kind="variable"><name>kLongPassthroughShader</name></member>
+    <member refid="d6/d3f/tiny__draw__tests_8cpp_1a813b1e0fc4ec2dca20c9f4082d3f5d52" kind="variable"><name>kVertexAttributes</name></member>
+    <member refid="d6/d3f/tiny__draw__tests_8cpp_1a9abb5fe26cc9aaeaff17e57fe76b7659" kind="variable"><name>kPrimitive</name></member>
+    <member refid="d6/d3f/tiny__draw__tests_8cpp_1a23323c2e63d8e2be93505b8bd5b0dbf3" kind="function"><name>GetNumDrawsForMode</name></member>
+    <member refid="d6/d3f/tiny__draw__tests_8cpp_1ae971a5a9e132363375b1a78be6954e43" kind="function"><name>MakeTestName</name></member>
+  </compound>
+  <compound refid="d2/db2/tiny__draw__tests_8h" kind="file"><name>tiny_draw_tests.h</name>
+  </compound>
+  <compound refid="db/d65/uniform__thrash__tests_8cpp" kind="file"><name>uniform_thrash_tests.cpp</name>
+    <member refid="db/d65/uniform__thrash__tests_8cpp_1a9748afb1f9fc31d71c665afa5c9d65ee" kind="variable"><name>kTestName</name></member>
+    <member refid="db/d65/uniform__thrash__tests_8cpp_1a4a153d4f1f3903688d0c90ec90bc185b" kind="variable"><name>kIterations</name></member>
+    <member refid="db/d65/uniform__thrash__tests_8cpp_1a07ea30267fa2f8c208f9ce3e8e32fcb1" kind="variable"><name>kNumDrawsSingleFrame</name></member>
+    <member refid="db/d65/uniform__thrash__tests_8cpp_1a9761d34423238b7afb45c60613a85a3a" kind="variable"><name>kNumDrawsMultiFrame</name></member>
+    <member refid="db/d65/uniform__thrash__tests_8cpp_1abe7e74d7f50455d42730cd305cc025ea" kind="variable"><name>kShader</name></member>
+    <member refid="db/d65/uniform__thrash__tests_8cpp_1a2a274bada2470951737bc9e701383b7a" kind="function"><name>SetVertexColor</name></member>
+  </compound>
+  <compound refid="de/d3d/uniform__thrash__tests_8h" kind="file"><name>uniform_thrash_tests.h</name>
+  </compound>
+  <compound refid="d0/de9/vertex__buffer__allocation__tests_8cpp" kind="file"><name>vertex_buffer_allocation_tests.cpp</name>
+    <member refid="d0/de9/vertex__buffer__allocation__tests_8cpp_1a2cd568a3cfc75ec95ed88c15a57b2994" kind="variable"><name>kTinyAllocationTest</name></member>
+    <member refid="d0/de9/vertex__buffer__allocation__tests_8cpp_1a06449dfdbed244cbadc7dbaed6d6d8d5" kind="variable"><name>kMixedVertexCountTest</name></member>
+    <member refid="d0/de9/vertex__buffer__allocation__tests_8cpp_1a02b6870a54a9176a61005d713b4373cb" kind="variable"><name>kMixedVertexBufferSizeMultiframeArrays</name></member>
+    <member refid="d0/de9/vertex__buffer__allocation__tests_8cpp_1a8ef978376302112935374db1709ab529" kind="variable"><name>kMixedVertexBufferSizeMultiframeInlineArrays</name></member>
+    <member refid="d0/de9/vertex__buffer__allocation__tests_8cpp_1a87fb045b6e7fefc4dc2c14355801bdc4" kind="variable"><name>kMixedVertexBufferSizeMultiframeInlineBuffers</name></member>
+    <member refid="d0/de9/vertex__buffer__allocation__tests_8cpp_1ad531431af860e6fe5913952d0f5a6841" kind="variable"><name>kMixedVertexBufferSizeMultiframeInlineElements</name></member>
+    <member refid="d0/de9/vertex__buffer__allocation__tests_8cpp_1ab477b71f77731d3264a43bf4a2e7b356" kind="variable"><name>kMixedVertexBufferSizesSingleFrame</name></member>
+    <member refid="d0/de9/vertex__buffer__allocation__tests_8cpp_1a813b1e0fc4ec2dca20c9f4082d3f5d52" kind="variable"><name>kVertexAttributes</name></member>
+    <member refid="d0/de9/vertex__buffer__allocation__tests_8cpp_1a7c3b74d02207017a306b868b07f58cb0" kind="variable"><name>kArrayEntriesPerVertex</name></member>
+    <member refid="d0/de9/vertex__buffer__allocation__tests_8cpp_1a90c8c61f53b980a5092d6dbb0710bacb" kind="variable"><name>kSmallestVertexBufferSize</name></member>
+    <member refid="d0/de9/vertex__buffer__allocation__tests_8cpp_1a42df1460479bda7a1f5846898eb24c18" kind="function"><name>GetMixedVertexBufferSizesMultiframe</name></member>
+    <member refid="d0/de9/vertex__buffer__allocation__tests_8cpp_1a5995386e8c434264fc1843d0512d4139" kind="function"><name>MakeTestName</name></member>
+    <member refid="d0/de9/vertex__buffer__allocation__tests_8cpp_1a3bb7121379986cde0e2b081c7c7db1a0" kind="function"><name>CreateGeometry</name></member>
+    <member refid="d0/de9/vertex__buffer__allocation__tests_8cpp_1ae06df5da62e18e256c94178ef4925f28" kind="function"><name>GetTinyAllocDrawsMultiframe</name></member>
+  </compound>
+  <compound refid="d7/d54/vertex__buffer__allocation__tests_8h" kind="file"><name>vertex_buffer_allocation_tests.h</name>
+  </compound>
+  <compound refid="dir_68267d1309a1af8e8297ef4c3efbcdba" kind="dir"><name>src</name>
+  </compound>
+  <compound refid="dir_d93a1d4020dea85bb71b237545b5e722" kind="dir"><name>src/tests</name>
+  </compound>
+</doxygenindex>

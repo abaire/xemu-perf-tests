@@ -1,0 +1,734 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="d0/d98/classRuntimeConfig" kind="class" language="C++" prot="public">
+    <compoundname>RuntimeConfig</compoundname>
+    <sectiondef kind="public-type">
+      <memberdef kind="enum" id="d0/d98/classRuntimeConfig_1a53d0ad09bd863533db55bc1918436821" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>SkipConfiguration</name>
+        <qualifiedname>RuntimeConfig::SkipConfiguration</qualifiedname>
+        <enumvalue id="d0/d98/classRuntimeConfig_1a53d0ad09bd863533db55bc1918436821a5b39c8b553c821e7cddc6da64b5bd2ee" prot="public">
+          <name>DEFAULT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d0/d98/classRuntimeConfig_1a53d0ad09bd863533db55bc1918436821a203ec08f57cb105eeb2b121ba6503b52" prot="public">
+          <name>SKIPPED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d0/d98/classRuntimeConfig_1a53d0ad09bd863533db55bc1918436821a2b373f495b7ff443d0244c6a5e436023" prot="public">
+          <name>UNSKIPPED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/runtime_config.h" line="12" column="3" bodyfile="src/runtime_config.h" bodystart="12" bodyend="16"/>
+      </memberdef>
+      <memberdef kind="enum" id="d0/d98/classRuntimeConfig_1a1cec199cd9c952f3ee36aad3508de51d" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>RunMode</name>
+        <qualifiedname>RuntimeConfig::RunMode</qualifiedname>
+        <enumvalue id="d0/d98/classRuntimeConfig_1a1cec199cd9c952f3ee36aad3508de51da0679273e201afd0bf57af3961f8a23b8" prot="public">
+          <name>SINGLE</name>
+          <briefdescription>
+<para>Each test renders once (repeating its body a few times) and logs submission timing. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d0/d98/classRuntimeConfig_1a1cec199cd9c952f3ee36aad3508de51da4b9ca846723a454c90694243dfc1f4dd" prot="public">
+          <name>SUSTAINED</name>
+          <briefdescription>
+<para>Each test runs for warmup + measure frames in continuous (60fps-budget) mode and logs per-frame timing. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d0/d98/classRuntimeConfig_1a1cec199cd9c952f3ee36aad3508de51da9f19f49a589b6bc247398b3f8c8a9aad" prot="public">
+          <name>CALIBRATE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Each test with a load knob is searched for the largest load that meets the frame budget, and the results are written to calibration.json. </para>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/runtime_config.h" line="18" column="3" bodyfile="src/runtime_config.h" bodystart="18" bodyend="26"/>
+      </memberdef>
+      <memberdef kind="typedef" id="d0/d98/classRuntimeConfig_1aff756ba6d02de2c73bb81625c07be3a3" prot="public" static="no">
+        <type>std::map&lt; std::string, uint32_t &gt;</type>
+        <definition>typedef std::map&lt;std::string, uint32_t&gt; RuntimeConfig::TestLoads</definition>
+        <argsstring></argsstring>
+        <name>TestLoads</name>
+        <qualifiedname>RuntimeConfig::TestLoads</qualifiedname>
+        <briefdescription>
+<para>Map of test case name to configured load. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/runtime_config.h" line="29" column="20" bodyfile="src/runtime_config.h" bodystart="29" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="d0/d98/classRuntimeConfig_1a82dbd30ac65d1e180a436f620a9a3253" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool RuntimeConfig::disable_autorun_</definition>
+        <argsstring></argsstring>
+        <name>disable_autorun_</name>
+        <qualifiedname>RuntimeConfig::disable_autorun_</qualifiedname>
+        <initializer>= DEFAULT_DISABLE_AUTORUN</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/runtime_config.h" line="86" column="8" bodyfile="src/runtime_config.h" bodystart="86" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d0/d98/classRuntimeConfig_1a86bf2d2cdd9ad0200158b461b64acb04" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool RuntimeConfig::enable_autorun_immediately_</definition>
+        <argsstring></argsstring>
+        <name>enable_autorun_immediately_</name>
+        <qualifiedname>RuntimeConfig::enable_autorun_immediately_</qualifiedname>
+        <initializer>= DEFAULT_AUTORUN_IMMEDIATELY</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/runtime_config.h" line="87" column="8" bodyfile="src/runtime_config.h" bodystart="87" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d0/d98/classRuntimeConfig_1a839dd4750252137dc5d0fbc54f34956e" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool RuntimeConfig::enable_shutdown_on_completion_</definition>
+        <argsstring></argsstring>
+        <name>enable_shutdown_on_completion_</name>
+        <qualifiedname>RuntimeConfig::enable_shutdown_on_completion_</qualifiedname>
+        <initializer>= DEFAULT_ENABLE_SHUTDOWN</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/runtime_config.h" line="88" column="8" bodyfile="src/runtime_config.h" bodystart="88" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d0/d98/classRuntimeConfig_1a78613c6ad8ea5c5d9add504ef45ea724" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool RuntimeConfig::skip_tests_by_default_</definition>
+        <argsstring></argsstring>
+        <name>skip_tests_by_default_</name>
+        <qualifiedname>RuntimeConfig::skip_tests_by_default_</qualifiedname>
+        <initializer>= DEFAULT_SKIP_TESTS_BY_DEFAULT</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/runtime_config.h" line="89" column="8" bodyfile="src/runtime_config.h" bodystart="89" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d0/d98/classRuntimeConfig_1aad2ce726210206fa4398a2d63b811388" prot="private" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t RuntimeConfig::reboot_or_shutdown_delay_ms_</definition>
+        <argsstring></argsstring>
+        <name>reboot_or_shutdown_delay_ms_</name>
+        <qualifiedname>RuntimeConfig::reboot_or_shutdown_delay_ms_</qualifiedname>
+        <initializer>= 10000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/runtime_config.h" line="90" column="12" bodyfile="src/runtime_config.h" bodystart="90" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d0/d98/classRuntimeConfig_1a909ad1d37589976ec8df8dd848e7abbd" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string RuntimeConfig::output_directory_path_</definition>
+        <argsstring></argsstring>
+        <name>output_directory_path_</name>
+        <qualifiedname>RuntimeConfig::output_directory_path_</qualifiedname>
+        <initializer>= SanitizePath(DEFAULT_OUTPUT_DIRECTORY_PATH)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/runtime_config.h" line="92" column="15" bodyfile="src/runtime_config.h" bodystart="92" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d0/d98/classRuntimeConfig_1a2a694b82f6730329a93bfa0f790f1d6c" prot="private" static="no" mutable="no">
+        <type><ref refid="d0/d98/classRuntimeConfig_1a1cec199cd9c952f3ee36aad3508de51d" kindref="member">RunMode</ref></type>
+        <definition>RunMode RuntimeConfig::run_mode_</definition>
+        <argsstring></argsstring>
+        <name>run_mode_</name>
+        <qualifiedname>RuntimeConfig::run_mode_</qualifiedname>
+        <initializer>= <ref refid="d0/d98/classRuntimeConfig_1a1cec199cd9c952f3ee36aad3508de51da0679273e201afd0bf57af3961f8a23b8" kindref="member">RunMode::SINGLE</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/runtime_config.h" line="94" column="11" bodyfile="src/runtime_config.h" bodystart="94" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d0/d98/classRuntimeConfig_1a7acddd197a03e89604f92298fe751b15" prot="private" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t RuntimeConfig::warmup_frames_</definition>
+        <argsstring></argsstring>
+        <name>warmup_frames_</name>
+        <qualifiedname>RuntimeConfig::warmup_frames_</qualifiedname>
+        <initializer>= 30</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/runtime_config.h" line="95" column="12" bodyfile="src/runtime_config.h" bodystart="95" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d0/d98/classRuntimeConfig_1a977c8bb21450d06e30c522a056cf93cb" prot="private" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t RuntimeConfig::measure_frames_</definition>
+        <argsstring></argsstring>
+        <name>measure_frames_</name>
+        <qualifiedname>RuntimeConfig::measure_frames_</qualifiedname>
+        <initializer>= 240</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/runtime_config.h" line="96" column="12" bodyfile="src/runtime_config.h" bodystart="96" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d0/d98/classRuntimeConfig_1acb407dd1c757c218ea74d2f9f41478b3" prot="private" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t RuntimeConfig::calibration_probe_frames_</definition>
+        <argsstring></argsstring>
+        <name>calibration_probe_frames_</name>
+        <qualifiedname>RuntimeConfig::calibration_probe_frames_</qualifiedname>
+        <initializer>= 120</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/runtime_config.h" line="97" column="12" bodyfile="src/runtime_config.h" bodystart="97" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d0/d98/classRuntimeConfig_1af2a52cc156f9d02f328d3a4936479ef6" prot="private" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t RuntimeConfig::calibration_target_busy_p95_us_</definition>
+        <argsstring></argsstring>
+        <name>calibration_target_busy_p95_us_</name>
+        <qualifiedname>RuntimeConfig::calibration_target_busy_p95_us_</qualifiedname>
+        <initializer>= 15000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/runtime_config.h" line="99" column="12" bodyfile="src/runtime_config.h" bodystart="99" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d0/d98/classRuntimeConfig_1a11a899dcff6dbfb54e63ef372c788f55" prot="private" static="no" mutable="no">
+        <type>std::map&lt; std::string, <ref refid="d0/d98/classRuntimeConfig_1aff756ba6d02de2c73bb81625c07be3a3" kindref="member">TestLoads</ref> &gt;</type>
+        <definition>std::map&lt;std::string, TestLoads&gt; RuntimeConfig::configured_test_loads_</definition>
+        <argsstring></argsstring>
+        <name>configured_test_loads_</name>
+        <qualifiedname>RuntimeConfig::configured_test_loads_</qualifiedname>
+        <briefdescription>
+<para>Map of test suite name to a map of test case to configured load. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/runtime_config.h" line="102" column="12" bodyfile="src/runtime_config.h" bodystart="102" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d0/d98/classRuntimeConfig_1ae2a0e986e5243751ba425d2cd8c3d39e" prot="private" static="no" mutable="no">
+        <type>std::map&lt; std::string, <ref refid="d0/d98/classRuntimeConfig_1aff756ba6d02de2c73bb81625c07be3a3" kindref="member">TestLoads</ref> &gt;</type>
+        <definition>std::map&lt;std::string, TestLoads&gt; RuntimeConfig::baseline_test_loads_</definition>
+        <argsstring></argsstring>
+        <name>baseline_test_loads_</name>
+        <qualifiedname>RuntimeConfig::baseline_test_loads_</qualifiedname>
+        <briefdescription>
+<para>Map of test suite name to a map of test case to hardware-calibrated load. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/runtime_config.h" line="105" column="12" bodyfile="src/runtime_config.h" bodystart="105" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d0/d98/classRuntimeConfig_1a5e69eff9458234b7cd10f8283b7ae8a7" prot="private" static="no" mutable="no">
+        <type>std::map&lt; std::string, SkipConfiguration &gt;</type>
+        <definition>std::map&lt;std::string, SkipConfiguration&gt; RuntimeConfig::configured_test_suites_</definition>
+        <argsstring></argsstring>
+        <name>configured_test_suites_</name>
+        <qualifiedname>RuntimeConfig::configured_test_suites_</qualifiedname>
+        <briefdescription>
+<para>Map of test suite name to skip config. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/runtime_config.h" line="108" column="12" bodyfile="src/runtime_config.h" bodystart="108" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d0/d98/classRuntimeConfig_1a93266abd31cd76445e637c54c9ac0ace" prot="private" static="no" mutable="no">
+        <type>std::map&lt; std::string, std::map&lt; std::string, SkipConfiguration &gt; &gt;</type>
+        <definition>std::map&lt;std::string, std::map&lt;std::string, SkipConfiguration&gt; &gt; RuntimeConfig::configured_test_cases_</definition>
+        <argsstring></argsstring>
+        <name>configured_test_cases_</name>
+        <qualifiedname>RuntimeConfig::configured_test_cases_</qualifiedname>
+        <briefdescription>
+<para>Map of test suite name to a map of test case to skip config. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/runtime_config.h" line="110" column="12" bodyfile="src/runtime_config.h" bodystart="110" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="d0/d98/classRuntimeConfig_1a5bb5fdf8d9ba569c2ab2a5b549d987d0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>RuntimeConfig::RuntimeConfig</definition>
+        <argsstring>()=default</argsstring>
+        <name>RuntimeConfig</name>
+        <qualifiedname>RuntimeConfig::RuntimeConfig</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/runtime_config.h" line="32" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/d98/classRuntimeConfig_1a357e29abface33d5bc0b18d9445327f7" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>RuntimeConfig::RuntimeConfig</definition>
+        <argsstring>(const RuntimeConfig &amp;)=delete</argsstring>
+        <name>RuntimeConfig</name>
+        <qualifiedname>RuntimeConfig::RuntimeConfig</qualifiedname>
+        <param>
+          <type>const <ref refid="d0/d98/classRuntimeConfig" kindref="compound">RuntimeConfig</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/runtime_config.h" line="33" column="12"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/d98/classRuntimeConfig_1a14a49d34275e82a2b06bd365d1216c51" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool RuntimeConfig::LoadConfig</definition>
+        <argsstring>(const char *config_file_path, std::vector&lt; std::string &gt; &amp;errors)</argsstring>
+        <name>LoadConfig</name>
+        <qualifiedname>RuntimeConfig::LoadConfig</qualifiedname>
+        <param>
+          <type>const char *</type>
+          <declname>config_file_path</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; std::string &gt; &amp;</type>
+          <declname>errors</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Loads the JSON config file from the given path. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>config_file_path</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- The path to the file containing the JSON config. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>errors</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Vector of strings into which any error messages will be placed. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true on success, false on failure </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/runtime_config.h" line="41" column="8" bodyfile="src/runtime_config.cpp" bodystart="68" bodyend="74"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/d98/classRuntimeConfig_1a01982f42fa9b49444100ab893e9d4e2b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool RuntimeConfig::LoadConfigBuffer</definition>
+        <argsstring>(const std::string &amp;config_content, std::vector&lt; std::string &gt; &amp;errors)</argsstring>
+        <name>LoadConfigBuffer</name>
+        <qualifiedname>RuntimeConfig::LoadConfigBuffer</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>config_content</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; std::string &gt; &amp;</type>
+          <declname>errors</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Loads the JSON config file from the given string buffer. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>config_content</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- String containing the JSON config. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>errors</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Vector of strings into which any error messages will be placed. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true on success, false on failure </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/runtime_config.h" line="49" column="8" bodyfile="src/runtime_config.cpp" bodystart="177" bodyend="284"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/d98/classRuntimeConfig_1aa144a07d82ad6a8474c4fe34175decac" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool RuntimeConfig::LoadCalibrationBaseline</definition>
+        <argsstring>(const char *calibration_file_path, std::vector&lt; std::string &gt; &amp;errors)</argsstring>
+        <name>LoadCalibrationBaseline</name>
+        <qualifiedname>RuntimeConfig::LoadCalibrationBaseline</qualifiedname>
+        <param>
+          <type>const char *</type>
+          <declname>calibration_file_path</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; std::string &gt; &amp;</type>
+          <declname>errors</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Loads the hardware-calibrated test loads from the &quot;loads&quot; object of a calibration.json produced by calibrate mode. These are applied by <computeroutput><ref refid="d0/d98/classRuntimeConfig_1ab234dceaf1d88e90e733321869a025d5" kindref="member">ApplyConfig</ref></computeroutput> as each test&apos;s default, and are overridden by any &quot;loads&quot; in the config. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>calibration_file_path</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Path to the calibration JSON file. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>errors</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Vector of strings into which any error messages will be placed. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true on success, false on failure </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/runtime_config.h" line="58" column="8" bodyfile="src/runtime_config.cpp" bodystart="150" bodyend="165"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/d98/classRuntimeConfig_1ab234dceaf1d88e90e733321869a025d5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool RuntimeConfig::ApplyConfig</definition>
+        <argsstring>(std::vector&lt; std::shared_ptr&lt; TestSuite &gt; &gt; &amp;test_suites, std::vector&lt; std::string &gt; &amp;errors)</argsstring>
+        <name>ApplyConfig</name>
+        <qualifiedname>RuntimeConfig::ApplyConfig</qualifiedname>
+        <param>
+          <type>std::vector&lt; std::shared_ptr&lt; <ref refid="d2/d3e/classTestSuite" kindref="compound">TestSuite</ref> &gt; &gt; &amp;</type>
+          <declname>test_suites</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; std::string &gt; &amp;</type>
+          <declname>errors</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Processes the JSON config file at the given path and adjusts the given set of test suites. Returns false if parsing fails for any reason. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/runtime_config.h" line="64" column="8" bodyfile="src/runtime_config.cpp" bodystart="383" bodyend="448"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/d98/classRuntimeConfig_1af61da712447ba61deeb35becd686badd" prot="public" static="no" nodiscard="yes" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::map&lt; std::string, uint32_t &gt;</type>
+        <definition>std::map&lt; std::string, uint32_t &gt; RuntimeConfig::baseline_loads</definition>
+        <argsstring>() const</argsstring>
+        <name>baseline_loads</name>
+        <qualifiedname>RuntimeConfig::baseline_loads</qualifiedname>
+        <briefdescription>
+<para>Returns the hardware-calibrated loads from the calibration baseline, keyed by &quot;Suite::Test&quot;. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/runtime_config.h" line="67" column="13" bodyfile="src/runtime_config.cpp" bodystart="167" bodyend="175"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/d98/classRuntimeConfig_1a9a8c5be5090df2ecc1e79265a285be93" prot="public" static="no" nodiscard="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool RuntimeConfig::disable_autorun</definition>
+        <argsstring>() const</argsstring>
+        <name>disable_autorun</name>
+        <qualifiedname>RuntimeConfig::disable_autorun</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/runtime_config.h" line="69" column="9" bodyfile="src/runtime_config.h" bodystart="69" bodyend="69"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/d98/classRuntimeConfig_1a1a8773d0ba2f6d1ffcd0eb1c4d6c3590" prot="public" static="no" nodiscard="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool RuntimeConfig::enable_autorun_immediately</definition>
+        <argsstring>() const</argsstring>
+        <name>enable_autorun_immediately</name>
+        <qualifiedname>RuntimeConfig::enable_autorun_immediately</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/runtime_config.h" line="70" column="9" bodyfile="src/runtime_config.h" bodystart="70" bodyend="70"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/d98/classRuntimeConfig_1a053e22e1fdaa8f0cfab669d86bdc747f" prot="public" static="no" nodiscard="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool RuntimeConfig::enable_shutdown_on_completion</definition>
+        <argsstring>() const</argsstring>
+        <name>enable_shutdown_on_completion</name>
+        <qualifiedname>RuntimeConfig::enable_shutdown_on_completion</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/runtime_config.h" line="71" column="9" bodyfile="src/runtime_config.h" bodystart="71" bodyend="71"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/d98/classRuntimeConfig_1a917790f13b1e41f33450c5601d33922b" prot="public" static="no" nodiscard="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool RuntimeConfig::skip_tests_by_default</definition>
+        <argsstring>() const</argsstring>
+        <name>skip_tests_by_default</name>
+        <qualifiedname>RuntimeConfig::skip_tests_by_default</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/runtime_config.h" line="72" column="9" bodyfile="src/runtime_config.h" bodystart="72" bodyend="72"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/d98/classRuntimeConfig_1a6f43f70103750517751c0e0f0698a894" prot="public" static="no" nodiscard="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>uint32_t RuntimeConfig::reboot_or_shutdown_delay_ms</definition>
+        <argsstring>() const</argsstring>
+        <name>reboot_or_shutdown_delay_ms</name>
+        <qualifiedname>RuntimeConfig::reboot_or_shutdown_delay_ms</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/runtime_config.h" line="73" column="13" bodyfile="src/runtime_config.h" bodystart="73" bodyend="73"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/d98/classRuntimeConfig_1a648142e0700bcf91e6d8743fc2cd8e68" prot="public" static="no" nodiscard="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const std::string &amp;</type>
+        <definition>const std::string &amp; RuntimeConfig::output_directory_path</definition>
+        <argsstring>() const</argsstring>
+        <name>output_directory_path</name>
+        <qualifiedname>RuntimeConfig::output_directory_path</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/runtime_config.h" line="75" column="22" bodyfile="src/runtime_config.h" bodystart="75" bodyend="75"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/d98/classRuntimeConfig_1a1e06d4cc2989dcf7bfca8b34cf008384" prot="public" static="no" nodiscard="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="d0/d98/classRuntimeConfig_1a1cec199cd9c952f3ee36aad3508de51d" kindref="member">RunMode</ref></type>
+        <definition>RunMode RuntimeConfig::run_mode</definition>
+        <argsstring>() const</argsstring>
+        <name>run_mode</name>
+        <qualifiedname>RuntimeConfig::run_mode</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/runtime_config.h" line="77" column="12" bodyfile="src/runtime_config.h" bodystart="77" bodyend="77"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/d98/classRuntimeConfig_1a1fde32974ae52c964d3fcb5f430bd921" prot="public" static="no" nodiscard="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>uint32_t RuntimeConfig::warmup_frames</definition>
+        <argsstring>() const</argsstring>
+        <name>warmup_frames</name>
+        <qualifiedname>RuntimeConfig::warmup_frames</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/runtime_config.h" line="78" column="13" bodyfile="src/runtime_config.h" bodystart="78" bodyend="78"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/d98/classRuntimeConfig_1a0b0c167218ba2d4f470fba2736b2d6ac" prot="public" static="no" nodiscard="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>uint32_t RuntimeConfig::measure_frames</definition>
+        <argsstring>() const</argsstring>
+        <name>measure_frames</name>
+        <qualifiedname>RuntimeConfig::measure_frames</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/runtime_config.h" line="79" column="13" bodyfile="src/runtime_config.h" bodystart="79" bodyend="79"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/d98/classRuntimeConfig_1a4d05a857b29a718cc059f73495d3fbcb" prot="public" static="no" nodiscard="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>uint32_t RuntimeConfig::calibration_probe_frames</definition>
+        <argsstring>() const</argsstring>
+        <name>calibration_probe_frames</name>
+        <qualifiedname>RuntimeConfig::calibration_probe_frames</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/runtime_config.h" line="80" column="13" bodyfile="src/runtime_config.h" bodystart="80" bodyend="80"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/d98/classRuntimeConfig_1a43535dd9da286bcaef979586979848a8" prot="public" static="no" nodiscard="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>uint32_t RuntimeConfig::calibration_target_busy_p95_us</definition>
+        <argsstring>() const</argsstring>
+        <name>calibration_target_busy_p95_us</name>
+        <qualifiedname>RuntimeConfig::calibration_target_busy_p95_us</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/runtime_config.h" line="81" column="13" bodyfile="src/runtime_config.h" bodystart="81" bodyend="81"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="d0/d98/classRuntimeConfig_1ad0597a9477a5dbcb7227e8685e9d3468" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string RuntimeConfig::SanitizePath</definition>
+        <argsstring>(const std::string &amp;path)</argsstring>
+        <name>SanitizePath</name>
+        <qualifiedname>RuntimeConfig::SanitizePath</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>path</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/runtime_config.h" line="83" column="22" bodyfile="src/runtime_config.cpp" bodystart="450" bodyend="454"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/runtime_config.h" line="10" column="1" bodyfile="src/runtime_config.h" bodystart="10" bodyend="111"/>
+    <listofallmembers>
+      <member refid="d0/d98/classRuntimeConfig_1ab234dceaf1d88e90e733321869a025d5" prot="public" virt="non-virtual"><scope>RuntimeConfig</scope><name>ApplyConfig</name></member>
+      <member refid="d0/d98/classRuntimeConfig_1af61da712447ba61deeb35becd686badd" prot="public" virt="non-virtual"><scope>RuntimeConfig</scope><name>baseline_loads</name></member>
+      <member refid="d0/d98/classRuntimeConfig_1ae2a0e986e5243751ba425d2cd8c3d39e" prot="private" virt="non-virtual"><scope>RuntimeConfig</scope><name>baseline_test_loads_</name></member>
+      <member refid="d0/d98/classRuntimeConfig_1a4d05a857b29a718cc059f73495d3fbcb" prot="public" virt="non-virtual"><scope>RuntimeConfig</scope><name>calibration_probe_frames</name></member>
+      <member refid="d0/d98/classRuntimeConfig_1acb407dd1c757c218ea74d2f9f41478b3" prot="private" virt="non-virtual"><scope>RuntimeConfig</scope><name>calibration_probe_frames_</name></member>
+      <member refid="d0/d98/classRuntimeConfig_1a43535dd9da286bcaef979586979848a8" prot="public" virt="non-virtual"><scope>RuntimeConfig</scope><name>calibration_target_busy_p95_us</name></member>
+      <member refid="d0/d98/classRuntimeConfig_1af2a52cc156f9d02f328d3a4936479ef6" prot="private" virt="non-virtual"><scope>RuntimeConfig</scope><name>calibration_target_busy_p95_us_</name></member>
+      <member refid="d0/d98/classRuntimeConfig_1a93266abd31cd76445e637c54c9ac0ace" prot="private" virt="non-virtual"><scope>RuntimeConfig</scope><name>configured_test_cases_</name></member>
+      <member refid="d0/d98/classRuntimeConfig_1a11a899dcff6dbfb54e63ef372c788f55" prot="private" virt="non-virtual"><scope>RuntimeConfig</scope><name>configured_test_loads_</name></member>
+      <member refid="d0/d98/classRuntimeConfig_1a5e69eff9458234b7cd10f8283b7ae8a7" prot="private" virt="non-virtual"><scope>RuntimeConfig</scope><name>configured_test_suites_</name></member>
+      <member refid="d0/d98/classRuntimeConfig_1a9a8c5be5090df2ecc1e79265a285be93" prot="public" virt="non-virtual"><scope>RuntimeConfig</scope><name>disable_autorun</name></member>
+      <member refid="d0/d98/classRuntimeConfig_1a82dbd30ac65d1e180a436f620a9a3253" prot="private" virt="non-virtual"><scope>RuntimeConfig</scope><name>disable_autorun_</name></member>
+      <member refid="d0/d98/classRuntimeConfig_1a1a8773d0ba2f6d1ffcd0eb1c4d6c3590" prot="public" virt="non-virtual"><scope>RuntimeConfig</scope><name>enable_autorun_immediately</name></member>
+      <member refid="d0/d98/classRuntimeConfig_1a86bf2d2cdd9ad0200158b461b64acb04" prot="private" virt="non-virtual"><scope>RuntimeConfig</scope><name>enable_autorun_immediately_</name></member>
+      <member refid="d0/d98/classRuntimeConfig_1a053e22e1fdaa8f0cfab669d86bdc747f" prot="public" virt="non-virtual"><scope>RuntimeConfig</scope><name>enable_shutdown_on_completion</name></member>
+      <member refid="d0/d98/classRuntimeConfig_1a839dd4750252137dc5d0fbc54f34956e" prot="private" virt="non-virtual"><scope>RuntimeConfig</scope><name>enable_shutdown_on_completion_</name></member>
+      <member refid="d0/d98/classRuntimeConfig_1aa144a07d82ad6a8474c4fe34175decac" prot="public" virt="non-virtual"><scope>RuntimeConfig</scope><name>LoadCalibrationBaseline</name></member>
+      <member refid="d0/d98/classRuntimeConfig_1a14a49d34275e82a2b06bd365d1216c51" prot="public" virt="non-virtual"><scope>RuntimeConfig</scope><name>LoadConfig</name></member>
+      <member refid="d0/d98/classRuntimeConfig_1a01982f42fa9b49444100ab893e9d4e2b" prot="public" virt="non-virtual"><scope>RuntimeConfig</scope><name>LoadConfigBuffer</name></member>
+      <member refid="d0/d98/classRuntimeConfig_1a0b0c167218ba2d4f470fba2736b2d6ac" prot="public" virt="non-virtual"><scope>RuntimeConfig</scope><name>measure_frames</name></member>
+      <member refid="d0/d98/classRuntimeConfig_1a977c8bb21450d06e30c522a056cf93cb" prot="private" virt="non-virtual"><scope>RuntimeConfig</scope><name>measure_frames_</name></member>
+      <member refid="d0/d98/classRuntimeConfig_1a648142e0700bcf91e6d8743fc2cd8e68" prot="public" virt="non-virtual"><scope>RuntimeConfig</scope><name>output_directory_path</name></member>
+      <member refid="d0/d98/classRuntimeConfig_1a909ad1d37589976ec8df8dd848e7abbd" prot="private" virt="non-virtual"><scope>RuntimeConfig</scope><name>output_directory_path_</name></member>
+      <member refid="d0/d98/classRuntimeConfig_1a6f43f70103750517751c0e0f0698a894" prot="public" virt="non-virtual"><scope>RuntimeConfig</scope><name>reboot_or_shutdown_delay_ms</name></member>
+      <member refid="d0/d98/classRuntimeConfig_1aad2ce726210206fa4398a2d63b811388" prot="private" virt="non-virtual"><scope>RuntimeConfig</scope><name>reboot_or_shutdown_delay_ms_</name></member>
+      <member refid="d0/d98/classRuntimeConfig_1a1e06d4cc2989dcf7bfca8b34cf008384" prot="public" virt="non-virtual"><scope>RuntimeConfig</scope><name>run_mode</name></member>
+      <member refid="d0/d98/classRuntimeConfig_1a2a694b82f6730329a93bfa0f790f1d6c" prot="private" virt="non-virtual"><scope>RuntimeConfig</scope><name>run_mode_</name></member>
+      <member refid="d0/d98/classRuntimeConfig_1a1cec199cd9c952f3ee36aad3508de51d" prot="public" virt="non-virtual"><scope>RuntimeConfig</scope><name>RunMode</name></member>
+      <member refid="d0/d98/classRuntimeConfig_1a5bb5fdf8d9ba569c2ab2a5b549d987d0" prot="public" virt="non-virtual"><scope>RuntimeConfig</scope><name>RuntimeConfig</name></member>
+      <member refid="d0/d98/classRuntimeConfig_1a357e29abface33d5bc0b18d9445327f7" prot="public" virt="non-virtual"><scope>RuntimeConfig</scope><name>RuntimeConfig</name></member>
+      <member refid="d0/d98/classRuntimeConfig_1ad0597a9477a5dbcb7227e8685e9d3468" prot="public" virt="non-virtual"><scope>RuntimeConfig</scope><name>SanitizePath</name></member>
+      <member refid="d0/d98/classRuntimeConfig_1a917790f13b1e41f33450c5601d33922b" prot="public" virt="non-virtual"><scope>RuntimeConfig</scope><name>skip_tests_by_default</name></member>
+      <member refid="d0/d98/classRuntimeConfig_1a78613c6ad8ea5c5d9add504ef45ea724" prot="private" virt="non-virtual"><scope>RuntimeConfig</scope><name>skip_tests_by_default_</name></member>
+      <member refid="d0/d98/classRuntimeConfig_1a53d0ad09bd863533db55bc1918436821" prot="public" virt="non-virtual"><scope>RuntimeConfig</scope><name>SkipConfiguration</name></member>
+      <member refid="d0/d98/classRuntimeConfig_1aff756ba6d02de2c73bb81625c07be3a3" prot="public" virt="non-virtual"><scope>RuntimeConfig</scope><name>TestLoads</name></member>
+      <member refid="d0/d98/classRuntimeConfig_1a1fde32974ae52c964d3fcb5f430bd921" prot="public" virt="non-virtual"><scope>RuntimeConfig</scope><name>warmup_frames</name></member>
+      <member refid="d0/d98/classRuntimeConfig_1a7acddd197a03e89604f92298fe751b15" prot="private" virt="non-virtual"><scope>RuntimeConfig</scope><name>warmup_frames_</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

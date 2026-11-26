@@ -1,0 +1,931 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="d6/d80/classTestHost" kind="class" language="C++" prot="public">
+    <compoundname>TestHost</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">PBKitPlusPlus::NV2AState</basecompoundref>
+    <includes refid="df/d43/test__host_8h" local="no">test_host.h</includes>
+    <innerclass refid="d1/dc6/structTestHost_1_1ProfileResults" prot="public">TestHost::ProfileResults</innerclass>
+    <innerclass refid="d3/d3d/structTestHost_1_1SustainedSummary" prot="public">TestHost::SustainedSummary</innerclass>
+    <innerclass refid="d3/d99/structTestHost_1_1SustainedFrame" prot="private">TestHost::SustainedFrame</innerclass>
+    <innerclass refid="d3/d81/structTestHost_1_1semaphore__dma__ctx__" prot="private">TestHost::semaphore_dma_ctx_</innerclass>
+    <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="d6/d80/classTestHost_1a45afd08c65c3e4acd06a4ed18c5f6b72" prot="public" static="yes" constexpr="yes" mutable="no">
+        <type>int32_t</type>
+        <definition>int32_t TestHost::kFirstTestContextChannel</definition>
+        <argsstring></argsstring>
+        <name>kFirstTestContextChannel</name>
+        <qualifiedname>TestHost::kFirstTestContextChannel</qualifiedname>
+        <initializer>= PBKitPlusPlus::kNextContextChannel + 1</initializer>
+        <briefdescription>
+<para>First DMA context channel available for use by test suites. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/test_host.h" line="49" column="28" bodyfile="src/test_host.h" bodystart="49" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="d6/d80/classTestHost_1ac1164ad632c1c8a050f38d0defb72ba4" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool TestHost::save_results_</definition>
+        <argsstring></argsstring>
+        <name>save_results_</name>
+        <qualifiedname>TestHost::save_results_</qualifiedname>
+        <initializer>{true}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/test_host.h" line="123" column="8" bodyfile="src/test_host.h" bodystart="123" bodyend="123"/>
+      </memberdef>
+      <memberdef kind="variable" id="d6/d80/classTestHost_1a13d5414fa77fd7602bd8c07b4fdd068d" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool TestHost::sustained_active_</definition>
+        <argsstring></argsstring>
+        <name>sustained_active_</name>
+        <qualifiedname>TestHost::sustained_active_</qualifiedname>
+        <initializer>{false}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/test_host.h" line="142" column="8" bodyfile="src/test_host.h" bodystart="142" bodyend="142"/>
+      </memberdef>
+      <memberdef kind="variable" id="d6/d80/classTestHost_1a6289be7072b04e1120f6bcba378632f9" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool TestHost::sustained_recording_</definition>
+        <argsstring></argsstring>
+        <name>sustained_recording_</name>
+        <qualifiedname>TestHost::sustained_recording_</qualifiedname>
+        <initializer>{false}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/test_host.h" line="143" column="8" bodyfile="src/test_host.h" bodystart="143" bodyend="143"/>
+      </memberdef>
+      <memberdef kind="variable" id="d6/d80/classTestHost_1aebc1017d135d062898a56696cf1a30b0" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool TestHost::sustained_awaiting_prepare_</definition>
+        <argsstring></argsstring>
+        <name>sustained_awaiting_prepare_</name>
+        <qualifiedname>TestHost::sustained_awaiting_prepare_</qualifiedname>
+        <initializer>{false}</initializer>
+        <briefdescription>
+<para>True until the first PrepareDraw of the current frame re-stamps the frame start. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/test_host.h" line="145" column="8" bodyfile="src/test_host.h" bodystart="145" bodyend="145"/>
+      </memberdef>
+      <memberdef kind="variable" id="d6/d80/classTestHost_1a8423a1147269ecc82f844e6315e64c89" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool TestHost::sustained_skip_current_frame_</definition>
+        <argsstring></argsstring>
+        <name>sustained_skip_current_frame_</name>
+        <qualifiedname>TestHost::sustained_skip_current_frame_</qualifiedname>
+        <initializer>{false}</initializer>
+        <briefdescription>
+<para>True if the current frame should not be recorded. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/test_host.h" line="147" column="8" bodyfile="src/test_host.h" bodystart="147" bodyend="147"/>
+      </memberdef>
+      <memberdef kind="variable" id="d6/d80/classTestHost_1a2b975896d2e18d028b4d4abd6d1ba119" prot="private" static="no" mutable="no">
+        <type>LARGE_INTEGER</type>
+        <definition>LARGE_INTEGER TestHost::sustained_frame_start_</definition>
+        <argsstring></argsstring>
+        <name>sustained_frame_start_</name>
+        <qualifiedname>TestHost::sustained_frame_start_</qualifiedname>
+        <initializer>{}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/test_host.h" line="148" column="17" bodyfile="src/test_host.h" bodystart="148" bodyend="148"/>
+      </memberdef>
+      <memberdef kind="variable" id="d6/d80/classTestHost_1a1628541bebcf86f3566985d3d0d83c39" prot="private" static="no" mutable="no">
+        <type>PBKitPlusPlus::Pushbuffer::ResetStats</type>
+        <definition>PBKitPlusPlus::Pushbuffer::ResetStats TestHost::sustained_frame_start_resets_</definition>
+        <argsstring></argsstring>
+        <name>sustained_frame_start_resets_</name>
+        <qualifiedname>TestHost::sustained_frame_start_resets_</qualifiedname>
+        <initializer>{}</initializer>
+        <briefdescription>
+<para>Pushbuffer reset statistics at <computeroutput>sustained_frame_start_</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/test_host.h" line="150" column="41" bodyfile="src/test_host.h" bodystart="150" bodyend="150"/>
+      </memberdef>
+      <memberdef kind="variable" id="d6/d80/classTestHost_1a0ba285d8183eb5f923e8ff73cdc75a20" prot="private" static="no" mutable="no">
+        <type>LARGE_INTEGER</type>
+        <definition>LARGE_INTEGER TestHost::sustained_last_recorded_end_</definition>
+        <argsstring></argsstring>
+        <name>sustained_last_recorded_end_</name>
+        <qualifiedname>TestHost::sustained_last_recorded_end_</qualifiedname>
+        <initializer>{}</initializer>
+        <briefdescription>
+<para>End of the most recent recorded frame, or 0 if none has been recorded yet. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/test_host.h" line="152" column="17" bodyfile="src/test_host.h" bodystart="152" bodyend="152"/>
+      </memberdef>
+      <memberdef kind="variable" id="d6/d80/classTestHost_1a61321a186302961d8d8805c8db01bde8" prot="private" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t TestHost::sustained_skipped_missed_vblanks_</definition>
+        <argsstring></argsstring>
+        <name>sustained_skipped_missed_vblanks_</name>
+        <qualifiedname>TestHost::sustained_skipped_missed_vblanks_</qualifiedname>
+        <initializer>{0}</initializer>
+        <briefdescription>
+<para>Missed vblanks during frames that were not recorded because of <ref refid="d6/d80/classTestHost_1aa6714120bb93a3c81585a0e223e6c210" kindref="member">SkipRecordingCurrentFrame()</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/test_host.h" line="154" column="12" bodyfile="src/test_host.h" bodystart="154" bodyend="154"/>
+      </memberdef>
+      <memberdef kind="variable" id="d6/d80/classTestHost_1a65236810d469126e0ee86fb705cec699" prot="private" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t TestHost::sustained_last_busy_us_</definition>
+        <argsstring></argsstring>
+        <name>sustained_last_busy_us_</name>
+        <qualifiedname>TestHost::sustained_last_busy_us_</qualifiedname>
+        <initializer>{0}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/test_host.h" line="155" column="12" bodyfile="src/test_host.h" bodystart="155" bodyend="155"/>
+      </memberdef>
+      <memberdef kind="variable" id="d6/d80/classTestHost_1aaa26ea25bc1b01c6fa747975a73cad2d" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool TestHost::sustained_aborted_</definition>
+        <argsstring></argsstring>
+        <name>sustained_aborted_</name>
+        <qualifiedname>TestHost::sustained_aborted_</qualifiedname>
+        <initializer>{false}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/test_host.h" line="156" column="8" bodyfile="src/test_host.h" bodystart="156" bodyend="156"/>
+      </memberdef>
+      <memberdef kind="variable" id="d6/d80/classTestHost_1a4c4c730f09ae01f844117da2a2a67898" prot="private" static="no" mutable="no">
+        <type><ref refid="d3/d3d/structTestHost_1_1SustainedSummary" kindref="compound">SustainedSummary</ref></type>
+        <definition>SustainedSummary TestHost::sustained_summary_</definition>
+        <argsstring></argsstring>
+        <name>sustained_summary_</name>
+        <qualifiedname>TestHost::sustained_summary_</qualifiedname>
+        <initializer>{}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/test_host.h" line="157" column="20" bodyfile="src/test_host.h" bodystart="157" bodyend="157"/>
+      </memberdef>
+      <memberdef kind="variable" id="d6/d80/classTestHost_1a02bc3321c2017f67af65c7e8431ea3ee" prot="private" static="no" mutable="no">
+        <type>DWORD</type>
+        <definition>DWORD TestHost::sustained_last_vbl_</definition>
+        <argsstring></argsstring>
+        <name>sustained_last_vbl_</name>
+        <qualifiedname>TestHost::sustained_last_vbl_</qualifiedname>
+        <initializer>{0}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/test_host.h" line="158" column="9" bodyfile="src/test_host.h" bodystart="158" bodyend="158"/>
+      </memberdef>
+      <memberdef kind="variable" id="d6/d80/classTestHost_1a1c32841c3ccbaaff6b1be4ef0013610e" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; SustainedFrame &gt;</type>
+        <definition>std::vector&lt;SustainedFrame&gt; TestHost::sustained_frames_</definition>
+        <argsstring></argsstring>
+        <name>sustained_frames_</name>
+        <qualifiedname>TestHost::sustained_frames_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/test_host.h" line="159" column="15" bodyfile="src/test_host.h" bodystart="159" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d6/d80/classTestHost_1a51b076b966c013b1f1452d4bfa51d5dc" prot="private" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t TestHost::sustained_fence_timeouts_</definition>
+        <argsstring></argsstring>
+        <name>sustained_fence_timeouts_</name>
+        <qualifiedname>TestHost::sustained_fence_timeouts_</qualifiedname>
+        <initializer>{0}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/test_host.h" line="160" column="12" bodyfile="src/test_host.h" bodystart="160" bodyend="160"/>
+      </memberdef>
+      <memberdef kind="variable" id="d6/d80/classTestHost_1a383e9afe51d5a2378e7b18534f264806" prot="private" static="no" mutable="no">
+        <type>volatile uint32_t *</type>
+        <definition>volatile uint32_t* TestHost::semaphore_memory_</definition>
+        <argsstring></argsstring>
+        <name>semaphore_memory_</name>
+        <qualifiedname>TestHost::semaphore_memory_</qualifiedname>
+        <initializer>{nullptr}</initializer>
+        <briefdescription>
+<para>RAM written by the GPU on NV097_BACK_END_WRITE_SEMAPHORE_RELEASE. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/test_host.h" line="163" column="21" bodyfile="src/test_host.h" bodystart="163" bodyend="163"/>
+      </memberdef>
+      <memberdef kind="variable" id="d6/d80/classTestHost_1af40b52550a6ae058de7a9b2449b804e6" prot="private" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t TestHost::semaphore_value_</definition>
+        <argsstring></argsstring>
+        <name>semaphore_value_</name>
+        <qualifiedname>TestHost::semaphore_value_</qualifiedname>
+        <initializer>{0}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/test_host.h" line="165" column="12" bodyfile="src/test_host.h" bodystart="165" bodyend="165"/>
+      </memberdef>
+      <memberdef kind="variable" id="d6/d80/classTestHost_1a49b77cb96f34662d1a1f25fb872e277a" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double TestHost::perf_counter_frequency_</definition>
+        <argsstring></argsstring>
+        <name>perf_counter_frequency_</name>
+        <qualifiedname>TestHost::perf_counter_frequency_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/test_host.h" line="168" column="10" bodyfile="src/test_host.h" bodystart="168" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d6/d80/classTestHost_1afad9b097484782dd3e0ef90f53620128" prot="private" static="no" mutable="no">
+        <type>LARGE_INTEGER</type>
+        <definition>LARGE_INTEGER TestHost::last_frame_time_</definition>
+        <argsstring></argsstring>
+        <name>last_frame_time_</name>
+        <qualifiedname>TestHost::last_frame_time_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/test_host.h" line="169" column="17" bodyfile="src/test_host.h" bodystart="169" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d6/d80/classTestHost_1a44a27292cdcc045d5c57bc016c5d1ed2" prot="private" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t TestHost::current_frame_index_</definition>
+        <argsstring></argsstring>
+        <name>current_frame_index_</name>
+        <qualifiedname>TestHost::current_frame_index_</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/test_host.h" line="170" column="12" bodyfile="src/test_host.h" bodystart="170" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d6/d80/classTestHost_1a6571486c3e0878b1e38f4e93bb6f8e3d" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float TestHost::frame_times_[kFrameTimeWindow]</definition>
+        <argsstring>[kFrameTimeWindow]</argsstring>
+        <name>frame_times_</name>
+        <qualifiedname>TestHost::frame_times_</qualifiedname>
+        <initializer>= {0.f}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/test_host.h" line="171" column="9" bodyfile="src/test_host.h" bodystart="171" bodyend="171"/>
+      </memberdef>
+      <memberdef kind="variable" id="d6/d80/classTestHost_1a147210c9db4e3810e731ae76fe2efcd1" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float TestHost::average_frame_rate_</definition>
+        <argsstring></argsstring>
+        <name>average_frame_rate_</name>
+        <qualifiedname>TestHost::average_frame_rate_</qualifiedname>
+        <initializer>= 0.f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/test_host.h" line="172" column="9" bodyfile="src/test_host.h" bodystart="172" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d6/d80/classTestHost_1ab4f6a6c770f4de723f14ddb0c3803727" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float TestHost::average_mspf_</definition>
+        <argsstring></argsstring>
+        <name>average_mspf_</name>
+        <qualifiedname>TestHost::average_mspf_</qualifiedname>
+        <initializer>= 0.f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/test_host.h" line="173" column="9" bodyfile="src/test_host.h" bodystart="173" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="d6/d80/classTestHost_1a88c5efd5898ec857a5d63a7c772a8a95" prot="private" static="yes" constexpr="yes" mutable="no">
+        <type>auto</type>
+        <definition>auto TestHost::kFrameTimeWindow</definition>
+        <argsstring></argsstring>
+        <name>kFrameTimeWindow</name>
+        <qualifiedname>TestHost::kFrameTimeWindow</qualifiedname>
+        <initializer>= 10</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/test_host.h" line="167" column="25" bodyfile="src/test_host.h" bodystart="167" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="d6/d80/classTestHost_1a56bf99cdd1f9bbdc1dd89b58591455d9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>TestHost::TestHost</definition>
+        <argsstring>(uint32_t framebuffer_width, uint32_t framebuffer_height, uint32_t max_texture_width=256, uint32_t max_texture_height=256, uint32_t max_texture_depth=4)</argsstring>
+        <name>TestHost</name>
+        <qualifiedname>TestHost::TestHost</qualifiedname>
+        <param>
+          <type>uint32_t</type>
+          <declname>framebuffer_width</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>framebuffer_height</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>max_texture_width</declname>
+          <defval>256</defval>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>max_texture_height</declname>
+          <defval>256</defval>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>max_texture_depth</declname>
+          <defval>4</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/test_host.h" line="28" column="3" bodyfile="src/test_host.cpp" bodystart="36" bodyend="43"/>
+      </memberdef>
+      <memberdef kind="function" id="d6/d80/classTestHost_1a7343d98d694323b7e42ca44a70a5e42a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TestHost::PrepareDraw</definition>
+        <argsstring>(uint32_t argb=0xFF000000, uint32_t depth_value=0xFFFFFFFF, uint8_t stencil_value=0x00)</argsstring>
+        <name>PrepareDraw</name>
+        <qualifiedname>TestHost::PrepareDraw</qualifiedname>
+        <param>
+          <type>uint32_t</type>
+          <declname>argb</declname>
+          <defval>0xFF000000</defval>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>depth_value</declname>
+          <defval>0xFFFFFFFF</defval>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>stencil_value</declname>
+          <defval>0x00</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Waits for vblank, clears the framebuffer, and (in sustained mode) marks the start of the frame&apos;s timed region. Hides NV2AState::PrepareDraw so that all tests get sustained-mode timing without modification. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/test_host.h" line="36" column="8" bodyfile="src/test_host.cpp" bodystart="70" bodyend="78"/>
+      </memberdef>
+      <memberdef kind="function" id="d6/d80/classTestHost_1ad4dde48e4a1c7ac6c5477aeff87052a3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TestHost::FinishDraw</definition>
+        <argsstring>(const std::string &amp;suite_name, const std::string &amp;test_name, const ProfileResults &amp;results)</argsstring>
+        <name>FinishDraw</name>
+        <qualifiedname>TestHost::FinishDraw</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>suite_name</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>test_name</declname>
+        </param>
+        <param>
+          <type>const <ref refid="d1/dc6/structTestHost_1_1ProfileResults" kindref="compound">ProfileResults</ref> &amp;</type>
+          <declname>results</declname>
+        </param>
+        <briefdescription>
+<para>Renders test results and swaps back buffer. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/test_host.h" line="39" column="8" bodyfile="src/test_host.cpp" bodystart="80" bodyend="161"/>
+      </memberdef>
+      <memberdef kind="function" id="d6/d80/classTestHost_1aa87ceadc4fd108e9bf2997d6d42502a1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TestHost::FinishDrawWithoutPresent</definition>
+        <argsstring>()</argsstring>
+        <name>FinishDrawWithoutPresent</name>
+        <qualifiedname>TestHost::FinishDrawWithoutPresent</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Waits for the GPU to finish the frame&apos;s work without presenting it, leaving the displayed image unchanged. In sustained mode the frame is timed like any other. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/test_host.h" line="43" column="8" bodyfile="src/test_host.cpp" bodystart="260" bodyend="267"/>
+      </memberdef>
+      <memberdef kind="function" id="d6/d80/classTestHost_1aa6714120bb93a3c81585a0e223e6c210" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void TestHost::SkipRecordingCurrentFrame</definition>
+        <argsstring>()</argsstring>
+        <name>SkipRecordingCurrentFrame</name>
+        <qualifiedname>TestHost::SkipRecordingCurrentFrame</qualifiedname>
+        <briefdescription>
+<para>Excludes the current sustained-mode frame from the recorded results. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/test_host.h" line="46" column="8" bodyfile="src/test_host.h" bodystart="46" bodyend="46"/>
+      </memberdef>
+      <memberdef kind="function" id="d6/d80/classTestHost_1a7f054a648c0f5f8b985a23bac20cd3b6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TestHost::SetupFixedFunctionPassthrough</definition>
+        <argsstring>()</argsstring>
+        <name>SetupFixedFunctionPassthrough</name>
+        <qualifiedname>TestHost::SetupFixedFunctionPassthrough</qualifiedname>
+        <briefdescription>
+<para>Sets up the projection matrix for passthrough operation / direct addressing of pixels. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/test_host.h" line="52" column="8" bodyfile="src/test_host.cpp" bodystart="163" bodyend="173"/>
+      </memberdef>
+      <memberdef kind="function" id="d6/d80/classTestHost_1a2413d6bea509877c02bf550a68dba3a1" prot="public" static="no" nodiscard="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool TestHost::GetSaveResults</definition>
+        <argsstring>() const</argsstring>
+        <name>GetSaveResults</name>
+        <qualifiedname>TestHost::GetSaveResults</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/test_host.h" line="54" column="9" bodyfile="src/test_host.h" bodystart="54" bodyend="54"/>
+      </memberdef>
+      <memberdef kind="function" id="d6/d80/classTestHost_1a93e74f05fb04b7222a5ccdd9967d25ec" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void TestHost::SetSaveResults</definition>
+        <argsstring>(bool enable=true)</argsstring>
+        <name>SetSaveResults</name>
+        <qualifiedname>TestHost::SetSaveResults</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>enable</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/test_host.h" line="55" column="8" bodyfile="src/test_host.h" bodystart="55" bodyend="55"/>
+      </memberdef>
+      <memberdef kind="function" id="d6/d80/classTestHost_1ab430ced08ee958dc583212e1aaeb699f" prot="public" static="no" nodiscard="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const double &amp;</type>
+        <definition>const double &amp; TestHost::GetPerformanceCounterFrequency</definition>
+        <argsstring>() const</argsstring>
+        <name>GetPerformanceCounterFrequency</name>
+        <qualifiedname>TestHost::GetPerformanceCounterFrequency</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/test_host.h" line="57" column="17" bodyfile="src/test_host.h" bodystart="57" bodyend="57"/>
+      </memberdef>
+      <memberdef kind="function" id="d6/d80/classTestHost_1a43bdc7a2f49d32c9bb1912a0e3e24d7d" prot="public" static="no" nodiscard="yes" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>uint32_t TestHost::GetMicrosecondsSince</definition>
+        <argsstring>(const LARGE_INTEGER &amp;previous) const</argsstring>
+        <name>GetMicrosecondsSince</name>
+        <qualifiedname>TestHost::GetMicrosecondsSince</qualifiedname>
+        <param>
+          <type>const LARGE_INTEGER &amp;</type>
+          <declname>previous</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/test_host.h" line="58" column="13" bodyfile="src/test_host.cpp" bodystart="189" bodyend="196"/>
+      </memberdef>
+      <memberdef kind="function" id="d6/d80/classTestHost_1ad703bef00b7925829da252259859feaa" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void TestHost::PreTest</definition>
+        <argsstring>()</argsstring>
+        <name>PreTest</name>
+        <qualifiedname>TestHost::PreTest</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/test_host.h" line="60" column="8" bodyfile="src/test_host.h" bodystart="60" bodyend="65"/>
+      </memberdef>
+      <memberdef kind="function" id="d6/d80/classTestHost_1a314c6e57b9935260658ffec6fef90b27" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TestHost::BeginSustainedCapture</definition>
+        <argsstring>(uint32_t expected_frames)</argsstring>
+        <name>BeginSustainedCapture</name>
+        <qualifiedname>TestHost::BeginSustainedCapture</qualifiedname>
+        <param>
+          <type>uint32_t</type>
+          <declname>expected_frames</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Begins collecting per-frame timing for a sustained (multi-frame, non-interactive) run. While active, FinishDraw skips the results overlay and records timing for each frame. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/test_host.h" line="69" column="8" bodyfile="src/test_host.cpp" bodystart="247" bodyend="258"/>
+      </memberdef>
+      <memberdef kind="function" id="d6/d80/classTestHost_1a3e151a1e6226d17e7e45e1c536453053" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TestHost::BeginSustainedFrame</definition>
+        <argsstring>()</argsstring>
+        <name>BeginSustainedFrame</name>
+        <qualifiedname>TestHost::BeginSustainedFrame</qualifiedname>
+        <briefdescription>
+<para>Marks the start of a frame in sustained mode. Must be called before the test body issues any work. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/test_host.h" line="72" column="8" bodyfile="src/test_host.cpp" bodystart="274" bodyend="278"/>
+      </memberdef>
+      <memberdef kind="function" id="d6/d80/classTestHost_1a0ac647ffe8ff956276908a822c1b77ec" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void TestHost::SetSustainedRecording</definition>
+        <argsstring>(bool enable)</argsstring>
+        <name>SetSustainedRecording</name>
+        <qualifiedname>TestHost::SetSustainedRecording</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>enable</declname>
+        </param>
+        <briefdescription>
+<para>Enables/disables recording of frames passed to FinishDraw (used to discard warmup frames). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/test_host.h" line="75" column="8" bodyfile="src/test_host.h" bodystart="75" bodyend="75"/>
+      </memberdef>
+      <memberdef kind="function" id="d6/d80/classTestHost_1a763eb9c3f46b8f9b2a87fb23384630fe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="d3/d3d/structTestHost_1_1SustainedSummary" kindref="compound">SustainedSummary</ref></type>
+        <definition>TestHost::SustainedSummary TestHost::EndSustainedCapture</definition>
+        <argsstring>(const std::string &amp;suite_name, const std::string &amp;test_name, uint32_t load, bool aborted)</argsstring>
+        <name>EndSustainedCapture</name>
+        <qualifiedname>TestHost::EndSustainedCapture</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>suite_name</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>test_name</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>load</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>aborted</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Ends sustained capture and returns a summary of it. The recorded frames are kept until the next capture begins, so they may be logged with <ref refid="d6/d80/classTestHost_1a55f1d8161deee38aabaf300b27d0e8a9" kindref="member">LogSustainedCapture()</ref>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/test_host.h" line="93" column="20" bodyfile="src/test_host.cpp" bodystart="379" bodyend="414"/>
+      </memberdef>
+      <memberdef kind="function" id="d6/d80/classTestHost_1a55f1d8161deee38aabaf300b27d0e8a9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TestHost::LogSustainedCapture</definition>
+        <argsstring>(const std::string &amp;suite_name, const std::string &amp;test_name, uint32_t load, uint32_t warmup_frames, const char *calibration_label=nullptr)</argsstring>
+        <name>LogSustainedCapture</name>
+        <qualifiedname>TestHost::LogSustainedCapture</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>suite_name</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>test_name</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>load</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>warmup_frames</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>calibration_label</declname>
+          <defval>nullptr</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Writes a results record for the most recently ended capture. If <computeroutput>calibration_label</computeroutput> is not null it is recorded as the record&apos;s &quot;calibration&quot; field. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/test_host.h" line="98" column="8" bodyfile="src/test_host.cpp" bodystart="416" bodyend="462"/>
+      </memberdef>
+      <memberdef kind="function" id="d6/d80/classTestHost_1a614545db63ad8315251682966f83c2c0" prot="public" static="no" nodiscard="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>uint32_t TestHost::GetLastSustainedFrameBusyUs</definition>
+        <argsstring>() const</argsstring>
+        <name>GetLastSustainedFrameBusyUs</name>
+        <qualifiedname>TestHost::GetLastSustainedFrameBusyUs</qualifiedname>
+        <briefdescription>
+<para>Returns the busy time of the most recently finished sustained frame, whether or not it was recorded. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/test_host.h" line="102" column="13" bodyfile="src/test_host.h" bodystart="102" bodyend="102"/>
+      </memberdef>
+      <memberdef kind="function" id="d6/d80/classTestHost_1a3648bbe8f3a6774809c8ed484318474f" prot="public" static="no" nodiscard="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool TestHost::IsSustainedCaptureActive</definition>
+        <argsstring>() const</argsstring>
+        <name>IsSustainedCaptureActive</name>
+        <qualifiedname>TestHost::IsSustainedCaptureActive</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/test_host.h" line="104" column="9" bodyfile="src/test_host.h" bodystart="104" bodyend="104"/>
+      </memberdef>
+      <memberdef kind="function" id="d6/d80/classTestHost_1ac192b19e6ded9e20da1e83cb949fd709" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool TestHost::WaitForGPUIdle</definition>
+        <argsstring>()</argsstring>
+        <name>WaitForGPUIdle</name>
+        <qualifiedname>TestHost::WaitForGPUIdle</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Blocks until the GPU has finished all work submitted so far.</para>
+<para>Pushes a NV097_BACK_END_WRITE_SEMAPHORE_RELEASE and spins on the RAM value the GPU writes, rather than polling GPU registers via pb_busy(). Under xemu each register read is an MMIO access that contends for the same locks the benchmarks are trying to measure, so polling would perturb the results.</para>
+<para>Returns false if the fence timed out, in which case this falls back to pb_busy(). </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/test_host.h" line="113" column="8" bodyfile="src/test_host.cpp" bodystart="219" bodyend="245"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="d6/d80/classTestHost_1a24b83c50f1d0b792c2089b41903d580e" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TestHost::EnsureFolderExists</definition>
+        <argsstring>(const std::string &amp;folder_path)</argsstring>
+        <name>EnsureFolderExists</name>
+        <qualifiedname>TestHost::EnsureFolderExists</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>folder_path</declname>
+        </param>
+        <briefdescription>
+<para>Creates the given directory if it does not already exist. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/test_host.h" line="32" column="15" bodyfile="src/test_host.cpp" bodystart="45" bodyend="68"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="d6/d80/classTestHost_1ad699e547ded91c631507d8ae7b203b9c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TestHost::FinishSustainedFrame</definition>
+        <argsstring>(bool present)</argsstring>
+        <name>FinishSustainedFrame</name>
+        <qualifiedname>TestHost::FinishSustainedFrame</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>present</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/test_host.h" line="116" column="8" bodyfile="src/test_host.cpp" bodystart="280" bodyend="334"/>
+      </memberdef>
+      <memberdef kind="function" id="d6/d80/classTestHost_1adea906d17deb5da55557511d297803e9" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TestHost::StampSustainedFrameStart</definition>
+        <argsstring>()</argsstring>
+        <name>StampSustainedFrameStart</name>
+        <qualifiedname>TestHost::StampSustainedFrameStart</qualifiedname>
+        <briefdescription>
+<para>Marks the start of the current frame&apos;s timed region. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/test_host.h" line="119" column="8" bodyfile="src/test_host.cpp" bodystart="269" bodyend="272"/>
+      </memberdef>
+      <memberdef kind="function" id="d6/d80/classTestHost_1a9d9ef9dd1fa65b41b2ce581a295bc088" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TestHost::EnsureSemaphoreInitialized</definition>
+        <argsstring>()</argsstring>
+        <name>EnsureSemaphoreInitialized</name>
+        <qualifiedname>TestHost::EnsureSemaphoreInitialized</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/test_host.h" line="120" column="8" bodyfile="src/test_host.cpp" bodystart="198" bodyend="217"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Provides utility methods for use by <ref refid="d2/d3e/classTestSuite" kindref="compound">TestSuite</ref> subclasses. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>PBKitPlusPlus::NV2AState</label>
+      </node>
+      <node id="1">
+        <label>TestHost</label>
+        <link refid="d6/d80/classTestHost"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>PBKitPlusPlus::NV2AState</label>
+      </node>
+      <node id="1">
+        <label>TestHost</label>
+        <link refid="d6/d80/classTestHost"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="src/test_host.h" line="16" column="1" bodyfile="src/test_host.h" bodystart="16" bodyend="174"/>
+    <listofallmembers>
+      <member refid="d6/d80/classTestHost_1a147210c9db4e3810e731ae76fe2efcd1" prot="private" virt="non-virtual"><scope>TestHost</scope><name>average_frame_rate_</name></member>
+      <member refid="d6/d80/classTestHost_1ab4f6a6c770f4de723f14ddb0c3803727" prot="private" virt="non-virtual"><scope>TestHost</scope><name>average_mspf_</name></member>
+      <member refid="d6/d80/classTestHost_1a314c6e57b9935260658ffec6fef90b27" prot="public" virt="non-virtual"><scope>TestHost</scope><name>BeginSustainedCapture</name></member>
+      <member refid="d6/d80/classTestHost_1a3e151a1e6226d17e7e45e1c536453053" prot="public" virt="non-virtual"><scope>TestHost</scope><name>BeginSustainedFrame</name></member>
+      <member refid="d6/d80/classTestHost_1a44a27292cdcc045d5c57bc016c5d1ed2" prot="private" virt="non-virtual"><scope>TestHost</scope><name>current_frame_index_</name></member>
+      <member refid="d6/d80/classTestHost_1a763eb9c3f46b8f9b2a87fb23384630fe" prot="public" virt="non-virtual"><scope>TestHost</scope><name>EndSustainedCapture</name></member>
+      <member refid="d6/d80/classTestHost_1a24b83c50f1d0b792c2089b41903d580e" prot="public" virt="non-virtual"><scope>TestHost</scope><name>EnsureFolderExists</name></member>
+      <member refid="d6/d80/classTestHost_1a9d9ef9dd1fa65b41b2ce581a295bc088" prot="private" virt="non-virtual"><scope>TestHost</scope><name>EnsureSemaphoreInitialized</name></member>
+      <member refid="d6/d80/classTestHost_1ad4dde48e4a1c7ac6c5477aeff87052a3" prot="public" virt="non-virtual"><scope>TestHost</scope><name>FinishDraw</name></member>
+      <member refid="d6/d80/classTestHost_1aa87ceadc4fd108e9bf2997d6d42502a1" prot="public" virt="non-virtual"><scope>TestHost</scope><name>FinishDrawWithoutPresent</name></member>
+      <member refid="d6/d80/classTestHost_1ad699e547ded91c631507d8ae7b203b9c" prot="private" virt="non-virtual"><scope>TestHost</scope><name>FinishSustainedFrame</name></member>
+      <member refid="d6/d80/classTestHost_1a6571486c3e0878b1e38f4e93bb6f8e3d" prot="private" virt="non-virtual"><scope>TestHost</scope><name>frame_times_</name></member>
+      <member refid="d6/d80/classTestHost_1a614545db63ad8315251682966f83c2c0" prot="public" virt="non-virtual"><scope>TestHost</scope><name>GetLastSustainedFrameBusyUs</name></member>
+      <member refid="d6/d80/classTestHost_1a43bdc7a2f49d32c9bb1912a0e3e24d7d" prot="public" virt="non-virtual"><scope>TestHost</scope><name>GetMicrosecondsSince</name></member>
+      <member refid="d6/d80/classTestHost_1ab430ced08ee958dc583212e1aaeb699f" prot="public" virt="non-virtual"><scope>TestHost</scope><name>GetPerformanceCounterFrequency</name></member>
+      <member refid="d6/d80/classTestHost_1a2413d6bea509877c02bf550a68dba3a1" prot="public" virt="non-virtual"><scope>TestHost</scope><name>GetSaveResults</name></member>
+      <member refid="d6/d80/classTestHost_1a3648bbe8f3a6774809c8ed484318474f" prot="public" virt="non-virtual"><scope>TestHost</scope><name>IsSustainedCaptureActive</name></member>
+      <member refid="d6/d80/classTestHost_1a45afd08c65c3e4acd06a4ed18c5f6b72" prot="public" virt="non-virtual"><scope>TestHost</scope><name>kFirstTestContextChannel</name></member>
+      <member refid="d6/d80/classTestHost_1a88c5efd5898ec857a5d63a7c772a8a95" prot="private" virt="non-virtual"><scope>TestHost</scope><name>kFrameTimeWindow</name></member>
+      <member refid="d6/d80/classTestHost_1afad9b097484782dd3e0ef90f53620128" prot="private" virt="non-virtual"><scope>TestHost</scope><name>last_frame_time_</name></member>
+      <member refid="d6/d80/classTestHost_1a55f1d8161deee38aabaf300b27d0e8a9" prot="public" virt="non-virtual"><scope>TestHost</scope><name>LogSustainedCapture</name></member>
+      <member refid="d6/d80/classTestHost_1a49b77cb96f34662d1a1f25fb872e277a" prot="private" virt="non-virtual"><scope>TestHost</scope><name>perf_counter_frequency_</name></member>
+      <member refid="d6/d80/classTestHost_1a7343d98d694323b7e42ca44a70a5e42a" prot="public" virt="non-virtual"><scope>TestHost</scope><name>PrepareDraw</name></member>
+      <member refid="d6/d80/classTestHost_1ad703bef00b7925829da252259859feaa" prot="public" virt="non-virtual"><scope>TestHost</scope><name>PreTest</name></member>
+      <member refid="d6/d80/classTestHost_1ac1164ad632c1c8a050f38d0defb72ba4" prot="private" virt="non-virtual"><scope>TestHost</scope><name>save_results_</name></member>
+      <member refid="d6/d80/classTestHost_1a383e9afe51d5a2378e7b18534f264806" prot="private" virt="non-virtual"><scope>TestHost</scope><name>semaphore_memory_</name></member>
+      <member refid="d6/d80/classTestHost_1af40b52550a6ae058de7a9b2449b804e6" prot="private" virt="non-virtual"><scope>TestHost</scope><name>semaphore_value_</name></member>
+      <member refid="d6/d80/classTestHost_1a93e74f05fb04b7222a5ccdd9967d25ec" prot="public" virt="non-virtual"><scope>TestHost</scope><name>SetSaveResults</name></member>
+      <member refid="d6/d80/classTestHost_1a0ac647ffe8ff956276908a822c1b77ec" prot="public" virt="non-virtual"><scope>TestHost</scope><name>SetSustainedRecording</name></member>
+      <member refid="d6/d80/classTestHost_1a7f054a648c0f5f8b985a23bac20cd3b6" prot="public" virt="non-virtual"><scope>TestHost</scope><name>SetupFixedFunctionPassthrough</name></member>
+      <member refid="d6/d80/classTestHost_1aa6714120bb93a3c81585a0e223e6c210" prot="public" virt="non-virtual"><scope>TestHost</scope><name>SkipRecordingCurrentFrame</name></member>
+      <member refid="d6/d80/classTestHost_1adea906d17deb5da55557511d297803e9" prot="private" virt="non-virtual"><scope>TestHost</scope><name>StampSustainedFrameStart</name></member>
+      <member refid="d6/d80/classTestHost_1aaa26ea25bc1b01c6fa747975a73cad2d" prot="private" virt="non-virtual"><scope>TestHost</scope><name>sustained_aborted_</name></member>
+      <member refid="d6/d80/classTestHost_1a13d5414fa77fd7602bd8c07b4fdd068d" prot="private" virt="non-virtual"><scope>TestHost</scope><name>sustained_active_</name></member>
+      <member refid="d6/d80/classTestHost_1aebc1017d135d062898a56696cf1a30b0" prot="private" virt="non-virtual"><scope>TestHost</scope><name>sustained_awaiting_prepare_</name></member>
+      <member refid="d6/d80/classTestHost_1a51b076b966c013b1f1452d4bfa51d5dc" prot="private" virt="non-virtual"><scope>TestHost</scope><name>sustained_fence_timeouts_</name></member>
+      <member refid="d6/d80/classTestHost_1a2b975896d2e18d028b4d4abd6d1ba119" prot="private" virt="non-virtual"><scope>TestHost</scope><name>sustained_frame_start_</name></member>
+      <member refid="d6/d80/classTestHost_1a1628541bebcf86f3566985d3d0d83c39" prot="private" virt="non-virtual"><scope>TestHost</scope><name>sustained_frame_start_resets_</name></member>
+      <member refid="d6/d80/classTestHost_1a1c32841c3ccbaaff6b1be4ef0013610e" prot="private" virt="non-virtual"><scope>TestHost</scope><name>sustained_frames_</name></member>
+      <member refid="d6/d80/classTestHost_1a65236810d469126e0ee86fb705cec699" prot="private" virt="non-virtual"><scope>TestHost</scope><name>sustained_last_busy_us_</name></member>
+      <member refid="d6/d80/classTestHost_1a0ba285d8183eb5f923e8ff73cdc75a20" prot="private" virt="non-virtual"><scope>TestHost</scope><name>sustained_last_recorded_end_</name></member>
+      <member refid="d6/d80/classTestHost_1a02bc3321c2017f67af65c7e8431ea3ee" prot="private" virt="non-virtual"><scope>TestHost</scope><name>sustained_last_vbl_</name></member>
+      <member refid="d6/d80/classTestHost_1a6289be7072b04e1120f6bcba378632f9" prot="private" virt="non-virtual"><scope>TestHost</scope><name>sustained_recording_</name></member>
+      <member refid="d6/d80/classTestHost_1a8423a1147269ecc82f844e6315e64c89" prot="private" virt="non-virtual"><scope>TestHost</scope><name>sustained_skip_current_frame_</name></member>
+      <member refid="d6/d80/classTestHost_1a61321a186302961d8d8805c8db01bde8" prot="private" virt="non-virtual"><scope>TestHost</scope><name>sustained_skipped_missed_vblanks_</name></member>
+      <member refid="d6/d80/classTestHost_1a4c4c730f09ae01f844117da2a2a67898" prot="private" virt="non-virtual"><scope>TestHost</scope><name>sustained_summary_</name></member>
+      <member refid="d6/d80/classTestHost_1a56bf99cdd1f9bbdc1dd89b58591455d9" prot="public" virt="non-virtual"><scope>TestHost</scope><name>TestHost</name></member>
+      <member refid="d6/d80/classTestHost_1ac192b19e6ded9e20da1e83cb949fd709" prot="public" virt="non-virtual"><scope>TestHost</scope><name>WaitForGPUIdle</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

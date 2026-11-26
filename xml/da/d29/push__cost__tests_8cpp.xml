@@ -1,0 +1,435 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="da/d29/push__cost__tests_8cpp" kind="file" language="C++">
+    <compoundname>push_cost_tests.cpp</compoundname>
+    <includes refid="d8/d34/push__cost__tests_8h" local="yes">push_cost_tests.h</includes>
+    <includes local="no">pbkit/pbkit.h</includes>
+    <includes local="no">algorithm</includes>
+    <includes local="yes">pushbuffer.h</includes>
+    <includes refid="df/d43/test__host_8h" local="yes">test_host.h</includes>
+    <incdepgraph>
+      <node id="11">
+        <label>test_host.h</label>
+        <link refid="df/d43/test__host_8h_source"/>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>src/tests/push_cost_tests.cpp</label>
+        <link refid="da/d29/push__cost__tests_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>push_cost_tests.h</label>
+        <link refid="d8/d34/push__cost__tests_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>test_suite.h</label>
+        <link refid="d6/d7a/test__suite_8h_source"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>algorithm</label>
+      </node>
+      <node id="6">
+        <label>chrono</label>
+      </node>
+      <node id="13">
+        <label>cstdint</label>
+      </node>
+      <node id="7">
+        <label>functional</label>
+      </node>
+      <node id="8">
+        <label>map</label>
+      </node>
+      <node id="3">
+        <label>memory</label>
+      </node>
+      <node id="14">
+        <label>nv2astate.h</label>
+      </node>
+      <node id="12">
+        <label>pbkit/pbkit.h</label>
+      </node>
+      <node id="15">
+        <label>pushbuffer.h</label>
+      </node>
+      <node id="9">
+        <label>set</label>
+      </node>
+      <node id="4">
+        <label>string</label>
+      </node>
+      <node id="10">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <sectiondef kind="var">
+      <memberdef kind="variable" id="da/d29/push__cost__tests_8cpp_1a3886ebf9665e87516d892fa67fe2a22d" prot="public" static="yes" constexpr="yes" mutable="no">
+        <type>char</type>
+        <definition>char kRamWriteTest[]</definition>
+        <argsstring>[]</argsstring>
+        <name>kRamWriteTest</name>
+        <initializer>= &quot;RamWrite&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tests/push_cost_tests.cpp" line="12" column="23" bodyfile="src/tests/push_cost_tests.cpp" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="da/d29/push__cost__tests_8cpp_1aa808c6697cea9aad4c4176fb03c8e55c" prot="public" static="yes" constexpr="yes" mutable="no">
+        <type>char</type>
+        <definition>char kPushbufferWriteTest[]</definition>
+        <argsstring>[]</argsstring>
+        <name>kPushbufferWriteTest</name>
+        <initializer>= &quot;PushbufferWrite&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tests/push_cost_tests.cpp" line="13" column="23" bodyfile="src/tests/push_cost_tests.cpp" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="da/d29/push__cost__tests_8cpp_1a9da99fb752370037d3aa9b0838aac1dc" prot="public" static="yes" constexpr="yes" mutable="no">
+        <type>char</type>
+        <definition>char kPushbufferSubmitTest[]</definition>
+        <argsstring>[]</argsstring>
+        <name>kPushbufferSubmitTest</name>
+        <initializer>= &quot;PushbufferSubmit&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tests/push_cost_tests.cpp" line="14" column="23" bodyfile="src/tests/push_cost_tests.cpp" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="da/d29/push__cost__tests_8cpp_1aba225cce79c2f34c5456ba9599ec6af0" prot="public" static="yes" constexpr="yes" mutable="no">
+        <type>char</type>
+        <definition>char kPushbufferAPITest[]</definition>
+        <argsstring>[]</argsstring>
+        <name>kPushbufferAPITest</name>
+        <initializer>= &quot;PushbufferAPI&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tests/push_cost_tests.cpp" line="15" column="23" bodyfile="src/tests/push_cost_tests.cpp" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="da/d29/push__cost__tests_8cpp_1a4a153d4f1f3903688d0c90ec90bc185b" prot="public" static="yes" constexpr="yes" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t kIterations</definition>
+        <argsstring></argsstring>
+        <name>kIterations</name>
+        <initializer>= 10</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tests/push_cost_tests.cpp" line="17" column="27" bodyfile="src/tests/push_cost_tests.cpp" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="da/d29/push__cost__tests_8cpp_1aea96f4c73dc980002b3fd9f0c98fccd3" prot="public" static="yes" constexpr="yes" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t kDefaultDwords</definition>
+        <argsstring></argsstring>
+        <name>kDefaultDwords</name>
+        <initializer>= 200 * 1024</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tests/push_cost_tests.cpp" line="20" column="27" bodyfile="src/tests/push_cost_tests.cpp" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="da/d29/push__cost__tests_8cpp_1a8ef96f11df0bd4774a7956235c2edd1d" prot="public" static="yes" constexpr="yes" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t kWindowDwords</definition>
+        <argsstring></argsstring>
+        <name>kWindowDwords</name>
+        <initializer>= 64 * 1024</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tests/push_cost_tests.cpp" line="24" column="27" bodyfile="src/tests/push_cost_tests.cpp" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="da/d29/push__cost__tests_8cpp_1a4bfa0a3709cfe1a123b9bbacf57bf975" prot="public" static="yes" constexpr="yes" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t kSubmitIntervalDwords</definition>
+        <argsstring></argsstring>
+        <name>kSubmitIntervalDwords</name>
+        <initializer>= Pushbuffer::kDefaultSubmitIntervalDwords</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tests/push_cost_tests.cpp" line="27" column="27" bodyfile="src/tests/push_cost_tests.cpp" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="da/d29/push__cost__tests_8cpp_1a54c7b5d0437ad54b019fc120d15e6fa5" prot="public" static="yes" constexpr="yes" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t kNopHeader</definition>
+        <argsstring></argsstring>
+        <name>kNopHeader</name>
+        <initializer>= (1 &lt;&lt; 18) | (SUBCH_3D &lt;&lt; 13) | NV097_NO_OPERATION</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tests/push_cost_tests.cpp" line="30" column="27" bodyfile="src/tests/push_cost_tests.cpp" bodystart="30" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="da/d29/push__cost__tests_8cpp_1aedc2556d67843948b1c6aff366187dbe" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>static uint32_t MethodDwords</definition>
+        <argsstring>(uint32_t load)</argsstring>
+        <name>MethodDwords</name>
+        <param>
+          <type>uint32_t</type>
+          <declname>load</declname>
+        </param>
+        <briefdescription>
+<para>Returns the number of DWORDs a test should write: its load, rounded down to a whole number of 2-DWORD methods. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tests/push_cost_tests.cpp" line="33" column="17" bodyfile="src/tests/push_cost_tests.cpp" bodystart="33" bodyend="33"/>
+      </memberdef>
+      <memberdef kind="function" id="da/d29/push__cost__tests_8cpp_1a5f2901f3d3d44ff13c6bfc1f4b13be01" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void WriteNops</definition>
+        <argsstring>(volatile uint32_t *dest, uint32_t num_dwords, uint32_t window_dwords)</argsstring>
+        <name>WriteNops</name>
+        <param>
+          <type>volatile uint32_t *</type>
+          <declname>dest</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>num_dwords</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>window_dwords</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Writes <computeroutput>num_dwords</computeroutput> (which must be even) DWORDs of NOP methods to <computeroutput>dest</computeroutput>, wrapping around a window of <computeroutput>window_dwords</computeroutput>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tests/push_cost_tests.cpp" line="37" column="13" bodyfile="src/tests/push_cost_tests.cpp" bodystart="37" bodyend="47"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;push_cost_tests.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;pbkit/pbkit.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;algorithm&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;pushbuffer.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;test_host.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal">PBKitPlusPlus;</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>kRamWriteTest[]<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;RamWrite&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>kPushbufferWriteTest[]<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;PushbufferWrite&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>kPushbufferSubmitTest[]<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;PushbufferSubmit&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>kPushbufferAPITest[]<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;PushbufferAPI&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/>uint32_t<sp/>kIterations<sp/>=<sp/>10;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Roughly<sp/>the<sp/>number<sp/>of<sp/>DWORDs<sp/>that<sp/>PfifoContention::Control<sp/>pushes<sp/>per<sp/>frame<sp/>at<sp/>its<sp/>calibrated<sp/>load.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/>uint32_t<sp/>kDefaultDwords<sp/>=<sp/>200<sp/>*<sp/>1024;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Writes<sp/>that<sp/>are<sp/>never<sp/>submitted<sp/>cycle<sp/>through<sp/>a<sp/>window<sp/>this<sp/>many<sp/>DWORDs<sp/>long.<sp/>It<sp/>fits<sp/>in<sp/>the<sp/>pushbuffer<sp/>and<sp/>is<sp/>larger</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="comment">//<sp/>than<sp/>the<sp/>CPU&apos;s<sp/>L2<sp/>cache.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/>uint32_t<sp/>kWindowDwords<sp/>=<sp/>64<sp/>*<sp/>1024;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="comment">//<sp/>PushbufferSubmit<sp/>submits<sp/>every<sp/>this<sp/>many<sp/>DWORDs,<sp/>matching<sp/>Pushbuffer::kDefaultSubmitIntervalDwords.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/>uint32_t<sp/>kSubmitIntervalDwords<sp/>=<sp/>Pushbuffer::kDefaultSubmitIntervalDwords;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Header<sp/>of<sp/>a<sp/>single-parameter<sp/>NV097_NO_OPERATION<sp/>method<sp/>on<sp/>the<sp/>3D<sp/>subchannel.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/>uint32_t<sp/>kNopHeader<sp/>=<sp/>(1<sp/>&lt;&lt;<sp/>18)<sp/>|<sp/>(SUBCH_3D<sp/>&lt;&lt;<sp/>13)<sp/>|<sp/>NV097_NO_OPERATION;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>uint32_t<sp/>MethodDwords(uint32_t<sp/>load)<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>load<sp/>&amp;<sp/>~1u;<sp/>}</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>WriteNops(</highlight><highlight class="keyword">volatile</highlight><highlight class="normal"><sp/>uint32_t<sp/>*dest,<sp/>uint32_t<sp/>num_dwords,<sp/>uint32_t<sp/>window_dwords)<sp/>{</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/>uint32_t<sp/>offset<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(uint32_t<sp/>methods<sp/>=<sp/>num_dwords<sp/>/<sp/>2;<sp/>methods;<sp/>--methods)<sp/>{</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/>dest[offset]<sp/>=<sp/>kNopHeader;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/>dest[offset<sp/>+<sp/>1]<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>offset<sp/>+=<sp/>2;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(offset<sp/>&gt;=<sp/>window_dwords)<sp/>{</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>offset<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="47"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal">PushCostTests::PushCostTests(<ref refid="d6/d80/classTestHost" kindref="compound">TestHost</ref><sp/>&amp;host,<sp/>std::string<sp/>output_dir,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Config<sp/>&amp;config)</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/><ref refid="d2/d3e/classTestSuite" kindref="compound">TestSuite</ref>(host,<sp/>std::move(output_dir),<sp/></highlight><highlight class="stringliteral">&quot;PushCost&quot;</highlight><highlight class="normal">,<sp/>config)<sp/>{</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/>tests_[kRamWriteTest]<sp/>=<sp/>[</highlight><highlight class="keyword">this</highlight><highlight class="normal">]()<sp/>{<sp/>TestRamWrite();<sp/>};</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/>tests_[kPushbufferWriteTest]<sp/>=<sp/>[</highlight><highlight class="keyword">this</highlight><highlight class="normal">]()<sp/>{<sp/>TestPushbufferWrite();<sp/>};</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/>tests_[kPushbufferSubmitTest]<sp/>=<sp/>[</highlight><highlight class="keyword">this</highlight><highlight class="normal">]()<sp/>{<sp/>TestPushbufferSubmit();<sp/>};</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/>tests_[kPushbufferAPITest]<sp/>=<sp/>[</highlight><highlight class="keyword">this</highlight><highlight class="normal">]()<sp/>{<sp/>TestPushbufferAPI();<sp/>};</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>The<sp/>tests<sp/>are<sp/>compared<sp/>with<sp/>each<sp/>other<sp/>at<sp/>equal<sp/>loads,<sp/>so<sp/>calibrating<sp/>each<sp/>to<sp/>the<sp/>frame<sp/>budget<sp/>would<sp/>defeat<sp/>them.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>&amp;[name,<sp/>_]<sp/>:<sp/>tests_)<sp/>{</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/>uncalibrated_tests_.insert(name);</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="60"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d3/d38/classPushCostTests_1a03bdf31b5ecbe9bcccf86e744fbc89f7" kindref="member">PushCostTests::Initialize</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><ref refid="d2/d3e/classTestSuite_1a1c4756eb905d6d4d35e1630107396c38" kindref="member">TestSuite::Initialize</ref>();</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/>ram_buffer_<sp/>=<sp/>std::make_unique&lt;uint32_t[]&gt;(kWindowDwords);</highlight></codeline>
+<codeline lineno="87"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d3/d38/classPushCostTests_1a837ea69f71a5f5db5ba0b7997d9f3c1b" kindref="member">PushCostTests::Deinitialize</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/>ram_buffer_.reset();</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><ref refid="d2/d3e/classTestSuite_1a137c1c57f8ad999bd78a8f7f8f2cf69e" kindref="member">TestSuite::Deinitialize</ref>();</highlight></codeline>
+<codeline lineno="92"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>PushCostTests::RunFrame(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*test_name,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::function&lt;</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">()&gt;<sp/>&amp;body)<sp/>{</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/>host_.SetVertexShaderProgram(</highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/>host_.SetupFixedFunctionPassthrough();</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/>host_.PrepareDraw(0xFF222222);</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Start<sp/>from<sp/>an<sp/>empty<sp/>pushbuffer<sp/>so<sp/>every<sp/>test<sp/>performs<sp/>its<sp/>resets<sp/>at<sp/>the<sp/>same<sp/>points.<sp/>This<sp/>is<sp/>inside<sp/>the<sp/>measured</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>frame,<sp/>but<sp/>it<sp/>is<sp/>the<sp/>same<sp/>for<sp/>every<sp/>test,<sp/>its<sp/>wait<sp/>(for<sp/>the<sp/>clear)<sp/>is<sp/>reported<sp/>in<sp/>reset_wait_us,<sp/>and<sp/>it<sp/>is<sp/>short.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/>Pushbuffer::Flush();</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>results<sp/>=<sp/><ref refid="d2/d3e/classTestSuite_1ac50b006a0a46396cde6073c3e569bde7" kindref="member">Profile</ref>(test_name,<sp/>kIterations,<sp/>body);</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/>host_.FinishDraw(suite_name_,<sp/>test_name,<sp/>results);</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>PushbufferWrite<sp/>and<sp/>PushbufferSubmit<sp/>write<sp/>to<sp/>the<sp/>pushbuffer<sp/>behind<sp/>Pushbuffer&apos;s<sp/>back,<sp/>so<sp/>it<sp/>no<sp/>longer<sp/>knows<sp/>how</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>much<sp/>of<sp/>the<sp/>pushbuffer<sp/>is<sp/>in<sp/>use.<sp/>Resetting<sp/>returns<sp/>it<sp/>to<sp/>a<sp/>known<sp/>state;<sp/>the<sp/>GPU<sp/>is<sp/>idle<sp/>after<sp/>FinishDraw.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/>Pushbuffer::Flush();</highlight></codeline>
+<codeline lineno="111"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>PushCostTests::TestRamWrite()<sp/>{</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint32_t<sp/>num_dwords<sp/>=<sp/>MethodDwords(<ref refid="d2/d3e/classTestSuite_1a43d6c2f3e48099664cdec05863550ef7" kindref="member">GetLoad</ref>(kRamWriteTest,<sp/>kDefaultDwords));</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/>RunFrame(kRamWriteTest,<sp/>[</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>num_dwords]()<sp/>{<sp/>WriteNops(ram_buffer_.get(),<sp/>num_dwords,<sp/>kWindowDwords);<sp/>});</highlight></codeline>
+<codeline lineno="116"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>PushCostTests::TestPushbufferWrite()<sp/>{</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint32_t<sp/>num_dwords<sp/>=<sp/>MethodDwords(<ref refid="d2/d3e/classTestSuite_1a43d6c2f3e48099664cdec05863550ef7" kindref="member">GetLoad</ref>(kPushbufferWriteTest,<sp/>kDefaultDwords));</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/>RunFrame(kPushbufferWriteTest,<sp/>[num_dwords]()<sp/>{</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>The<sp/>pushbuffer<sp/>is<sp/>empty,<sp/>so<sp/>the<sp/>window<sp/>fits.<sp/>Ending<sp/>the<sp/>block<sp/>at<sp/>its<sp/>start<sp/>submits<sp/>nothing,<sp/>so<sp/>the<sp/>GPU<sp/>never</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>reads<sp/>the<sp/>data<sp/>and<sp/>later<sp/>pushes<sp/>overwrite<sp/>it.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>p<sp/>=<sp/>pb_begin();</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/>WriteNops(p,<sp/>num_dwords,<sp/>kWindowDwords);</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/>pb_end(p);</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/>});</highlight></codeline>
+<codeline lineno="127"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>PushCostTests::TestPushbufferSubmit()<sp/>{</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint32_t<sp/>num_dwords<sp/>=<sp/>MethodDwords(<ref refid="d2/d3e/classTestSuite_1a43d6c2f3e48099664cdec05863550ef7" kindref="member">GetLoad</ref>(kPushbufferSubmitTest,<sp/>kDefaultDwords));</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Counts<sp/>DWORDs<sp/>pushed<sp/>since<sp/>the<sp/>pushbuffer<sp/>was<sp/>last<sp/>reset.<sp/>It<sp/>starts<sp/>at<sp/>zero<sp/>because<sp/>RunFrame<sp/>flushes<sp/>before</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>profiling,<sp/>and<sp/>it<sp/>carries<sp/>over<sp/>between<sp/>the<sp/>body&apos;s<sp/>iterations<sp/>because<sp/>the<sp/>pushbuffer<sp/>is<sp/>only<sp/>reset<sp/>here.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/>uint32_t<sp/>since_reset<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/>RunFrame(kPushbufferSubmitTest,<sp/>[num_dwords,<sp/>&amp;since_reset]()<sp/>{</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Reset<sp/>at<sp/>the<sp/>same<sp/>point<sp/>that<sp/>Pushbuffer<sp/>does<sp/>automatically,<sp/>rounded<sp/>down<sp/>to<sp/>a<sp/>whole<sp/>number<sp/>of<sp/>2-DWORD<sp/>methods,</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>so<sp/>that<sp/>this<sp/>and<sp/>PushbufferAPI<sp/>perform<sp/>the<sp/>same<sp/>number<sp/>of<sp/>resets.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint32_t<sp/>dwords_per_reset<sp/>=<sp/>Pushbuffer::CapacityDwords()<sp/>&amp;<sp/>~1u;</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>remaining<sp/>=<sp/>num_dwords;</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(remaining)<sp/>{</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t<sp/>block<sp/>=<sp/>std::min(remaining,<sp/>kSubmitIntervalDwords);</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(since_reset<sp/>+<sp/>block<sp/>&gt;<sp/>dwords_per_reset)<sp/>{</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(since_reset<sp/>&lt;<sp/>dwords_per_reset)<sp/>{</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Fill<sp/>up<sp/>to<sp/>the<sp/>reset<sp/>point<sp/>first,<sp/>as<sp/>Pushbuffer<sp/>would.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>block<sp/>=<sp/>dwords_per_reset<sp/>-<sp/>since_reset;</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Resets<sp/>go<sp/>through<sp/>Pushbuffer<sp/>so<sp/>that<sp/>their<sp/>wait<sp/>is<sp/>reported<sp/>in<sp/>reset_wait_us.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Pushbuffer::Flush();</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>since_reset<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">continue</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"></highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>p<sp/>=<sp/>pb_begin();</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>WriteNops(p,<sp/>block,<sp/>block);</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>pb_end(p<sp/>+<sp/>block);</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>remaining<sp/>-=<sp/>block;</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>since_reset<sp/>+=<sp/>block;</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/>});</highlight></codeline>
+<codeline lineno="160"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"></highlight></codeline>
+<codeline lineno="162"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>PushCostTests::TestPushbufferAPI()<sp/>{</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint32_t<sp/>num_dwords<sp/>=<sp/>MethodDwords(<ref refid="d2/d3e/classTestSuite_1a43d6c2f3e48099664cdec05863550ef7" kindref="member">GetLoad</ref>(kPushbufferAPITest,<sp/>kDefaultDwords));</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/>RunFrame(kPushbufferAPITest,<sp/>[num_dwords]()<sp/>{</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/>Pushbuffer::DeferredSubmitScope<sp/>deferred;</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(uint32_t<sp/>methods<sp/>=<sp/>num_dwords<sp/>/<sp/>2;<sp/>methods;<sp/>--methods)<sp/>{</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>Pushbuffer::Begin();</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>Pushbuffer::Push(NV097_NO_OPERATION,<sp/>0);</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>Pushbuffer::End();</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/>});</highlight></codeline>
+<codeline lineno="172"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="src/tests/push_cost_tests.cpp"/>
+  </compounddef>
+</doxygen>

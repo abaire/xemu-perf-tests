@@ -1,0 +1,534 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="d9/df6/program__thrash__tests_8cpp" kind="file" language="C++">
+    <compoundname>program_thrash_tests.cpp</compoundname>
+    <includes refid="d8/d76/program__thrash__tests_8h" local="yes">program_thrash_tests.h</includes>
+    <includes local="no">pbkit/pbkit.h</includes>
+    <includes local="yes">pushbuffer.h</includes>
+    <includes local="yes">shaders/passthrough_vertex_shader.h</includes>
+    <includes local="yes">shaders/vertex_shader_program.h</includes>
+    <includes refid="df/d43/test__host_8h" local="yes">test_host.h</includes>
+    <includes local="yes">long_passthrough.vshinc</includes>
+    <includes local="yes">diffuse_from_uniform.vshinc</includes>
+    <incdepgraph>
+      <node id="11">
+        <label>test_host.h</label>
+        <link refid="df/d43/test__host_8h_source"/>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>src/tests/program_thrash_tests.cpp</label>
+        <link refid="d9/df6/program__thrash__tests_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>program_thrash_tests.h</label>
+        <link refid="d8/d76/program__thrash__tests_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>test_suite.h</label>
+        <link refid="d6/d7a/test__suite_8h_source"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>chrono</label>
+      </node>
+      <node id="13">
+        <label>cstdint</label>
+      </node>
+      <node id="19">
+        <label>diffuse_from_uniform.vshinc</label>
+      </node>
+      <node id="8">
+        <label>functional</label>
+      </node>
+      <node id="18">
+        <label>long_passthrough.vshinc</label>
+      </node>
+      <node id="3">
+        <label>map</label>
+      </node>
+      <node id="4">
+        <label>memory</label>
+      </node>
+      <node id="14">
+        <label>nv2astate.h</label>
+      </node>
+      <node id="12">
+        <label>pbkit/pbkit.h</label>
+      </node>
+      <node id="15">
+        <label>pushbuffer.h</label>
+      </node>
+      <node id="9">
+        <label>set</label>
+      </node>
+      <node id="16">
+        <label>shaders/passthrough_vertex_shader.h</label>
+      </node>
+      <node id="17">
+        <label>shaders/vertex_shader_program.h</label>
+      </node>
+      <node id="5">
+        <label>string</label>
+      </node>
+      <node id="10">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <sectiondef kind="var">
+      <memberdef kind="variable" id="d9/df6/program__thrash__tests_8cpp_1a830d4fb8f7910c077d86ea418244c6db" prot="public" static="yes" constexpr="yes" mutable="no">
+        <type>char</type>
+        <definition>char kReuploadTest[]</definition>
+        <argsstring>[]</argsstring>
+        <name>kReuploadTest</name>
+        <initializer>= &quot;Reupload&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tests/program_thrash_tests.cpp" line="10" column="23" bodyfile="src/tests/program_thrash_tests.cpp" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d9/df6/program__thrash__tests_8cpp_1a23916d71738c5a05b910ac1bc122e836" prot="public" static="yes" constexpr="yes" mutable="no">
+        <type>char</type>
+        <definition>char kReuploadLongTest[]</definition>
+        <argsstring>[]</argsstring>
+        <name>kReuploadLongTest</name>
+        <initializer>= &quot;ReuploadLong&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tests/program_thrash_tests.cpp" line="11" column="23" bodyfile="src/tests/program_thrash_tests.cpp" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d9/df6/program__thrash__tests_8cpp_1a80e169ff077ede41e33e7b9c0886973a" prot="public" static="yes" constexpr="yes" mutable="no">
+        <type>char</type>
+        <definition>char kResidentTest[]</definition>
+        <argsstring>[]</argsstring>
+        <name>kResidentTest</name>
+        <initializer>= &quot;Resident&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tests/program_thrash_tests.cpp" line="12" column="23" bodyfile="src/tests/program_thrash_tests.cpp" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d9/df6/program__thrash__tests_8cpp_1a4a153d4f1f3903688d0c90ec90bc185b" prot="public" static="yes" constexpr="yes" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t kIterations</definition>
+        <argsstring></argsstring>
+        <name>kIterations</name>
+        <initializer>= 10</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tests/program_thrash_tests.cpp" line="14" column="27" bodyfile="src/tests/program_thrash_tests.cpp" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d9/df6/program__thrash__tests_8cpp_1a07ea30267fa2f8c208f9ce3e8e32fcb1" prot="public" static="yes" constexpr="yes" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t kNumDrawsSingleFrame</definition>
+        <argsstring></argsstring>
+        <name>kNumDrawsSingleFrame</name>
+        <initializer>= 1000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tests/program_thrash_tests.cpp" line="15" column="27" bodyfile="src/tests/program_thrash_tests.cpp" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d9/df6/program__thrash__tests_8cpp_1a422c3754252c807666505d002742e3f8" prot="public" static="yes" constexpr="yes" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t kNumDrawsReupload</definition>
+        <argsstring></argsstring>
+        <name>kNumDrawsReupload</name>
+        <initializer>= 325</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tests/program_thrash_tests.cpp" line="18" column="27" bodyfile="src/tests/program_thrash_tests.cpp" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d9/df6/program__thrash__tests_8cpp_1a1c8bfeabb4632f5609bf91cea582c20e" prot="public" static="yes" constexpr="yes" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t kNumDrawsReuploadLong</definition>
+        <argsstring></argsstring>
+        <name>kNumDrawsReuploadLong</name>
+        <initializer>= 160</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tests/program_thrash_tests.cpp" line="19" column="27" bodyfile="src/tests/program_thrash_tests.cpp" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d9/df6/program__thrash__tests_8cpp_1a14017434e5ffc8b26c29e2278ca4ebec" prot="public" static="yes" constexpr="yes" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t kNumDrawsResident</definition>
+        <argsstring></argsstring>
+        <name>kNumDrawsResident</name>
+        <initializer>= 355</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tests/program_thrash_tests.cpp" line="20" column="27" bodyfile="src/tests/program_thrash_tests.cpp" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d9/df6/program__thrash__tests_8cpp_1ad4dc8ab2cdfc1b55dd843498162a94e0" prot="public" static="yes" constexpr="yes" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t kNumDrawsAdjustmentStep</definition>
+        <argsstring></argsstring>
+        <name>kNumDrawsAdjustmentStep</name>
+        <initializer>= 5</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tests/program_thrash_tests.cpp" line="21" column="27" bodyfile="src/tests/program_thrash_tests.cpp" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d9/df6/program__thrash__tests_8cpp_1aca3b1aa2949c8b7c6a5bf22ea0862ccd" prot="public" static="yes" constexpr="yes" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t kSecondProgramSlot</definition>
+        <argsstring></argsstring>
+        <name>kSecondProgramSlot</name>
+        <initializer>= 64</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tests/program_thrash_tests.cpp" line="25" column="27" bodyfile="src/tests/program_thrash_tests.cpp" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d9/df6/program__thrash__tests_8cpp_1a813b1e0fc4ec2dca20c9f4082d3f5d52" prot="public" static="yes" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t kVertexAttributes</definition>
+        <argsstring></argsstring>
+        <name>kVertexAttributes</name>
+        <initializer>= TestHost::POSITION | TestHost::DIFFUSE</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tests/program_thrash_tests.cpp" line="27" column="17" bodyfile="src/tests/program_thrash_tests.cpp" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d9/df6/program__thrash__tests_8cpp_1a9abb5fe26cc9aaeaff17e57fe76b7659" prot="public" static="yes" mutable="no">
+        <type>TestHost::DrawPrimitive</type>
+        <definition>TestHost::DrawPrimitive kPrimitive</definition>
+        <argsstring></argsstring>
+        <name>kPrimitive</name>
+        <initializer>= TestHost::PRIMITIVE_TRIANGLES</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tests/program_thrash_tests.cpp" line="28" column="32" bodyfile="src/tests/program_thrash_tests.cpp" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d9/df6/program__thrash__tests_8cpp_1a7b04cd9d4461324c354a503043816cff" prot="public" static="yes" mutable="no">
+        <type>const uint32_t</type>
+        <definition>const uint32_t kLongPassthroughShader[]</definition>
+        <argsstring>[]</argsstring>
+        <name>kLongPassthroughShader</name>
+        <initializer>= {
+
+}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tests/program_thrash_tests.cpp" line="31" column="23" bodyfile="src/tests/program_thrash_tests.cpp" bodystart="31" bodyend="33"/>
+      </memberdef>
+      <memberdef kind="variable" id="d9/df6/program__thrash__tests_8cpp_1adda59bd6330d32d97bcc9d3ad588daa7" prot="public" static="yes" mutable="no">
+        <type>const uint32_t</type>
+        <definition>const uint32_t kDiffuseFromUniformShader[]</definition>
+        <argsstring>[]</argsstring>
+        <name>kDiffuseFromUniformShader</name>
+        <initializer>= {
+
+}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tests/program_thrash_tests.cpp" line="35" column="23" bodyfile="src/tests/program_thrash_tests.cpp" bodystart="35" bodyend="37"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="d9/df6/program__thrash__tests_8cpp_1adc901d5f0c67ec42e37da5c55ea5a866" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void LoadProgramAt</definition>
+        <argsstring>(uint32_t slot, const uint32_t *shader, uint32_t shader_size)</argsstring>
+        <name>LoadProgramAt</name>
+        <param>
+          <type>uint32_t</type>
+          <declname>slot</declname>
+        </param>
+        <param>
+          <type>const uint32_t *</type>
+          <declname>shader</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>shader_size</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Loads the given vertex program into transform program memory starting at the given slot without changing the program start address. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tests/program_thrash_tests.cpp" line="42" column="13" bodyfile="src/tests/program_thrash_tests.cpp" bodystart="42" bodyend="50"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;program_thrash_tests.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;pbkit/pbkit.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;pushbuffer.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;shaders/passthrough_vertex_shader.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;shaders/vertex_shader_program.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;test_host.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>kReuploadTest[]<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;Reupload&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>kReuploadLongTest[]<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;ReuploadLong&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>kResidentTest[]<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;Resident&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/>uint32_t<sp/>kIterations<sp/>=<sp/>10;</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/>uint32_t<sp/>kNumDrawsSingleFrame<sp/>=<sp/>1000;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Measured<sp/>using<sp/>a<sp/>1.0<sp/>devkit,<sp/>slightly<sp/>below<sp/>the<sp/>60<sp/>fps<sp/>limit.<sp/>DPAD<sp/>left/right<sp/>may<sp/>be<sp/>used<sp/>in<sp/>continuous<sp/>mode<sp/>to</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="comment">//<sp/>find<sp/>the<sp/>largest<sp/>value<sp/>that<sp/>maintains<sp/>60<sp/>fps.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/>uint32_t<sp/>kNumDrawsReupload<sp/>=<sp/>325;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/>uint32_t<sp/>kNumDrawsReuploadLong<sp/>=<sp/>160;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/>uint32_t<sp/>kNumDrawsResident<sp/>=<sp/>355;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/>uint32_t<sp/>kNumDrawsAdjustmentStep<sp/>=<sp/>5;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Instruction<sp/>slot<sp/>at<sp/>which<sp/>the<sp/>second<sp/>program<sp/>is<sp/>loaded<sp/>in<sp/>the<sp/>resident<sp/>test.<sp/>Must<sp/>be<sp/>past<sp/>the<sp/>end<sp/>of<sp/>the</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="comment">//<sp/>passthrough<sp/>program<sp/>loaded<sp/>at<sp/>slot<sp/>0.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/>uint32_t<sp/>kSecondProgramSlot<sp/>=<sp/>64;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>uint32_t<sp/>kVertexAttributes<sp/>=<sp/>TestHost::POSITION<sp/>|<sp/>TestHost::DIFFUSE;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>TestHost::DrawPrimitive<sp/>kPrimitive<sp/>=<sp/>TestHost::PRIMITIVE_TRIANGLES;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="comment">//<sp/>clang-format<sp/>off</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint32_t<sp/>kLongPassthroughShader[]<sp/>=<sp/>{</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;long_passthrough.vshinc&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint32_t<sp/>kDiffuseFromUniformShader[]<sp/>=<sp/>{</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;diffuse_from_uniform.vshinc&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="comment">//<sp/>clang-format<sp/>on</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>LoadProgramAt(uint32_t<sp/>slot,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint32_t<sp/>*shader,<sp/>uint32_t<sp/>shader_size)<sp/>{</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/>PBKitPlusPlus::Pushbuffer::Begin();</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/>PBKitPlusPlus::Pushbuffer::Push(NV097_SET_TRANSFORM_PROGRAM_LOAD,<sp/>slot);</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>shader_size<sp/>/<sp/>16;<sp/>++i)<sp/>{</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>*value<sp/>=<sp/></highlight><highlight class="keyword">reinterpret_cast&lt;</highlight><highlight class="keyword">const<sp/></highlight><highlight class="normal">DWORD<sp/>*</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(shader<sp/>+<sp/>(i<sp/>*<sp/>4));</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/>PBKitPlusPlus::Pushbuffer::Push4(NV097_SET_TRANSFORM_PROGRAM,<sp/>value);</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/>PBKitPlusPlus::Pushbuffer::End();</highlight></codeline>
+<codeline lineno="50"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal">ProgramThrashTests::ProgramThrashTests(<ref refid="d6/d80/classTestHost" kindref="compound">TestHost</ref><sp/>&amp;host,<sp/>std::string<sp/>output_dir,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Config<sp/>&amp;config)</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/><ref refid="d2/d3e/classTestSuite" kindref="compound">TestSuite</ref>(host,<sp/>std::move(output_dir),<sp/></highlight><highlight class="stringliteral">&quot;ProgramThrash&quot;</highlight><highlight class="normal">,<sp/>config)<sp/>{</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/>tests_[kReuploadTest]<sp/>=<sp/>[</highlight><highlight class="keyword">this</highlight><highlight class="normal">]()<sp/>{<sp/>TestReupload(kReuploadTest,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);<sp/>};</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/>tests_[kReuploadLongTest]<sp/>=<sp/>[</highlight><highlight class="keyword">this</highlight><highlight class="normal">]()<sp/>{<sp/>TestReupload(kReuploadLongTest,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);<sp/>};</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/>tests_[kResidentTest]<sp/>=<sp/>[</highlight><highlight class="keyword">this</highlight><highlight class="normal">]()<sp/>{<sp/>TestResident(kResidentTest);<sp/>};</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/>num_draws_multi_frame_[kReuploadTest]<sp/>=<sp/>kNumDrawsReupload;</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/>num_draws_multi_frame_[kReuploadLongTest]<sp/>=<sp/>kNumDrawsReuploadLong;</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/>num_draws_multi_frame_[kResidentTest]<sp/>=<sp/>kNumDrawsResident;</highlight></codeline>
+<codeline lineno="61"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d5/dfa/classProgramThrashTests_1a88394e3472c891ebf17206f43ba6709a" kindref="member">ProgramThrashTests::Initialize</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><ref refid="d2/d3e/classTestSuite_1a1c4756eb905d6d4d35e1630107396c38" kindref="member">TestSuite::Initialize</ref>();</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/>host_.SetFinalCombiner0Just(TestHost::SRC_DIFFUSE);</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/>host_.SetFinalCombiner1Just(TestHost::SRC_ZERO,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/>vertex_buffer_<sp/>=<sp/>host_.AllocateVertexBuffer(3);</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>vertex<sp/>=<sp/>vertex_buffer_-&gt;Lock();</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/>vertex-&gt;SetPosition(300.f,<sp/>200.f,<sp/>1.f);</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/>vertex-&gt;SetDiffuse(1.f,<sp/>0.f,<sp/>0.f);</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/>++vertex;</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/>vertex-&gt;SetPosition(304.f,<sp/>200.f,<sp/>1.f);</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/>vertex-&gt;SetDiffuse(0.f,<sp/>1.f,<sp/>0.f);</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/>++vertex;</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/>vertex-&gt;SetPosition(302.f,<sp/>204.f,<sp/>1.f);</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/>vertex-&gt;SetDiffuse(0.f,<sp/>0.f,<sp/>1.f);</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/>++vertex;</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/>vertex_buffer_-&gt;Unlock();</highlight></codeline>
+<codeline lineno="102"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d5/dfa/classProgramThrashTests_1a83ca8db2360fb707b371c542c1aadade" kindref="member">ProgramThrashTests::Deinitialize</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/>host_.ClearVertexBuffer();</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><ref refid="d2/d3e/classTestSuite_1a137c1c57f8ad999bd78a8f7f8f2cf69e" kindref="member">TestSuite::Deinitialize</ref>();</highlight></codeline>
+<codeline lineno="107"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d5/dfa/classProgramThrashTests_1a329effe8e4d3e8078402a71d0c3a9373" kindref="member">ProgramThrashTests::UpdateUserContext</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>direction)<sp/>{</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>it<sp/>=<sp/>num_draws_multi_frame_.find(active_test_);</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(it<sp/>==<sp/>num_draws_multi_frame_.end())<sp/>{</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(direction<sp/>&lt;<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(it-&gt;second<sp/>&gt;<sp/>kNumDrawsAdjustmentStep)<sp/>{</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>it-&gt;second<sp/>-=<sp/>kNumDrawsAdjustmentStep;</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/>it-&gt;second<sp/>+=<sp/>kNumDrawsAdjustmentStep;</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="122"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal">uint32_t<sp/>ProgramThrashTests::GetNumDraws(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;test_name)<sp/>{</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/>active_test_<sp/>=<sp/>test_name;</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>host_.GetSaveResults()<sp/>?<sp/>kNumDrawsSingleFrame<sp/>:<sp/>num_draws_multi_frame_[test_name];</highlight></codeline>
+<codeline lineno="127"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>ProgramThrashTests::PrintNumDraws(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;test_name)<sp/>{</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!host_.GetSaveResults())<sp/>{</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/>pb_print(</highlight><highlight class="stringliteral">&quot;Draws:<sp/>%lu<sp/>(DPAD<sp/>left/right<sp/>to<sp/>adjust)\n&quot;</highlight><highlight class="normal">,<sp/>num_draws_multi_frame_[test_name]);</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="133"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>ProgramThrashTests::TestReupload(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;test_name,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>long_shader)<sp/>{</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/>host_.PrepareDraw(0xFF333333);</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"></highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/>std::shared_ptr&lt;PBKitPlusPlus::VertexShaderProgram&gt;<sp/>shader;</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(long_shader)<sp/>{</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/>shader<sp/>=</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::make_shared&lt;PBKitPlusPlus::VertexShaderProgram&gt;(kLongPassthroughShader,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(kLongPassthroughShader));</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>See<sp/>long_passthrough.vsh.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/>shader-&gt;SetUniformF(0,<sp/>0.f,<sp/>0.5f,<sp/>0.25f,<sp/>1.f);</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/>shader<sp/>=<sp/>std::make_shared&lt;PBKitPlusPlus::PassthroughVertexShader&gt;();</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/>host_.SetVertexShaderProgram(shader);</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"></highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint32_t<sp/>num_draws<sp/>=<sp/>GetNumDraws(test_name);</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>results<sp/>=<sp/><ref refid="d2/d3e/classTestSuite_1ac50b006a0a46396cde6073c3e569bde7" kindref="member">Profile</ref>(test_name,<sp/>kIterations,<sp/>[</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>shader,<sp/>num_draws]<sp/>{</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>num_draws;<sp/>++i)<sp/>{</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>shader-&gt;Activate();</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>host_.DrawArrays(kVertexAttributes,<sp/>kPrimitive);</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/>});</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"></highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/>PrintNumDraws(test_name);</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/>host_.FinishDraw(suite_name_,<sp/>test_name,<sp/>results);</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"></highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/>host_.SetVertexShaderProgram(</highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="161"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"></highlight></codeline>
+<codeline lineno="163"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>ProgramThrashTests::TestResident(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;test_name)<sp/>{</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/>host_.PrepareDraw(0xFF333333);</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"></highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/>host_.SetVertexShaderProgram(std::make_shared&lt;PBKitPlusPlus::PassthroughVertexShader&gt;());</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"></highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Load<sp/>a<sp/>second<sp/>program<sp/>after<sp/>the<sp/>passthrough<sp/>program<sp/>and<sp/>upload<sp/>its<sp/>uniforms<sp/>directly,<sp/>as<sp/>it<sp/>will<sp/>never<sp/>be<sp/>the</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>active<sp/>pbkit<sp/>program.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/>LoadProgramAt(kSecondProgramSlot,<sp/>kDiffuseFromUniformShader,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(kDiffuseFromUniformShader));</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/>PBKitPlusPlus::VertexShaderProgram<sp/>diffuse_from_uniform;</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/>diffuse_from_uniform.SetUniformF(0,<sp/>0.f,<sp/>1.f,<sp/>0.f,<sp/>1.f);</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/>diffuse_from_uniform.PrepareDraw();</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"></highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint32_t<sp/>num_draws<sp/>=<sp/>GetNumDraws(test_name);</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>results<sp/>=<sp/><ref refid="d2/d3e/classTestSuite_1ac50b006a0a46396cde6073c3e569bde7" kindref="member">Profile</ref>(test_name,<sp/>kIterations,<sp/>[</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>num_draws]<sp/>{</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>num_draws;<sp/>++i)<sp/>{</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>PBKitPlusPlus::Pushbuffer::Begin();</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>PBKitPlusPlus::Pushbuffer::Push(NV097_SET_TRANSFORM_PROGRAM_START,<sp/>(i<sp/>&amp;<sp/>1)<sp/>?<sp/>kSecondProgramSlot<sp/>:<sp/>0);</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>PBKitPlusPlus::Pushbuffer::End();</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>host_.DrawArrays(kVertexAttributes,<sp/>kPrimitive);</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/>});</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"></highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/>PrintNumDraws(test_name);</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/>host_.FinishDraw(suite_name_,<sp/>test_name,<sp/>results);</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"></highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/>host_.SetVertexShaderProgram(</highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="189"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="src/tests/program_thrash_tests.cpp"/>
+  </compounddef>
+</doxygen>

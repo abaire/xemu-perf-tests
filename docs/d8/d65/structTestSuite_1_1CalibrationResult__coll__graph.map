@@ -1,0 +1,5 @@
+<map id="TestSuite::CalibrationResult" name="TestSuite::CalibrationResult">
+<area shape="rect" id="Node000001" title="Result of Calibrate()." alt="" coords="11,106,212,134"/>
+<area shape="rect" id="Node000002" href="$d3/d3d/structTestHost_1_1SustainedSummary.html" title="Summary of a sustained capture." alt="" coords="5,5,218,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="114,47,114,106,109,105,109,50"/>
+</map>

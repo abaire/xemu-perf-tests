@@ -1,0 +1,292 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="d6/d7a/test__suite_8h" kind="file" language="C++">
+    <compoundname>test_suite.h</compoundname>
+    <includes local="no">chrono</includes>
+    <includes local="no">functional</includes>
+    <includes local="no">map</includes>
+    <includes local="no">set</includes>
+    <includes local="no">string</includes>
+    <includes local="no">vector</includes>
+    <includes refid="df/d43/test__host_8h" local="yes">test_host.h</includes>
+    <includedby refid="d9/dcf/menu__item_8cpp" local="yes">src/menu_item.cpp</includedby>
+    <includedby refid="d4/d3c/runtime__config_8h" local="yes">src/runtime_config.h</includedby>
+    <includedby refid="dd/dab/test__driver_8h" local="yes">src/test_driver.h</includedby>
+    <includedby refid="d3/dd2/busy__pfifo__tests_8h" local="yes">src/tests/busy_pfifo_tests.h</includedby>
+    <includedby refid="df/d6d/fill__rate__tests_8h" local="yes">src/tests/fill_rate_tests.h</includedby>
+    <includedby refid="d8/d40/high__vertex__count__tests_8h" local="yes">src/tests/high_vertex_count_tests.h</includedby>
+    <includedby refid="d2/d88/pfifo__contention__tests_8h" local="yes">src/tests/pfifo_contention_tests.h</includedby>
+    <includedby refid="d3/d55/primitive__type__tests_8h" local="yes">src/tests/primitive_type_tests.h</includedby>
+    <includedby refid="d8/d76/program__thrash__tests_8h" local="yes">src/tests/program_thrash_tests.h</includedby>
+    <includedby refid="d8/d34/push__cost__tests_8h" local="yes">src/tests/push_cost_tests.h</includedby>
+    <includedby refid="de/dfd/surface__rendering__tests_8h" local="yes">src/tests/surface_rendering_tests.h</includedby>
+    <includedby refid="dc/d6c/test__suite_8cpp" local="yes">src/tests/test_suite.cpp</includedby>
+    <includedby refid="d2/db2/tiny__draw__tests_8h" local="yes">src/tests/tiny_draw_tests.h</includedby>
+    <includedby refid="de/d3d/uniform__thrash__tests_8h" local="yes">src/tests/uniform_thrash_tests.h</includedby>
+    <includedby refid="d7/d54/vertex__buffer__allocation__tests_8h" local="yes">src/tests/vertex_buffer_allocation_tests.h</includedby>
+    <incdepgraph>
+      <node id="8">
+        <label>test_host.h</label>
+        <link refid="df/d43/test__host_8h_source"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>src/tests/test_suite.h</label>
+        <link refid="d6/d7a/test__suite_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>chrono</label>
+      </node>
+      <node id="10">
+        <label>cstdint</label>
+      </node>
+      <node id="3">
+        <label>functional</label>
+      </node>
+      <node id="4">
+        <label>map</label>
+      </node>
+      <node id="11">
+        <label>nv2astate.h</label>
+      </node>
+      <node id="9">
+        <label>pbkit/pbkit.h</label>
+      </node>
+      <node id="12">
+        <label>pushbuffer.h</label>
+      </node>
+      <node id="5">
+        <label>set</label>
+      </node>
+      <node id="6">
+        <label>string</label>
+      </node>
+      <node id="7">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>src/runtime_config.h</label>
+        <link refid="d4/d3c/runtime__config_8h_source"/>
+      </node>
+      <node id="3">
+        <label>src/test_driver.h</label>
+        <link refid="dd/dab/test__driver_8h_source"/>
+      </node>
+      <node id="4">
+        <label>src/tests/busy_pfifo_tests.h</label>
+        <link refid="d3/dd2/busy__pfifo__tests_8h_source"/>
+      </node>
+      <node id="5">
+        <label>src/tests/fill_rate_tests.h</label>
+        <link refid="df/d6d/fill__rate__tests_8h_source"/>
+      </node>
+      <node id="6">
+        <label>src/tests/high_vertex_count_tests.h</label>
+        <link refid="d8/d40/high__vertex__count__tests_8h_source"/>
+      </node>
+      <node id="7">
+        <label>src/tests/pfifo_contention_tests.h</label>
+        <link refid="d2/d88/pfifo__contention__tests_8h_source"/>
+      </node>
+      <node id="8">
+        <label>src/tests/primitive_type_tests.h</label>
+        <link refid="d3/d55/primitive__type__tests_8h_source"/>
+      </node>
+      <node id="9">
+        <label>src/tests/program_thrash_tests.h</label>
+        <link refid="d8/d76/program__thrash__tests_8h_source"/>
+      </node>
+      <node id="10">
+        <label>src/tests/push_cost_tests.h</label>
+        <link refid="d8/d34/push__cost__tests_8h_source"/>
+      </node>
+      <node id="11">
+        <label>src/tests/surface_rendering_tests.h</label>
+        <link refid="de/dfd/surface__rendering__tests_8h_source"/>
+      </node>
+      <node id="1">
+        <label>src/tests/test_suite.h</label>
+        <link refid="d6/d7a/test__suite_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>src/tests/tiny_draw_tests.h</label>
+        <link refid="d2/db2/tiny__draw__tests_8h_source"/>
+      </node>
+      <node id="13">
+        <label>src/tests/uniform_thrash_tests.h</label>
+        <link refid="de/d3d/uniform__thrash__tests_8h_source"/>
+      </node>
+      <node id="14">
+        <label>src/tests/vertex_buffer_allocation_tests.h</label>
+        <link refid="d7/d54/vertex__buffer__allocation__tests_8h_source"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="d2/d3e/classTestSuite" prot="public">TestSuite</innerclass>
+    <innerclass refid="da/d85/structTestSuite_1_1Config" prot="public">TestSuite::Config</innerclass>
+    <innerclass refid="d8/d1b/structTestSuite_1_1CalibrationSettings" prot="public">TestSuite::CalibrationSettings</innerclass>
+    <innerclass refid="dd/d1b/structTestSuite_1_1CalibrationResult" prot="public">TestSuite::CalibrationResult</innerclass>
+    <innerclass refid="dd/df9/structTestSuite_1_1CalibrationResult_1_1Run" prot="public">TestSuite::CalibrationResult::Run</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>XEMU_PERF_TESTS_TEST_SUITE_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>XEMU_PERF_TESTS_TEST_SUITE_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;chrono&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;functional&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;map&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;set&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;test_host.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16" refid="d2/d3e/classTestSuite" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">TestSuite<sp/>{</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="19" refid="da/d85/structTestSuite_1_1Config" refkind="compound"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="da/d85/structTestSuite_1_1Config" kindref="compound">Config</ref><sp/>{};</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/>TestSuite()<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/>TestSuite(<ref refid="d6/d80/classTestHost" kindref="compound">TestHost</ref><sp/>&amp;host,<sp/>std::string<sp/>output_dir,<sp/>std::string<sp/>suite_name,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="da/d85/structTestSuite_1_1Config" kindref="compound">Config</ref><sp/>&amp;config);</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>~TestSuite()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/>[[nodiscard]]<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;Name()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>suite_name_;<sp/>};</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d2/d3e/classTestSuite_1a1c4756eb905d6d4d35e1630107396c38" kindref="member">Initialize</ref>();</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32" refid="d2/d3e/classTestSuite_1a137c1c57f8ad999bd78a8f7f8f2cf69e" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d2/d3e/classTestSuite_1a137c1c57f8ad999bd78a8f7f8f2cf69e" kindref="member">Deinitialize</ref>()<sp/>{}</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36" refid="d2/d3e/classTestSuite_1ad3fb7cc9d8db8740c5188da083312b8d" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d2/d3e/classTestSuite_1ad3fb7cc9d8db8740c5188da083312b8d" kindref="member">SetupTest</ref>()<sp/>{}</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40" refid="d2/d3e/classTestSuite_1a90bc6959d04c41e07eed51f80a435d70" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d2/d3e/classTestSuite_1a90bc6959d04c41e07eed51f80a435d70" kindref="member">TearDownTest</ref>()<sp/>{}</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>DisableTests(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::set&lt;std::string&gt;<sp/>&amp;tests_to_skip);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/>[[nodiscard]]<sp/>std::vector&lt;std::string&gt;<sp/>TestNames()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/>[[nodiscard]]<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>HasEnabledTests()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>!tests_.empty();<sp/>};</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>Run(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;test_name,<sp/>uint32_t<sp/>frame_count);</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>RunAll();</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/>TestHost::SustainedSummary<sp/><ref refid="d2/d3e/classTestSuite_1a7eaba7408aed781686f9a5ac37de36d1" kindref="member">RunSustained</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;test_name,<sp/>uint32_t<sp/>warmup_frames,<sp/>uint32_t<sp/>measure_frames,</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>log<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">,<sp/>uint32_t<sp/>abort_busy_us<sp/>=<sp/>0);</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58" refid="d8/d1b/structTestSuite_1_1CalibrationSettings" refkind="compound"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="d8/d1b/structTestSuite_1_1CalibrationSettings" kindref="compound">CalibrationSettings</ref><sp/>{</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>warmup_frames;</highlight></codeline>
+<codeline lineno="61" refid="d8/d1b/structTestSuite_1_1CalibrationSettings_1ae88f4d057aaab9c475d47683765a4e1e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="d8/d1b/structTestSuite_1_1CalibrationSettings_1ae88f4d057aaab9c475d47683765a4e1e" kindref="member">probe_frames</ref>;</highlight></codeline>
+<codeline lineno="63" refid="d8/d1b/structTestSuite_1_1CalibrationSettings_1a6b93c8b52cc4b7a729545e5f90e11044" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="d8/d1b/structTestSuite_1_1CalibrationSettings_1a6b93c8b52cc4b7a729545e5f90e11044" kindref="member">confirm_frames</ref>;</highlight></codeline>
+<codeline lineno="65" refid="d8/d1b/structTestSuite_1_1CalibrationSettings_1ad56b6981a32886035316d54c9bfee345" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="d8/d1b/structTestSuite_1_1CalibrationSettings_1ad56b6981a32886035316d54c9bfee345" kindref="member">target_busy_p95_us</ref>;</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/>};</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69" refid="dd/d1b/structTestSuite_1_1CalibrationResult" refkind="compound"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="dd/d1b/structTestSuite_1_1CalibrationResult" kindref="compound">CalibrationResult</ref><sp/>{</highlight></codeline>
+<codeline lineno="73" refid="dd/d1b/structTestSuite_1_1CalibrationResult_1a35ddefc1d8b8ba689b0eab5ec9c2fdc8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="dd/d1b/structTestSuite_1_1CalibrationResult_1a35ddefc1d8b8ba689b0eab5ec9c2fdc8" kindref="member">status</ref>;</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>load;</highlight></codeline>
+<codeline lineno="76" refid="dd/d1b/structTestSuite_1_1CalibrationResult_1a824bb6e31b109b34c1843d608044bf4c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="dd/d1b/structTestSuite_1_1CalibrationResult_1a824bb6e31b109b34c1843d608044bf4c" kindref="member">runs</ref>;</highlight></codeline>
+<codeline lineno="78" refid="dd/d1b/structTestSuite_1_1CalibrationResult_1a1666c1f53cdf39adb0a422eb2d0f69b0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d3/d3d/structTestHost_1_1SustainedSummary" kindref="compound">TestHost::SustainedSummary</ref><sp/><ref refid="dd/d1b/structTestSuite_1_1CalibrationResult_1a1666c1f53cdf39adb0a422eb2d0f69b0" kindref="member">summary</ref>;</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81" refid="dd/df9/structTestSuite_1_1CalibrationResult_1_1Run" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="dd/df9/structTestSuite_1_1CalibrationResult_1_1Run" kindref="compound">Run</ref><sp/>{</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t<sp/>load;</highlight></codeline>
+<codeline lineno="84" refid="dd/df9/structTestSuite_1_1CalibrationResult_1_1Run_1a91016c5f265be9cae0c92358cdfd7808" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="dd/df9/structTestSuite_1_1CalibrationResult_1_1Run_1a91016c5f265be9cae0c92358cdfd7808" kindref="member">confirm</ref>;</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>passed;</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d3/d3d/structTestHost_1_1SustainedSummary" kindref="compound">TestHost::SustainedSummary</ref><sp/>summary;</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="89" refid="dd/d1b/structTestSuite_1_1CalibrationResult_1a7f100e2c3e856352aa484b5b0b498d6b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;Run&gt;<sp/><ref refid="dd/d1b/structTestSuite_1_1CalibrationResult_1a7f100e2c3e856352aa484b5b0b498d6b" kindref="member">history</ref>;</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/>};</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><ref refid="dd/d1b/structTestSuite_1_1CalibrationResult" kindref="compound">CalibrationResult</ref><sp/><ref refid="d2/d3e/classTestSuite_1a1a6ef873dd99dfa1c6f3dca29466d7f7" kindref="member">Calibrate</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;test_name,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="d8/d1b/structTestSuite_1_1CalibrationSettings" kindref="compound">CalibrationSettings</ref><sp/>&amp;settings);</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight></codeline>
+<codeline lineno="97" refid="d2/d3e/classTestSuite_1a3f6f68819aac546923d3f0dcbbdfd162" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d2/d3e/classTestSuite_1a3f6f68819aac546923d3f0dcbbdfd162" kindref="member">SetLoad</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;test_name,<sp/>uint32_t<sp/>load)<sp/>{<sp/>loads_[test_name]<sp/>=<sp/>load;<sp/>}</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+<codeline lineno="100" refid="d2/d3e/classTestSuite_1ae78f846955f3fb6ba75d7a674c1ccc1c" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d2/d3e/classTestSuite_1ae78f846955f3fb6ba75d7a674c1ccc1c" kindref="member">SetBaselineLoad</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;test_name,<sp/>uint32_t<sp/>load)<sp/>{<sp/>baseline_loads_[test_name]<sp/>=<sp/>load;<sp/>}</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/>[[nodiscard]]<sp/>uint32_t<sp/><ref refid="d2/d3e/classTestSuite_1a43d6c2f3e48099664cdec05863550ef7" kindref="member">GetLoad</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;test_name,<sp/>uint32_t<sp/>default_value)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107" refid="d2/d3e/classTestSuite_1ac12e8f49c702522380d9824e4acfd53b" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d2/d3e/classTestSuite_1ac12e8f49c702522380d9824e4acfd53b" kindref="member">UpdateUserContext</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>direction)<sp/>{};</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><ref refid="d1/dc6/structTestHost_1_1ProfileResults" kindref="compound">TestHost::ProfileResults</ref><sp/><ref refid="d2/d3e/classTestSuite_1ac50b006a0a46396cde6073c3e569bde7" kindref="member">Profile</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;test_name,<sp/>uint32_t<sp/>num_iterations,</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::function&lt;</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)&gt;<sp/>&amp;body)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>SetDefaultTextureFormat()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><ref refid="d6/d80/classTestHost" kindref="compound">TestHost</ref><sp/>&amp;host_;</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/>std::string<sp/>output_dir_;</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/>std::string<sp/>suite_name_;</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Map<sp/>of<sp/>`test_name`<sp/>to<sp/>`void<sp/>test()`</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/>std::map&lt;std::string,<sp/>std::function&lt;void(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)&gt;&gt;<sp/>tests_{};</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Map<sp/>of<sp/>`test_name`<sp/>to<sp/>configured<sp/>load<sp/>knob<sp/>value.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/>std::map&lt;std::string,<sp/>uint32_t&gt;<sp/>loads_{};</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Tests<sp/>that<sp/>have<sp/>a<sp/>load<sp/>knob<sp/>but<sp/>must<sp/>not<sp/>be<sp/>calibrated,<sp/>e.g.<sp/>diagnostics<sp/>that<sp/>compare<sp/>runs<sp/>at<sp/>equal<sp/>loads.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/>std::set&lt;std::string&gt;<sp/>uncalibrated_tests_{};</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Map<sp/>of<sp/>`test_name`<sp/>to<sp/>hardware-calibrated<sp/>load,<sp/>used<sp/>when<sp/>there<sp/>is<sp/>no<sp/>entry<sp/>in<sp/>`loads_`.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/>std::map&lt;std::string,<sp/>uint32_t&gt;<sp/>baseline_loads_{};</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Load<sp/>value<sp/>most<sp/>recently<sp/>returned<sp/>by<sp/>GetLoad<sp/>for<sp/>each<sp/>test,<sp/>used<sp/>to<sp/>annotate<sp/>results.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">mutable</highlight><highlight class="normal"><sp/>std::map&lt;std::string,<sp/>uint32_t&gt;<sp/>effective_loads_{};</highlight></codeline>
+<codeline lineno="134"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/><sp/></highlight><highlight class="comment">//<sp/>XEMU_PERF_TESTS_TEST_SUITE_H</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="src/tests/test_suite.h"/>
+  </compounddef>
+</doxygen>

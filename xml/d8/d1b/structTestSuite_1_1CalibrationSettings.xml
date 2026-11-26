@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="d8/d1b/structTestSuite_1_1CalibrationSettings" kind="struct" language="C++" prot="public">
+    <compoundname>TestSuite::CalibrationSettings</compoundname>
+    <includes refid="d6/d7a/test__suite_8h" local="no">test_suite.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="d8/d1b/structTestSuite_1_1CalibrationSettings_1ac0b11f1b8998a1c6a23eaae0360fcfb4" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t TestSuite::CalibrationSettings::warmup_frames</definition>
+        <argsstring></argsstring>
+        <name>warmup_frames</name>
+        <qualifiedname>TestSuite::CalibrationSettings::warmup_frames</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tests/test_suite.h" line="59" column="14" bodyfile="src/tests/test_suite.h" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d8/d1b/structTestSuite_1_1CalibrationSettings_1ae88f4d057aaab9c475d47683765a4e1e" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t TestSuite::CalibrationSettings::probe_frames</definition>
+        <argsstring></argsstring>
+        <name>probe_frames</name>
+        <qualifiedname>TestSuite::CalibrationSettings::probe_frames</qualifiedname>
+        <briefdescription>
+<para>Number of measured frames for each probe during the search. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tests/test_suite.h" line="61" column="14" bodyfile="src/tests/test_suite.h" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d8/d1b/structTestSuite_1_1CalibrationSettings_1a6b93c8b52cc4b7a729545e5f90e11044" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t TestSuite::CalibrationSettings::confirm_frames</definition>
+        <argsstring></argsstring>
+        <name>confirm_frames</name>
+        <qualifiedname>TestSuite::CalibrationSettings::confirm_frames</qualifiedname>
+        <briefdescription>
+<para>Number of measured frames used to confirm the final load. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tests/test_suite.h" line="63" column="14" bodyfile="src/tests/test_suite.h" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d8/d1b/structTestSuite_1_1CalibrationSettings_1ad56b6981a32886035316d54c9bfee345" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t TestSuite::CalibrationSettings::target_busy_p95_us</definition>
+        <argsstring></argsstring>
+        <name>target_busy_p95_us</name>
+        <qualifiedname>TestSuite::CalibrationSettings::target_busy_p95_us</qualifiedname>
+        <briefdescription>
+<para>A load passes if its busy p95 is at most this, with no missed vblanks or fence timeouts. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tests/test_suite.h" line="65" column="14" bodyfile="src/tests/test_suite.h" bodystart="65" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Parameters for <ref refid="d2/d3e/classTestSuite_1a1a6ef873dd99dfa1c6f3dca29466d7f7" kindref="member">Calibrate()</ref>. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/tests/test_suite.h" line="58" column="3" bodyfile="src/tests/test_suite.h" bodystart="58" bodyend="66"/>
+    <listofallmembers>
+      <member refid="d8/d1b/structTestSuite_1_1CalibrationSettings_1a6b93c8b52cc4b7a729545e5f90e11044" prot="public" virt="non-virtual"><scope>TestSuite::CalibrationSettings</scope><name>confirm_frames</name></member>
+      <member refid="d8/d1b/structTestSuite_1_1CalibrationSettings_1ae88f4d057aaab9c475d47683765a4e1e" prot="public" virt="non-virtual"><scope>TestSuite::CalibrationSettings</scope><name>probe_frames</name></member>
+      <member refid="d8/d1b/structTestSuite_1_1CalibrationSettings_1ad56b6981a32886035316d54c9bfee345" prot="public" virt="non-virtual"><scope>TestSuite::CalibrationSettings</scope><name>target_busy_p95_us</name></member>
+      <member refid="d8/d1b/structTestSuite_1_1CalibrationSettings_1ac0b11f1b8998a1c6a23eaae0360fcfb4" prot="public" virt="non-virtual"><scope>TestSuite::CalibrationSettings</scope><name>warmup_frames</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

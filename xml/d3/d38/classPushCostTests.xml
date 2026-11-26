@@ -1,0 +1,256 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="d3/d38/classPushCostTests" kind="class" language="C++" prot="public">
+    <compoundname>PushCostTests</compoundname>
+    <basecompoundref refid="d2/d3e/classTestSuite" prot="public" virt="non-virtual">TestSuite</basecompoundref>
+    <includes refid="d8/d34/push__cost__tests_8h" local="no">push_cost_tests.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="d3/d38/classPushCostTests_1a2778affdbaa96e708213df1b55e54894" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; uint32_t[]&gt;</type>
+        <definition>std::unique_ptr&lt;uint32_t[]&gt; PushCostTests::ram_buffer_</definition>
+        <argsstring></argsstring>
+        <name>ram_buffer_</name>
+        <qualifiedname>PushCostTests::ram_buffer_</qualifiedname>
+        <briefdescription>
+<para>Ordinary cached RAM, used as the destination for RamWrite. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tests/push_cost_tests.h" line="34" column="19" bodyfile="src/tests/push_cost_tests.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="d3/d38/classPushCostTests_1acf946f18a335331ae2f16ef2916ec086" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>PushCostTests::PushCostTests</definition>
+        <argsstring>(TestHost &amp;host, std::string output_dir, const Config &amp;config)</argsstring>
+        <name>PushCostTests</name>
+        <qualifiedname>PushCostTests::PushCostTests</qualifiedname>
+        <param>
+          <type><ref refid="d6/d80/classTestHost" kindref="compound">TestHost</ref> &amp;</type>
+          <declname>host</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>output_dir</declname>
+        </param>
+        <param>
+          <type>const <ref refid="da/d85/structTestSuite_1_1Config" kindref="compound">Config</ref> &amp;</type>
+          <declname>config</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tests/push_cost_tests.h" line="19" column="3" bodyfile="src/tests/push_cost_tests.cpp" bodystart="49" bodyend="60"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d38/classPushCostTests_1a03bdf31b5ecbe9bcccf86e744fbc89f7" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void PushCostTests::Initialize</definition>
+        <argsstring>() override</argsstring>
+        <name>Initialize</name>
+        <qualifiedname>PushCostTests::Initialize</qualifiedname>
+        <reimplements refid="d2/d3e/classTestSuite_1a1c4756eb905d6d4d35e1630107396c38">Initialize</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Initializes the test suite and creates test cases.</para>
+<para><simplesect kind="remark"><para>RamWrite Writes <computeroutput>load</computeroutput> DWORDs of NOP methods into ordinary cached RAM. Baseline for the CPU&apos;s store throughput.</para>
+</simplesect>
+<simplesect kind="remark"><para>PushbufferWrite Writes <computeroutput>load</computeroutput> DWORDs of NOP methods into the pushbuffer&apos;s memory without submitting them, so the GPU never reads them. Compared to RamWrite, shows the cost of writing to the pushbuffer&apos;s memory itself.</para>
+</simplesect>
+<simplesect kind="remark"><para>PushbufferSubmit Writes <computeroutput>load</computeroutput> DWORDs of NOP methods directly into the pushbuffer and submits them with pbkit every 8K DWORDs, resetting the pushbuffer at the same points as Pushbuffer does. Compared to PushbufferWrite, shows the cost of the GPU consuming commands while the CPU is writing them.</para>
+</simplesect>
+<simplesect kind="remark"><para>PushbufferAPI Pushes <computeroutput>load</computeroutput> DWORDs of NOP methods through Pushbuffer::Push with deferred submission, which submits and resets at the same points as PushbufferSubmit. Compared to PushbufferSubmit, shows the overhead of the Pushbuffer API.</para>
+</simplesect>
+Every test starts its frame with an empty pushbuffer, and any reset needed to return the pushbuffer to Pushbuffer&apos;s control happens after the frame&apos;s measurements. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tests/push_cost_tests.h" line="21" column="8" bodyfile="src/tests/push_cost_tests.cpp" bodystart="84" bodyend="87"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d38/classPushCostTests_1a837ea69f71a5f5db5ba0b7997d9f3c1b" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void PushCostTests::Deinitialize</definition>
+        <argsstring>() override</argsstring>
+        <name>Deinitialize</name>
+        <qualifiedname>PushCostTests::Deinitialize</qualifiedname>
+        <reimplements refid="d2/d3e/classTestSuite_1a137c1c57f8ad999bd78a8f7f8f2cf69e">Deinitialize</reimplements>
+        <briefdescription>
+<para>Called to tear down the test suite. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tests/push_cost_tests.h" line="22" column="8" bodyfile="src/tests/push_cost_tests.cpp" bodystart="89" bodyend="92"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="d3/d38/classPushCostTests_1a8a1c5832c39a0b66ccfb3483262a267d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void PushCostTests::TestRamWrite</definition>
+        <argsstring>()</argsstring>
+        <name>TestRamWrite</name>
+        <qualifiedname>PushCostTests::TestRamWrite</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tests/push_cost_tests.h" line="25" column="8" bodyfile="src/tests/push_cost_tests.cpp" bodystart="113" bodyend="116"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d38/classPushCostTests_1aa7484d7dabac81c32dd3b42944f71818" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void PushCostTests::TestPushbufferWrite</definition>
+        <argsstring>()</argsstring>
+        <name>TestPushbufferWrite</name>
+        <qualifiedname>PushCostTests::TestPushbufferWrite</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tests/push_cost_tests.h" line="26" column="8" bodyfile="src/tests/push_cost_tests.cpp" bodystart="118" bodyend="127"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d38/classPushCostTests_1ae0ac0f07b706f2b303c35788ceef5a52" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void PushCostTests::TestPushbufferSubmit</definition>
+        <argsstring>()</argsstring>
+        <name>TestPushbufferSubmit</name>
+        <qualifiedname>PushCostTests::TestPushbufferSubmit</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tests/push_cost_tests.h" line="27" column="8" bodyfile="src/tests/push_cost_tests.cpp" bodystart="129" bodyend="160"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d38/classPushCostTests_1a6ad68a51e0d0bfe056b2135c780c5956" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void PushCostTests::TestPushbufferAPI</definition>
+        <argsstring>()</argsstring>
+        <name>TestPushbufferAPI</name>
+        <qualifiedname>PushCostTests::TestPushbufferAPI</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tests/push_cost_tests.h" line="28" column="8" bodyfile="src/tests/push_cost_tests.cpp" bodystart="162" bodyend="172"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d38/classPushCostTests_1a5c50a3329fe027718cdaacc51570f006" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void PushCostTests::RunFrame</definition>
+        <argsstring>(const char *test_name, const std::function&lt; void()&gt; &amp;body)</argsstring>
+        <name>RunFrame</name>
+        <qualifiedname>PushCostTests::RunFrame</qualifiedname>
+        <param>
+          <type>const char *</type>
+          <declname>test_name</declname>
+        </param>
+        <param>
+          <type>const std::function&lt; void()&gt; &amp;</type>
+          <declname>body</declname>
+        </param>
+        <briefdescription>
+<para>Runs <computeroutput>body</computeroutput> with the standard frame setup and reports results under <computeroutput>test_name</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tests/push_cost_tests.h" line="31" column="8" bodyfile="src/tests/push_cost_tests.cpp" bodystart="94" bodyend="111"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Diagnostics that break down the CPU cost of building a pushbuffer. Each test writes the same stream of single-DWORD NV097_NO_OPERATION methods, <computeroutput>load</computeroutput> DWORDs per frame, to a different destination or through a different path, so comparing their <computeroutput>submit_minus_reset_us</computeroutput> separates the cost of the memory being written, of the GPU consuming the commands, and of the pbkitplusplus Pushbuffer API.</para>
+<para>These are not benchmarks, and are excluded from calibration. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>PushCostTests</label>
+        <link refid="d3/d38/classPushCostTests"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>TestSuite</label>
+        <link refid="d2/d3e/classTestSuite"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="4">
+        <label>PBKitPlusPlus::NV2AState</label>
+      </node>
+      <node id="1">
+        <label>PushCostTests</label>
+        <link refid="d3/d38/classPushCostTests"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>TestHost</label>
+        <link refid="d6/d80/classTestHost"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>TestSuite</label>
+        <link refid="d2/d3e/classTestSuite"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>host_</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="src/tests/push_cost_tests.h" line="17" column="1" bodyfile="src/tests/push_cost_tests.h" bodystart="17" bodyend="35"/>
+    <listofallmembers>
+      <member refid="d2/d3e/classTestSuite_1a68776950621caa4be885384fcdbaee03" prot="protected" virt="non-virtual"><scope>PushCostTests</scope><name>baseline_loads_</name></member>
+      <member refid="d2/d3e/classTestSuite_1a1a6ef873dd99dfa1c6f3dca29466d7f7" prot="public" virt="non-virtual"><scope>PushCostTests</scope><name>Calibrate</name></member>
+      <member refid="d3/d38/classPushCostTests_1a837ea69f71a5f5db5ba0b7997d9f3c1b" prot="public" virt="virtual"><scope>PushCostTests</scope><name>Deinitialize</name></member>
+      <member refid="d2/d3e/classTestSuite_1a165d9da1dec525ffdd299e2dcfaec2ef" prot="public" virt="non-virtual"><scope>PushCostTests</scope><name>DisableTests</name></member>
+      <member refid="d2/d3e/classTestSuite_1ad94b80e6eafe00ce46732765d47890a1" prot="protected" virt="non-virtual"><scope>PushCostTests</scope><name>effective_loads_</name></member>
+      <member refid="d2/d3e/classTestSuite_1a43d6c2f3e48099664cdec05863550ef7" prot="public" virt="non-virtual"><scope>PushCostTests</scope><name>GetLoad</name></member>
+      <member refid="d2/d3e/classTestSuite_1a7059e61572d914cff83ae22da3ea1957" prot="public" virt="non-virtual"><scope>PushCostTests</scope><name>HasEnabledTests</name></member>
+      <member refid="d2/d3e/classTestSuite_1a454f5c2050b66b598a2f2fcffd45ae48" prot="protected" virt="non-virtual"><scope>PushCostTests</scope><name>host_</name></member>
+      <member refid="d3/d38/classPushCostTests_1a03bdf31b5ecbe9bcccf86e744fbc89f7" prot="public" virt="virtual"><scope>PushCostTests</scope><name>Initialize</name></member>
+      <member refid="d2/d3e/classTestSuite_1a65705c32aa1bf9b6edf9f783ff93853a" prot="protected" virt="non-virtual"><scope>PushCostTests</scope><name>loads_</name></member>
+      <member refid="d2/d3e/classTestSuite_1a15144024801f2f885727f7926c826c87" prot="public" virt="non-virtual"><scope>PushCostTests</scope><name>Name</name></member>
+      <member refid="d2/d3e/classTestSuite_1a2e81678d3ac733d517616bd67a837465" prot="protected" virt="non-virtual"><scope>PushCostTests</scope><name>output_dir_</name></member>
+      <member refid="d2/d3e/classTestSuite_1ac50b006a0a46396cde6073c3e569bde7" prot="protected" virt="non-virtual"><scope>PushCostTests</scope><name>Profile</name></member>
+      <member refid="d3/d38/classPushCostTests_1acf946f18a335331ae2f16ef2916ec086" prot="public" virt="non-virtual"><scope>PushCostTests</scope><name>PushCostTests</name></member>
+      <member refid="d3/d38/classPushCostTests_1a2778affdbaa96e708213df1b55e54894" prot="private" virt="non-virtual"><scope>PushCostTests</scope><name>ram_buffer_</name></member>
+      <member refid="d2/d3e/classTestSuite_1aa87e9c8f05a49f660701e91271fb0ede" prot="public" virt="non-virtual"><scope>PushCostTests</scope><name>Run</name></member>
+      <member refid="d2/d3e/classTestSuite_1a7f99d1a92beb6b58219b841b60d56322" prot="public" virt="non-virtual"><scope>PushCostTests</scope><name>RunAll</name></member>
+      <member refid="d3/d38/classPushCostTests_1a5c50a3329fe027718cdaacc51570f006" prot="private" virt="non-virtual"><scope>PushCostTests</scope><name>RunFrame</name></member>
+      <member refid="d2/d3e/classTestSuite_1a7eaba7408aed781686f9a5ac37de36d1" prot="public" virt="non-virtual"><scope>PushCostTests</scope><name>RunSustained</name></member>
+      <member refid="d2/d3e/classTestSuite_1ae78f846955f3fb6ba75d7a674c1ccc1c" prot="public" virt="non-virtual"><scope>PushCostTests</scope><name>SetBaselineLoad</name></member>
+      <member refid="d2/d3e/classTestSuite_1a0d580dbb0e1630ecdc989d5c852e8f91" prot="protected" virt="non-virtual"><scope>PushCostTests</scope><name>SetDefaultTextureFormat</name></member>
+      <member refid="d2/d3e/classTestSuite_1a3f6f68819aac546923d3f0dcbbdfd162" prot="public" virt="non-virtual"><scope>PushCostTests</scope><name>SetLoad</name></member>
+      <member refid="d2/d3e/classTestSuite_1ad3fb7cc9d8db8740c5188da083312b8d" prot="public" virt="virtual"><scope>PushCostTests</scope><name>SetupTest</name></member>
+      <member refid="d2/d3e/classTestSuite_1ac59f02a9549a146ed62e6185c0acec8b" prot="protected" virt="non-virtual"><scope>PushCostTests</scope><name>suite_name_</name></member>
+      <member refid="d2/d3e/classTestSuite_1a90bc6959d04c41e07eed51f80a435d70" prot="public" virt="virtual"><scope>PushCostTests</scope><name>TearDownTest</name></member>
+      <member refid="d2/d3e/classTestSuite_1a80f0bc74d8d511547708827e5a549a63" prot="public" virt="non-virtual"><scope>PushCostTests</scope><name>TestNames</name></member>
+      <member refid="d3/d38/classPushCostTests_1a6ad68a51e0d0bfe056b2135c780c5956" prot="private" virt="non-virtual"><scope>PushCostTests</scope><name>TestPushbufferAPI</name></member>
+      <member refid="d3/d38/classPushCostTests_1ae0ac0f07b706f2b303c35788ceef5a52" prot="private" virt="non-virtual"><scope>PushCostTests</scope><name>TestPushbufferSubmit</name></member>
+      <member refid="d3/d38/classPushCostTests_1aa7484d7dabac81c32dd3b42944f71818" prot="private" virt="non-virtual"><scope>PushCostTests</scope><name>TestPushbufferWrite</name></member>
+      <member refid="d3/d38/classPushCostTests_1a8a1c5832c39a0b66ccfb3483262a267d" prot="private" virt="non-virtual"><scope>PushCostTests</scope><name>TestRamWrite</name></member>
+      <member refid="d2/d3e/classTestSuite_1a7bc0a6c4d360f6f487779e8f4282d0a1" prot="protected" virt="non-virtual"><scope>PushCostTests</scope><name>tests_</name></member>
+      <member refid="d2/d3e/classTestSuite_1a57b1ed01dd40328456bf0854043ca68b" prot="public" virt="non-virtual"><scope>PushCostTests</scope><name>TestSuite</name></member>
+      <member refid="d2/d3e/classTestSuite_1a253b4d7ef576ab6950da2f9748d0afa9" prot="public" virt="non-virtual"><scope>PushCostTests</scope><name>TestSuite</name></member>
+      <member refid="d2/d3e/classTestSuite_1a9a9de80c37a22d46e20e0fa1c4f83786" prot="protected" virt="non-virtual"><scope>PushCostTests</scope><name>uncalibrated_tests_</name></member>
+      <member refid="d2/d3e/classTestSuite_1ac12e8f49c702522380d9824e4acfd53b" prot="public" virt="virtual"><scope>PushCostTests</scope><name>UpdateUserContext</name></member>
+      <member refid="d2/d3e/classTestSuite_1a1743f0a04119de901cb819111d51192d" prot="public" virt="virtual"><scope>PushCostTests</scope><name>~TestSuite</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,110 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="dd/d1b/structTestSuite_1_1CalibrationResult" kind="struct" language="C++" prot="public">
+    <compoundname>TestSuite::CalibrationResult</compoundname>
+    <includes refid="d6/d7a/test__suite_8h" local="no">test_suite.h</includes>
+    <innerclass refid="dd/df9/structTestSuite_1_1CalibrationResult_1_1Run" prot="public">TestSuite::CalibrationResult::Run</innerclass>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="dd/d1b/structTestSuite_1_1CalibrationResult_1a35ddefc1d8b8ba689b0eab5ec9c2fdc8" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string TestSuite::CalibrationResult::status</definition>
+        <argsstring></argsstring>
+        <name>status</name>
+        <qualifiedname>TestSuite::CalibrationResult::status</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>&quot;ok&quot;, &quot;no_load&quot; (the test has no load knob), &quot;over_budget&quot; (fails even at a load of 1), &quot;hit_cap&quot; (still passes at the largest load searched), or &quot;unconfirmed&quot; (the search found a passing load but the confirmation runs failed, even after stepping the load down), or &quot;excluded&quot; (the test opted out of calibration). </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tests/test_suite.h" line="73" column="17" bodyfile="src/tests/test_suite.h" bodystart="73" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="dd/d1b/structTestSuite_1_1CalibrationResult_1a4fe263f657865de61f50e1d50126d1e2" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t TestSuite::CalibrationResult::load</definition>
+        <argsstring></argsstring>
+        <name>load</name>
+        <qualifiedname>TestSuite::CalibrationResult::load</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tests/test_suite.h" line="74" column="14" bodyfile="src/tests/test_suite.h" bodystart="74" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="dd/d1b/structTestSuite_1_1CalibrationResult_1a824bb6e31b109b34c1843d608044bf4c" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t TestSuite::CalibrationResult::runs</definition>
+        <argsstring></argsstring>
+        <name>runs</name>
+        <qualifiedname>TestSuite::CalibrationResult::runs</qualifiedname>
+        <briefdescription>
+<para>Number of sustained runs performed. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tests/test_suite.h" line="76" column="14" bodyfile="src/tests/test_suite.h" bodystart="76" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="dd/d1b/structTestSuite_1_1CalibrationResult_1a1666c1f53cdf39adb0a422eb2d0f69b0" prot="public" static="no" mutable="no">
+        <type><ref refid="d3/d3d/structTestHost_1_1SustainedSummary" kindref="compound">TestHost::SustainedSummary</ref></type>
+        <definition>TestHost::SustainedSummary TestSuite::CalibrationResult::summary</definition>
+        <argsstring></argsstring>
+        <name>summary</name>
+        <qualifiedname>TestSuite::CalibrationResult::summary</qualifiedname>
+        <briefdescription>
+<para>Summary of the final confirmation run (or the last run, if there was none). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tests/test_suite.h" line="78" column="32" bodyfile="src/tests/test_suite.h" bodystart="78" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="dd/d1b/structTestSuite_1_1CalibrationResult_1a7f100e2c3e856352aa484b5b0b498d6b" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="dd/df9/structTestSuite_1_1CalibrationResult_1_1Run" kindref="compound">Run</ref> &gt;</type>
+        <definition>std::vector&lt;Run&gt; TestSuite::CalibrationResult::history</definition>
+        <argsstring></argsstring>
+        <name>history</name>
+        <qualifiedname>TestSuite::CalibrationResult::history</qualifiedname>
+        <briefdescription>
+<para>Every run performed, in order, including retries. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tests/test_suite.h" line="89" column="17" bodyfile="src/tests/test_suite.h" bodystart="89" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Result of <ref refid="d2/d3e/classTestSuite_1a1a6ef873dd99dfa1c6f3dca29466d7f7" kindref="member">Calibrate()</ref>. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="2">
+        <label>TestHost::SustainedSummary</label>
+        <link refid="d3/d3d/structTestHost_1_1SustainedSummary"/>
+      </node>
+      <node id="1">
+        <label>TestSuite::CalibrationResult</label>
+        <link refid="dd/d1b/structTestSuite_1_1CalibrationResult"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>summary</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="src/tests/test_suite.h" line="69" column="3" bodyfile="src/tests/test_suite.h" bodystart="69" bodyend="90"/>
+    <listofallmembers>
+      <member refid="dd/d1b/structTestSuite_1_1CalibrationResult_1a7f100e2c3e856352aa484b5b0b498d6b" prot="public" virt="non-virtual"><scope>TestSuite::CalibrationResult</scope><name>history</name></member>
+      <member refid="dd/d1b/structTestSuite_1_1CalibrationResult_1a4fe263f657865de61f50e1d50126d1e2" prot="public" virt="non-virtual"><scope>TestSuite::CalibrationResult</scope><name>load</name></member>
+      <member refid="dd/d1b/structTestSuite_1_1CalibrationResult_1a824bb6e31b109b34c1843d608044bf4c" prot="public" virt="non-virtual"><scope>TestSuite::CalibrationResult</scope><name>runs</name></member>
+      <member refid="dd/d1b/structTestSuite_1_1CalibrationResult_1a35ddefc1d8b8ba689b0eab5ec9c2fdc8" prot="public" virt="non-virtual"><scope>TestSuite::CalibrationResult</scope><name>status</name></member>
+      <member refid="dd/d1b/structTestSuite_1_1CalibrationResult_1a1666c1f53cdf39adb0a422eb2d0f69b0" prot="public" virt="non-virtual"><scope>TestSuite::CalibrationResult</scope><name>summary</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

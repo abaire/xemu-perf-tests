@@ -1,0 +1,91 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="dd/df9/structTestSuite_1_1CalibrationResult_1_1Run" kind="struct" language="C++" prot="public">
+    <compoundname>TestSuite::CalibrationResult::Run</compoundname>
+    <includes refid="d6/d7a/test__suite_8h" local="no">test_suite.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="dd/df9/structTestSuite_1_1CalibrationResult_1_1Run_1a2a46e82b02f7c9aea05bcea19eed119d" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t TestSuite::CalibrationResult::Run::load</definition>
+        <argsstring></argsstring>
+        <name>load</name>
+        <qualifiedname>TestSuite::CalibrationResult::Run::load</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tests/test_suite.h" line="82" column="16" bodyfile="src/tests/test_suite.h" bodystart="82" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="dd/df9/structTestSuite_1_1CalibrationResult_1_1Run_1a91016c5f265be9cae0c92358cdfd7808" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool TestSuite::CalibrationResult::Run::confirm</definition>
+        <argsstring></argsstring>
+        <name>confirm</name>
+        <qualifiedname>TestSuite::CalibrationResult::Run::confirm</qualifiedname>
+        <briefdescription>
+<para>True for a confirmation run, false for a search probe. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tests/test_suite.h" line="84" column="12" bodyfile="src/tests/test_suite.h" bodystart="84" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="dd/df9/structTestSuite_1_1CalibrationResult_1_1Run_1a8c674f9e67440742f2facc94c0b62d25" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool TestSuite::CalibrationResult::Run::passed</definition>
+        <argsstring></argsstring>
+        <name>passed</name>
+        <qualifiedname>TestSuite::CalibrationResult::Run::passed</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tests/test_suite.h" line="85" column="12" bodyfile="src/tests/test_suite.h" bodystart="85" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="dd/df9/structTestSuite_1_1CalibrationResult_1_1Run_1a5413da283c3931704f24b552db821cb0" prot="public" static="no" mutable="no">
+        <type><ref refid="d3/d3d/structTestHost_1_1SustainedSummary" kindref="compound">TestHost::SustainedSummary</ref></type>
+        <definition>TestHost::SustainedSummary TestSuite::CalibrationResult::Run::summary</definition>
+        <argsstring></argsstring>
+        <name>summary</name>
+        <qualifiedname>TestSuite::CalibrationResult::Run::summary</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tests/test_suite.h" line="86" column="34" bodyfile="src/tests/test_suite.h" bodystart="86" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>One sustained run performed during calibration. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="2">
+        <label>TestHost::SustainedSummary</label>
+        <link refid="d3/d3d/structTestHost_1_1SustainedSummary"/>
+      </node>
+      <node id="1">
+        <label>TestSuite::CalibrationResult::Run</label>
+        <link refid="dd/df9/structTestSuite_1_1CalibrationResult_1_1Run"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>summary</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="src/tests/test_suite.h" line="81" column="5" bodyfile="src/tests/test_suite.h" bodystart="81" bodyend="87"/>
+    <listofallmembers>
+      <member refid="dd/df9/structTestSuite_1_1CalibrationResult_1_1Run_1a91016c5f265be9cae0c92358cdfd7808" prot="public" virt="non-virtual"><scope>TestSuite::CalibrationResult::Run</scope><name>confirm</name></member>
+      <member refid="dd/df9/structTestSuite_1_1CalibrationResult_1_1Run_1a2a46e82b02f7c9aea05bcea19eed119d" prot="public" virt="non-virtual"><scope>TestSuite::CalibrationResult::Run</scope><name>load</name></member>
+      <member refid="dd/df9/structTestSuite_1_1CalibrationResult_1_1Run_1a8c674f9e67440742f2facc94c0b62d25" prot="public" virt="non-virtual"><scope>TestSuite::CalibrationResult::Run</scope><name>passed</name></member>
+      <member refid="dd/df9/structTestSuite_1_1CalibrationResult_1_1Run_1a5413da283c3931704f24b552db821cb0" prot="public" virt="non-virtual"><scope>TestSuite::CalibrationResult::Run</scope><name>summary</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,327 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="df/d43/test__host_8h" kind="file" language="C++">
+    <compoundname>test_host.h</compoundname>
+    <includes local="no">pbkit/pbkit.h</includes>
+    <includes local="no">cstdint</includes>
+    <includes local="no">string</includes>
+    <includes local="no">vector</includes>
+    <includes local="yes">nv2astate.h</includes>
+    <includes local="yes">pushbuffer.h</includes>
+    <includedby refid="df/d0a/main_8cpp" local="yes">src/main.cpp</includedby>
+    <includedby refid="dd/dab/test__driver_8h" local="yes">src/test_driver.h</includedby>
+    <includedby refid="d2/d61/test__host_8cpp" local="yes">src/test_host.cpp</includedby>
+    <includedby refid="d6/da7/busy__pfifo__tests_8cpp" local="yes">src/tests/busy_pfifo_tests.cpp</includedby>
+    <includedby refid="d6/d62/fill__rate__tests_8cpp" local="yes">src/tests/fill_rate_tests.cpp</includedby>
+    <includedby refid="d3/d4c/high__vertex__count__tests_8cpp" local="yes">src/tests/high_vertex_count_tests.cpp</includedby>
+    <includedby refid="d8/d40/high__vertex__count__tests_8h" local="yes">src/tests/high_vertex_count_tests.h</includedby>
+    <includedby refid="d6/dc6/pfifo__contention__tests_8cpp" local="yes">src/tests/pfifo_contention_tests.cpp</includedby>
+    <includedby refid="d4/d5c/primitive__type__tests_8cpp" local="yes">src/tests/primitive_type_tests.cpp</includedby>
+    <includedby refid="d9/df6/program__thrash__tests_8cpp" local="yes">src/tests/program_thrash_tests.cpp</includedby>
+    <includedby refid="da/d29/push__cost__tests_8cpp" local="yes">src/tests/push_cost_tests.cpp</includedby>
+    <includedby refid="d6/d74/surface__rendering__tests_8cpp" local="yes">src/tests/surface_rendering_tests.cpp</includedby>
+    <includedby refid="dc/d6c/test__suite_8cpp" local="yes">src/tests/test_suite.cpp</includedby>
+    <includedby refid="d6/d7a/test__suite_8h" local="yes">src/tests/test_suite.h</includedby>
+    <includedby refid="d6/d3f/tiny__draw__tests_8cpp" local="yes">src/tests/tiny_draw_tests.cpp</includedby>
+    <includedby refid="db/d65/uniform__thrash__tests_8cpp" local="yes">src/tests/uniform_thrash_tests.cpp</includedby>
+    <includedby refid="d0/de9/vertex__buffer__allocation__tests_8cpp" local="yes">src/tests/vertex_buffer_allocation_tests.cpp</includedby>
+    <includedby refid="d7/d54/vertex__buffer__allocation__tests_8h" local="yes">src/tests/vertex_buffer_allocation_tests.h</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>src/test_host.h</label>
+        <link refid="df/d43/test__host_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>cstdint</label>
+      </node>
+      <node id="6">
+        <label>nv2astate.h</label>
+      </node>
+      <node id="2">
+        <label>pbkit/pbkit.h</label>
+      </node>
+      <node id="7">
+        <label>pushbuffer.h</label>
+      </node>
+      <node id="4">
+        <label>string</label>
+      </node>
+      <node id="5">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="5">
+        <label>src/runtime_config.h</label>
+        <link refid="d4/d3c/runtime__config_8h_source"/>
+      </node>
+      <node id="2">
+        <label>src/test_driver.h</label>
+        <link refid="dd/dab/test__driver_8h_source"/>
+      </node>
+      <node id="1">
+        <label>src/test_host.h</label>
+        <link refid="df/d43/test__host_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>src/tests/busy_pfifo_tests.h</label>
+        <link refid="d3/dd2/busy__pfifo__tests_8h_source"/>
+      </node>
+      <node id="7">
+        <label>src/tests/fill_rate_tests.h</label>
+        <link refid="df/d6d/fill__rate__tests_8h_source"/>
+      </node>
+      <node id="3">
+        <label>src/tests/high_vertex_count_tests.h</label>
+        <link refid="d8/d40/high__vertex__count__tests_8h_source"/>
+      </node>
+      <node id="8">
+        <label>src/tests/pfifo_contention_tests.h</label>
+        <link refid="d2/d88/pfifo__contention__tests_8h_source"/>
+      </node>
+      <node id="9">
+        <label>src/tests/primitive_type_tests.h</label>
+        <link refid="d3/d55/primitive__type__tests_8h_source"/>
+      </node>
+      <node id="10">
+        <label>src/tests/program_thrash_tests.h</label>
+        <link refid="d8/d76/program__thrash__tests_8h_source"/>
+      </node>
+      <node id="11">
+        <label>src/tests/push_cost_tests.h</label>
+        <link refid="d8/d34/push__cost__tests_8h_source"/>
+      </node>
+      <node id="12">
+        <label>src/tests/surface_rendering_tests.h</label>
+        <link refid="de/dfd/surface__rendering__tests_8h_source"/>
+      </node>
+      <node id="4">
+        <label>src/tests/test_suite.h</label>
+        <link refid="d6/d7a/test__suite_8h_source"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>src/tests/tiny_draw_tests.h</label>
+        <link refid="d2/db2/tiny__draw__tests_8h_source"/>
+      </node>
+      <node id="14">
+        <label>src/tests/uniform_thrash_tests.h</label>
+        <link refid="de/d3d/uniform__thrash__tests_8h_source"/>
+      </node>
+      <node id="15">
+        <label>src/tests/vertex_buffer_allocation_tests.h</label>
+        <link refid="d7/d54/vertex__buffer__allocation__tests_8h_source"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="d6/d80/classTestHost" prot="public">TestHost</innerclass>
+    <innerclass refid="d1/dc6/structTestHost_1_1ProfileResults" prot="public">TestHost::ProfileResults</innerclass>
+    <innerclass refid="d3/d3d/structTestHost_1_1SustainedSummary" prot="public">TestHost::SustainedSummary</innerclass>
+    <innerclass refid="d3/d99/structTestHost_1_1SustainedFrame" prot="private">TestHost::SustainedFrame</innerclass>
+    <innerclass refid="d3/d81/structTestHost_1_1semaphore__dma__ctx__" prot="private">TestHost::semaphore_dma_ctx_</innerclass>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="df/d43/test__host_8h_1a77e84b79ce20c95d551e7dd4fbe3c374" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void pb_print_with_floats</definition>
+        <argsstring>(const char *format,...)</argsstring>
+        <name>pb_print_with_floats</name>
+        <param>
+          <type>const char *</type>
+          <declname>format</declname>
+        </param>
+        <param>
+          <type>...</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/test_host.h" line="176" column="6" bodyfile="src/test_host.cpp" bodystart="175" bodyend="187" declfile="src/test_host.h" declline="176" declcolumn="6"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>XEMU_PERF_TESTS_TEST_HOST_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>XEMU_PERF_TESTS_TEST_HOST_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;pbkit/pbkit.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cstdint&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;nv2astate.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;pushbuffer.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16" refid="d6/d80/classTestHost" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">TestHost<sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>PBKitPlusPlus::NV2AState<sp/>{</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="18" refid="d1/dc6/structTestHost_1_1ProfileResults" refkind="compound"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="d1/dc6/structTestHost_1_1ProfileResults" kindref="compound">ProfileResults</ref><sp/>{</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>iterations;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>total_time_microseconds;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>average_time_microseconds;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>maximum_time_microseconds;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>minimum_time_microseconds;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;uint32_t&gt;<sp/>raw_results;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/>};</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/>TestHost(uint32_t<sp/>framebuffer_width,<sp/>uint32_t<sp/>framebuffer_height,<sp/>uint32_t<sp/>max_texture_width<sp/>=<sp/>256,</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t<sp/>max_texture_height<sp/>=<sp/>256,<sp/>uint32_t<sp/>max_texture_depth<sp/>=<sp/>4);</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d6/d80/classTestHost_1a24b83c50f1d0b792c2089b41903d580e" kindref="member">EnsureFolderExists</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;folder_path);</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d6/d80/classTestHost_1a7343d98d694323b7e42ca44a70a5e42a" kindref="member">PrepareDraw</ref>(uint32_t<sp/>argb<sp/>=<sp/>0xFF000000,<sp/>uint32_t<sp/>depth_value<sp/>=<sp/>0xFFFFFFFF,<sp/>uint8_t<sp/>stencil_value<sp/>=<sp/>0x00);</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d6/d80/classTestHost_1ad4dde48e4a1c7ac6c5477aeff87052a3" kindref="member">FinishDraw</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;suite_name,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;test_name,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="d1/dc6/structTestHost_1_1ProfileResults" kindref="compound">ProfileResults</ref><sp/>&amp;results);</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d6/d80/classTestHost_1aa87ceadc4fd108e9bf2997d6d42502a1" kindref="member">FinishDrawWithoutPresent</ref>();</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46" refid="d6/d80/classTestHost_1aa6714120bb93a3c81585a0e223e6c210" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d6/d80/classTestHost_1aa6714120bb93a3c81585a0e223e6c210" kindref="member">SkipRecordingCurrentFrame</ref>()<sp/>{<sp/>sustained_skip_current_frame_<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;<sp/>}</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49" refid="d6/d80/classTestHost_1a45afd08c65c3e4acd06a4ed18c5f6b72" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/>int32_t<sp/><ref refid="d6/d80/classTestHost_1a45afd08c65c3e4acd06a4ed18c5f6b72" kindref="member">kFirstTestContextChannel</ref><sp/>=<sp/>PBKitPlusPlus::kNextContextChannel<sp/>+<sp/>1;</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d6/d80/classTestHost_1a7f054a648c0f5f8b985a23bac20cd3b6" kindref="member">SetupFixedFunctionPassthrough</ref>();</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/>[[nodiscard]]<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>GetSaveResults()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>save_results_;<sp/>}</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>SetSaveResults(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>enable<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">)<sp/>{<sp/>save_results_<sp/>=<sp/>enable;<sp/>}</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/>[[nodiscard]]<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>&amp;GetPerformanceCounterFrequency()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>perf_counter_frequency_;<sp/>}</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/>[[nodiscard]]<sp/>uint32_t<sp/>GetMicrosecondsSince(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>LARGE_INTEGER<sp/>&amp;previous)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>PreTest()<sp/>{</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>current_frame_index_<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/>last_frame_time_.QuadPart<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>average_frame_rate_<sp/>=<sp/>0.f;</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/>average_mspf_<sp/>=<sp/>0.f;</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d6/d80/classTestHost_1a314c6e57b9935260658ffec6fef90b27" kindref="member">BeginSustainedCapture</ref>(uint32_t<sp/>expected_frames);</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d6/d80/classTestHost_1a3e151a1e6226d17e7e45e1c536453053" kindref="member">BeginSustainedFrame</ref>();</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75" refid="d6/d80/classTestHost_1a0ac647ffe8ff956276908a822c1b77ec" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d6/d80/classTestHost_1a0ac647ffe8ff956276908a822c1b77ec" kindref="member">SetSustainedRecording</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>enable)<sp/>{<sp/>sustained_recording_<sp/>=<sp/>enable;<sp/>}</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78" refid="d3/d3d/structTestHost_1_1SustainedSummary" refkind="compound"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="d3/d3d/structTestHost_1_1SustainedSummary" kindref="compound">SustainedSummary</ref><sp/>{</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>frames;</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>busy_p50_us;</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>busy_p95_us;</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>missed_vblanks;</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>fence_timeouts;</highlight></codeline>
+<codeline lineno="86" refid="d3/d3d/structTestHost_1_1SustainedSummary_1ae5ab37b792b981755164fee2260480e2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="d3/d3d/structTestHost_1_1SustainedSummary_1ae5ab37b792b981755164fee2260480e2" kindref="member">max_resets</ref>;</highlight></codeline>
+<codeline lineno="88" refid="d3/d3d/structTestHost_1_1SustainedSummary_1a0ad37c6fb41d4e464582613729fec1d4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d3/d3d/structTestHost_1_1SustainedSummary_1a0ad37c6fb41d4e464582613729fec1d4" kindref="member">aborted</ref>;</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/>};</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><ref refid="d3/d3d/structTestHost_1_1SustainedSummary" kindref="compound">SustainedSummary</ref><sp/><ref refid="d6/d80/classTestHost_1a763eb9c3f46b8f9b2a87fb23384630fe" kindref="member">EndSustainedCapture</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;suite_name,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;test_name,<sp/>uint32_t<sp/>load,</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>aborted);</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d6/d80/classTestHost_1a55f1d8161deee38aabaf300b27d0e8a9" kindref="member">LogSustainedCapture</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;suite_name,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;test_name,<sp/>uint32_t<sp/>load,</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t<sp/>warmup_frames,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*calibration_label<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight></codeline>
+<codeline lineno="102" refid="d6/d80/classTestHost_1a614545db63ad8315251682966f83c2c0" refkind="member"><highlight class="normal"><sp/><sp/>[[nodiscard]]<sp/>uint32_t<sp/><ref refid="d6/d80/classTestHost_1a614545db63ad8315251682966f83c2c0" kindref="member">GetLastSustainedFrameBusyUs</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>sustained_last_busy_us_;<sp/>}</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/>[[nodiscard]]<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>IsSustainedCaptureActive()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>sustained_active_;<sp/>}</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d6/d80/classTestHost_1ac192b19e6ded9e20da1e83cb949fd709" kindref="member">WaitForGPUIdle</ref>();</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>FinishSustainedFrame(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>present);</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>StampSustainedFrameStart();</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>EnsureSemaphoreInitialized();</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>save_results_{</highlight><highlight class="keyword">true</highlight><highlight class="normal">};</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">SustainedFrame<sp/>{</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>submit_us;</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>reset_wait_us;</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>resets;</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>busy_us;</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>frame_us;</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>vblanks;</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/>};</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>sustained_active_{</highlight><highlight class="keyword">false</highlight><highlight class="normal">};</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>sustained_recording_{</highlight><highlight class="keyword">false</highlight><highlight class="normal">};</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>sustained_awaiting_prepare_{</highlight><highlight class="keyword">false</highlight><highlight class="normal">};</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>sustained_skip_current_frame_{</highlight><highlight class="keyword">false</highlight><highlight class="normal">};</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/>LARGE_INTEGER<sp/>sustained_frame_start_{};</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/>PBKitPlusPlus::Pushbuffer::ResetStats<sp/>sustained_frame_start_resets_{};</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/>LARGE_INTEGER<sp/>sustained_last_recorded_end_{};</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/>uint32_t<sp/>sustained_skipped_missed_vblanks_{0};</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/>uint32_t<sp/>sustained_last_busy_us_{0};</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>sustained_aborted_{</highlight><highlight class="keyword">false</highlight><highlight class="normal">};</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><ref refid="d3/d3d/structTestHost_1_1SustainedSummary" kindref="compound">SustainedSummary</ref><sp/>sustained_summary_{};</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/>DWORD<sp/>sustained_last_vbl_{0};</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/>std::vector&lt;SustainedFrame&gt;<sp/>sustained_frames_;</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/>uint32_t<sp/>sustained_fence_timeouts_{0};</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"></highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">volatile</highlight><highlight class="normal"><sp/>uint32_t<sp/>*semaphore_memory_{</highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">};</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">s_CtxDma<sp/>semaphore_dma_ctx_{};</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/>uint32_t<sp/>semaphore_value_{0};</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"></highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>kFrameTimeWindow<sp/>=<sp/>10;</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>perf_counter_frequency_;</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/>LARGE_INTEGER<sp/>last_frame_time_;</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/>uint32_t<sp/>current_frame_index_<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>frame_times_[kFrameTimeWindow]<sp/>=<sp/>{0.f};</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>average_frame_rate_<sp/>=<sp/>0.f;</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>average_mspf_<sp/>=<sp/>0.f;</highlight></codeline>
+<codeline lineno="174"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"></highlight></codeline>
+<codeline lineno="176"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>pb_print_with_floats(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*format,<sp/>...);</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"></highlight></codeline>
+<codeline lineno="178"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/><sp/></highlight><highlight class="comment">//<sp/>XEMU_PERF_TESTS_TEST_HOST_H</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="src/test_host.h"/>
+  </compounddef>
+</doxygen>
